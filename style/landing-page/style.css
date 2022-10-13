@@ -113,11 +113,8 @@ body{
 
 .row-1{
 	width: 100%;
-}
-
-.container{
 	padding-top: 80px;
-	padding-bottom: 80px;
+	padding-bottom: 160px;
 }
 
 .the-nineteen{
@@ -138,4 +135,39 @@ body{
 .row-2{
 	width: 100%;
 	text-align: center;
+	padding-bottom: 160px;
+}
+
+.tutorial{
+	padding-top: 50px;
+	font-weight: 700;
+	padding-bottom: 30px;
+}
+
+.text-background{
+	position: relative;
+	z-index: 1;
+	top: 0px;
+}
+
+.text-frontground{
+	position: absolute;
+	z-index: 2;
+	top: 130px;
+	left: 130px;
+}
+
+.number-1{
+	font-size: 176px;
+	color: #FFEAE8;
+}
+
+.number-2{
+	font-size: 176px;
+	color: #ECDBFF;
+}
+
+.number-3{
+	font-size: 176px;
+	color: #D4EDEE;
 }

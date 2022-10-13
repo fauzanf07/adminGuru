@@ -69,6 +69,39 @@
 
 		<div class="row-2">
 			<h2>HOW DID IT WORKS</h2>
+			<div class="tutorial">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<div class="text-background">
+								<p class="number-1">01</p>
+								<div class="text-frontground">
+									<p>BUY OUR APP LICENSE</p>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="text-background">
+								<p class="number-2">02</p>
+								<div class="text-frontground">
+									<p>INSTALL ON YOUR DESKTOP</p>
+								</div>
+							</div>
+						</div>
+						<div class="col">
+							<div class="text-background">
+								<p class="number-3">03</p>
+								<div class="text-frontground">
+									<p>MAKE ADMINISTRATION 10x FASTER</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+			<div class="button-reserve">
+				<button type="button" class="btn btn-outline-dark btn-lg">Reserve My Spot</button>
+			</div>
 		</div>
 	</div>
 </body>
