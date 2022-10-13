@@ -1,7 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,400&display=swap');
+
 html {
 	width: 100%;
 	height: 100%;
 }
+
 
 body{
 	width: 100%;
@@ -13,6 +16,7 @@ body{
 	left: 0;
 	right: 0;
 	background-color: #f0a48c !important;
+	font-family: 'Montserrat', sans-serif;
 }
 
 .logo-icon{
@@ -101,4 +105,37 @@ body{
 .btn-contact:hover{
 	background-color: #1d1e21;
 	color: #fff;
+}
+
+.content{
+	background-color: #fff;
+}
+
+.row-1{
+	width: 100%;
+}
+
+.container{
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+
+.the-nineteen{
+	font-weight: 700;
+	font-size: 41px;
+}
+
+.jargon{
+	font-weight: 500;
+	font-size: 25px;
+}
+
+.quotes{
+	padding-top: 10px;
+	font-weight: 500;
+}
+
+.row-2{
+	width: 100%;
+	text-align: center;
 }
