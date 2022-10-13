@@ -171,3 +171,20 @@ body{
 	font-size: 176px;
 	color: #D4EDEE;
 }
+
+.row-3{
+	padding-bottom: 160px;
+}
+
+.carousel{
+	margin-left: 3%;
+	margin-right: 3%;
+}
+
+.row-4{
+	text-align: center;
+}
+
+.windows{
+	margin-top: 30px;
+}

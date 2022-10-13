@@ -103,6 +103,52 @@
 				<button type="button" class="btn btn-outline-dark btn-lg">Reserve My Spot</button>
 			</div>
 		</div>
+		<div class="row-3">
+			<div class="carousel">
+				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<ol class="carousel-indicators">
+						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+					</ol>
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+						<img class="d-block w-100" src="images/slide1.jpg" alt="First slide">
+						</div>
+						<div class="carousel-item">
+						<img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
+						</div>
+						<div class="carousel-item">
+						<img class="d-block w-100" src="images/slide3.jpg" alt="Third slide">
+						</div>
+					</div>
+					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="sr-only">Previous</span>
+					</a>
+					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="sr-only">Next</span>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-4">
+			<h2>Featured On</h2>
+			<div class="row-1">
+				<div class="container">
+					<div class="row">
+						<div class="col">
+							<img class="windows" src="https://static.wixstatic.com/media/4c1c57_4313be106c5949c896ceed39a4a22d7c~mv2.png/v1/fill/w_407,h_75,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Windows_11_logo_svg.png" alt="Windows 11" width="407px" height="75px">
+						</div>
+						<div class="col">
+							<img src="https://static.wixstatic.com/media/4c1c57_76b3c55752394cf18f8a162cebe55afb~mv2.png/v1/fill/w_158,h_152,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/download%20(3).png" alt="Windows 11" width="158px" height="152px">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 
