@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,400&display=swap');
+
+html {
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+	margin:0;
+	padding: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.logo-parent{
+	margin-top: 2%;
+	margin-left: 3%;
+	z-index: 3;
+}
+
+.logo-icon{
+	width: 40px;
+	height: 40px;
+	background-color: #000;
+	display: inline-block;
+	vertical-align: top;
+	z-index: 3;
+}
+
+.logo-text{
+	font-family: 'montserrat', 'sans-serif';
+	font-size: 24px;
+	font-weight: 700;
+	width: 320px;
+	height: auto;
+	display: inline-block;
+    vertical-align: top; 
+	z-index: 3;
+}
+.logo-name{
+	line-height: 20px;
+	font-size: 20px;
+	margin-left: 15px;
+	z-index: 3;
+}
+
+.desc{
+	color: #000;
+	font-size: 16px;
+	z-index: 3;
+}
+
+.nav-item{
+	margin-right: 20px;
+	margin-bottom: 20px;
+	z-index: 3;
+}
+
+.collapse ul li{
+	display: inline-block;
+	width: auto;
+	white-space: nowrap;
+	z-index: 3;
+}
+
+nav{
+	position: relative;
+	z-index: 1;
+	top: 0px;
+}
+
+.pink-on-top{
+	width: 100%;
+	height: 50%;
+	margin-top:65px;
+	background-color: #F0A48C;
+	position: absolute;
+	z-index: 2;
+}
+
+.row-1{
+	padding-top: 200px;
+}
+
+.form-group{
+	margin-bottom: 20px;
+}
+
+.forgot-password{
+	font-weight: 400;
+	font-size: smaller;
+	margin-left:170px;
+}
+
+.login-button{
+	margin-top: 30px;
+}
+
+.signup-direction{
+	text-align: center;
+	font-weight: 700;
+	margin-top: 15px;
+}
+
+.border{
+	border: 2px solid black;
+	border-radius: 30px;
+	margin-bottom: 20px;
+}
+
+form{
+	padding: 20px;
+	font-weight: 700;
+}
+
+.copyright{
+	text-align: center;
+	margin-top: 10%;
+}
+
+.background-footer{
+	height: 50px;
+	background-color: #F3F3F3;
+}
