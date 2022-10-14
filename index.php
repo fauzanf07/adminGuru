@@ -43,6 +43,114 @@
 		    </div>
 		  </div>
 		</nav>
+		<div class="container">
+			<div class="row row-profile">
+				<div class="col-lg-3">
+					<center><img src="<?php echo $_SESSION['photo_profile']; ?>" class="profile-pic" id="profile-pic"></center>
+					<h3 class="profile-name"><?php echo $_SESSION['name']; ?></h3>
+					<span class="username"><?php echo $_SESSION['username']; ?></span>
+					<div class="info">
+						<span class="info-item"><i class="bi bi-person-fill"></i>&nbsp;&nbsp; Level 3 - Explorer</span>
+						<span class="info-item"><i class="bi bi-trophy-fill"></i>&nbsp;&nbsp; 10th</span>
+						<span class="info-item"><i class="bi bi-diamond-fill"></i>&nbsp;&nbsp; 500 Points</span>
+						<span class="info-item"><i class="bi bi-award-fill"></i>&nbsp;&nbsp; 3 Badges</span>
+						<span class="info-item"><i class="bi bi-star-fill"></i>&nbsp;&nbsp; 1000 XP</span>
+					</div>
+				</div>
+				<div class="col-lg-9 nav-info-user">
+					<nav>
+					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+					    <button class="nav-link active" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="bi bi-chat-square-text-fill"></i>&nbsp;&nbsp;Feed</button>
+					    <button class="nav-link" id="nav-progress-tab" data-bs-toggle="tab" data-bs-target="#nav-progress" type="button" role="tab" aria-controls="nav-progress" aria-selected="false"><i class="bi bi-layers-fill"></i>&nbsp;&nbsp;Progress</button>
+					    <button class="nav-link" id="nav-badges-tab" data-bs-toggle="tab" data-bs-target="#nav-badges" type="button" role="tab" aria-controls="nav-badges" aria-selected="false"><i class="bi bi-award-fill"></i>&nbsp;&nbsp;Badges</button>
+					  </div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab" tabindex="0">
+							<div class="post">
+								<div class="top">
+									<div class="top-photo">
+										<img src= "<?php echo $_SESSION['photo_profile']; ?>" class="avatar">
+									</div>
+									<div class="top-name">
+										<b><span><?php echo $_SESSION['name']; ?></span></b><span>&nbsp;&nbsp;<?php echo $_SESSION['username']; ?></span><br>
+										<span>20-08-2022 18:30</span>
+									</div>
+								</div>
+								<div class="content-post">
+									<p>I'm so happy that I have earned this badge! I can't wait to see you earn this badge too!</p>
+									<center><img src="../images/badges.png" class="badges"></center>
+								</div>
+							</div>
+					  	</div>
+					  	<div class="tab-pane fade" id="nav-progress" role="tabpanel" aria-labelledby="nav-progress-tab" tabindex="0">
+						  	<div class="card card-progress">
+								<h5 class="card-header">Course Progress</h5>
+								<div class="card-body">
+							    	<h6>Algorithm & Programming</h6>
+								    <div class="progress">
+									  <div class="progress-bar bg-warning progress-bar-striped" role="progressbar" aria-label="Example with label" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+									</div>
+								</div>
+							</div>
+							<div class="card card-progress">
+								<h5 class="card-header">Activity Histories</h5>
+								<div class="card-body">
+								    <div class="row-custom">
+								    	<div class="coloumn-1"><i class="bi bi-arrow-up-circle-fill"></i>&nbsp; Level Up</div>
+								    	<div class="coloumn-2">Level up to Level 3 and have become an Explorer</div>
+								    </div>
+								    <div class="row-custom">
+								    	<div class="coloumn-1"><i class="bi bi-star-fill"></i>&nbsp; +500 XP</div>
+								    	<div class="coloumn-2">You have finished basic algorithm material</div>
+								    </div>
+								    <div class="row-custom">
+								    	<div class="coloumn-1"><i class="bi bi-award-fill"></i></i>&nbsp; New Badges</div>
+								    	<div class="coloumn-2">You have earned Digital Badge System</div>
+								    </div>
+							  	</div>
+							</div>
+							<div class="card card-progress">
+								<h5 class="card-header">Points Histories</h5>
+								<div class="card-body">
+								  	<span>Your current points : <b>500 Pts</b></span>
+								    <div class="row-custom">
+								    	<div class="coloumn-1"><i class="bi bi-diamond-fill"></i>&nbsp; +500 Pts</div>
+								    	<div class="coloumn-2">You have finished Assignment 1</div>
+								    </div>
+							    </div>
+							</div>
+					  	</div>
+					  	<div class="tab-pane fade" id="nav-badges" role="tabpanel" aria-labelledby="nav-badges-tab" tabindex="0">
+						  	<div class="card card-badges" style="width: 18rem;">
+								<img src="../images/badges.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<center><h5 class="card-title">Digital Badge System</h5></center>
+								    <center><p class="card-text">COMPLETION BADGES</p></center><br/>
+								    <center><p class="card-text">Earned: 14 Feb, 2022 02:30:00</p></center>
+								</div>
+							</div>
+							<div class="card card-badges" style="width: 18rem;">
+								<img src="../images/badges.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<center><h5 class="card-title">Digital Badge System</h5></center>
+								    <center><p class="card-text">COMPLETION BADGES</p></center><br/>
+								    <center><p class="card-text">Earned: 14 Feb, 2022 02:30:00</p></center>
+								</div>
+							</div>
+							<div class="card card-badges" style="width: 18rem;">
+								<img src="../images/badges.png" class="card-img-top" alt="...">
+								<div class="card-body">
+									<center><h5 class="card-title">Digital Badge System</h5></center>
+								    <center><p class="card-text">COMPLETION BADGES</p></center><br/>
+								    <center><p class="card-text">Earned: 14 Feb, 2022 02:30:00</p></center>
+								</div>
+							</div>
+					  	</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 	<div class="white-on-top"></div>
 	<div class="headline">
@@ -68,7 +176,7 @@
 		</div>
 
 		<div class="row-2">
-			<h2>HOW DID IT WORKS</h2>
+			<h2>HOW DID IT WORK</h2>
 			<div class="tutorial">
 				<div class="container">
 					<div class="row">
@@ -104,33 +212,35 @@
 			</div>
 		</div>
 		<div class="row-3">
-			<div class="carousel">
-				<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-					<ol class="carousel-indicators">
-						<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-						<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-					</ol>
-					<div class="carousel-inner">
-						<div class="carousel-item active">
-						<img class="d-block w-100" src="images/slide1.jpg" alt="First slide">
-						</div>
-						<div class="carousel-item">
-						<img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
-						</div>
-						<div class="carousel-item">
-						<img class="d-block w-100" src="images/slide3.jpg" alt="Third slide">
-						</div>
-					</div>
-					<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="sr-only">Previous</span>
-					</a>
-					<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="sr-only">Next</span>
-					</a>
-				</div>
+			<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
+			  <div class="carousel-indicators">
+			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+			  </div>
+			  <div class="carousel-inner">
+			    <div class="carousel-item active">
+			      <img class="d-block w-100" src="images/slide1.jpg" alt="First slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
+			    </div>
+			    <div class="carousel-item">
+			      <img class="d-block w-100" src="images/slide3.jpg" alt="Third slide">
+			      <div class="carousel-caption d-none d-md-block">
+			        <h5>Third slide label</h5>
+			        <p>Some representative placeholder content for the third slide.</p>
+			      </div>
+			    </div>
+			  </div>
+			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Previous</span>
+			  </button>
+			  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+			    <span class="visually-hidden">Next</span>
+			  </button>
 			</div>
 		</div>
 
