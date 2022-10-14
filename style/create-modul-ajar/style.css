@@ -30,16 +30,19 @@ body{
 	height: auto;
 	display: inline-block;
     vertical-align: top; 
+    color: #fff;
 }
 .logo-name{
 	line-height: 20px;
 	font-size: 20px;
 	margin-left: 15px;
+	color: #fff;
 }
 
 .desc{
 	color: #000;
 	font-size: 16px;
+	color: #fff;
 }
 .white-on-top{
 	width: 100%;
@@ -51,8 +54,9 @@ body{
 	width: 100%;
 	height: 70%;
 }
-.navbar{
+.wrapper .navbar{
 	padding: 20px !important;
+	background-color: #f0a48c;
 }
 .collapse ul li{
 	display: inline-block;
@@ -98,121 +102,70 @@ body{
 	display: block;
 }
 
-.post{
+.list-modul{
 	width: 100%;
 	padding: 20px 30px;
-	background-color: #f3f4f6;
+	background-color: #fff;
+	border: 2px solid #f3f4f6;
 	border-radius: 20px;
+	overflow-x: scroll;
 }
 .avatar{
 	width: 50px;
 	height: 50px;
 	border-radius: 50%;
 }
-.top{
-	width: 100%;
-	display: inline-block;
-}
-.top-photo{
-	width: 10%;
-	display: inline-block;
-	float: left;
-}
-.top-name{
-	width: 90%;
-	display: inline-block;
-	float: right;
-	padding-left: 10px;
-}
-.content-post{
-	padding-top: 20px;
-}
-.badges{
-	width: 200px;
-	height: auto;
-}
+
+
 .tab-content .tab-pane{
 	padding: 20px;
 }
 
-.card-progress{
-	margin-bottom: 30px;
+.btn-download{
+	width: 150px;
+	display: inline-block;
+}
+.mt-10{
+	margin-top: 10px;
 }
 
-.row-custom{
+.title{
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.btn-warning{
+	color: #fff !important;
+}
+
+.btn-action{
+	width: 100px;
+}
+#create{
+	float: right;
+}
+.create-modul{
 	width: 100%;
-	padding: 10px 5px;
-	display: inline-block;
-
-}
-.coloumn-1{
-	width: 20%;
-	display: inline-block;
-	float: left;
-	font-weight: 500;
-}
-.coloumn-2{
-	width: 80%;
-	display: inline-block;
-	float: left;
-	padding-left: 10px;
-}
-.card-badges{
-	margin: 20px;
-	display: inline-block;
+	padding: 20px 30px;
+	background-color: #fff;
+	border: 2px solid #f3f4f6;
+	border-radius: 20px;
+	margin-top: 60px;
 }
 
-.change-pic-pop-up{
-	z-index: 3;
-	display: none;
-}
-.w-40{
-	width: 40%;
-}
-.mt-20{
+
+.btn-create{
+	width: 100px;
 	margin-top: 20px;
 }
-.c-black{
-	color: #000;
-}
-#close{
-	float: right;
-	font-size: 23px;
-}
-#close:hover{
-	cursor: pointer;
-}
-.card-change-pic{
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	margin: auto;
-	position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+.ml-10{
+	margin-left: 10px;
 }
 
-.black-wrapper{
+.multiple-inputs{
 	width: 100%;
-	height: 100%;
-	background-color: #000;
-	opacity: 0.5;
-	position: fixed;
-	z-index: 2;
+	padding: 20px;
+	border: 2px solid #f3f4f6;
+	border-radius: 10px;
 	
-}
-.change-img{
-	width: 200px;
-	height: 200px;
-	border-radius: 50%;
-}
-#change-img-form{
-	margin-top: 30px;
-}
-
-@media only screen and (max-width: 991px) {
-	.container .row-profile .nav-info-user{
-		padding-top: 40px;
-	}
 }
