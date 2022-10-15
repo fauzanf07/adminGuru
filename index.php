@@ -28,7 +28,7 @@
 		          <a class="nav-link active" aria-current="page" href="#">Online Courses</a>
 		        </li>
 		        <li class="nav-text">
-		          <a class="nav-link" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a>
+		          <a class="nav-link" href="login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a>
 		        </li>
 		        <li class="nav-icon">
 		          <a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>

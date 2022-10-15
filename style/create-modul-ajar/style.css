@@ -165,7 +165,11 @@ body{
 .multiple-inputs{
 	width: 100%;
 	padding: 20px;
-	border: 2px solid #f3f4f6;
+	border: 2px solid #e9ecef;
 	border-radius: 10px;
 	
+}
+
+.bg-head{
+	background-color: #e9ecef;
 }

@@ -9,6 +9,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Slab&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -30,7 +33,7 @@
 			        	<a class="nav-link active" aria-current="page" href="#">Online Courses</a>
 			        </li>
 			        <li class="nav-text">
-			        	<a class="nav-link" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a>
+			        	<a class="nav-link" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
 			        </li>
 			        <li class="nav-icon">
 			        	<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
@@ -52,11 +55,11 @@
 					<h3 class="profile-name">Willy Surya Wardhana, S.Pd.</h3>
 					<span class="username">@willysurya</span>
 					<div class="info">
-						<span class="info-item"><i class="bi bi-person-fill"></i>&nbsp;&nbsp; Level 3 - Explorer</span>
-						<span class="info-item"><i class="bi bi-trophy-fill"></i>&nbsp;&nbsp; 10th</span>
-						<span class="info-item"><i class="bi bi-diamond-fill"></i>&nbsp;&nbsp; 500 Points</span>
-						<span class="info-item"><i class="bi bi-award-fill"></i>&nbsp;&nbsp; 3 Badges</span>
-						<span class="info-item"><i class="bi bi-star-fill"></i>&nbsp;&nbsp; 1000 XP</span>
+						<span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  198609262015051001</span>
+						<span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; SMKN 3 Pasundan Bandung</span>
+						<span class="info-item"><i class="bi bi-briefcase"></i>&nbsp;&nbsp; Guru</span>
+						<span class="info-item"><i class="bi bi-envelope"></i>&nbsp;&nbsp; willysurya@gmail.com</span>
+						<span class="info-item"><i class="bi bi-person"></i>&nbsp;&nbsp; Animasi</span>
 					</div>
 				</div>
 				<div class="col-lg-9 nav-info-user">
@@ -109,7 +112,7 @@
 									<div class="carousel-inner">
 										<form method="POST">
 									    	<div class="carousel-item active">
-									      		<h5>A. Identitas Sekolah</h5>
+									      		<h5>A. IDENTITAS SEKOLAH (INFORMASI UMUM)</h5>
 									      		<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Nama Penyusun</span>
 												  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="Willy Surya Wardhana, S.Pd." disabled="disabled">
@@ -170,22 +173,266 @@
 													</div>
 													<button type="button" class="btn btn-success" id="addMateri"> + Materi</button>
 												</div>
+												<div class="input-group mb-3 mt-3">
+												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
+												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											    	<span >Next</span>
+								  				</button>
 
 									    	</div>
 									    	<div class="carousel-item">
-									      		<p>slkdjskjdksjdkjsd</p>
+									    		<h5>B. KOMPETENSI AWAL</h5>
+									      		<div class="multiple-inputs" id="multipleInputs">
+													<div id="inputs-ka">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA1">
+															<span class="input-group-text" id="addon-wrapping-ka1">1</span>
+															<input type="text" class="form-control" placeholder="Kompetensi Awal 1" aria-label="Username" aria-describedby="addon-wrapping" name="ka1" id="inputKa1">
+															<button class="btn btn-danger" id="button-addon2-ka1"  type="button" data-ka="1" id="button-addon-ka2" onclick="hapusKA(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addKA"> + Kompetensi Awal</button>
+												</div>
+												<br/>
+												<h5>C.  PROFIL PELAJAR PANCASILA</h5>
+												<div class="multiple-inputs " id="multipleInputs">
+													<div id="inputs-pp">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-pp" id="inputPP1">
+															<span class="input-group-text" id="addon-wrapping-pp1">1</span>
+															<input type="text" class="form-control" placeholder="Profil 1" aria-label="Username" aria-describedby="addon-wrapping" name="pp1" id="inputPp1">
+															<button class="btn btn-danger" id="button-addon2-pp1"  type="button" data-pp="1" onclick="hapusPP(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addPP"> + Profil Pancasila</button>
+												</div>
+												<br/>
+												<h5>D. SARANA DAN PRASARANA</h5>
+												<div class="multiple-inputs " id="multipleInputs">
+													<div class="input-group mb-3 mt-3">
+													  <span class="input-group-text" id="basic-addon1">Media</span>
+													  <input type="text" class="form-control" placeholder="Media" aria-label="Username" aria-describedby="basic-addon1">
+													</div>
+													<div class="input-group mb-3 mt-3">
+													  <span class="input-group-text" id="basic-addon1">Sumber Belajar</span>
+													  <input type="text" class="form-control" placeholder="Sumber Belajar" aria-label="Username" aria-describedby="basic-addon1">
+													</div>
+												</div>
+												<br/>
+												<h5>E. TARGET PESERTA DIDIK</h5>
+												<div class="input-group mb-3 mt-3">
+													<span class="input-group-text" id="basic-addon1">Target Peserta Didik</span>
+													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<br/>
+												<h5>F. MODEL PEMBELAJARAN</h5>
+												<div class="input-group mb-3 mt-3">
+													<span class="input-group-text" id="basic-addon1">Model Pembelajaran</span>
+													<input type="text" class="form-control" placeholder="Model Pembelajaran" aria-label="Username" aria-describedby="basic-addon1">
+												</div>
+												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+											    	<span>Previous</span>
+											  	</button>
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											    	<span >Next</span>
+								  				</button>
 									    	</div>
 									    	<div class="carousel-item">
-									    		<p>jsdkjskdjksd</p>
+									    		<h5>A. TUJUAN PEMBELAJARAN (KOMPONEN INTI)</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+													<div id="inputs-tp">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-tp" id="inputTP1">
+															<span class="input-group-text" id="addon-wrapping-tp1">1</span>
+															<input type="text" class="form-control" placeholder="Tujuan Pembelajaran 1" aria-label="Username" aria-describedby="addon-wrapping" name="tp1" id="inputTp1">
+															<button class="btn btn-danger" id="button-addon2-tp1"  type="button" data-tp="1"  onclick="hapusTP(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addTP"> + Tujuan Pembelajaran</button>
+												</div>
+												<br/>
+												<h5>B. PEMAHAMAN BERMAKNA</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+													<div id="inputs-pb">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB1">
+															<span class="input-group-text" id="addon-wrapping-pb1">1</span>
+															<input type="text" class="form-control" placeholder="Pemahaman Bermakna 1" aria-label="Username" aria-describedby="addon-wrapping" name="pb1" id="inputPb1">
+															<button class="btn btn-danger" id="button-addon2-pb1"  type="button" data-pb="1"  onclick="hapusPB(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addPB"> + Pemahaman Bermakna</button>
+												</div>
+												<br/>
+												<h5>C. PERTANYAAN PEMANTIK</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+													<div id="inputs-perpem">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM1">
+															<span class="input-group-text" id="addon-wrapping-perpem1">1</span>
+															<input type="text" class="form-control" placeholder="Pertanyaan Pemantik 1" aria-label="Username" aria-describedby="addon-wrapping" name="perpem1" id="inputPerpem1">
+															<button class="btn btn-danger" id="button-addon2-perpem1"  type="button" data-perpem="1"  onclick="hapusPERPEM(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addPERPEM"> + Pertanyaan Pemantik</button>
+												</div>
+												<br/>
+												<h5>D. PERSIAPAN PEMBELAJARAN</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+													<div id="inputs-perpemb">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-perpemb" id="inputPERPEMB1">
+															<span class="input-group-text" id="addon-wrapping-perpemb1">1</span>
+															<input type="text" class="form-control" placeholder="Persiapan Pembelajaran 1" aria-label="Username" aria-describedby="addon-wrapping" name="perpemb1" id="inputPerpemb1">
+															<button class="btn btn-danger" id="button-addon2-perpemb1"  type="button" data-perpemb="1"  onclick="hapusPERPEMB(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addPERPEMB"> + Persiapan Pembelajaran</button>
+												</div>
+												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+											    	<span>Previous</span>
+											  	</button>
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											    	<span >Next</span>
+								  				</button>
 									    	</div>
+									    	<div class="carousel-item">
+									    		<h5>E. KEGIATAN PEMBELAJARAN</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<b><span>Pertemuan 1</span></b>
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Pendahuluan</span>
+														</div>
+														<div class="col-lg-9">
+															<div id="inputs-pend">
+																<div class="input-group flex-nowrap mb-3 mt-3  input-pend" id="inputPEND1">
+																	<span class="input-group-text" id="addon-wrapping-pend1">1</span>
+																	<input type="text" class="form-control" placeholder="Kegiatan 1" aria-label="Username" aria-describedby="addon-wrapping" name="pend1" id="inputPend1">
+																	<button class="btn btn-danger" id="button-addon2-pend1"  type="button" data-pend="1"  onclick="hapusPEND(this);">Hapus</button>
+																</div>
+															</div>
+															<button type="button" class="btn btn-success" id="addPEND"> + Keg. Pendahuluan</button>
+														</div>
+													</div>
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Inti</span>
+														</div>
+														<div class="col-lg-9">
+															<div id="inputs-inti">
+																<div class="input-group flex-nowrap mb-3 mt-3 input-inti" id="inputINTI1">
+																	<span class="input-group-text" id="addon-wrapping-inti1">1</span>
+																	<input type="text" class="form-control" placeholder="Kegiatan 1" aria-label="Username" aria-describedby="addon-wrapping" name="inti1" id="inputInti1">
+																	<button class="btn btn-danger" id="button-addon2-inti1"  type="button" data-inti="1"  onclick="hapusINTI(this);">Hapus</button>
+																</div>
+															</div>
+															<button type="button" class="btn btn-success" id="addINTI"> + Keg. Inti</button>
+														</div>
+													</div>
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Penutup</span>
+														</div>
+														<div class="col-lg-9">
+															<div id="inputs-penutup">
+																<div class="input-group flex-nowrap mb-3 mt-3 input-penutup" id="inputPENUTUP1">
+																	<span class="input-group-text" id="addon-wrapping-penutup1">1</span>
+																	<input type="text" class="form-control" placeholder="Kegiatan 1" aria-label="Username" aria-describedby="addon-wrapping" name="penutup1" id="inputPenutup1">
+																	<button class="btn btn-danger" id="button-addon2-penutup1"  type="button" data-penutup="1"  onclick="hapusPENUTUP(this);">Hapus</button>
+																</div>
+															</div>
+															<button type="button" class="btn btn-success" id="addPENUTUP"> + Keg. Penutup</button>
+														</div>
+													</div>
+												</div>
+												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+											    	<span>Previous</span>
+											  	</button>
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											    	<span >Next</span>
+								  				</button>
+									    	</div>
+									    	<div class="carousel-item">
+									    		<h5>F. ASESMEN</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Asesmen non Kognitif</span>
+														</div>
+														<div class="col-lg-9">
+															<textarea id="asesNonKog" name="asesNonKog"></textarea>
+														</div>
+													</div>
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Asesmen Kognitif</span>
+														</div>
+														<div class="col-lg-9">
+															<textarea id="asesKog" name="asesKog"></textarea>
+														</div>
+													</div>
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Asesmen Formatif</span>
+														</div>
+														<div class="col-lg-9">
+															<textarea id="asesFor" name="asesFor"></textarea>
+														</div>
+													</div>
+												</div>
+												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+											    	<span>Previous</span>
+											  	</button>
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											    	<span >Next</span>
+								  				</button>
+									    	</div>
+									    	<div class="carousel-item">
+									    		<h5>F. PENGAYAAN DAN REMEDIAL</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<textarea id="pengayaan" name="pengayaan"></textarea>
+									    		</div>
+									    		<br/>
+									    		<h5>G. REFLEKSI PESERTA DIDIK DAN GURU</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<textarea id="refleksi" name="refleksi"></textarea>
+									    		</div>
+									    		<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+											    	<span>Previous</span>
+											  	</button>
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											    	<span >Next</span>
+								  				</button>
+									    	</div>
+									    	<div class="carousel-item">
+									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<textarea id="lkpd" name="lkpd"></textarea>
+									    		</div>
+									    		<br/>
+									    		<h5>B. BAHAN BACAAN GURU DAN PESERTA DIDIK</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<textarea id="bahanBaca" name="bahanBaca"></textarea>
+									    		</div>
+									    		<br/>
+									    		<h5>C. GLOSARIUM</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<textarea id="glosarium" name="glosarium"></textarea>
+									    		</div>
+									    		<br/>
+									    		<h5>D. DAFTAR PUSTAKA</h5>
+									    		<div class="multiple-inputs " id="multipleInputs">
+									    			<textarea id="daftarPustaka" name="daftarPustaka"></textarea>
+									    		</div>
+											  	</button>
+											  	<button class="btn btn-primary btn-create mt-3" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+											    	<span>Previous</span>
+											  	</button>
+											  	<button class="btn btn-success ml-10 mt-3" type="button">
+											    	<span >Buat Modul Ajar</span>
+								  				</button>
+									    	</div>
+
 								    	</form>
 								  	</div>
-								  	<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-								    	<span>Previous</span>
-								  	</button>
-								  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-								    	<span >Next</span>
-								  	</button>
+								  	
 								</div>
 							</div>
 					  	</div>
@@ -201,7 +448,7 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -210,4 +457,8 @@
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
+	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
+	<script type="text/javascript" src="../js/create-modul-ajar/summernote.js"></script>
+
+	
 </html>

@@ -10,7 +10,7 @@
 
 <body>
     <div class="nav-parent">
-		<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #FFFFFF;">
+		<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
 			<div class="pink-on-top"></div>
 			<div class="container-fluid">
 				<div class="logo-parent">
@@ -24,17 +24,17 @@
 				<span class="navbar-toggler-icon"></span>
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link active" aria-current="page" href="#">Home</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">Online Course</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#">About Us</a>
-					</li>
-				</ul>
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">Online Course</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#">About Us</a>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</nav>
@@ -44,17 +44,17 @@
 		<div class="row-1">
 			<div class="container">
 				<div class="row">
-					<div class="col"></div>
-					<div class="col">
+					<div class="col-lg-4"></div>
+					<div class="col-lg-4">
 						<div class="border">
 							<form>
 								<div class="form-group">
-									<label for="exampleInputEmail1">Email address</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+									<label for="exampleInputEmail1">Email address/Username</label>
+									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email or username">
 									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1">Password <span class="forgot-password"><a href="#">Forgot password?</a></span></label>
+									<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="#"><span class="forgot-password">Forgot password?</span></a></label>
 									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
 								</div>
 								<div class="login-button">
@@ -72,7 +72,7 @@
 						</div>
 
 					</div>
-					<div class="col">
+					<div class="col-lg-4">
 					</div>
 				</div>
 			</div>
