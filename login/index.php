@@ -50,16 +50,16 @@
 							<form>
 								<div class="form-group">
 									<label for="exampleInputEmail1">Email address/Username</label>
-									<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email or username">
+									<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email or username">
 									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 								</div>
 								<div class="form-group">
 									<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="#"><span class="forgot-password">Forgot password?</span></a></label>
-									<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+									<input type="password" class="form-control" id="password" placeholder="Password">
 								</div>
 								<div class="login-button">
 									<div class="d-grid gap-2">
-										<button class="btn btn-primary btn btn-success" type="button">Log in</button>
+										<button class="btn btn-primary btn btn-success" type="button" id="login">Log in</button>
 									</div>
 								</div>
 							</form>
@@ -87,5 +87,15 @@
 	</div>
     
 </body>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+	<script type="text/javascript" src="../js/login/login.js"></script>
 </html>

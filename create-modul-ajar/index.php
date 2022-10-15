@@ -1,3 +1,9 @@
+<?php 
+	session_start();
+	if(!isset($_SESSION['nama'])){
+		header("Location: http://localhost/adminGuru/login");
+	}
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +15,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Slab&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 </head>
@@ -33,7 +39,7 @@
 			        	<a class="nav-link active" aria-current="page" href="#">Online Courses</a>
 			        </li>
 			        <li class="nav-text">
-			        	<a class="nav-link" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
+			        	<a class="nav-link" id="logout"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
 			        </li>
 			        <li class="nav-icon">
 			        	<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
@@ -52,14 +58,14 @@
 			<div class="row row-profile">
 				<div class="col-lg-3">
 					<center><img src="../images/avatar.jpg" class="profile-pic" id="profile-pic"></center>
-					<h3 class="profile-name">Willy Surya Wardhana, S.Pd.</h3>
-					<span class="username">@willysurya</span>
+					<h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
+					<span class="username">@<?php echo $_SESSION['username']; ?></span>
 					<div class="info">
-						<span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  198609262015051001</span>
-						<span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; SMKN 3 Pasundan Bandung</span>
-						<span class="info-item"><i class="bi bi-briefcase"></i>&nbsp;&nbsp; Guru</span>
-						<span class="info-item"><i class="bi bi-envelope"></i>&nbsp;&nbsp; willysurya@gmail.com</span>
-						<span class="info-item"><i class="bi bi-person"></i>&nbsp;&nbsp; Animasi</span>
+						<span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  <?php echo $_SESSION['nip']; ?></span>
+						<span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; <?php echo $_SESSION['sekolah']; ?></span>
+						<span class="info-item"><i class="bi bi-briefcase"></i>&nbsp;&nbsp; <?php echo $_SESSION['jabatan']; ?></span>
+						<span class="info-item"><i class="bi bi-envelope"></i>&nbsp;&nbsp; <?php echo $_SESSION['email']; ?></span>
+						<span class="info-item"><i class="bi bi-person"></i>&nbsp;&nbsp; <?php echo $_SESSION['mapel']; ?></span>
 					</div>
 				</div>
 				<div class="col-lg-9 nav-info-user">
@@ -385,12 +391,12 @@
 								  				</button>
 									    	</div>
 									    	<div class="carousel-item">
-									    		<h5>F. PENGAYAAN DAN REMEDIAL</h5>
+									    		<h5>G. PENGAYAAN DAN REMEDIAL</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<textarea id="pengayaan" name="pengayaan"></textarea>
 									    		</div>
 									    		<br/>
-									    		<h5>G. REFLEKSI PESERTA DIDIK DAN GURU</h5>
+									    		<h5>H. REFLEKSI PESERTA DIDIK DAN GURU</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<textarea id="refleksi" name="refleksi"></textarea>
 									    		</div>
@@ -446,10 +452,6 @@
 	
 </body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-
-
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
 
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

@@ -173,3 +173,7 @@ body{
 .bg-head{
 	background-color: #e9ecef;
 }
+
+#logout:hover{
+	cursor: pointer;
+}
