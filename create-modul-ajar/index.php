@@ -4,6 +4,15 @@
 		header("Location: http://localhost/adminGuru/login");
 	}
 	include("../backend/conn.php");
+
+	$nama = $_SESSION['nama'];
+
+	$sql = "SELECT id FROM table_user WHERE nama = '$nama'";
+	$result = mysqli_query($con, $sql);
+	$r = mysqli_fetch_assoc($result);
+	$id_user = $r['id'];
+
+
  ?>
 <!DOCTYPE html>
 <html>
@@ -79,7 +88,7 @@
 						<div class="tab-pane fade show active" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab" tabindex="0">
 							<div class="list-modul">
 								<h3 class="title">Modul Ajar</h3>
-								<button type="button" class="btn btn-success" id="create"><i class="bi bi-file-plus"></i> Buat Modul Ajar</button>
+								<a class="btn btn-success" id="create" href="#formBuatModul"><i class="bi bi-file-plus"></i> Buat Modul Ajar</a>
 								<br/><br/>
 								<table class="table table-striped" id="tableModul">
 									<thead>
@@ -94,25 +103,37 @@
 							            </tr>
 							        </thead>
 							        <tbody>
-							        	<tr>
-							        		<td>1</td>
-							        		<td>14-10-2022 16:40</td>
-							        		<td>Animasi</td>
-							        		<td>Dasar Dasar Keahlian Desain Komunikasi Visual</td>
-							        		<td>X/1</td>
-							        		<td>
-							        			<center><button type="button" class="btn btn-primary btn-download">Download Docs</button></center>
-							        			<center><button type="button" class="btn btn-danger btn-download mt-10">Download PDF</button></center>
-							        		</td>
-							        		<td>
-							        			<center><button type="button" class="btn btn-warning btn-action">Edit</button></center>
-							        			<center><button type="button" class="btn btn-danger btn-action mt-10">Hapus</button></center>
-							        		</td>
-							        	</tr>
+							        	<?php
+							        		$sql = "SELECT * FROM identitas_sekolah WHERE id_user = '$id_user'";
+							        		$result = mysqli_query($con, $sql);
+							        		$i=1;
+											while($r = mysqli_fetch_assoc($result)){
+												echo "
+													<tr>
+										        		<td>".$i."</td>
+										        		<td>".$r['created_at']."</td>
+										        		<td>".$r['program_keahlian']."</td>
+										        		<td>".$r['mata_pelajaran']."</td>
+										        		<td>X/1</td>
+										        		<td>
+										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' >Download Docs</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf'>Download PDF</button></center>
+										        		</td>
+										        		<td>
+										        			<center><button type='button' class='btn btn-warning btn-action' data-id='".$r['id']."'>Edit</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."'>Hapus</button></center>
+										        		</td>
+										        	</tr>
+												";
+												$i++;
+											}
+
+							        	?>
+							        	
 							        </tbody>
 								</table>
 							</div>
-							<div class="create-modul">
+							<div class="create-modul" id="formBuatModul">
 								<center><h3 class="title">Buat Modul Ajar</h3></center>
 								<br/>
 								<div id="carouselExampleControls" class="carousel slide" data-interval="false">
@@ -487,7 +508,7 @@
 																<input type="text" class="form-control" list="ases-non-options" id="ases-non-input" placeholder="Asesmen Non Kognitif">
 															  	<datalist id="ases-non-options">
 															  		<?php
-																    	$query = "SELECT * FROM ases_non_kog";
+																    	$query = "SELECT * FROM list_ases_non_kog";
 																    	$result = mysqli_query($con,$query);
 																    	while($r = mysqli_fetch_assoc($result)) {
 																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-non">'.$r["asesmen"].'</option>';
@@ -513,7 +534,7 @@
 																<input type="text" class="form-control" list="ases-kog-options" id="ases-kog-input" placeholder="Asesmen Kognitif">
 															  	<datalist id="ases-kog-options">
 															  		<?php
-																    	$query = "SELECT * FROM ases_kog";
+																    	$query = "SELECT * FROM list_ases_kog";
 																    	$result = mysqli_query($con,$query);
 																    	while($r = mysqli_fetch_assoc($result)) {
 																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-kog">'.$r["asesmen"].'</option>';
@@ -524,6 +545,7 @@
 															</div>
 														</div>
 													</div>
+
 													<div class="row mt-3">
 														<div class="col-lg-3 bg-head">
 															<span>Asesmen Formatif</span>
@@ -539,7 +561,7 @@
 																<input type="text" class="form-control" list="ases-for-options" id="ases-for-input" placeholder="Asesmen Formatif">
 															  	<datalist id="ases-for-options">
 															  		<?php
-																    	$query = "SELECT * FROM ases_for";
+																    	$query = "SELECT * FROM list_ases_for";
 																    	$result = mysqli_query($con,$query);
 																    	while($r = mysqli_fetch_assoc($result)) {
 																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-for">'.$r["asesmen"].'</option>';
@@ -565,7 +587,7 @@
 																<input type="text" class="form-control" list="ases-sum-options" id="ases-sum-input" placeholder="Asesmen Sumatif">
 															  	<datalist id="ases-sum-options">
 															  		<?php
-																    	$query = "SELECT * FROM ases_sum";
+																    	$query = "SELECT * FROM list_ases_sum";
 																    	$result = mysqli_query($con,$query);
 																    	while($r = mysqli_fetch_assoc($result)) {
 																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-sum">'.$r["asesmen"].'</option>';
@@ -662,7 +684,8 @@
 											    	<span>Previous</span>
 											  	</button>
 											  	<button class="btn btn-success ml-10 mt-3" type="button" id="buatModulAjar">
-											    	<span >Buat Modul Ajar</span>
+											    	<span >Buat Modul Ajar&nbsp;</span>
+											    	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
 								  				</button>
 									    	</div>
 

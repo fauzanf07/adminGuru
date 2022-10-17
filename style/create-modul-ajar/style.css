@@ -192,3 +192,7 @@ body{
 	border:1px solid #000;
 	border-radius: 10px;
 }
+
+#spinner{
+	display: none;
+}

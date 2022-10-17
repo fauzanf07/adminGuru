@@ -98,6 +98,8 @@ $('#elemen').on('change',function(){
 });
 
 $('#buatModulAjar').click(function(){
+	$('#spinner').css('display','inline-block');
+
 	var modul_ajar = new Object();
 	modul_ajar.nama = $('#namaPenyusun').val();
 	modul_ajar.satuanPend = $('#satuanPend').val();
@@ -279,18 +281,31 @@ $('#buatModulAjar').click(function(){
 		},
 		cache: false,
 		success: function(dataResult){
-			// var dataResult = JSON.parse(dataResult);
+			$('#spinner').css('display','none');
+			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult);
-			// if(dataResult.statusCode==201){
-			// 	$('.option-tp').remove();
-			// 	$('textarea#cp').val(dataResult.cp[0].capaian_pembelajaran);
-			// 	for(var i=0;i<dataResult.tp.length;i++){
-			// 		$('#tp-options').append('<option value="'+dataResult.tp[i].tp+'" class="option-tp">'+dataResult.tp[i].tp+'</option>');
-			// 	}
-			// }
-			// else if(dataResult.statusCode==202){
-			// 	console.log('gagal');
-			// }
+			if(dataResult.statusCode==201){
+				Swal.fire({
+					title: 'Success!',
+					text: 'Data berhasil ditambahkan',
+					icon: 'success',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				}).then((result) =>{
+					if(result.isConfirmed){
+						location.reload();
+					}
+				});
+			}
+			else if(dataResult.statusCode==202){
+				Swal.fire({
+					title: 'Error!',
+					text: 'There is something wrong',
+					icon: 'error',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				})
+			}
 		}
 	});
 });
