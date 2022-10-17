@@ -3,6 +3,7 @@
 	if(!isset($_SESSION['nama'])){
 		header("Location: http://localhost/adminGuru/login");
 	}
+	include("../backend/conn.php");
  ?>
 <!DOCTYPE html>
 <html>
@@ -121,67 +122,82 @@
 									      		<h5>A. IDENTITAS SEKOLAH (INFORMASI UMUM)</h5>
 									      		<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Nama Penyusun</span>
-												  <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="Willy Surya Wardhana, S.Pd." disabled="disabled">
+												  <input type="text" class="form-control" aria-describedby="basic-addon1" value="<?php echo $_SESSION['nama']; ?>" disabled="disabled" id="namaPenyusun">
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Satuan Pendidikan</span>
-												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" aria-label="Username" aria-describedby="basic-addon1" value="SMK Pasundan 3 Cimahi" disabled="disabled">
+												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $_SESSION['sekolah']; ?>" disabled="disabled" id="satuanPend">
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran</span>
-												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1">
+												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar">
+												    <datalist id="tahunajar-options">
+														<option value="2020/2021">2020/2021</option>
+														<option value="2021/2022">2021/2022</option>
+														<option value="2022/2023">2022/2023</option>
+													</datalist>
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Program Keahlian</label>
-													<select class="form-select" id="inputGroupSelect01">
-													    <option selected>Choose...</option>
-													    <option value="1">Animasi</option>
+													<select class="form-select" id="programKeahlian">
+													    <option value="" selected>Choose...</option>
+													    <?php
+													    	$query = "SELECT * FROM program_keahlian";
+													    	$result = mysqli_query($con,$query);
+													    	while($r = mysqli_fetch_assoc($result)) {
+															    echo '<option value="'.$r["id"].'" class="option-prokel">'.$r["program_keahlian"].'</option>';
+															}
+													    ?>
 													</select>
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran</label>
-													<select class="form-select" id="inputGroupSelect01">
-													    <option selected>Choose...</option>
-													    <option value="1">Dasar Dasar Keahlian Desain Komunikasi Visual</option>
+													<select class="form-select" id="mapel">
+															<option selected>Choose...</option>
 													</select>
 												</div>
 												<div class="input-group mb-3">
 												  <span class="input-group-text">Kelas, Semester, dan Fase</span>
-												  	<select class="form-select" id="inputGroupSelect01">
+												  	<select class="form-select" id="kelas">
 													    <option selected>Choose...</option>
-													    <option value="1">X</option>
-													    <option value="1">XI</option>
-													    <option value="1">XII</option>
+													    <option value="x">X</option>
+													    <option value="xi">XI</option>
+													    <option value="xii">XII</option>
 													</select>
-												  	<select class="form-select" id="inputGroupSelect01">
+												  	<select class="form-select" id="semester">
 													    <option selected>Choose...</option>
 													    <option value="1">1</option>
 													    <option value="1">2</option>
 													</select>
-													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" value="E" disabled="disabled">
+													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" value="" disabled="disabled">
 												</div>
 												<div class="input-group mb-3">
 														<span class="input-group-text">Elemen</span>
-														<textarea class="form-control" aria-label="With textarea"></textarea>
+														<select class="form-select" id="elemen">
+															<option selected>Choose...</option>
+														</select>
 												</div>
 												<div class="input-group mb-3">
 														<span class="input-group-text">Capaian Pembelajaran</span>
-														<textarea class="form-control" aria-label="With textarea"></textarea>
+														<textarea class="form-control" id="cp" name="cp" disabled="disabled" rows="6"></textarea>
 												</div>
 												<div class="multiple-inputs" id="multipleInputs">
-													<span>Materi</span>
-													<div id="inputs">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-materi" id="inputMateri1">
-															<span class="input-group-text" id="addon-wrapping1">1</span>
-															<input type="text" class="form-control" placeholder="Materi 1" aria-label="Username" aria-describedby="addon-wrapping" name="materi1" id="input1">
-															<button class="btn btn-danger" id="button-addon21"  type="button" data-no="1" id="button-addon2" onclick="hapusMateri(this);">Hapus</button>
+														<span>Meteri : </span>
+														<div class="list-input mt-3">
+															<div id="inputs-materi">
+																<div class="list-kosong" id="list-kosong-materi">Tidak ada materi</div>
+															</div>
 														</div>
-													</div>
-													<button type="button" class="btn btn-success" id="addMateri"> + Materi</button>
+														<div class="input-group mb-3 mt-3">
+															<input type="text" class="form-control" list="materi-options" id="materi-input" placeholder="Materi belajar">
+														  	<datalist id="materi-options">
+															</datalist>
+															<button class="btn btn-success" type="button" data-pp="1" onclick="addMateri();">+</button>
+														</div>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
-												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1">
+												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW">
 												</div>
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
@@ -203,38 +219,87 @@
 												<br/>
 												<h5>C.  PROFIL PELAJAR PANCASILA</h5>
 												<div class="multiple-inputs " id="multipleInputs">
-													<div id="inputs-pp">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-pp" id="inputPP1">
-															<span class="input-group-text" id="addon-wrapping-pp1">1</span>
-															<input type="text" class="form-control" placeholder="Profil 1" aria-label="Username" aria-describedby="addon-wrapping" name="pp1" id="inputPp1">
-															<button class="btn btn-danger" id="button-addon2-pp1"  type="button" data-pp="1" onclick="hapusPP(this);">Hapus</button>
+														<span>Profil Pelajar Pancasila : </span>
+														<div class="list-input mt-3">
+															<div id="inputs-pp">
+																<div class="list-kosong" id="list-kosong-pp">Tidak ada Profil Pelajar Pancasila</div>
+															</div>
 														</div>
-													</div>
-													<button type="button" class="btn btn-success" id="addPP"> + Profil Pancasila</button>
+														<div class="input-group mb-3 mt-3">
+															<input type="text" class="form-control" list="pp-options" id="pp-input" placeholder="Profil Pelajar Pancasila">
+														  	<datalist id="pp-options">
+														  		<option value="Mandiri">Mandiri</option>
+															    <option value="Kreatif">Kreatif</option>
+															    <option value="Berfikir Kritis">Berfikir Kritis</option>
+															</datalist>
+															<button class="btn btn-success" type="button" onclick="addPP();">+</button>
+														</div>
 												</div>
 												<br/>
 												<h5>D. SARANA DAN PRASARANA</h5>
 												<div class="multiple-inputs " id="multipleInputs">
-													<div class="input-group mb-3 mt-3">
-													  <span class="input-group-text" id="basic-addon1">Media</span>
-													  <input type="text" class="form-control" placeholder="Media" aria-label="Username" aria-describedby="basic-addon1">
+													<div  class="multiple-inputs">
+														<span>Media pembelajaran yang digunakan : </span>
+														<div class="list-input mt-3">
+															<div id="inputs-media">
+																<div class="list-kosong" id="list-kosong-media">Tidak ada media pembelajaran yang digunakan</div>
+															</div>
+														</div>
+														<div class="input-group mb-3 mt-3">
+															<input type="text" class="form-control" list="media-options" id="media-input" placeholder="Media Pembelajaran">
+														  	<datalist id="media-options">
+															    <option value="Lembar kerja peserta didik">Lembar kerja peserta didik</option>
+															    <option value="Laptop">Laptop</option>
+															    <option value="Handphone">Handphone</option>
+															    <option value="LCD">LCD</option>
+															</datalist>
+															<button class="btn btn-success"  type="button" onclick="addMedia();">+</button>
+														</div>
 													</div>
-													<div class="input-group mb-3 mt-3">
-													  <span class="input-group-text" id="basic-addon1">Sumber Belajar</span>
-													  <input type="text" class="form-control" placeholder="Sumber Belajar" aria-label="Username" aria-describedby="basic-addon1">
+													
+													<div  class="multiple-inputs mt-3">
+														<span>Sumber belajar yang digunakan : </span>
+														<div class="list-input mt-3">
+															<div id="inputs-sumber">
+																<div class="list-kosong" id="list-kosong-sumber">Tidak ada sumber belajar yang digunakan</div>
+															</div>
+														</div>
+														<div class="input-group mb-3 mt-3">
+															<input type="text" class="form-control" list="sumber-options" id="sumber-input" placeholder="Sumber Belajar">
+														  	<datalist id="sumber-options">
+															    <option value="Lembar kerja peserta didik">Lembar kerja peserta didik</option>
+															    <option value="Laman E-Learning">Laman E-Learning</option>
+															    <option value="E-book">E-book</option>
+															    <option value="Buku bacaan">Buku bacaan</option>
+															    <option value="Youtube">Youtube</option>
+															</datalist>
+															<button class="btn btn-success" type="button" onclick="addSumber();">+</button>
+														</div>
 													</div>
 												</div>
 												<br/>
 												<h5>E. TARGET PESERTA DIDIK</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Target Peserta Didik</span>
-													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1">
+													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target">
 												</div>
 												<br/>
 												<h5>F. MODEL PEMBELAJARAN</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Model Pembelajaran</span>
-													<input type="text" class="form-control" placeholder="Model Pembelajaran" aria-label="Username" aria-describedby="basic-addon1">
+													<select class="form-select" id="model">
+													    <option selected>Choose...</option>
+													    <option value="Discovery Learning">Discovery Learning</option>
+													    <option value="Inquiry Learning Terbimbing">Inquiry Learning Terbimbing</option>
+													    <option value="Problem Based Learning">Problem Based Learning</option>
+													    <option value="Project Based Learning (PjBL)">Project Based Learning (PjBL)</option>
+													    <option value="Production based Training (PBT)">Production based Training (PBT).</option>
+													    <option value="Kontekstual">Kontekstual</option>
+													    <option value="Ekspositori">Ekspositori</option>
+													    <option value="Kooperatif">Kooperatif</option>
+													    <option value="PAIKEM">PAIKEM</option>
+
+													</select>
 												</div>
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
@@ -246,14 +311,19 @@
 									    	<div class="carousel-item">
 									    		<h5>A. TUJUAN PEMBELAJARAN (KOMPONEN INTI)</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-													<div id="inputs-tp">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-tp" id="inputTP1">
-															<span class="input-group-text" id="addon-wrapping-tp1">1</span>
-															<input type="text" class="form-control" placeholder="Tujuan Pembelajaran 1" aria-label="Username" aria-describedby="addon-wrapping" name="tp1" id="inputTp1">
-															<button class="btn btn-danger" id="button-addon2-tp1"  type="button" data-tp="1"  onclick="hapusTP(this);">Hapus</button>
+														<span>Tujuan Pembelajaran : </span>
+														<div class="list-input mt-3">
+															<div id="inputs-tp">
+																<div class="list-kosong" id="list-kosong-tp">Tidak ada tujuan pembelajaran</div>
+															</div>
 														</div>
-													</div>
-													<button type="button" class="btn btn-success" id="addTP"> + Tujuan Pembelajaran</button>
+														<div class="input-group mb-3 mt-3">
+															<input type="text" class="form-control" list="tp-options" id="tp-input" placeholder="Tujuan Pembelajaran">
+														  	<datalist id="tp-options">
+															    
+															</datalist>
+															<button class="btn btn-success" type="button" onclick="addTP();">+</button>
+														</div>
 												</div>
 												<br/>
 												<h5>B. PEMAHAMAN BERMAKNA</h5>
@@ -282,14 +352,25 @@
 												<br/>
 												<h5>D. PERSIAPAN PEMBELAJARAN</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-													<div id="inputs-perpemb">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-perpemb" id="inputPERPEMB1">
-															<span class="input-group-text" id="addon-wrapping-perpemb1">1</span>
-															<input type="text" class="form-control" placeholder="Persiapan Pembelajaran 1" aria-label="Username" aria-describedby="addon-wrapping" name="perpemb1" id="inputPerpemb1">
-															<button class="btn btn-danger" id="button-addon2-perpemb1"  type="button" data-perpemb="1"  onclick="hapusPERPEMB(this);">Hapus</button>
+														<span>Persiapan Pembelajaran : </span>
+														<div class="list-input mt-3">
+															<div id="inputs-perpemb">
+																<div class="list-kosong" id="list-kosong-perpemb">Tidak ada persiapan pembelajaran</div>
+															</div>
 														</div>
-													</div>
-													<button type="button" class="btn btn-success" id="addPERPEMB"> + Persiapan Pembelajaran</button>
+														<div class="input-group mb-3 mt-3">
+															<input type="text" class="form-control" list="perpemb-options" id="perpemb-input" placeholder="Persiapan Pembelajaran">
+														  	<datalist id="perpemb-options">
+														  		<?php
+															    	$query = "SELECT * FROM list_persiapan";
+															    	$result = mysqli_query($con,$query);
+															    	while($r = mysqli_fetch_assoc($result)) {
+																	    echo '<option value="'.$r["persiapan_pembelajaran"].'" class="option-perpemb">'.$r["persiapan_pembelajaran"].'</option>';
+																	}
+															    ?>
+															</datalist>
+															<button class="btn btn-success" type="button" onclick="addPerpemb();">+</button>
+														</div>
 												</div>
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
@@ -307,14 +388,25 @@
 															<span>Pendahuluan</span>
 														</div>
 														<div class="col-lg-9">
-															<div id="inputs-pend">
-																<div class="input-group flex-nowrap mb-3 mt-3  input-pend" id="inputPEND1">
-																	<span class="input-group-text" id="addon-wrapping-pend1">1</span>
-																	<input type="text" class="form-control" placeholder="Kegiatan 1" aria-label="Username" aria-describedby="addon-wrapping" name="pend1" id="inputPend1">
-																	<button class="btn btn-danger" id="button-addon2-pend1"  type="button" data-pend="1"  onclick="hapusPEND(this);">Hapus</button>
+															<span>Kegiatan Pendahuluan : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-pend">
+																	<div class="list-kosong" id="list-kosong-pend">Tidak ada Pendahuluan</div>
 																</div>
 															</div>
-															<button type="button" class="btn btn-success" id="addPEND"> + Keg. Pendahuluan</button>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="pend-options" id="pend-input" placeholder="Kegiatan Pendahuluan">
+															  	<datalist id="pend-options">
+															  		<?php
+																    	$query = "SELECT * FROM list_pendahuluan";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["kegiatan"].'" class="option-perpemb">'.$r["kegiatan"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addPEND();">+</button>
+															</div>
 														</div>
 													</div>
 													<div class="row mt-3">
@@ -322,14 +414,25 @@
 															<span>Inti</span>
 														</div>
 														<div class="col-lg-9">
-															<div id="inputs-inti">
-																<div class="input-group flex-nowrap mb-3 mt-3 input-inti" id="inputINTI1">
-																	<span class="input-group-text" id="addon-wrapping-inti1">1</span>
-																	<input type="text" class="form-control" placeholder="Kegiatan 1" aria-label="Username" aria-describedby="addon-wrapping" name="inti1" id="inputInti1">
-																	<button class="btn btn-danger" id="button-addon2-inti1"  type="button" data-inti="1"  onclick="hapusINTI(this);">Hapus</button>
+															<span>Kegiatan Inti : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-inti">
+																	<div class="list-kosong" id="list-kosong-inti">Tidak ada Inti</div>
 																</div>
 															</div>
-															<button type="button" class="btn btn-success" id="addINTI"> + Keg. Inti</button>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="inti-options" id="inti-input" placeholder="Kegiatan Inti">
+															  	<datalist id="inti-options">
+															  		<?php
+																    	$query = "SELECT * FROM list_inti";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["kegiatan"].'" class="option-perpemb">'.$r["kegiatan"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addINTI();">+</button>
+															</div>
 														</div>
 													</div>
 													<div class="row mt-3">
@@ -337,14 +440,25 @@
 															<span>Penutup</span>
 														</div>
 														<div class="col-lg-9">
-															<div id="inputs-penutup">
-																<div class="input-group flex-nowrap mb-3 mt-3 input-penutup" id="inputPENUTUP1">
-																	<span class="input-group-text" id="addon-wrapping-penutup1">1</span>
-																	<input type="text" class="form-control" placeholder="Kegiatan 1" aria-label="Username" aria-describedby="addon-wrapping" name="penutup1" id="inputPenutup1">
-																	<button class="btn btn-danger" id="button-addon2-penutup1"  type="button" data-penutup="1"  onclick="hapusPENUTUP(this);">Hapus</button>
+															<span>Kegiatan Penutup : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-penutup">
+																	<div class="list-kosong" id="list-kosong-penutup">Tidak ada Penutup</div>
 																</div>
 															</div>
-															<button type="button" class="btn btn-success" id="addPENUTUP"> + Keg. Penutup</button>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="penutup-options" id="penutup-input" placeholder="Kegiatan penutup">
+															  	<datalist id="penutup-options">
+															  		<?php
+																    	$query = "SELECT * FROM list_penutup";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["kegiatan"].'" class="option-perpemb">'.$r["kegiatan"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addPENUTUP();">+</button>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -363,7 +477,25 @@
 															<span>Asesmen non Kognitif</span>
 														</div>
 														<div class="col-lg-9">
-															<textarea id="asesNonKog" name="asesNonKog"></textarea>
+															<span>Asesmen non Kognitif : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-ases-non">
+																	<div class="list-kosong" id="list-kosong-ases-non">Tidak ada Asesmen Non Kognitif</div>
+																</div>
+															</div>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="ases-non-options" id="ases-non-input" placeholder="Asesmen Non Kognitif">
+															  	<datalist id="ases-non-options">
+															  		<?php
+																    	$query = "SELECT * FROM ases_non_kog";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-non">'.$r["asesmen"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addAsesNon();">+</button>
+															</div>
 														</div>
 													</div>
 													<div class="row mt-3">
@@ -371,7 +503,25 @@
 															<span>Asesmen Kognitif</span>
 														</div>
 														<div class="col-lg-9">
-															<textarea id="asesKog" name="asesKog"></textarea>
+															<span>Asesmen Kognitif : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-ases-kog">
+																	<div class="list-kosong" id="list-kosong-ases-kog">Tidak ada Asesmen Kognitif</div>
+																</div>
+															</div>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="ases-kog-options" id="ases-kog-input" placeholder="Asesmen Kognitif">
+															  	<datalist id="ases-kog-options">
+															  		<?php
+																    	$query = "SELECT * FROM ases_kog";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-kog">'.$r["asesmen"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addAsesKog();">+</button>
+															</div>
 														</div>
 													</div>
 													<div class="row mt-3">
@@ -379,7 +529,51 @@
 															<span>Asesmen Formatif</span>
 														</div>
 														<div class="col-lg-9">
-															<textarea id="asesFor" name="asesFor"></textarea>
+															<span>Asesmen Formatif : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-ases-for">
+																	<div class="list-kosong" id="list-kosong-ases-for">Tidak ada Asesmen Formatif</div>
+																</div>
+															</div>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="ases-for-options" id="ases-for-input" placeholder="Asesmen Formatif">
+															  	<datalist id="ases-for-options">
+															  		<?php
+																    	$query = "SELECT * FROM ases_for";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-for">'.$r["asesmen"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addAsesFor();">+</button>
+															</div>
+														</div>
+													</div>
+													<div class="row mt-3">
+														<div class="col-lg-3 bg-head">
+															<span>Asesmen Sumatif</span>
+														</div>
+														<div class="col-lg-9">
+															<span>Asesmen Suamtif : </span>
+															<div class="list-input mt-3">
+																<div id="inputs-ases-sum">
+																	<div class="list-kosong" id="list-kosong-ases-sum">Tidak ada Asesmen Sumatif</div>
+																</div>
+															</div>
+															<div class="input-group mb-3 mt-3">
+																<input type="text" class="form-control" list="ases-sum-options" id="ases-sum-input" placeholder="Asesmen Sumatif">
+															  	<datalist id="ases-sum-options">
+															  		<?php
+																    	$query = "SELECT * FROM ases_sum";
+																    	$result = mysqli_query($con,$query);
+																    	while($r = mysqli_fetch_assoc($result)) {
+																		    echo '<option value="'.$r["asesmen"].'" class="option-ases-sum">'.$r["asesmen"].'</option>';
+																		}
+																    ?>
+																</datalist>
+																<button class="btn btn-success" type="button" onclick="addAsesSum();">+</button>
+															</div>
 														</div>
 													</div>
 												</div>
@@ -393,12 +587,48 @@
 									    	<div class="carousel-item">
 									    		<h5>G. PENGAYAAN DAN REMEDIAL</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<textarea id="pengayaan" name="pengayaan"></textarea>
+							    					<span>Pengayaan dan Remedial : </span>
+													<div class="list-input mt-3">
+														<div id="inputs-penmed">
+															<div class="list-kosong" id="list-kosong-penmed">Tidak ada Pengayaan dan Remedial</div>
+														</div>
+													</div>
+													<div class="input-group mb-3 mt-3">
+														<input type="text" class="form-control" list="penmed-options" id="penmed-input" placeholder="Pengayaan dan Remedial">
+													  	<datalist id="penmed-options">
+													  		<?php
+														    	$query = "SELECT * FROM list_pengayaan_remedial";
+														    	$result = mysqli_query($con,$query);
+														    	while($r = mysqli_fetch_assoc($result)) {
+																    echo '<option value="'.$r["pengayaan_remedial"].'" class="option-ases-for">'.$r["pengayaan_remedial"].'</option>';
+																}
+														    ?>
+														</datalist>
+														<button class="btn btn-success" type="button" onclick="addPenmed();">+</button>
+													</div>
 									    		</div>
 									    		<br/>
 									    		<h5>H. REFLEKSI PESERTA DIDIK DAN GURU</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<textarea id="refleksi" name="refleksi"></textarea>
+									    			<span>Refleksi Peserta Didik dan Guru : </span>
+													<div class="list-input mt-3">
+														<div id="inputs-refleksi">
+															<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>
+														</div>
+													</div>
+													<div class="input-group mb-3 mt-3">
+														<input type="text" class="form-control" list="refleksi-options" id="refleksi-input" placeholder="Refleksi">
+													  	<datalist id="refleksi-options">
+													  		<?php
+														    	$query = "SELECT * FROM list_refleksi";
+														    	$result = mysqli_query($con,$query);
+														    	while($r = mysqli_fetch_assoc($result)) {
+																    echo '<option value="'.$r["refleksi"].'" class="option-ases-for">'.$r["refleksi"].'</option>';
+																}
+														    ?>
+														</datalist>
+														<button class="btn btn-success" type="button" onclick="addRefleksi();">+</button>
+													</div>
 									    		</div>
 									    		<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
@@ -431,7 +661,7 @@
 											  	<button class="btn btn-primary btn-create mt-3" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-success ml-10 mt-3" type="button">
+											  	<button class="btn btn-success ml-10 mt-3" type="button" id="buatModulAjar">
 											    	<span >Buat Modul Ajar</span>
 								  				</button>
 									    	</div>

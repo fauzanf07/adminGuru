@@ -177,3 +177,18 @@ body{
 #logout:hover{
 	cursor: pointer;
 }
+
+.list-input{
+	width: 100%;
+	padding: 10px 20px;
+	border-radius: 10px;
+	background-color: #e9ecef;
+}
+
+.list-kosong{
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	border:1px solid #000;
+	border-radius: 10px;
+}

@@ -1,5 +1,5 @@
 <?php 
-	$con = mysqli_connect('localhost', 'root', '','admin_guru');
+	include("../conn.php");
 
 	$txtUsername = $_POST['username'];
 	$txtPassword = $_POST['password'];
