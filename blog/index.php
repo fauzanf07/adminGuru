@@ -57,7 +57,11 @@
 				<div class="col-md-auto">
       				<div class="vertical-line"></div>
     			</div>
-				<div class="col col-lg-2">-consectetur adipiscing elit</div>
+				<div class="col col-lg-2">
+					<a class="table-of-contents" href="#">-consectetur adipiscing elit</a>
+					<a class="table-of-contents" href="#">-consectetur adipiscing elit</a>
+					<a class="table-of-contents" href="#">-consectetur adipiscing elit</a>
+				</div>
             </div>
         </div>
     </div>
