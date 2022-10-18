@@ -196,3 +196,7 @@ body{
 #spinner{
 	display: none;
 }
+
+#spinnerDownload{
+	display: none;
+}

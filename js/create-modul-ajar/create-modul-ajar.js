@@ -264,38 +264,46 @@ $('#buatModulAjar').click(function(){
 
 	modul_ajar.refleksi = refleksi;
 
-	modul_ajar.lkpd = $('#lkpd').summernote('code');
-	modul_ajar.bahanBaca = $('#bahanBaca').summernote('code');
-	modul_ajar.glosarium = $('#glosarium').summernote('code');
-	modul_ajar.daftarPustaka = $('#daftarPustaka').summernote('code');
-	
+	var bahanBaca = [];
+	var bahanBacaLen = $('.input-bahan').length;
+	for(var i=0;i<bahanBacaLen;i++){
+		bahanBaca[i] = $('#inputBahan'+(i+1)).val();
+	}
+
+	modul_ajar.bahanBaca = bahanBaca;
+
+	var glos = [];
+	var glosLen = $('.input-glos').length;
+	for(var i=0;i<glosLen;i++){
+		glos[i] = $('#inputGlos'+(i+1)).val();
+	}
+
+	modul_ajar.glos = glos;
+
+	var dafpus = [];
+	var dafpusLen = $('.input-dafpus').length;
+	for(var i=0;i<dafpusLen;i++){
+		dafpus[i] = $('#inputDafpus'+(i+1)).val();
+	}
+
+	modul_ajar.dafpus = dafpus;
 
 
 	var modulAjar = JSON.stringify(modul_ajar);
+	console.log(modulAjar);
 
 	$.ajax({
 		url: "../backend/create-modul-ajar/create_modul.php",
 		type: "POST",
 		data: {
-			modulAjar: modulAjar			
+			modulAjar: modulAjar
 		},
 		cache: false,
 		success: function(dataResult){
-			$('#spinner').css('display','none');
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult);
 			if(dataResult.statusCode==201){
-				Swal.fire({
-					title: 'Success!',
-					text: 'Data berhasil ditambahkan',
-					icon: 'success',
-					confirmButtonText: 'Ok',
-					confirmButtonColor: "#d63630"
-				}).then((result) =>{
-					if(result.isConfirmed){
-						location.reload();
-					}
-				});
+				uploadLkpd(dataResult.last_id);
 			}
 			else if(dataResult.statusCode==202){
 				Swal.fire({
@@ -309,4 +317,166 @@ $('#buatModulAjar').click(function(){
 		}
 	});
 });
+
+function uploadLkpd(id){
+	var fd = new FormData();
+    var files = $('#lkpd')[0].files[0];
+    fd.append('file', files);
+    var last_id = id;
+
+	$.ajax({
+        url: '../backend/create-modul-ajar/upload_file.php',
+        type: 'POST',
+        data: fd,
+        contentType: false,
+       	processData: false,
+        success: function(dataResult){
+        	var dataResult = JSON.parse(dataResult);
+			console.log(dataResult);
+            if(dataResult.statusCode==201){
+            	var fileName = dataResult.fileName;
+                uploadToDB(last_id,fileName);
+            }
+            else{
+                Swal.fire({
+					title: 'Error!',
+					text: 'There is something wrong with uploading lkpd',
+					icon: 'error',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				})
+            }
+        },
+   });
+}
+
+function uploadToDB(id,fileName){
+	var last_id = id;
+	var fileName = fileName;
+	console.log(last_id+" "+fileName);
+	$.ajax({
+		url: '../backend/create-modul-ajar/upload_nama_file.php',
+        type: 'POST',
+        data: {
+			last_id: last_id,
+			fileName: fileName
+		},
+        success: function(dataResult){
+        	$('#spinner').css('display','none');
+        	var dataResult = JSON.parse(dataResult);
+			console.log(dataResult);
+            if(dataResult.statusCode==201){
+                Swal.fire({
+					title: 'Success!',
+					text: 'Data berhasil ditambahkan',
+					icon: 'success',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				}).then((result) =>{
+					if(result.isConfirmed){
+						location.reload();
+					}
+				});
+            }
+            else{
+                Swal.fire({
+					title: 'Error!',
+					text: 'There is something wrong with uploading lkpd',
+					icon: 'error',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				})
+            }
+        }
+      });
+
+}
+
+function downloadDocs(id){
+	var id_identitas = $(id).data('id');
+	$('#spinnerDownload').css('display','inline-block');
+	$.ajax({
+		url: "../backend/create-modul-ajar/is_modul_created.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			if(dataResult.statusCode==202){
+				createModul(id_identitas);
+			}
+			else if(dataResult.statusCode==201){
+				window.open('./download-modul.php?id='+id_identitas, '_blank');
+				$('#spinnerDownload').css('display','none');
+			}
+		}
+	});
+}
+
+function createModul(id){
+	var id_identitas = id;
+	$.ajax({
+		url: "../backend/modul/create.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			window.open('./download-modul.php?id='+id_identitas, '_blank');
+			$('#spinnerDownload').css('display','none');
+		}
+	});
+}
+
+function hapusModul(id){
+	var id_identitas = $(id).data('id');
+	Swal.fire({
+	  title: 'Are you sure?',
+	  text: "You won't be able to revert this!",
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#d63630',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: 'Yes, delete it!'
+	}).then((result) => {
+	  if (result.isConfirmed) {
+	  	$.ajax({
+			url: "../backend/hapus-modul/hapus_modul.php",
+			type: "POST",
+			data: {
+				id: id_identitas		
+			},
+			cache: false,
+			success: function(dataResult){
+				var dataResult = JSON.parse(dataResult);
+				console.log(dataResult.statusCode);
+				if(dataResult.statusCode==202){
+					createModul(id_identitas);
+				}
+				else if(dataResult.statusCode==201){
+					Swal.fire({
+						title: 'Success!',
+						text: 'Data berhasil dihapus',
+						icon: 'success',
+						confirmButtonText: 'Ok',
+						confirmButtonColor: "#d63630"
+					}).then((result) =>{
+						if(result.isConfirmed){
+							location.reload();
+						}
+					});
+				}
+			}
+		});
+	  }
+	})
+	
+}
+
 

@@ -114,14 +114,14 @@
 										        		<td>".$r['created_at']."</td>
 										        		<td>".$r['program_keahlian']."</td>
 										        		<td>".$r['mata_pelajaran']."</td>
-										        		<td>X/1</td>
+										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>
-										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' >Download Docs</button></center>
+										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' onclick='downloadDocs(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'></span></button></center>
 										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf'>Download PDF</button></center>
 										        		</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-warning btn-action' data-id='".$r['id']."'>Edit</button></center>
-										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."'>Hapus</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>
 										        		</td>
 										        	</tr>
 												";
@@ -138,20 +138,20 @@
 								<br/>
 								<div id="carouselExampleControls" class="carousel slide" data-interval="false">
 									<div class="carousel-inner">
-										<form method="POST">
+										<form method="POST" enctype="multipart/form-data">
 									    	<div class="carousel-item active">
 									      		<h5>A. IDENTITAS SEKOLAH (INFORMASI UMUM)</h5>
 									      		<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Nama Penyusun</span>
-												  <input type="text" class="form-control" aria-describedby="basic-addon1" value="<?php echo $_SESSION['nama']; ?>" disabled="disabled" id="namaPenyusun">
+												  <input type="text" class="form-control" aria-describedby="basic-addon1" value="<?php echo $_SESSION['nama']; ?>" disabled="disabled" id="namaPenyusun" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Satuan Pendidikan</span>
-												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $_SESSION['sekolah']; ?>" disabled="disabled" id="satuanPend">
+												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $_SESSION['sekolah']; ?>" disabled="disabled" id="satuanPend" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran</span>
-												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar">
+												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" required>
 												    <datalist id="tahunajar-options">
 														<option value="2020/2021">2020/2021</option>
 														<option value="2021/2022">2021/2022</option>
@@ -160,7 +160,7 @@
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Program Keahlian</label>
-													<select class="form-select" id="programKeahlian">
+													<select class="form-select" id="programKeahlian" required>
 													    <option value="" selected>Choose...</option>
 													    <?php
 													    	$query = "SELECT * FROM program_keahlian";
@@ -173,7 +173,7 @@
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran</label>
-													<select class="form-select" id="mapel">
+													<select class="form-select" id="mapel" required>
 															<option selected>Choose...</option>
 													</select>
 												</div>
@@ -662,22 +662,45 @@
 									    	<div class="carousel-item">
 									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<textarea id="lkpd" name="lkpd"></textarea>
+									    			<div class="input-group">
+														<input type="file" class="form-control" id="lkpd">
+													</div>
 									    		</div>
 									    		<br/>
 									    		<h5>B. BAHAN BACAAN GURU DAN PESERTA DIDIK</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<textarea id="bahanBaca" name="bahanBaca"></textarea>
+									    			<div id="inputs-bahan">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN1">
+															<span class="input-group-text" id="addon-wrapping-bahan1">1</span>
+															<textarea class="form-control" name="bahan1" id="inputBahan1" rows="2" placeholder="Bahan Bacaan 1"></textarea>
+															<button class="btn btn-danger" id="button-addon2-bahan1"  type="button" data-bahan="1"  onclick="hapusBAHAN(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addBAHAN"> + Bahan Bacaan</button>
 									    		</div>
 									    		<br/>
 									    		<h5>C. GLOSARIUM</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<textarea id="glosarium" name="glosarium"></textarea>
+									    			<div id="inputs-glos">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS1">
+															<span class="input-group-text" id="addon-wrapping-glos1">1</span>
+															<textarea class="form-control" name="glos1" id="inputGlos1" rows="2" placeholder="Glosarium 1"></textarea>
+															<button class="btn btn-danger" id="button-addon2-glos1"  type="button" data-glos="1"  onclick="hapusGLOS(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addGLOS"> + Glosarium</button>
 									    		</div>
 									    		<br/>
 									    		<h5>D. DAFTAR PUSTAKA</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<textarea id="daftarPustaka" name="daftarPustaka"></textarea>
+									    			<div id="inputs-dafpus">
+														<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS1">
+															<span class="input-group-text" id="addon-wrapping-dafpus1">1</span>
+															<textarea class="form-control" name="dafpus1" id="inputDafpus1" rows="2" placeholder="Daftar Pustaka 1"></textarea>
+															<button class="btn btn-danger" id="button-addon2-dafpus1"  type="button" data-dafpus="1"  onclick="hapusDAFPUS(this);">Hapus</button>
+														</div>
+													</div>
+													<button type="button" class="btn btn-success" id="addDAFPUS"> + Daftar Pustaka</button>
 									    		</div>
 											  	</button>
 											  	<button class="btn btn-primary btn-create mt-3" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -713,7 +736,6 @@
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
-	<script type="text/javascript" src="../js/create-modul-ajar/summernote.js"></script>
 
 	
 </html>

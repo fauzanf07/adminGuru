@@ -627,3 +627,90 @@ function hapusRefleksi(id){
 			$('#inputs-refleksi').append('<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>');
 		}
 }
+
+var bahan = 1;
+$('#addBAHAN').click(function(){
+	bahan = bahan+1;
+	$('#inputs-bahan').append('<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN'+bahan+
+		'"><span class="input-group-text" id="addon-wrapping-bahan'+bahan+'">'+bahan+'</span><textarea class="form-control" name="bahan'+bahan+'" id="inputBahan'+bahan+'" rows="2" placeholder="Bahan Bacaan '+bahan+'"></textarea><button class="btn btn-danger" id="button-addon2-bahan'+bahan+'"  type="button" data-bahan="'
+		+bahan+'" onclick="hapusBAHAN(this);">Hapus</button></div>');
+});
+
+function hapusBAHAN(id){
+	var total_inputs = $('.input-bahan').length;
+	if(total_inputs==1){
+		alert("Minimal 1 Bahan Bacaan");
+	}else{
+		var no = $(id).data('bahan');
+		$('#inputBAHAN'+no).remove();
+		for (var i = no+1; i <= total_inputs; i++) {
+			$('#addon-wrapping-bahan'+i).html(i-1);
+			$('#inputBahan'+i).attr('placeholder', 'Bahan Bacaan '+(i-1));
+			$('#inputBahan'+i).attr('name', 'bahan'+(i-1));
+			$('#button-addon2-bahan'+i).attr('data-bahan',(i-1));
+			$('#inputBAHAN'+i).attr('id','inputBAHAN'+(i-1));
+			$('#addon-wrapping-bahan'+i).attr('id','addon-wrapping-bahan'+(i-1));
+			$('#inputBahan'+i).attr('id','inputBahan'+(i-1));
+			$('#button-addon2-bahan'+i).attr('id','button-addon2-bahan'+(i-1));
+		}
+		bahan = $('.input-bahan').length;
+	}	
+}
+
+var glos = 1;
+$('#addGLOS').click(function(){
+	glos = glos+1;
+	$('#inputs-glos').append('<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS'+glos+
+		'"><span class="input-group-text" id="addon-wrapping-glos'+glos+'">'+glos+'</span><textarea class="form-control" name="glos'+glos+'" id="inputGlos'+glos+'" rows="2" placeholder="Glosarium '+glos+'"></textarea><button class="btn btn-danger" id="button-addon2-glos'+glos+'"  type="button" data-glos="'
+		+glos+'" onclick="hapusGLOS(this);">Hapus</button></div>');
+});
+
+function hapusGLOS(id){
+	var total_inputs = $('.input-glos').length;
+	if(total_inputs==1){
+		alert("Minimal 1 Glosarium");
+	}else{
+		var no = $(id).data('glos');
+		$('#inputGLOS'+no).remove();
+		for (var i = no+1; i <= total_inputs; i++) {
+			$('#addon-wrapping-glos'+i).html(i-1);
+			$('#inputGlos'+i).attr('placeholder', 'Glosarium '+(i-1));
+			$('#inputGLos'+i).attr('name', 'glos'+(i-1));
+			$('#button-addon2-glos'+i).attr('data-glos',(i-1));
+			$('#inputGLOS'+i).attr('id','inputGLOS'+(i-1));
+			$('#addon-wrapping-glos'+i).attr('id','addon-wrapping-glos'+(i-1));
+			$('#inputGlos'+i).attr('id','inputGlos'+(i-1));
+			$('#button-addon2-glos'+i).attr('id','button-addon2-glos'+(i-1));
+		}
+		glos = $('.input-glos').length;
+	}	
+}
+
+var dafpus = 1;
+$('#addDAFPUS').click(function(){
+	dafpus = dafpus+1;
+	$('#inputs-dafpus').append('<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS'+dafpus+
+		'"><span class="input-group-text" id="addon-wrapping-dafpus'+dafpus+'">'+dafpus+'</span><textarea class="form-control" name="dafpus'+dafpus+'" id="inputDafpus'+dafpus+'" rows="2" placeholder="Daftar Pustaka '+dafpus+'"></textarea><button class="btn btn-danger" id="button-addon2-dafpus'+dafpus+'"  type="button" data-dafpus="'
+		+dafpus+'" onclick="hapusDAFPUS(this);">Hapus</button></div>');
+});
+
+function hapusDAFPUS(id){
+	var total_inputs = $('.input-dafpus').length;
+	if(total_inputs==1){
+		alert("Minimal 1 Daftar Pustaka");
+	}else{
+		var no = $(id).data('dafpus');
+		$('#inputDAFPUS'+no).remove();
+		for (var i = no+1; i <= total_inputs; i++) {
+			$('#addon-wrapping-dafpus'+i).html(i-1);
+			$('#inputDafpus'+i).attr('placeholder', 'Daftar Pustaka '+(i-1));
+			$('#inputDafpus'+i).attr('name', 'dafpus'+(i-1));
+			$('#button-addon2-dafpus'+i).attr('data-dafpus',(i-1));
+			$('#inputDAFPUS'+i).attr('id','inputDAFPUS'+(i-1));
+			$('#addon-wrapping-dafpus'+i).attr('id','addon-wrapping-dafpus'+(i-1));
+			$('#inputDafpus'+i).attr('id','inputDafpus'+(i-1));
+			$('#button-addon2-dafpus'+i).attr('id','button-addon2-dafpus'+(i-1));
+		}
+		dafpus = $('.input-dafpus').length;
+	}	
+}

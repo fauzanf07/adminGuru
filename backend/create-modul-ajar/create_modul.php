@@ -258,40 +258,41 @@
 		}
 	}
 
-
-	$lkpd = $objModul->lkpd;
-	$sql = "INSERT INTO lkpd VALUES('','$last_id','$lkpd')";
-	$result = mysqli_query($con, $sql);
-	if($result){
-		$jmlSuccess++;
+	$jmlBahanBaca = count($objModul->bahanBaca);
+	for($i=0;$i<$jmlBahanBaca;$i++){
+		$bahanBaca = $objModul->bahanBaca[$i];
+		$sql = "INSERT INTO bahan_bacaan VALUES('','$last_id', '$bahanBaca')";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			$jmlSuccess++;
+		}
 	}
 
-	$bahanBaca = $objModul->bahanBaca;
-	$sql = "INSERT INTO bahan_bacaan VALUES('','$last_id','$bahanBaca')";
-	$result = mysqli_query($con, $sql);
-	if($result){
-		$jmlSuccess++;
+	$jmlGlos = count($objModul->glos);
+	for($i=0;$i<$jmlGlos;$i++){
+		$glos = $objModul->glos[$i];
+		$sql = "INSERT INTO glosarium VALUES('','$last_id', '$glos')";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			$jmlSuccess++;
+		}
 	}
 
-	$glosarium = $objModul->glosarium;
-	$sql = "INSERT INTO glosarium VALUES('','$last_id','$glosarium')";
-	$result = mysqli_query($con, $sql);
-	if($result){
-		$jmlSuccess++;
+	$jmlDafpus = count($objModul->dafpus);
+	for($i=0;$i<$jmlDafpus;$i++){
+		$dafpus = $objModul->dafpus[$i];
+		$sql = "INSERT INTO daftar_pustaka VALUES('','$last_id', '$dafpus')";
+		$result = mysqli_query($con, $sql);
+		if ($result) {
+			$jmlSuccess++;
+		}
 	}
-
-	$daftarPustaka = $objModul->daftarPustaka;
-	$sql = "INSERT INTO daftar_pustaka VALUES('','$last_id','$daftarPustaka')";
-	$result = mysqli_query($con, $sql);
-	if($result){
-		$jmlSuccess++;
-	}
-
-	$jmlQuery = 9+$jmlMateri+$jmlKa+$jmlPp+$jmlMedia+$jmlSumber+$jmlTp+$jmlPb+$jmlPerpem+$jmlPerpemb+$jmlPend+$jmlInti+$jmlPenutup+$jmlAsesNon+$jmlAsesKog+$jmlAsesFor+$jmlAsesSum+$jmlPenmed+$jmlRefleksi;
 	
 
+	$jmlQuery = 5+$jmlMateri+$jmlKa+$jmlPp+$jmlMedia+$jmlSumber+$jmlTp+$jmlPb+$jmlPerpem+$jmlPerpemb+$jmlPend+$jmlInti+$jmlPenutup+$jmlAsesNon+$jmlAsesKog+$jmlAsesFor+$jmlAsesSum+$jmlPenmed+$jmlRefleksi+$jmlBahanBaca+$jmlDafpus+$jmlDafpus;
+
 	if($jmlQuery == $jmlSuccess){
-		echo json_encode(array("statusCode"=>201));
+		echo json_encode(array("statusCode"=>201, "last_id"=>$last_id));
 	}else{
 		echo json_encode(array("statusCode"=>202));
 	}
