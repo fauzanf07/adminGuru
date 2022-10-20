@@ -96,4 +96,15 @@ nav{
 
 .submit-btn{
 	margin-top: 10px;
+	margin-bottom: 100px;
+	float: right;
+}
+
+.background-footer{
+	height: 50px;
+	background-color: #F3F3F3;
+}
+
+.copyright{
+	text-align: center;
 }
