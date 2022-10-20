@@ -45,15 +45,60 @@
 				<div class="row">
 					<div class="col"></div>
 					<div class="col-lg-9">
+						<div class="signup-title">
+							<h1>Sign Up</h1>
+						</div>
                         <form>
-                            <div class="row">
-                                <div class="col">
-                                <input type="text" class="form-control" placeholder="First name">
-                                </div>
-                                <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name">
-                                </div>
-                            </div>
+							<div class="row form-group">
+								<label for="inputNama">Nama</label>
+								<div class="col">
+								<input type="text" class="form-control" placeholder="First name">
+								</div>
+								<div class="col">
+								<input type="text" class="form-control" placeholder="Last name">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputNIP">NIP</label>
+								<input type="text" class="form-control" id="inputNIP" placeholder="NIP">
+							</div>
+							<div class="row">
+								<div class="form-group col-md-4">
+									<label for="inputSekolah">Sekolah</label>
+									<input type="text" class="form-control" id="inputSekolah" placeholder="Sekolah">
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputJabatan">Jabatan</label>
+									<select id="inputJabatan" class="form-control">
+										<option selected>Pilih...</option>
+										<option>Kepala Sekolah</option>
+										<option>Staff Sekolah</option>
+										<option>Guru</option>
+										<option>lainnya</option>
+									</select>
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputMapel">Mata Pelajaran</label>
+									<input type="text" class="form-control" id="inputMapel" placeholder="Mapel">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputEmail">Email address</label>
+								<input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+							</div>
+							<div class="form-group">
+								<label for="inputUsername">Username</label>
+								<input type="text" class="form-control" id="inputUsername" placeholder="Username">
+							</div>
+							<div class="form-group">
+								<label for="inputPassword">Password</label>
+								<input type="password" class="form-control" id="inputPassword" placeholder="Password">
+							</div>
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="exampleCheck1">
+								<label class="form-check-label" for="exampleCheck1">Semua data sudah benar</label>
+							</div>
+							<button type="submit" class="btn btn-primary submit-btn">Submit</button>
                         </form>
 					</div>
 					<div class="col">

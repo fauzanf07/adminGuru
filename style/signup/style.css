@@ -76,11 +76,24 @@ nav{
 }
 
 .nav-parent .navbar{
-	background-color: #f0a48c !important;
+	background-color: #24576E !important;
 }
 
 .row-1{
     margin-top: 20px;
     margin-left: 30px;
     margin-right: 30px;
+}
+
+.signup-title{
+	margin-top: 100px;
+	margin-bottom: 40px;
+}
+
+.form-group{
+	margin-bottom: 30px;
+}
+
+.submit-btn{
+	margin-top: 10px;
 }
