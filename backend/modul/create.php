@@ -10,6 +10,7 @@ $jmlSuccess = 0;
 
 $sql = "SELECT * FROM identitas_sekolah WHERE id = '$id'";
 $result = mysqli_query($con, $sql);
+$link = "http://localhost";
 
 $r = mysqli_fetch_assoc($result);
 $id_user = $r['id_user'];
@@ -377,8 +378,13 @@ $section->addText(' ',null,null);
 $section->addTitle('LAMPIRAN', 1);
 
 $section->addTitle('LEMBAR KERJA PESERTA DIDIK', 2);
-
-
+$sql = "SELECT lkpd FROM lkpd WHERE id_identitas ='$id'";
+$result = mysqli_query($con, $sql);
+$r = mysqli_fetch_assoc($result);
+$link = "http://localhost/adminGuru/";
+$dirLkpd = "lkpd/".$r['lkpd'];
+$link .= $dirLkpd;
+$section->addLink($link,"LKPD ".$mapel,array('bold' => false),$pName);
 
 $section->addText(' ',null,null);
 $section->addTitle('BAHAN BACAAN GURU DAN PESERTA DIDIK', 2);
@@ -386,24 +392,26 @@ $sql = "SELECT bahan_bacaan FROM bahan_bacaan WHERE id_identitas ='$id'";
 $result = mysqli_query($con, $sql);
 while($r = mysqli_fetch_assoc($result)){
     $section->addText($r['bahan_bacaan'],array('bold' => false),$pName);
-    $section->addText(' ',null,null);
 }
+
+$section->addText(' ',null,null);
 $section->addTitle('GLOSARIUM', 2);
 $sql = "SELECT glosarium FROM glosarium WHERE id_identitas ='$id'";
 $result = mysqli_query($con, $sql);
 while($r = mysqli_fetch_assoc($result)){
     $section->addText($r['glosarium'],array('bold' => false),$pName);
-    $section->addText(' ',null,null);
 }
 
+$section->addText(' ',null,null);
 $section->addTitle('DAFTAR PUSTAKA', 2);
 $sql = "SELECT daftar_pustaka FROM daftar_pustaka WHERE id_identitas ='$id'";
 $result = mysqli_query($con, $sql);
 while($r = mysqli_fetch_assoc($result)){
     $section->addText($r['daftar_pustaka'],array('bold' => false),$pName);
-    $section->addText(' ',null,null);
+    
 }
 
+$section->addText(' ',null,null);
 $section->addText(' ',null,null);
 $section->addText(' ',null,null);
 $section->addText("   Mengetahui\t\t\t\t\t\t\t\tCimahi,Juli 2022",array('bold' => false),$pName);
