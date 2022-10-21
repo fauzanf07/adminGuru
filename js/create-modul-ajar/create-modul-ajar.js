@@ -320,7 +320,6 @@ $('#buatModulAjar').click(function(){
 	});
 });
 
-$()
 
 function uploadLkpd(id){
 	var fd = new FormData();
@@ -366,21 +365,11 @@ function uploadToDB(id,fileName){
 			fileName: fileName
 		},
         success: function(dataResult){
-        	$('#spinner').css('display','none');
+        	
         	var dataResult = JSON.parse(dataResult);
 			console.log(dataResult);
             if(dataResult.statusCode==201){
-                Swal.fire({
-					title: 'Success!',
-					text: 'Data berhasil ditambahkan',
-					icon: 'success',
-					confirmButtonText: 'Ok',
-					confirmButtonColor: "#d63630"
-				}).then((result) =>{
-					if(result.isConfirmed){
-						location.reload();
-					}
-				});
+                createModulDocx(last_id);
             }
             else{
                 Swal.fire({
@@ -394,6 +383,49 @@ function uploadToDB(id,fileName){
         }
       });
 
+}
+
+function createModulDocx(id){
+	var id_identitas = id;
+	$.ajax({
+		url: "../backend/modul/create.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			createModulPdf(id_identitas);
+		}
+	});
+}
+
+function createModulPdf(id){
+	var id_identitas = id;
+	$('#spinner').css('display','none');
+	$.ajax({
+		url: "../backend/modul/create-pdf.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			Swal.fire({
+					title: 'Success!',
+					text: 'Data berhasil ditambahkan',
+					icon: 'success',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				}).then((result) =>{
+					if(result.isConfirmed){
+						location.reload();
+					}
+			});
+		}
+	});
 }
 
 function downloadDocs(id){
@@ -410,20 +442,21 @@ function downloadDocs(id){
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult.statusCode);
 			if(dataResult.statusCode==202){
-				createModul(id_identitas);
+				createModulDocx(id_identitas);
 			}
 			else if(dataResult.statusCode==201){
-				window.open('./download-modul.php?id='+id_identitas, '_blank');
+				window.open('./download-modul.php?id='+id_identitas+'&ext=docx', '_blank');
 				$('#spinnerDownload').css('display','none');
 			}
 		}
 	});
 }
 
-function createModul(id){
-	var id_identitas = id;
+function downloadPdf(id){
+	var id_identitas = $(id).data('id');
+	$('#spinnerDownload'+id_identitas).css('display','inline-block');
 	$.ajax({
-		url: "../backend/modul/create.php",
+		url: "../backend/create-modul-ajar/is_modul_created.php",
 		type: "POST",
 		data: {
 			id: id_identitas		
@@ -432,11 +465,17 @@ function createModul(id){
 		success: function(dataResult){
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult.statusCode);
-			window.open('./download-modul.php?id='+id_identitas, '_blank');
-			$('#spinnerDownload'+id_identitas).css('display','none');
+			if(dataResult.statusCode==202){
+				createModulPdf(id_identitas);
+			}
+			else if(dataResult.statusCode==201){
+				window.open('./download-modul.php?id='+id_identitas+'&ext=pdf', '_blank');
+				$('#spinnerDownload').css('display','none');
+			}
 		}
 	});
 }
+
 
 function hapusModul(id){
 	var id_identitas = $(id).data('id');
@@ -445,7 +484,7 @@ function hapusModul(id){
 	  text: "You won't be able to revert this!",
 	  icon: 'warning',
 	  showCancelButton: true,
-	  confirmButtonColor: '#d63630',
+	  confirmButtonColor: '#24576E',
 	  cancelButtonColor: '#d33',
 	  confirmButtonText: 'Yes, delete it!'
 	}).then((result) => {

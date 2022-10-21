@@ -56,7 +56,7 @@ body{
 }
 .wrapper .navbar{
 	padding: 20px !important;
-	background-color: #24576E;
+	background-color: #24576E !important;
 }
 .collapse ul li{
 	display: inline-block;
