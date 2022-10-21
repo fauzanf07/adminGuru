@@ -5,20 +5,23 @@
 	}
 	include("../backend/conn.php");
 
-	$nama = $_SESSION['nama'];
+	$id_identitas = $_GET['id_identitas'];
 
-	$sql = "SELECT id FROM table_user WHERE nama = '$nama'";
+	$sql = "SELECT * FROM identitas_sekolah WHERE id = '$id_identitas'";
 	$result = mysqli_query($con, $sql);
-	$r = mysqli_fetch_assoc($result);
-	$id_user = $r['id'];
+	$idSekolah = mysqli_fetch_assoc($result);
+	$id_user = $idSekolah['id_user'];
 
+	$sql = "SELECT * FROM table_user WHERE id = '$id_user'";
+	$result = mysqli_query($con, $sql);
+	$user = mysqli_fetch_assoc($result);
 
  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Pembuatan Modul Ajar</title>
-	<link rel="stylesheet" type="text/css" href="../style/edit-modul-ajar/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -90,53 +93,6 @@
 					</nav>
 					<div class="tab-content" id="nav-tabContent">
 						<div class="tab-pane fade show active" id="nav-feed" role="tabpanel" aria-labelledby="nav-feed-tab" tabindex="0">
-							<div class="list-modul">
-								<h3 class="title">Modul Ajar</h3>
-								<a class="btn btn-success" id="create" href="#formBuatModul"><i class="bi bi-file-plus"></i> Buat Modul Ajar</a>
-								<br/><br/>
-								<table class="table table-striped" id="tableModul">
-									<thead>
-							            <tr>
-							                <th>No</th>
-							                <th>Tanggal Buat</th>
-							                <th>Program Keahlian</th>
-							                <th>Mata Pelajaran</th>
-							                <th>Kelas/Semester</th>
-							                <th>Download Modul Ajar</th>
-							                <th>Action</th>
-							            </tr>
-							        </thead>
-							        <tbody>
-							        	<?php
-							        		$sql = "SELECT * FROM identitas_sekolah WHERE id_user = '$id_user'";
-							        		$result = mysqli_query($con, $sql);
-							        		$i=1;
-											while($r = mysqli_fetch_assoc($result)){
-												echo "
-													<tr>
-										        		<td>".$i."</td>
-										        		<td>".$r['created_at']."</td>
-										        		<td>".$r['program_keahlian']."</td>
-										        		<td>".$r['mata_pelajaran']."</td>
-										        		<td>".$r['kelas']."/".$r['semester']."</td>
-										        		<td>
-										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' onclick='downloadDocs(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
-										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf'>Download PDF</button></center>
-										        		</td>
-										        		<td>
-										        			<center><button type='button' class='btn btn-warning btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
-										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>
-										        		</td>
-										        	</tr>
-												";
-												$i++;
-											}
-
-							        	?>
-							        	
-							        </tbody>
-								</table>
-							</div>
 							<div class="create-modul" id="formBuatModul">
 								<center><h3 class="title">Buat Modul Ajar</h3></center>
 								<br/>
@@ -147,19 +103,19 @@
 									      		<h5>A. IDENTITAS SEKOLAH (INFORMASI UMUM)</h5>
 									      		<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Nama Penyusun</span>
-												  <input type="text" class="form-control" aria-describedby="basic-addon1" value="<?php echo $_SESSION['nama']; ?>" disabled="disabled" id="namaPenyusun" required>
+												  <input type="text" class="form-control" aria-describedby="basic-addon1" value="<?php echo $user['nama'] ?>" disabled="disabled" id="namaPenyusun" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Satuan Pendidikan</span>
-												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $_SESSION['sekolah']; ?>" disabled="disabled" id="satuanPend" required>
+												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $user['sekolah']; ?>" disabled="disabled" id="satuanPend" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Kepala Sekolah</span>
-												  <input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepala_sekolah" required>
+												  <input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepala_sekolah" value="<?php echo $idSekolah['kepala_sekolah']; ?>" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran</span>
-												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" required>
+												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" value="<?php echo $idSekolah['tahun_ajaran']; ?>" required>
 												    <datalist id="tahunajar-options">
 														<option value="2020/2021">2020/2021</option>
 														<option value="2021/2022">2021/2022</option>
@@ -174,7 +130,11 @@
 													    	$query = "SELECT * FROM program_keahlian";
 													    	$result = mysqli_query($con,$query);
 													    	while($r = mysqli_fetch_assoc($result)) {
-															    echo '<option value="'.$r["id"].'" class="option-prokel">'.$r["program_keahlian"].'</option>';
+													    		if($idSekolah['program_keahlian'] == $r['program_keahlian']){
+													    			echo '<option value="'.$r["id"].'" class="option-prokel" selected>'.$r["program_keahlian"].'</option>';
+													    		}else{
+													    			echo '<option value="'.$r["id"].'" class="option-prokel">'.$r["program_keahlian"].'</option>';
+													    		}
 															}
 													    ?>
 													</select>
@@ -182,51 +142,104 @@
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran</label>
 													<select class="form-select" id="mapel" required>
-															<option selected>Choose...</option>
+															<option>Choose...</option>
+															<?php 
+																$programKeahlian = $idSekolah['program_keahlian'];
+																$query = "SELECT id FROM program_keahlian WHERE program_keahlian ='$programKeahlian'";
+																$result = mysqli_query($con, $query);
+																$r = mysqli_fetch_assoc($result);
+																$id_pk = $r['id'];
+
+																$query = "SELECT * FROM mata_pelajaran WHERE id_pk = '$id_pk'";
+																$result = mysqli_query($con, $query);
+																while($r = mysqli_fetch_assoc($result)){
+																	if($r['mata_pelajaran'] == $idSekolah['mata_pelajaran']){
+																		echo '<option value="'.$r['id'].'" class="option-mapel" selected>'.$r['mata_pelajaran'].'</option>';
+																		$idMapel = $r['id'];
+																	}else{
+																		echo '<option value="'.$r['id'].'" class="option-mapel">'.$r['mata_pelajaran'].'</option>';
+																	}
+																	
+																}
+
+															?>
 													</select>
 												</div>
 												<div class="input-group mb-3">
 												  <span class="input-group-text">Kelas, Semester, dan Fase</span>
 												  	<select class="form-select" id="kelas" required>
 													    <option selected>Choose...</option>
-													    <option value="x">X</option>
-													    <option value="xi">XI</option>
-													    <option value="xii">XII</option>
+													    <option value="x" <?php if($idSekolah['kelas'] == 'X') echo "selected"; ?>>X</option>
+													    <option value="xi" <?php if($idSekolah['kelas'] == 'XI') echo "selected"; ?>>XI</option>
+													    <option value="xii" <?php if($idSekolah['kelas'] == 'XII') echo "selected"; ?>>XII</option>
 													</select>
 												  	<select class="form-select" id="semester" required>
 													    <option selected>Choose...</option>
-													    <option value="1">1</option>
-													    <option value="1">2</option>
+													    <option value="1" <?php if($idSekolah['semester'] == 1) echo "selected"; ?>>1</option>
+													    <option value="2" <?php if($idSekolah['semester'] == 2) echo "selected"; ?>>2</option>
 													</select>
-													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" value="" disabled="disabled">
+													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" value="<?php echo $idSekolah['fase']; ?>" disabled="disabled" >
 												</div>
 												<div class="input-group mb-3">
 														<span class="input-group-text">Elemen</span>
 														<select class="form-select" id="elemen" required>
 															<option selected>Choose...</option>
+															<?php
+
+																$query = "SELECT * FROM elemen WHERE id_mapel = '$idMapel'";
+																$result = mysqli_query($con, $query);
+																while($r = mysqli_fetch_assoc($result)){
+																	if($r['elemen'] == $idSekolah['elemen']){
+																		echo '<option value="'.$r['id'].'" class="option-elemen" selected>'.$r['elemen'].'</option>';
+																		$idElemen = $r['id'];
+																	}else{
+																		echo '<option value="'.$r['id'].'" class="option-elemen">'.$r['elemen'].'</option>';
+																	}
+																	
+																}
+
+															?>
 														</select>
 												</div>
 												<div class="input-group mb-3">
 														<span class="input-group-text">Capaian Pembelajaran</span>
-														<textarea class="form-control" id="cp" name="cp" disabled="disabled" rows="6" required></textarea>
+														<textarea class="form-control" id="cp" name="cp" disabled="disabled" rows="6" required>
+															<?php echo $idSekolah['capaian_pembelajaran']; ?>
+														</textarea>
 												</div>
 												<div class="multiple-inputs" id="multipleInputs">
 														<span>Meteri : </span>
 														<div class="list-input mt-3">
 															<div id="inputs-materi">
-																<div class="list-kosong" id="list-kosong-materi">Tidak ada materi</div>
+																<?php 
+																	$query = "SELECT * FROM materi WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-materi" id="inputMATERI'.$i.'"><span class="input-group-text" id="addon-wrapping-materi'.$i.'">'.$i.'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="materi'.$i.'" id="inputMateri'.$i.'" value="'.$r['materi'].'" disabled><button class="btn btn-danger" id="button-addon2-materi'.$i.'"  type="button" data-materi="'.$i.'" onclick="hapusMATERI(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-materi">Tidak ada materi</div>';
+																	}
+																?>
+																
 															</div>
 														</div>
 														<div class="input-group mb-3 mt-3">
 															<input type="text" class="form-control" list="materi-options" id="materi-input" placeholder="Materi belajar" required>
 														  	<datalist id="materi-options">
 															</datalist>
-															<button class="btn btn-success" type="button" data-pp="1" onclick="addMateri();">+</button>
+															<button class="btn btn-success" type="button" data-materi="<?php echo ($i-1); ?>" onclick="addMateri();">+</button>
 														</div>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
-												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
+												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" value="<?php echo $idSekolah['alokasi_waktu']; ?>" required>
 												</div>
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-bs-slide="next">
 											    	<span >Next</span>

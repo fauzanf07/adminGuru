@@ -10,18 +10,21 @@
 
 	session_start();
 	$nama = $_SESSION['nama'];
+	$error = array();
 	$jmlSuccess = 0;
 
 	$sql = "SELECT id FROM table_user WHERE nama = '$nama'";
 	$result = mysqli_query($con, $sql);
 	if ($result) {
 		$jmlSuccess++;
+	}else{
+		$error[] = "tabel user";
 	}
 
 	$r = mysqli_fetch_assoc($result);
 	$id_user = $r['id'];
 
-
+	$kepalaSekolah = $objModul->kepala_sekolah;
 	$tahunAjar = $objModul->tahunAjar;
 	$programKeahlian = $objModul->programKeahlian;
 	$mapel = $objModul->mapel;
@@ -33,11 +36,13 @@
 	$cp = $objModul->cp;
 	$alokasiW = $objModul->alokasiW;
 	$date = date('Y-m-d H:i:s');
-	$sql = "INSERT INTO identitas_sekolah VALUES('','$id_user', '$tahunAjar', '$programKeahlian', '$mapel', '$kelas','$semester', '$fase', '$elemen','$cp','$alokasiW','$date','$date')";
+	$sql = "INSERT INTO identitas_sekolah VALUES('','$id_user','$kepalaSekolah', '$tahunAjar', '$programKeahlian', '$mapel', '$kelas','$semester', '$fase', '$elemen','$cp','$alokasiW','$date','$date')";
 	$result = mysqli_query($con, $sql);
 	if($result){
 		$last_id = mysqli_insert_id($con);
 		$jmlSuccess++;
+	}else{
+		$error[] = "identitas_sekolah";
 	}
 
 
@@ -50,6 +55,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "materi";
 		}
 	}
 
@@ -61,6 +68,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "kompetensi_awal";
 		}
 	}
 
@@ -71,6 +80,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "profil_pancasila";
 		}
 	}
 	
@@ -81,6 +92,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "media";
 		}
 	}
 
@@ -91,6 +104,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "sumber";
 		}
 	}
 
@@ -100,6 +115,8 @@
 	$result = mysqli_query($con, $sql);
 	if($result){
 		$jmlSuccess++;
+	}else{
+			$error[] = "target";
 	}
 
 
@@ -108,6 +125,8 @@
 	$result = mysqli_query($con, $sql);
 	if($result){
 		$jmlSuccess++;
+	}else{
+			$error[] = "model";
 	}
 
 
@@ -118,6 +137,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "tujuan";
 		}
 	}
 
@@ -129,6 +150,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "pemahaman_bermakna";
 		}
 	}
 
@@ -139,6 +162,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "pertanyaan_pemantik";
 		}
 	}
 
@@ -149,6 +174,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "persiapan_pembelajaran";
 		}
 	}
 
@@ -158,6 +185,8 @@
 	if($result){
 		$last_id_keg = mysqli_insert_id($con);
 		$jmlSuccess++;
+	}else{
+			$error[] = "kegiatan_pembelajaran";
 	}
 
 
@@ -168,6 +197,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "pendahuluan";
 		}
 	}
 
@@ -178,6 +209,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "inti";
 		}
 	}
 
@@ -190,6 +223,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "penutup";
 		}
 	}
 
@@ -201,6 +236,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "ases_non_kog";
 		}
 	}
 
@@ -211,6 +248,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "ases_kog";
 		}
 	}
 
@@ -222,6 +261,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "ases_for";
 		}
 	}
 
@@ -233,6 +274,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "ases_sum";
 		}
 	}
 
@@ -244,6 +287,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "pengayaan_remedial";
 		}
 	}
 
@@ -255,6 +300,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "refleksi";
 		}
 	}
 
@@ -265,6 +312,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "bahan_bacaan";
 		}
 	}
 
@@ -275,6 +324,8 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "glosarium";
 		}
 	}
 
@@ -285,16 +336,16 @@
 		$result = mysqli_query($con, $sql);
 		if ($result) {
 			$jmlSuccess++;
+		}else{
+			$error[] = "daftar_pustaka";
 		}
 	}
 	
 
-	$jmlQuery = 5+$jmlMateri+$jmlKa+$jmlPp+$jmlMedia+$jmlSumber+$jmlTp+$jmlPb+$jmlPerpem+$jmlPerpemb+$jmlPend+$jmlInti+$jmlPenutup+$jmlAsesNon+$jmlAsesKog+$jmlAsesFor+$jmlAsesSum+$jmlPenmed+$jmlRefleksi+$jmlBahanBaca+$jmlDafpus+$jmlDafpus;
-
-	if($jmlQuery == $jmlSuccess){
+	if(count($error) == 0){
 		echo json_encode(array("statusCode"=>201, "last_id"=>$last_id));
 	}else{
-		echo json_encode(array("statusCode"=>202));
+		echo json_encode(array("statusCode"=>202, "error"=>$error));
 	}
 
  ?>
