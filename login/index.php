@@ -6,18 +6,17 @@
 	<link rel="stylesheet" type="text/css" href="../style/login/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-    <div class="nav-parent">
+	<div class="nav-parent">
 		<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
 			<div class="pink-on-top"></div>
 			<div class="container-fluid">
 				<div class="logo-parent">
-					<div class="logo-icon"></div>
-					<div class="logo-text">
-						<h4 class="logo-name">THE NINETEEN</h4>
-						<a href="#" class="desc"><h4 class="logo-name desc">Providing solutions for Indonesian education</h4></div></a>
+					<div class="logo">
+						<img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo">
 					</div>
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +25,7 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Login</a>
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Online Course</a>
@@ -44,8 +43,8 @@
 		<div class="row-1">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4"></div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-blank"></div>
+					<div class="col-lg-4 col-content">
 						<div class="border">
 							<form>
 								<div class="form-group">
@@ -72,7 +71,7 @@
 						</div>
 
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-blank">
 					</div>
 				</div>
 			</div>
