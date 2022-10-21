@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/signup/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -96,7 +97,9 @@
 							<input type="checkbox" class="form-check-input" id="exampleCheck1">
 							<label class="form-check-label" for="exampleCheck1">Semua data sudah benar</label>
 						</div>
-						<button type="submit" class="btn btn-success submit-btn">Submit</button>
+						<div class="class-btn">
+							<button type="submit" class="btn btn-success submit-btn">Submit</button>
+						</div>
 					</form>
 				</div>
 				<div class="col">
@@ -105,12 +108,12 @@
 		</div>
 	</div>
 
-	<div class="footer">
+	<footer>
 		<div class="copyright">
 			<p>© 2022 by The Nineteen</p>
 		</div>
 		<div class="background-footer"></div>
-	</div>
+	</footer>
 
 </body>
 

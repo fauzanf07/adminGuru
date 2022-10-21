@@ -15,6 +15,8 @@ body{
 	left: 0;
 	right: 0;
 	font-family: 'Montserrat', sans-serif;
+	display: flex;
+    flex-direction: column;
 }
 
 .logo-parent{
@@ -101,4 +103,16 @@ nav{
 
 .copyright{
 	text-align: center;
+}
+
+footer {
+	margin-top: auto;
+}
+
+@media screen and (max-width: 425px) {
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
 }
