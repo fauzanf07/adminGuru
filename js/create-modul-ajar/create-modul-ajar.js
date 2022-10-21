@@ -97,12 +97,14 @@ $('#elemen').on('change',function(){
 	});
 });
 
+
 $('#buatModulAjar').click(function(){
 	$('#spinner').css('display','inline-block');
 
 	var modul_ajar = new Object();
 	modul_ajar.nama = $('#namaPenyusun').val();
 	modul_ajar.satuanPend = $('#satuanPend').val();
+	modul_ajar.kepala_sekolah = $('#kepala_sekolah').val();
 	modul_ajar.tahunAjar = $('#tahunAjar').val();
 	modul_ajar.programKeahlian = $('#programKeahlian').find(":selected").text();
 	modul_ajar.mapel = $('#mapel').find(":selected").text();
@@ -318,6 +320,8 @@ $('#buatModulAjar').click(function(){
 	});
 });
 
+$()
+
 function uploadLkpd(id){
 	var fd = new FormData();
     var files = $('#lkpd')[0].files[0];
@@ -394,7 +398,7 @@ function uploadToDB(id,fileName){
 
 function downloadDocs(id){
 	var id_identitas = $(id).data('id');
-	$('#spinnerDownload').css('display','inline-block');
+	$('#spinnerDownload'+id_identitas).css('display','inline-block');
 	$.ajax({
 		url: "../backend/create-modul-ajar/is_modul_created.php",
 		type: "POST",
@@ -429,7 +433,7 @@ function createModul(id){
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult.statusCode);
 			window.open('./download-modul.php?id='+id_identitas, '_blank');
-			$('#spinnerDownload').css('display','none');
+			$('#spinnerDownload'+id_identitas).css('display','none');
 		}
 	});
 }
@@ -477,6 +481,11 @@ function hapusModul(id){
 	  }
 	})
 	
+}
+
+function editModul(id){
+	var id_identitas = $(id).data('id');
+	window.location.href = '../edit-modul-ajar/edit.php?id_identitas='+id_identitas;
 }
 
 
