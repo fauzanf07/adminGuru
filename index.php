@@ -44,7 +44,10 @@
 		  </div>
 		</nav>
 	</div>
-	<div class="white-on-top"></div>
+
+	<div class="background">
+	</div>
+	
 	<div class="headline">
 		<h1>SMARTEACH</h1>
 		<h2>Menjadikan Pekerjaan Guru Lebih Mudah</h2>
