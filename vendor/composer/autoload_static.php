@@ -15,6 +15,10 @@ class ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea
         array (
             'PhpOffice\\PhpWord\\' => 18,
         ),
+        'N' => 
+        array (
+            'NcJoes\\OfficeConverter\\' => 23,
+        ),
         'L' => 
         array (
             'Laminas\\ZendFrameworkBridge\\' => 28,
@@ -27,6 +31,10 @@ class ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea
         array (
             0 => __DIR__ . '/..' . '/phpoffice/phpword/src/PhpWord',
         ),
+        'NcJoes\\OfficeConverter\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ncjoes/office-converter/src/OfficeConverter',
+        ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src',
@@ -34,6 +42,16 @@ class ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea
         'Laminas\\Escaper\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-escaper/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'C' => 
+        array (
+            'ConvertApi\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/convertapi/convertapi-php/lib',
+            ),
         ),
     );
 
@@ -46,6 +64,7 @@ class ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea::$classMap;
 
         }, null, ClassLoader::class);

@@ -121,10 +121,10 @@
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' onclick='downloadDocs(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
-										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf'>Download PDF</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' onclick='downloadPdf(this);'>Download PDF</button></center>
 										        		</td>
 										        		<td>
-										        			<center><button type='button' class='btn btn-warning btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
+										        			<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
 										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>
 										        		</td>
 										        	</tr>

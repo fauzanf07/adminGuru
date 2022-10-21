@@ -16,12 +16,17 @@
 	$result = mysqli_query($con, $sql);
 	$user = mysqli_fetch_assoc($result);
 
+	$sql = "SELECT * FROM kegiatan_pembelajaran WHERE id_identitas = '$id_identitas'";
+	$result = mysqli_query($con, $sql);
+	$r = mysqli_fetch_assoc($result);
+	$idKegiatan = $r['id'];
+
  ?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Pembuatan Modul Ajar</title>
-	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/edit-modul-ajar/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -88,7 +93,7 @@
 				<div class="col-lg-9 nav-info-user">
 					<nav>
 					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-					    <button class="nav-link active" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="bi bi-chat-square-text-fill"></i>&nbsp;&nbsp;Create Modul Ajar</button>
+					    <button class="nav-link active" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="bi bi-chat-square-text-fill"></i>&nbsp;&nbsp;Edit Modul Ajar</button>
 					  </div>
 					</nav>
 					<div class="tab-content" id="nav-tabContent">
@@ -234,7 +239,7 @@
 															<input type="text" class="form-control" list="materi-options" id="materi-input" placeholder="Materi belajar" required>
 														  	<datalist id="materi-options">
 															</datalist>
-															<button class="btn btn-success" type="button" data-materi="<?php echo ($i-1); ?>" onclick="addMateri();">+</button>
+															<button class="btn btn-success" type="button" onclick="addMateri();">+</button>
 														</div>
 												</div>
 												<div class="input-group mb-3 mt-3">
@@ -250,11 +255,22 @@
 									    		<h5>B. KOMPETENSI AWAL</h5>
 									      		<div class="multiple-inputs" id="multipleInputs">
 													<div id="inputs-ka">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA1">
-															<span class="input-group-text" id="addon-wrapping-ka1">1</span>
-															<input type="text" class="form-control" placeholder="Kompetensi Awal 1" aria-label="Username" aria-describedby="addon-wrapping" name="ka1" id="inputKa1">
-															<button class="btn btn-danger" id="button-addon2-ka1"  type="button" data-ka="1" id="button-addon-ka2" onclick="hapusKA(this);">Hapus</button>
-														</div>
+														<?php 
+																$query = "SELECT * FROM kompetensi_awal WHERE id_identitas = '$id_identitas'";
+																$result = mysqli_query($con, $query);
+																$jmlRows = mysqli_num_rows($result);
+																if($jmlRows > 0){
+																	$i=1;
+																	while($r = mysqli_fetch_assoc($result)){
+																		echo '<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA'.$i.'"><span class="input-group-text" id="addon-wrapping-ka'.$i.'">'.$i.'</span><input type="text" class="form-control" placeholder="Kompetensi Awal '.$i.'" aria-label="Username" aria-describedby="addon-wrapping" name="ka'.$i.'" id="inputKa'.$i.'" value="'.$r['kompetensi'].'"><button class="btn btn-danger" id="button-addon2-ka'.$i.'"  type="button" data-ka="'.$i.'" onclick="hapusKA(this);">Hapus</button></div>';
+																		$i++;
+																	}
+																	
+																}
+																else{
+																	echo '<div class="list-kosong" id="list-kosong-materi">Tidak ada materi</div>';
+																}
+														?>
 													</div>
 													<button type="button" class="btn btn-success" id="addKA"> + Kompetensi Awal</button>
 												</div>
@@ -264,7 +280,23 @@
 														<span>Profil Pelajar Pancasila : </span>
 														<div class="list-input mt-3">
 															<div id="inputs-pp">
-																<div class="list-kosong" id="list-kosong-pp">Tidak ada Profil Pelajar Pancasila</div>
+																<?php 
+																	$query = "SELECT * FROM profil_pancasila WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-pp" id="inputPP'.$i.'"><span class="input-group-text" id="addon-wrapping-pp'.$i.'">'.$i.'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="pp'.$i.'" id="inputPp'.$i.'" value="'.$r['profil_pancasila'].'" disabled><button class="btn btn-danger" id="button-addon2-pp'.$i.'"  type="button" data-pp="'.$i.'" onclick="hapusPP(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-pp">Tidak ada Profil Pelajar Pancasila</div>';
+																	}
+																?>
+																
 															</div>
 														</div>
 														<div class="input-group mb-3 mt-3">
@@ -284,7 +316,23 @@
 														<span>Media pembelajaran yang digunakan : </span>
 														<div class="list-input mt-3">
 															<div id="inputs-media">
-																<div class="list-kosong" id="list-kosong-media">Tidak ada media pembelajaran yang digunakan</div>
+																<?php 
+																	$query = "SELECT * FROM media WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-media" id="inputMEDIA'.$i.'"><span class="input-group-text" id="addon-wrapping-media'.$i.'">'.$i.'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="media'.$i.'" id="inputMedia'.$i.'" value="'.$r['media'].'" disabled><button class="btn btn-danger" id="button-addon2-media'.$i.'"  type="button" data-media="'.$i.'" onclick="hapusMEDIA(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-media">Tidak ada media pembelajaran yang digunakan</div>';
+																	}
+																?>
+																
 															</div>
 														</div>
 														<div class="input-group mb-3 mt-3">
@@ -303,7 +351,22 @@
 														<span>Sumber belajar yang digunakan : </span>
 														<div class="list-input mt-3">
 															<div id="inputs-sumber">
-																<div class="list-kosong" id="list-kosong-sumber">Tidak ada sumber belajar yang digunakan</div>
+																<?php 
+																	$query = "SELECT * FROM sumber WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-sumber" id="inputSUMBER'.$i.'"><span class="input-group-text" id="addon-wrapping-sumber'.$i.'">'.$i.'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="sumber'.$i.'" id="inputSumber'.$i.'" value="'.$r['sumber'].'" disabled><button class="btn btn-danger" id="button-addon2-sumber'.$i.'"  type="button" data-sumber="'.$i.'" onclick="hapusSUMBER(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-sumber">Tidak ada sumber belajar yang digunakan</div>';
+																	}
+																?>
 															</div>
 														</div>
 														<div class="input-group mb-3 mt-3">
@@ -323,7 +386,12 @@
 												<h5>E. TARGET PESERTA DIDIK</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Target Peserta Didik</span>
-													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target">
+													<?php 	
+														$query = "SELECT * FROM target_peserta_didik WHERE id_identitas = '$id_identitas'";
+														$result = mysqli_query($con, $query);
+														$r = mysqli_fetch_assoc($result);
+													?>
+													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target" value="<?php echo $r['target_peserta'] ?>">
 												</div>
 												<br/>
 												<h5>F. MODEL PEMBELAJARAN</h5>
@@ -331,15 +399,20 @@
 													<span class="input-group-text" id="basic-addon1">Model Pembelajaran</span>
 													<select class="form-select" id="model">
 													    <option selected>Choose...</option>
-													    <option value="Discovery Learning">Discovery Learning</option>
-													    <option value="Inquiry Learning Terbimbing">Inquiry Learning Terbimbing</option>
-													    <option value="Problem Based Learning">Problem Based Learning</option>
-													    <option value="Project Based Learning (PjBL)">Project Based Learning (PjBL)</option>
-													    <option value="Production based Training (PBT)">Production based Training (PBT).</option>
-													    <option value="Kontekstual">Kontekstual</option>
-													    <option value="Ekspositori">Ekspositori</option>
-													    <option value="Kooperatif">Kooperatif</option>
-													    <option value="PAIKEM">PAIKEM</option>
+													    <?php 
+													    	$query = "SELECT * FROM model_pembelajaran WHERE id_identitas = '$id_identitas'";
+													    	$result = mysqli_query($con, $query);
+															$r = mysqli_fetch_assoc($result);
+													    ?>
+													    <option value="Discovery Learning" <?php if($r['model_pembelajaran'] == "Discovery Learning") echo "selected"; ?>>Discovery Learning</option>
+													    <option value="Inquiry Learning Terbimbing" <?php if($r['model_pembelajaran'] == "Learning Terbimbing") echo "selected"; ?>>Inquiry Learning Terbimbing</option>
+													    <option value="Problem Based Learning" <?php if($r['model_pembelajaran'] == "Problem Based Learning") echo "selected"; ?>>Problem Based Learning</option>
+													    <option value="Project Based Learning (PjBL)" <?php if($r['model_pembelajaran'] == "Project Based Learning (PjBL)") echo "selected"; ?>>Project Based Learning (PjBL)</option>
+													    <option value="Production based Training (PBT)" <?php if($r['model_pembelajaran'] == "Production based Training (PBT)") echo "selected"; ?>>Production based Training (PBT).</option>
+													    <option value="Kontekstual" <?php if($r['model_pembelajaran'] == "Kontekstual") echo "selected"; ?>>Kontekstual</option>
+													    <option value="Ekspositori" <?php if($r['model_pembelajaran'] == "Ekspositori") echo "selected"; ?>>Ekspositori</option>
+													    <option value="Kooperatif" <?php if($r['model_pembelajaran'] == "Kooperatif") echo "selected"; ?>>Kooperatif</option>
+													    <option value="PAIKEM" <?php if($r['model_pembelajaran'] == "PAIKEM") echo "selected"; ?>>PAIKEM</option>
 
 													</select>
 												</div>
@@ -356,7 +429,23 @@
 														<span>Tujuan Pembelajaran : </span>
 														<div class="list-input mt-3">
 															<div id="inputs-tp">
-																<div class="list-kosong" id="list-kosong-tp">Tidak ada tujuan pembelajaran</div>
+																<?php 
+																	$query = "SELECT * FROM tujuan_pembelajaran WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-tp" id="inputTP'.$i.'"><span class="input-group-text" id="addon-wrapping-tp'.$i.'">'.$i.'</span><textarea class="form-control" name="tp'.$i.'" id="inputTp'.$i.'" rows="2" disabled>'.$r['tujuan_pembelajaran'].'</textarea><button class="btn btn-danger" id="button-addon2-tp'.$i.'"  type="button" data-tp="'.$i.'" onclick="hapusTP(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-tp">Tidak ada tujuan pembelajaran</div>';
+																	}
+																?>
+																
 															</div>
 														</div>
 														<div class="input-group mb-3 mt-3">
@@ -371,11 +460,22 @@
 												<h5>B. PEMAHAMAN BERMAKNA</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 													<div id="inputs-pb">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB1">
-															<span class="input-group-text" id="addon-wrapping-pb1">1</span>
-															<input type="text" class="form-control" placeholder="Pemahaman Bermakna 1" aria-label="Username" aria-describedby="addon-wrapping" name="pb1" id="inputPb1">
-															<button class="btn btn-danger" id="button-addon2-pb1"  type="button" data-pb="1"  onclick="hapusPB(this);">Hapus</button>
-														</div>
+														<?php 
+																	$query = "SELECT * FROM pemahaman_bermakna WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB'.$i.'"><span class="input-group-text" id="addon-wrapping-pb'.$i.'">'.$i.'</span><input type="text" class="form-control" placeholder="Pemahaman Bermakna '.$i.'" aria-label="Username" aria-describedby="addon-wrapping" name="pb'.$i.'" id="inputPb'.$i.'" value="'.$r['pemahaman_bermakna'].'"><button class="btn btn-danger" id="button-addon2-pb'.$i.'"  type="button" data-pb="'.$i.'" onclick="hapusPB(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-tp">Tidak ada tujuan pembelajaran</div>';
+																	}
+														?>
 													</div>
 													<button type="button" class="btn btn-success" id="addPB"> + Pemahaman Bermakna</button>
 												</div>
@@ -383,11 +483,22 @@
 												<h5>C. PERTANYAAN PEMANTIK</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 													<div id="inputs-perpem">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM1">
-															<span class="input-group-text" id="addon-wrapping-perpem1">1</span>
-															<input type="text" class="form-control" placeholder="Pertanyaan Pemantik 1" aria-label="Username" aria-describedby="addon-wrapping" name="perpem1" id="inputPerpem1">
-															<button class="btn btn-danger" id="button-addon2-perpem1"  type="button" data-perpem="1"  onclick="hapusPERPEM(this);">Hapus</button>
-														</div>
+														<?php 
+																	$query = "SELECT * FROM pertanyaan_pemantik WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM'.$i.'"><span class="input-group-text" id="addon-wrapping-perpem'.$i.'">'.$i.'</span><input type="text" class="form-control" placeholder="Pertanyaan Pemantik '.$i.'" aria-label="Username" aria-describedby="addon-wrapping" name="perpem'.$i.'" id="inputPerpem'.$i.'" value="'.$r['pertanyaan_pemantik'].'"><button class="btn btn-danger" id="button-addon2-perpem'.$i.'"  type="button" data-perpem="'.$i.'" onclick="hapusPERPEM(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-tp">Tidak ada tujuan pembelajaran</div>';
+																	}
+														?>
 													</div>
 													<button type="button" class="btn btn-success" id="addPERPEM"> + Pertanyaan Pemantik</button>
 												</div>
@@ -397,7 +508,23 @@
 														<span>Persiapan Pembelajaran : </span>
 														<div class="list-input mt-3">
 															<div id="inputs-perpemb">
-																<div class="list-kosong" id="list-kosong-perpemb">Tidak ada persiapan pembelajaran</div>
+																<?php 
+																	$query = "SELECT * FROM persiapan_pembelajaran WHERE id_identitas = '$id_identitas'";
+																	$result = mysqli_query($con, $query);
+																	$jmlRows = mysqli_num_rows($result);
+																	if($jmlRows > 0){
+																		$i=1;
+																		while($r = mysqli_fetch_assoc($result)){
+																			echo '<div class="input-group flex-nowrap mb-3 mt-3 input-perpemb" id="inputPERPEMB'.$i.'"><span class="input-group-text" id="addon-wrapping-perpemb'.$i.'">'.$i.'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="perpemb'.$i.'" id="inputPerpemb'.$i.'" value="'.$r['persiapan_pembelajaran'].'" disabled><button class="btn btn-danger" id="button-addon2-perpemb'.$i.'"  type="button" data-perpemb="'.$i.'" onclick="hapusPERPEMB(this);">Hapus</button></div>';
+																			$i++;
+																		}
+																		
+																	}
+																	else{
+																		echo '<div class="list-kosong" id="list-kosong-perpemb">Tidak ada persiapan pembelajaran</div>';
+																	}
+																?>
+																
 															</div>
 														</div>
 														<div class="input-group mb-3 mt-3">
@@ -433,7 +560,23 @@
 															<span>Kegiatan Pendahuluan : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-pend">
-																	<div class="list-kosong" id="list-kosong-pend">Tidak ada Pendahuluan</div>
+																	<?php 
+																		$query = "SELECT * FROM pendahuluan WHERE id_kegiatan = '$idKegiatan'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-pend" id="inputPEND'.$i.'"><span class="input-group-text" id="addon-wrapping-pend'.$i.'">'.$i.'</span><textarea class="form-control" name="pend'.$i.'" id="inputPend'.$i.'" rows="2" disabled>'.$r['kegiatan'].'</textarea><button class="btn btn-danger" id="button-addon2-pend'.$i.'"  type="button" data-pend="'.$i.'" onclick="hapusPEND(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-pend">Tidak ada Pendahuluan</div>';
+																		}
+																	?>
+																	
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -459,7 +602,23 @@
 															<span>Kegiatan Inti : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-inti">
-																	<div class="list-kosong" id="list-kosong-inti">Tidak ada Inti</div>
+																	<?php 
+																		$query = "SELECT * FROM inti WHERE id_kegiatan = '$idKegiatan'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-inti" id="inputINTI'.$i.'"><span class="input-group-text" id="addon-wrapping-inti'.$i.'">'.$i.'</span><textarea class="form-control" name="inti'.$i.'" id="inputInti'.$i.'" rows="2" disabled>'.$r['kegiatan'].'</textarea><button class="btn btn-danger" id="button-addon2-inti'.$i.'"  type="button" data-inti="'.$i.'" onclick="hapusINTI(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-inti">Tidak ada Inti</div>';
+																		}
+																	?>
+																	
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -485,7 +644,22 @@
 															<span>Kegiatan Penutup : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-penutup">
-																	<div class="list-kosong" id="list-kosong-penutup">Tidak ada Penutup</div>
+																	<?php 
+																		$query = "SELECT * FROM penutup WHERE id_kegiatan = '$idKegiatan'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-inti" id="inputINTI'.$i.'"><span class="input-group-text" id="addon-wrapping-inti'.$i.'">'.$i.'</span><textarea class="form-control" name="inti'.$i.'" id="inputInti'.$i.'" rows="2" disabled>'.$r['kegiatan'].'</textarea><button class="btn btn-danger" id="button-addon2-inti'.$i.'"  type="button" data-inti="'.$i.'" onclick="hapusINTI(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-penutup">Tidak ada Penutup</div>';
+																		}
+																	?>
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -522,7 +696,22 @@
 															<span>Asesmen non Kognitif : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-non">
-																	<div class="list-kosong" id="list-kosong-ases-non">Tidak ada Asesmen Non Kognitif</div>
+																	<?php 
+																		$query = "SELECT * FROM ases_non_kog WHERE id_identitas = '$id_identitas'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-ases-non" id="inputASESNON'.$i.'"><span class="input-group-text" id="addon-wrapping-ases-non'.$i.'">'.$i.'</span><textarea class="form-control" name="ases-non'.$i.'" id="inputAsesNon'.$i.'" rows="2" disabled>'.$r['ases'].'</textarea><button class="btn btn-danger" id="button-addon2-ases-non'.$i.'"  type="button" data-asesnon="'.$i.'" onclick="hapusAsesNon(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-ases-non">Tidak ada Asesmen Non Kognitif</div>';
+																		}
+																	?>
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -548,7 +737,23 @@
 															<span>Asesmen Kognitif : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-kog">
-																	<div class="list-kosong" id="list-kosong-ases-kog">Tidak ada Asesmen Kognitif</div>
+																	<?php 
+																		$query = "SELECT * FROM ases_kog WHERE id_identitas = '$id_identitas'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-ases-kog" id="inputASESKOG'.$i.'"><span class="input-group-text" id="addon-wrapping-ases-kog'.$i.'">'.$i.'</span><textarea class="form-control" name="ases-kog'.$i.'" id="inputAsesKog'.$i.'" rows="2" disabled>'.$r['ases'].'</textarea><button class="btn btn-danger" id="button-addon2-ases-kog'.$i.'"  type="button" data-aseskog="'.$i.'" onclick="hapusAsesKog(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-ases-kog">Tidak ada Asesmen Kognitif</div>';
+																		}
+																	?>
+																	
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -575,7 +780,22 @@
 															<span>Asesmen Formatif : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-for">
-																	<div class="list-kosong" id="list-kosong-ases-for">Tidak ada Asesmen Formatif</div>
+																	<?php 
+																		$query = "SELECT * FROM ases_for WHERE id_identitas = '$id_identitas'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-ases-for" id="inputASESFOR'.$i.'"><span class="input-group-text" id="addon-wrapping-ases-for'.$i.'">'.$i.'</span><textarea class="form-control" name="ases-for'.$i.'" id="inputAsesFor'.$i.'" rows="2" disabled>'.$r['ases'].'</textarea><button class="btn btn-danger" id="button-addon2-ases-for'.$i.'"  type="button" data-asesfor="'.$i.'" onclick="hapusAsesFor(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-ases-for">Tidak ada Asesmen Formatif</div>';
+																		}
+																	?>
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -601,7 +821,23 @@
 															<span>Asesmen Suamtif : </span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-sum">
-																	<div class="list-kosong" id="list-kosong-ases-sum">Tidak ada Asesmen Sumatif</div>
+																	<?php 
+																		$query = "SELECT * FROM ases_sum WHERE id_identitas = '$id_identitas'";
+																		$result = mysqli_query($con, $query);
+																		$jmlRows = mysqli_num_rows($result);
+																		if($jmlRows > 0){
+																			$i=1;
+																			while($r = mysqli_fetch_assoc($result)){
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-ases-sum" id="inputASESSUM'.$i.'"><span class="input-group-text" id="addon-wrapping-ases-sum'.$i.'">'.$i.'</span><textarea class="form-control" name="ases-sum'.$i.'" id="inputAsesSum'.$i.'" rows="2" disabled>'.$r['ases'].'</textarea><button class="btn btn-danger" id="button-addon2-ases-sum'.$i.'"  type="button" data-asessum="'.$i.'" onclick="hapusAsesSum(this);">Hapus</button></div>';
+																				$i++;
+																			}
+																			
+																		}
+																		else{
+																			echo '<div class="list-kosong" id="list-kosong-ases-sum">Tidak ada Asesmen Sumatif</div>';
+																		}
+																	?>
+																	
 																</div>
 															</div>
 															<div class="input-group mb-3 mt-3">
@@ -633,7 +869,22 @@
 							    					<span>Pengayaan dan Remedial : </span>
 													<div class="list-input mt-3">
 														<div id="inputs-penmed">
-															<div class="list-kosong" id="list-kosong-penmed">Tidak ada Pengayaan dan Remedial</div>
+															<?php 
+																$query = "SELECT * FROM pengayaan_remedial WHERE id_identitas = '$id_identitas'";
+																$result = mysqli_query($con, $query);
+																$jmlRows = mysqli_num_rows($result);
+																if($jmlRows > 0){
+																	$i=1;
+																	while($r = mysqli_fetch_assoc($result)){
+																		echo '<div class="input-group flex-nowrap mb-3 mt-3 input-penmed" id="inputPENMED'.$i.'"><span class="input-group-text" id="addon-wrapping-penmed'.$i.'">'.$i.'</span><textarea class="form-control" name="ases-penmed'.$i.'" id="inputPenmed'.$i.'" rows="2" disabled>'.$r['pengayaan_remedial'].'</textarea><button class="btn btn-danger" id="button-addon2-penmed'.$i.'"  type="button" data-penmed="'.$i.'" onclick="hapusPenmed(this);">Hapus</button></div>';
+																		$i++;
+																	}
+																	
+																}
+																else{
+																	echo '<div class="list-kosong" id="list-kosong-penmed">Tidak ada Pengayaan dan Remedial</div>';
+																}
+															?>
 														</div>
 													</div>
 													<div class="input-group mb-3 mt-3">
@@ -656,7 +907,23 @@
 									    			<span>Refleksi Peserta Didik dan Guru : </span>
 													<div class="list-input mt-3">
 														<div id="inputs-refleksi">
-															<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>
+															<?php 
+																$query = "SELECT * FROM refleksi WHERE id_identitas = '$id_identitas'";
+																$result = mysqli_query($con, $query);
+																$jmlRows = mysqli_num_rows($result);
+																if($jmlRows > 0){
+																	$i=1;
+																	while($r = mysqli_fetch_assoc($result)){
+																		echo '<div class="input-group flex-nowrap mb-3 mt-3 input-refleksi" id="inputREFLEKSI'.$i.'"><span class="input-group-text" id="addon-wrapping-refleksi'.$i.'">'.$i.'</span><textarea class="form-control" name="ases-refleksi'.$i.'" id="inputRefleksi'.$i.'" rows="2" disabled>'.$r['refleksi'].'</textarea><button class="btn btn-danger" id="button-addon2-refleksi'.$i.'"  type="button" data-refleksi="'.$i.'" onclick="hapusRefleksi(this);">Hapus</button></div>';
+																		$i++;
+																	}
+																	
+																}
+																else{
+																	echo '<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>';
+																}
+															?>
+															
 														</div>
 													</div>
 													<div class="input-group mb-3 mt-3">
@@ -691,11 +958,22 @@
 									    		<h5>B. BAHAN BACAAN GURU DAN PESERTA DIDIK</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<div id="inputs-bahan">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN1">
-															<span class="input-group-text" id="addon-wrapping-bahan1">1</span>
-															<textarea class="form-control" name="bahan1" id="inputBahan1" rows="2" placeholder="Bahan Bacaan 1"></textarea>
-															<button class="btn btn-danger" id="button-addon2-bahan1"  type="button" data-bahan="1"  onclick="hapusBAHAN(this);">Hapus</button>
-														</div>
+									    				<?php 
+															$query = "SELECT * FROM bahan_bacaan WHERE id_identitas = '$id_identitas'";
+															$result = mysqli_query($con, $query);
+															$jmlRows = mysqli_num_rows($result);
+															if($jmlRows > 0){
+																$i=1;
+																while($r = mysqli_fetch_assoc($result)){
+																	echo '<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN'.$i.'"><span class="input-group-text" id="addon-wrapping-bahan'.$i.'">'.$i.'</span><textarea class="form-control" name="bahan'.$i.'" id="inputBahan'.$i.'" rows="2" placeholder="Bahan Bacaan '.$i.'">'.$r['bahan_bacaan'].'</textarea><button class="btn btn-danger" id="button-addon2-bahan'.$i.'"  type="button" data-bahan="'.$i.'" onclick="hapusBAHAN(this);">Hapus</button></div>';
+																	$i++;
+																}
+																
+															}
+															else{
+																echo '<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>';
+															}
+														?>
 													</div>
 													<button type="button" class="btn btn-success" id="addBAHAN"> + Bahan Bacaan</button>
 									    		</div>
@@ -703,24 +981,44 @@
 									    		<h5>C. GLOSARIUM</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<div id="inputs-glos">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS1">
-															<span class="input-group-text" id="addon-wrapping-glos1">1</span>
-															<textarea class="form-control" name="glos1" id="inputGlos1" rows="2" placeholder="Glosarium 1"></textarea>
-															<button class="btn btn-danger" id="button-addon2-glos1"  type="button" data-glos="1"  onclick="hapusGLOS(this);">Hapus</button>
-														</div>
+									    				<?php 
+															$query = "SELECT * FROM glosarium WHERE id_identitas = '$id_identitas'";
+															$result = mysqli_query($con, $query);
+															$jmlRows = mysqli_num_rows($result);
+															if($jmlRows > 0){
+																$i=1;
+																while($r = mysqli_fetch_assoc($result)){
+																	echo '<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS'.$i.'"><span class="input-group-text" id="addon-wrapping-glos'.$i.'">'.$i.'</span><textarea class="form-control" name="glos'.$i.'" id="inputGlos'.$i.'" rows="2" placeholder="Glosarium '.$i.'">'.$r['glosarium'].'</textarea><button class="btn btn-danger" id="button-addon2-glos'.$i.'"  type="button" data-glos="'.$i.'" onclick="hapusGLOS(this);">Hapus</button></div>';
+																	$i++;
+																}
+																
+															}
+															else{
+																echo '<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>';
+															}
+														?>
 													</div>
 													<button type="button" class="btn btn-success" id="addGLOS"> + Glosarium</button>
 									    		</div>
 									    		<br/>
 									    		<h5>D. DAFTAR PUSTAKA</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<div id="inputs-dafpus">
-														<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS1">
-															<span class="input-group-text" id="addon-wrapping-dafpus1">1</span>
-															<textarea class="form-control" name="dafpus1" id="inputDafpus1" rows="2" placeholder="Daftar Pustaka 1"></textarea>
-															<button class="btn btn-danger" id="button-addon2-dafpus1"  type="button" data-dafpus="1"  onclick="hapusDAFPUS(this);">Hapus</button>
-														</div>
-													</div>
+									    			<?php 
+														$query = "SELECT * FROM daftar_pustaka WHERE id_identitas = '$id_identitas'";
+														$result = mysqli_query($con, $query);
+														$jmlRows = mysqli_num_rows($result);
+														if($jmlRows > 0){
+															$i=1;
+															while($r = mysqli_fetch_assoc($result)){
+																echo '<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS'.$i.'"><span class="input-group-text" id="addon-wrapping-dafpus'.$i.'">'.$i.'</span><textarea class="form-control" name="dafpus'.$i.'" id="inputDafpus'.$i.'" rows="2" placeholder="Daftar Pustaka '.$i.'">'.$r['daftar_pustaka'].'</textarea><button class="btn btn-danger" id="button-addon2-dafpus'.$i.'"  type="button" data-dafpus="'.$i.'" onclick="hapusDAFPUS(this);">Hapus</button></div>';
+																$i++;
+															}
+															
+														}
+														else{
+															echo '<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>';
+														}
+													?>
 													<button type="button" class="btn btn-success" id="addDAFPUS"> + Daftar Pustaka</button>
 									    		</div>
 											  	</button>
@@ -755,8 +1053,8 @@
 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
-	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
+	<script type="text/javascript" src="../js/edit-modul-ajar/edit-modul-ajar.js"></script>
+	<script type="text/javascript" src="../js/edit-modul-ajar/form.js"></script>
 
 	
 </html>

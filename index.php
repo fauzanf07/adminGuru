@@ -25,7 +25,7 @@
 		    <div class="collapse navbar-collapse" id="navbarText"  >
 		      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
 		        <li class="nav-text" >
-		          <a class="nav-link active" aria-current="page" href="#">Online Courses</a>
+		          <a class="nav-link active" aria-current="page" href="blog">Blog</a>
 		        </li>
 		        <li class="nav-text">
 		          <a class="nav-link" href="login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a>

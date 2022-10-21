@@ -4,6 +4,7 @@ function isEmpty(str) {
 var idMateri = 0;
 function addMateri(){
 	var materi = $('#materi-input').val();
+	console.log('halo');
 
 	if(!isEmpty(materi)){
 		if(idMateri==0){

@@ -1,6 +1,7 @@
 <?php 
 	include("../backend/conn.php");
-	$id_identitas =  $_GET['id'];;
+	$id_identitas =  $_GET['id'];
+	$ext = $_GET['ext'];
 	$sql = "SELECT * FROM file_modul WHERE id_identitas = '$id_identitas'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
@@ -8,7 +9,7 @@
 
 	$dir="../modul-ajar/";
 	
-	$file_path=$dir.$filename;
+	$file_path=$dir.$filename.".".$ext;
 	$ctype="application/octet-stream";
 	if(!empty($file_path) && file_exists($file_path)){ /*check keberadaan file*/
 	   header("Pragma:public");

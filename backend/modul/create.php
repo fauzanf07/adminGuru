@@ -14,6 +14,7 @@ $link = "http://localhost";
 
 $r = mysqli_fetch_assoc($result);
 $id_user = $r['id_user'];
+$kepalaSekolah = $r['kepala_sekolah'];
 $date_created = $r['created_at'];
 $programKeahlian = $r['program_keahlian'];
 $satuanPend = $_SESSION['sekolah'];
@@ -384,7 +385,7 @@ $r = mysqli_fetch_assoc($result);
 $link = "http://localhost/adminGuru/";
 $dirLkpd = "lkpd/".$r['lkpd'];
 $link .= $dirLkpd;
-$section->addLink($link,"LKPD ".$mapel,array('bold' => false),$pName);
+$section->addLink($link,"LKPD ".$mapel,array('bold' => false, 'color' => '#0061ff'),$pName);
 
 $section->addText(' ',null,null);
 $section->addTitle('BAHAN BACAAN GURU DAN PESERTA DIDIK', 2);
@@ -420,14 +421,14 @@ $section->addText("Kepala Sekolah\t\t\t\t\t\t\t\tGuru Mata Pelajaran",array('bol
 $section->addText(' ',null,null);
 $section->addText(' ',null,null);
 $section->addText(' ',null,null);
-$section->addText("Subaryo, S.Pd., M.Pd.\t\t\t\t\t\t  Willy Surya Wardhana",array('bold' => false),$pName);
+$section->addText($kepalaSekolah."\t\t\t\t\t\t  ".$nama,array('bold' => false),$pName);
 
 
 $createdAt = date('dmYHis', strtotime($date_created));
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-$filename = $createdAt.'_Modul Ajar_'.$programKeahlian.'.docx';
-$saveFile = $objWriter->save('../../modul-ajar/'.$filename);
+$filename = $createdAt.'_Modul Ajar_'.$programKeahlian;
+$saveFile = $objWriter->save('../../modul-ajar/'.$filename.'.docx');
 $sql = "INSERT INTO file_modul VALUES('','$id','$filename')";
 $result = mysqli_query($con, $sql);
 if($saveFile && $result){
