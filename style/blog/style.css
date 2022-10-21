@@ -15,6 +15,8 @@ body{
 	left: 0;
 	right: 0;
 	font-family: 'Montserrat', sans-serif;
+	display: flex;
+    flex-direction: column;
 }
 
 .logo-parent{
@@ -72,7 +74,6 @@ nav{
 .nav-parent .navbar{
 	background-color: #24576E !important;
 }
-
 .row-1{
 	margin-left: 80px;
 	margin-right: 50px;
@@ -100,4 +101,39 @@ nav{
 .table-of-contents{
 	display: block;
 	margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+	.col{
+		font-size: smaller;
+	}
+
+	.col-lg-2{
+		float: right;
+		font-size: medium;
+	}
+
+	.table-of-contents{
+		text-align: center;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.date{
+		display: flex;
+		justify-content: center;
+	}
+
+	.blog-title{
+		display: flex;
+		justify-content: center;
+	}
+
+	.col{
+		font-size: medium;
+	}
+
+	.col-lg-2{
+		font-size: smaller;
+	}
 }

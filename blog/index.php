@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/blog/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -51,7 +52,9 @@
     <div class="row-2">
         <div class="container">
             <div class="row g-5">
-                <div class="col">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis enim, nibh elit urna sem ante mus vitae ut. Id sem iaculis ac tempus mattis eget arcu urna. Ut eget dictum nulla blandit tellus morbi risus. Bibendum duis amet pellentesque sit. Ipsum, ut rhoncus sit lorem egestas sed libero, turpis ante. Pellentesque ut risus pellentesque in. Ipsum, aliquam in egestas nisi. Aliquet quam lectus risus lorem egestas euismod. Pulvinar sem pulvinar nisi diam tortor vulputate diam orci. Platea tempor maecenas sed arcu.</div>
+                <div class="col col-lg-9 col-content">
+					<p class="content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis enim, nibh elit urna sem ante mus vitae ut. Id sem iaculis ac tempus mattis eget arcu urna. Ut eget dictum nulla blandit tellus morbi risus. Bibendum duis amet pellentesque sit. Ipsum, ut rhoncus sit lorem egestas sed libero, turpis ante. Pellentesque ut risus pellentesque in. Ipsum, aliquam in egestas nisi. Aliquet quam lectus risus lorem egestas euismod. Pulvinar sem pulvinar nisi diam tortor vulputate diam orci. Platea tempor maecenas sed arcu.</p>
+				</div>
 				<div class="col-md-auto">
       				<div class="vertical-line"></div>
     			</div>
