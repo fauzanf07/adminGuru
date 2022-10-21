@@ -80,31 +80,21 @@ nav{
 }
 
 .row-1{
-    margin-top: 20px;
-    margin-left: 30px;
-    margin-right: 30px;
-}
-
-.signup-title{
-	margin-top: 100px;
-	margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    margin-top: 100px;
 }
 
 .form-group{
-	margin-bottom: 30px;
+    margin-bottom: 30px;
 }
 
-.submit-btn{
-	margin-top: 10px;
-	margin-bottom: 100px;
-	float: right;
+.signup-title{
+    margin-bottom: 50px;
 }
 
-.background-footer{
-	height: 50px;
-	background-color: #F3F3F3;
-}
-
-.copyright{
-	text-align: center;
+.btn{
+    float: right;
 }
