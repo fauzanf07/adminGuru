@@ -18,13 +18,14 @@
 <html>
 <head>
 	<title>Pembuatan Modul Ajar</title>
-	<link rel="stylesheet" type="text/css" href="../style/edit-modul-ajar/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Slab&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
@@ -35,39 +36,34 @@
 </head>
 <body>
 	<div class="wrapper">
-		<nav class="navbar navbar-expand-lg sticky-top navbar-dark">
-			<div class="container-fluid">
-			    <div>
-			    	<div class="logo-icon"></div>
-			    	<div class="logo-text">
-			    		<h4 class="logo-name">THE NINETEEN</h4>
-			    		<a href="#" class="desc"><h4 class="logo-name desc">Providing solutions for Indonesian education</h4></div></a>
-			    	</div>
-			    </div>
-			    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-			      <span class="navbar-toggler-icon"></span>
-			    </button>
-			    <div class="collapse navbar-collapse" id="navbarText"  >
-			      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			        <li class="nav-text" >
-			        	<a class="nav-link active" aria-current="page" href="#">Online Courses</a>
-			        </li>
-			        <li class="nav-text">
-			        	<a class="nav-link" id="logout"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
-			        </li>
-			        <li class="nav-icon">
-			        	<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
-			        </li>
-			        <li class="nav-icon">
-			        	<a class="nav-link" href="#"><i class="bi bi-twitter"></i></a>
-			        </li>
-			        <li class="nav-icon">
-			        	<a class="nav-link" href="#"><i class="bi bi-youtube"></i></a>
-			        </li>
-			      </ul>
-			    </div>
-			</div>
-		</nav>
+		<div class="nav-parent">
+			<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
+				<div class="pink-on-top"></div>
+				<div class="container-fluid">
+					<div class="logo-parent">
+						<div class="logo">
+							<img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo">
+						</div>
+					</div>
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav">
+							<li class="nav-item">
+								<a class="nav-link active" aria-current="page" href="#">Home</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">Online Course</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#">About Us</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</div>
 		<div class="container">
 			<div class="row row-profile">
 				<div class="col-lg-3">

@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/forgot-password/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -62,9 +63,18 @@
                     <input type="password" class="form-control" id="inputPasswordBaru" placeholder="Password Baru">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success submit-btn">Submit</button>
+				<div class="submit-btn">
+					<button type="submit" class="btn btn-success">Submit</button>
+				</div>
             </form>
         </div>
     </div>
+
+	<footer>
+		<div class="copyright">
+			<p>© 2022 by The Nineteen</p>
+		</div>
+		<div class="background-footer"></div>
+	</footer>
 
 </body>
