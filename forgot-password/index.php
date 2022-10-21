@@ -14,10 +14,8 @@
 			<div class="pink-on-top"></div>
 			<div class="container-fluid">
 				<div class="logo-parent">
-					<div class="logo-icon"></div>
-					<div class="logo-text">
-						<h4 class="logo-name">THE NINETEEN</h4>
-						<a href="#" class="desc"><h4 class="logo-name desc">Providing solutions for Indonesian education</h4></div></a>
+					<div class="logo">
+						<img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo">
 					</div>
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

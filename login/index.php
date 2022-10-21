@@ -9,15 +9,13 @@
 </head>
 
 <body>
-    <div class="nav-parent">
+	<div class="nav-parent">
 		<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
 			<div class="pink-on-top"></div>
 			<div class="container-fluid">
 				<div class="logo-parent">
-					<div class="logo-icon"></div>
-					<div class="logo-text">
-						<h4 class="logo-name">THE NINETEEN</h4>
-						<a href="#" class="desc"><h4 class="logo-name desc">Providing solutions for Indonesian education</h4></div></a>
+					<div class="logo">
+						<img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo">
 					</div>
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +24,7 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Login</a>
+							<a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">Online Course</a>
@@ -44,8 +42,8 @@
 		<div class="row-1">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4"></div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-blank"></div>
+					<div class="col-lg-4 col-content">
 						<div class="border">
 							<form>
 								<div class="form-group">
@@ -72,19 +70,19 @@
 						</div>
 
 					</div>
-					<div class="col-lg-4">
+					<div class="col-lg-4 col-blank">
 					</div>
 				</div>
 			</div>
 		</div>
     </div>
 
-	<div class="footer">
+	<footer id="footer">
 		<div class="copyright">
 			<p>© 2022 by The Nineteen</p>
 		</div>
 		<div class="background-footer"></div>
-	</div>
+	</footer>
     
 </body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
