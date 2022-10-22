@@ -84,9 +84,14 @@
 						</div>
 					</div>
 				</div>
+				<footer>
+					<div class="copyright">
+						<p>© 2022 by The Nineteen</p>
+					</div>
+					<div class="background-footer"></div>
+				</footer>
 			</div>
 		</div>
-		<footer id="footer">© 2022 by The Nineteen</footer>
 	</div>
     
 </body>
