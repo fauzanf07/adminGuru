@@ -51,6 +51,12 @@ nav{
 .nav-parent .navbar{
 	background-color: #24576E !important;
 }
+.nav-text{
+	margin-right: 20px;
+}
+.nav-icon{
+	margin-right: 5px;
+}
 
 .profile-pic{
 	width: 170px;
