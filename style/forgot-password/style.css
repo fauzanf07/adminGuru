@@ -80,6 +80,14 @@ nav{
 	background-color: #24576E !important;
 }
 
+.nav-text{
+	margin-right: 20px;
+}
+
+.nav-icon{
+	margin-right: 5px;
+}
+
 .row-1{
     display: flex;
     justify-content: center;

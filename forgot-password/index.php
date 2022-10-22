@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="nav-parent">
+	<div class="nav-parent">
 		<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
 			<div class="pink-on-top"></div>
 			<div class="container-fluid">
@@ -23,16 +23,22 @@
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav">
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="#">Home</a>
+				<div class="collapse navbar-collapse" id="navbarNav"  >
+					<ul class="navbar-nav mb-2 mb-lg-0">
+						<li class="nav-text" >
+							<a class="nav-link" aria-current="page" href="blog">Blog</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">Online Course</a>
+						<li class="nav-text">
+							<a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
 						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#">About Us</a>
+						<li class="nav-icon">
+							<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
+						</li>
+						<li class="nav-icon">
+							<a class="nav-link" href="#"><i class="bi bi-twitter"></i></a>
+						</li>
+						<li class="nav-icon">
+							<a class="nav-link" href="#"><i class="bi bi-youtube"></i></a>
 						</li>
 					</ul>
 				</div>
