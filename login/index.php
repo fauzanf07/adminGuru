@@ -28,7 +28,7 @@
 							<a class="nav-link active" aria-current="page" href="#">Home</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Online Course</a>
+							<a class="nav-link" href="#">Blog</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="#">About Us</a>
@@ -53,7 +53,7 @@
 									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 								</div>
 								<div class="form-group">
-									<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="#"><span class="forgot-password">Forgot password?</span></a></label>
+									<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="../forgot-password"><span class="forgot-password">Forgot password?</span></a></label>
 									<input type="password" class="form-control" id="password" placeholder="Password">
 								</div>
 								<div class="login-button">
@@ -66,7 +66,7 @@
 
 						<div class="border">
 							<div class="signup-direction">
-								<p>New to adminGuru? <span><a href="#">Create an account</a></span></p>
+								<p>New to adminGuru? <span><a href="../signup">Create an account</a></span></p>
 							</div>
 						</div>
 
