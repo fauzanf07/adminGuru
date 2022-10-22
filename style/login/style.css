@@ -107,6 +107,10 @@ form{
 	height: 2.5rem;
 	text-align: center;
 }
+.background-footer{
+	height: 50px;
+	background-color: #F3F3F3;
+}
 .copyright{
 	text-align: center;
 }
@@ -114,6 +118,7 @@ form{
 footer {
 	margin-top: auto;
 }
+
 
 @media screen and (max-width: 425px) {
 	.form-group{
