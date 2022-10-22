@@ -46,11 +46,9 @@ nav{
 	position: relative;
 	z-index: 1;
 	top: 0px;
+	background: url(../../images/background-paper.jpg) no-repeat center center fixed;
 }
 
-.nav-parent .navbar{
-	background-color: #24576E !important;
-}
 .nav-text{
 	margin-right: 20px;
 }

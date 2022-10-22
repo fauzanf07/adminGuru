@@ -46,10 +46,7 @@ nav{
 	position: relative;
 	z-index: 1;
 	top: 0px;
-}
-
-.nav-parent .navbar{
-	background-color: #24576E !important;
+	background: url(../../images/background-paper.jpg) no-repeat center center fixed;
 }
 
 .nav-text{

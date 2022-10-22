@@ -37,7 +37,7 @@
 <body>
 	<div class="wrapper">
 		<div class="nav-parent">
-			<nav class="navbar navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
+			<nav class="navbar navbar-expand-lg sticky-top navbar-light">
 				<div class="pink-on-top"></div>
 				<div class="container-fluid">
 					<div class="logo-parent">
