@@ -86,7 +86,11 @@
 				</div>
 			</div>
 		</div>
-		<footer id="footer">© 2022 by The Nineteen</footer>
+		<footer class="footer mt-auto py-3 bg-dark">
+			<div class="container">
+				<span class="text-light">@2022 by The Nineteen</span>
+			</div>
+		</footer>
 	</div>
     
 </body>
