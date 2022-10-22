@@ -50,8 +50,11 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarNav"  >
 						<ul class="navbar-nav mb-2 mb-lg-0">
+							<li class="nav-text" >
+					          <a class="nav-link" aria-current="page" href="../">Home</a>
+					        </li>
 					        <li class="nav-text" >
-					          <a class="nav-link" aria-current="page" href="blog">Blog</a>
+					          <a class="nav-link" aria-current="page" href="../blog">Blog</a>
 					        </li>
 					        <li class="nav-text">
 					          <a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
@@ -86,7 +89,7 @@
 				</div>
 				<div class="col-lg-9 nav-info-user">
 					<nav>
-					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+					  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="background-color: #fff;">
 					    <button class="nav-link active" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="bi bi-chat-square-text-fill"></i>&nbsp;&nbsp;Create Modul Ajar</button>
 					  </div>
 					</nav>
