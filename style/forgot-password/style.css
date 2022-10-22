@@ -33,6 +33,34 @@ body{
 	z-index: 3;
 }
 
+.logo-text{
+	font-family: 'montserrat', 'sans-serif';
+	font-size: 24px;
+	font-weight: 700;
+	width: 320px;
+	height: auto;
+	display: inline-block;
+    vertical-align: top; 
+	z-index: 3;
+	color: #fff;
+}
+
+.logo-toast{
+	height: 30px;
+	width: auto;
+}
+
+.desc{
+	color: #fff;
+	font-size: 16px;
+	z-index: 3;
+}
+
+.nav-item{
+	margin-right: 20px;
+	z-index: 3;
+}
+
 .collapse{
 	display: inline-block;
 	justify-content: end;

@@ -57,10 +57,10 @@
 						<div class="row form-group">
 							<label for="inputNama">Nama</label>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama depan">
+							<input type="text" class="form-control" placeholder="Nama depan" id="firstName">
 							</div>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama belakang dan gelar">
+							<input type="text" class="form-control" placeholder="Nama belakang dan gelar" id="lastNamaeTitle">
 							</div>
 						</div>
 						<div class="form-group">
@@ -122,5 +122,8 @@
 	</footer>
 
 </body>
-
+<script type="text/javascript" src="../js/forgot-password/forgot.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
 </html>
