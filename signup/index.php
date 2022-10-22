@@ -57,10 +57,10 @@
 						<div class="row form-group">
 							<label for="inputNama">Nama</label>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama depan">
+							<input type="text" class="form-control" placeholder="Nama depan" id="firstName">
 							</div>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama belakang dan gelar">
+							<input type="text" class="form-control" placeholder="Nama belakang dan gelar" id="lastNamaeTitle">
 							</div>
 						</div>
 						<div class="form-group">

@@ -45,51 +45,49 @@
 		</nav>
 	</div>
 
-    <div class="content">
-		<div class="row-1">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-blank"></div>
-					<div class="col-lg-4 col-content">
-						<div class="border">
-							<form>
-								<div class="form-group">
-									<label for="exampleInputEmail1">Email address/Username</label>
-									<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email or username">
-									<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+	<div id="page-container">
+		<div id="content-wrap">
+			<div class="content">
+				<div class="row-1">
+					<div class="container">
+						<div class="row">
+							<div class="col-lg-4 col-blank"></div>
+							<div class="col-lg-4 col-content">
+								<div class="border">
+									<form>
+										<div class="form-group">
+											<label for="exampleInputEmail1">Email address/Username</label>
+											<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email or username">
+											<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+										</div>
+										<div class="form-group">
+											<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="#"><span class="forgot-password">Forgot password?</span></a></label>
+											<input type="password" class="form-control" id="password" placeholder="Password">
+										</div>
+										<div class="login-button">
+											<div class="d-grid gap-2">
+												<button class="btn btn-primary btn btn-success" type="button" id="login">Log in</button>
+											</div>
+										</div>
+									</form>
 								</div>
-								<div class="form-group">
-									<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="../forgot-password"><span class="forgot-password">Forgot password?</span></a></label>
-									<input type="password" class="form-control" id="password" placeholder="Password">
-								</div>
-								<div class="login-button">
-									<div class="d-grid gap-2">
-										<button class="btn btn-primary btn btn-success" type="button" id="login">Log in</button>
+
+								<div class="border">
+									<div class="signup-direction">
+										<p>New to adminGuru? <span><a href="#">Create an account</a></span></p>
 									</div>
 								</div>
-							</form>
-						</div>
 
-						<div class="border">
-							<div class="signup-direction">
-								<p>New to adminGuru? <span><a href="../signup">Create an account</a></span></p>
+							</div>
+							<div class="col-lg-4 col-blank">
 							</div>
 						</div>
-
-					</div>
-					<div class="col-lg-4 col-blank">
 					</div>
 				</div>
 			</div>
 		</div>
-    </div>
-
-	<footer>
-		<div class="copyright">
-			<p>© 2022 by The Nineteen</p>
-		</div>
-		<div class="background-footer"></div>
-	</footer>
+		<footer id="footer">© 2022 by The Nineteen</footer>
+	</div>
     
 </body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
