@@ -1,4 +1,11 @@
+<?php 	
+	session_start();
+	if(!isset($_SESSION['nama'])){
+		header("Location: http://localhost/adminGuru/create-modul-ajar");
+	}
+?>
 <!DOCTYPE html>
+
 <html>
 
 <head>
