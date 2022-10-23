@@ -476,6 +476,11 @@ function downloadPdf(id){
 	});
 }
 
+function subscribe(id){
+	var id_identitas = $(id).data('id');
+	$('#subscribe').attr('data-id',id_identitas);
+}
+
 
 function hapusModul(id){
 	var id_identitas = $(id).data('id');

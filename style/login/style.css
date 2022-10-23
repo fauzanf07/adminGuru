@@ -33,6 +33,11 @@ body{
 	z-index: 3;
 }
 
+.logo-toast{
+	height: 30px;
+	width: auto;
+}
+
 .collapse{
 	display: inline-block;
 	justify-content: end;
@@ -95,9 +100,21 @@ form{
 	font-weight: 700;
 }
 
+footer{
+	text-align: center;
+}
+.background-footer{
+	height: 50px;
+	background-color: #F3F3F3;
+}
+.copyright{
+	text-align: center;
+}
+
 footer {
 	margin-top: auto;
 }
+
 
 @media screen and (max-width: 425px) {
 	.form-group{

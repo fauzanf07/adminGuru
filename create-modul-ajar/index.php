@@ -50,8 +50,11 @@
 					</button>
 					<div class="collapse navbar-collapse" id="navbarNav"  >
 						<ul class="navbar-nav mb-2 mb-lg-0">
+							<li class="nav-text" >
+					          <a class="nav-link" aria-current="page" href="../">Home</a>
+					        </li>
 					        <li class="nav-text" >
-					          <a class="nav-link" aria-current="page" href="blog">Blog</a>
+					          <a class="nav-link" aria-current="page" href="../blog">Blog</a>
 					        </li>
 					        <li class="nav-text">
 					          <a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
@@ -86,7 +89,7 @@
 				</div>
 				<div class="col-lg-9 nav-info-user">
 					<nav>
-					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+					  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="background-color: #fff;">
 					    <button class="nav-link active" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="bi bi-chat-square-text-fill"></i>&nbsp;&nbsp;Create Modul Ajar</button>
 					  </div>
 					</nav>
@@ -123,7 +126,7 @@
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' onclick='downloadDocs(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
-										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' onclick='downloadPdf(this);'>Download PDF</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
 										        		</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
@@ -734,6 +737,24 @@
 		</div>
 	</div>
 
+	<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+		    <div class="modal-content">
+		    	<div class="modal-header">
+		    		<img class="logo-icon-modal" src="../images/logo-removebg-preview.png" alt="logo">
+		        	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      	</div>
+		    	<div class="modal-body" style="text-align: center; color: #686868; padding: 10px 50px;">
+		    		<h4>Subscribe untuk melanjutkan</h4>
+		    		<p>Fitur ini dapat digunakan untuk yang berlangganan, yuk mulai berlangganan</p>
+		    		<button type="button" class="btn btn-outline-secondary btn-nanti" data-bs-dismiss="modal">Nanti Saja</button>
+		       		<button type="button" class="btn btn-success btn-subscribe" id="subscribe" onclick="downloadPdf(this);">Subscribe</button>
+		    	</div>
+		    	<div class="modal-footer" style="padding:20px 0; ">
+		      	</div>
+		    </div>
+		</div>
+	</div>
 	
 	
 </body>

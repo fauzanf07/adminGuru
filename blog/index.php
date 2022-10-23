@@ -1,3 +1,7 @@
+<?php 	
+	session_start();
+		
+ ?>
 <!DOCTYPE html>
 <html>
 
@@ -27,10 +31,17 @@
 				<div class="collapse navbar-collapse" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-text" >
-							<a class="nav-link" aria-current="page" href="blog">Blog</a>
+							<a class="nav-link" aria-current="page" href="../">Home</a>
 						</li>
 						<li class="nav-text">
 							<a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
+						</li>
+						<li class="nav-text">
+							<?php 	
+								if(isset($_SESSION['nama'])){
+									echo '<a class="nav-link" href="../create-modul-ajar">Create Modul</a>';
+								}
+							 ?>
 						</li>
 						<li class="nav-icon">
 							<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>

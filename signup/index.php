@@ -6,6 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="../style/signup/style.css">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -25,10 +26,13 @@
 				<div class="collapse navbar-collapse" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-text" >
-							<a class="nav-link" aria-current="page" href="blog">Blog</a>
+							<a class="nav-link" aria-current="page" href="../">Home</a>
+						</li>
+						<li class="nav-text" >
+							<a class="nav-link" aria-current="page" href="../blog">Blog</a>
 						</li>
 						<li class="nav-text">
-							<a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
+							<a class="nav-link active" href="../login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a>
 						</li>
 						<li class="nav-icon">
 							<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
@@ -60,7 +64,7 @@
 							<input type="text" class="form-control" placeholder="Nama depan" id="firstName">
 							</div>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama belakang dan gelar" id="lastNamaeTitle">
+							<input type="text" class="form-control" placeholder="Nama belakang dan gelar" id="lastNameTitle">
 							</div>
 						</div>
 						<div class="form-group">
@@ -84,7 +88,7 @@
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputMapel">Mata Pelajaran</label>
-								<input type="text" class="form-control" id="inputMapel" placeholder="Mapel">
+								<input type="text" class="form-control" id="inputMapel" placeholder="Mapel yang diajarkan">
 							</div>
 						</div>
 						<div class="form-group">
@@ -100,11 +104,11 @@
 							<input type="password" class="form-control" id="inputPassword" placeholder="Password">
 						</div>
 						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="exampleCheck1">
-							<label class="form-check-label" for="exampleCheck1">Semua data sudah benar</label>
+							<input type="checkbox" class="form-check-input" id="verif">
+							<label class="form-check-label" for="exampleCheck1" >Semua data sudah benar</label>
 						</div>
 						<div class="class-btn">
-							<button type="submit" class="btn btn-success submit-btn">Submit</button>
+							<button type="button" class="btn btn-success submit-btn" id="submit">Submit</button>
 						</div>
 					</form>
 				</div>
@@ -121,8 +125,21 @@
 		<div class="background-footer"></div>
 	</footer>
 
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	    <div class="toast-header">
+	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
+	      <strong class="me-auto">Admin Guru</strong>
+	      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	    </div>
+	    <div class="toast-body" id="toastBody">
+	      
+	    </div>
+	  </div>
+	</div>
+
 </body>
-<script type="text/javascript" src="../js/forgot-password/forgot.js"></script>
+<script type="text/javascript" src="../js/sign-up/sign-up.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>

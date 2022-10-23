@@ -10,9 +10,9 @@
 
 	if (mysqli_num_rows($result) > 0) {
 	  while($row = mysqli_fetch_array($result)) {
-	  	$pass = base64_decode($row["password"]);
+	  	$pass = $row["password"];
 	  	session_start();
-	  	if($txtPassword == $pass){
+	  	if(password_verify($txtPassword, $pass)){
 		  	echo json_encode(array("statusCode"=>201));
 		  	$_SESSION['nip'] = $row["nip"];
 		  	$_SESSION['nama'] = $row["nama"];

@@ -1,4 +1,11 @@
+<?php 	
+	session_start();
+	if(isset($_SESSION['nama'])){
+		header("Location: http://localhost/adminGuru/create-modul-ajar");
+	}
+?>
 <!DOCTYPE html>
+
 <html>
 
 <head>
@@ -25,10 +32,10 @@
 				<div class="collapse navbar-collapse" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0">
 						<li class="nav-text" >
-							<a class="nav-link" aria-current="page" href="blog">Blog</a>
+							<a class="nav-link" aria-current="page" href="../">Home</a>
 						</li>
 						<li class="nav-text">
-							<a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
+							<a class="nav-link active" href="../Blog">Blog</a>
 						</li>
 						<li class="nav-icon">
 							<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
@@ -61,7 +68,7 @@
 											<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 										</div>
 										<div class="form-group">
-											<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="#"><span class="forgot-password">Forgot password?</span></a></label>
+											<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="../forgot-password"><span class="forgot-password">Forgot password?</span></a></label>
 											<input type="password" class="form-control" id="password" placeholder="Password">
 										</div>
 										<div class="login-button">
@@ -74,7 +81,7 @@
 
 								<div class="border">
 									<div class="signup-direction">
-										<p>New to adminGuru? <span><a href="#">Create an account</a></span></p>
+										<p>New to adminGuru? <span><a href="../signup">Create an account</a></span></p>
 									</div>
 								</div>
 
@@ -88,13 +95,25 @@
 		</div>
 	</div>
 
-	<!-- Footer -->
-	<footer class="page-footer font-small blue">
-		<!-- Copyright -->
-		<div class="footer-copyright text-center py-3">©2022 by The Nineteen</div>
-		<!-- Copyright -->
+	<footer>
+		<div class="copyright">
+			<p>© 2022 by The Nineteen</p>
+		</div>
+		<div class="background-footer"></div>
 	</footer>
-	<!-- Footer -->
+
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	    <div class="toast-header">
+	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
+	      <strong class="me-auto">Admin Guru</strong>
+	      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	    </div>
+	    <div class="toast-body">
+	      Ada input yang belum diisi. Silahkan isi terlebih dahulu!
+	    </div>
+	  </div>
+	</div>
     
 </body>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
