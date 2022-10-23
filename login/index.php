@@ -58,8 +58,8 @@
 				<div class="row-1">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-4 col-blank"></div>
-							<div class="col-lg-4 col-content">
+							<div class="col-lg-3 col-blank"></div>
+							<div class="col-lg-6 col-content">
 								<div class="border">
 									<form>
 										<div class="form-group">
@@ -86,7 +86,7 @@
 								</div>
 
 							</div>
-							<div class="col-lg-4 col-blank">
+							<div class="col-lg-3 col-blank">
 							</div>
 						</div>
 					</div>
