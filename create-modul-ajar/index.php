@@ -126,7 +126,7 @@
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' onclick='downloadDocs(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
-										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' onclick='downloadPdf(this);'>Download PDF</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
 										        		</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
@@ -737,6 +737,24 @@
 		</div>
 	</div>
 
+	<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+		    <div class="modal-content">
+		    	<div class="modal-header">
+		    		<img class="logo-icon-modal" src="../images/logo-removebg-preview.png" alt="logo">
+		        	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+		      	</div>
+		    	<div class="modal-body" style="text-align: center; color: #686868; padding: 10px 50px;">
+		    		<h4>Subscribe untuk melanjutkan</h4>
+		    		<p>Fitur ini dapat digunakan untuk yang berlangganan, yuk mulai berlangganan</p>
+		    		<button type="button" class="btn btn-outline-secondary btn-nanti" data-bs-dismiss="modal">Nanti Saja</button>
+		       		<button type="button" class="btn btn-success btn-subscribe" id="subscribe" onclick="downloadPdf(this);">Subscribe</button>
+		    	</div>
+		    	<div class="modal-footer" style="padding:20px 0; ">
+		      	</div>
+		    </div>
+		</div>
+	</div>
 	
 	
 </body>

@@ -28,6 +28,12 @@ body{
 	z-index: 3;
 }
 
+.logo-icon-modal{
+	height: 35px;
+	width: auto;
+	display: inline-block;
+}
+
 .nav-item{
 	margin-right: 20px;
 	z-index: 3;
@@ -76,6 +82,22 @@ nav{
 	text-align: center;
 	display: block;
 	font-size: 20px;
+}
+.modal-content{
+	background-color: #EFEFEF !important;
+}
+
+.btn-nanti{
+	width: 100%;
+	background-color: #fff !important;
+}
+.btn-nanti:hover{
+	color: #000 !important;
+}
+
+.btn-subscribe{
+	width: 100%; 
+	margin-top: 15px;
 }
 
 .info{
