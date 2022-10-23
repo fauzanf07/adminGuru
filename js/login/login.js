@@ -30,6 +30,9 @@ $("#login").click(function(){
 			});
 		}
 		else{
-				alert('Please fill all the field !');
+				const toastLiveExample = document.getElementById('liveToast');
+				const toast = new bootstrap.Toast(toastLiveExample);
+
+		    	toast.show();
 		}
 });

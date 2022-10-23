@@ -3,7 +3,7 @@
 
 	$email = $_POST['email'];
 	$username = $_POST['username'];
-	$newPass = base64_encode($_POST['newPass']);
+	$newPass = password_hash($_POST['newPass'], PASSWORD_DEFAULT);
 
 	$query = "SELECT * FROM table_user WHERE username='$username' AND email='$email'";
 	$result = mysqli_query($con,$query);

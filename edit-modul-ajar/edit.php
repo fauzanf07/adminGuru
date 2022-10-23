@@ -35,12 +35,6 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-      integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -97,7 +91,7 @@
 				</div>
 				<div class="col-lg-9 nav-info-user">
 					<nav>
-					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+					  <div class="nav nav-tabs" id="nav-tab" role="tablist" style="background-color: #fff;">
 					    <button class="nav-link active" id="nav-feed-tab" data-bs-toggle="tab" data-bs-target="#nav-feed" type="button" role="tab" aria-controls="nav-feed" aria-selected="true"><i class="bi bi-chat-square-text-fill"></i>&nbsp;&nbsp;Edit Modul Ajar</button>
 					  </div>
 					</nav>

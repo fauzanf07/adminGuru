@@ -33,6 +33,11 @@ body{
 	z-index: 3;
 }
 
+.logo-toast{
+	height: 30px;
+	width: auto;
+}
+
 .collapse{
 	display: inline-block;
 	justify-content: end;
