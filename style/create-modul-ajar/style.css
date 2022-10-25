@@ -218,6 +218,6 @@ nav{
 
 @media screen and (max-width: 320px) {
 	.dataTables_wrapper{
-		margin-top: 30px;
+		margin-top: 60px;
 	}
 }
