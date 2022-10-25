@@ -214,6 +214,10 @@ nav{
 		font-size: medium;
 	}
 
+	.dataTables_wrapper{
+		margin-top: 60px;
+	}
+
 }
 
 @media screen and (max-width: 320px) {
