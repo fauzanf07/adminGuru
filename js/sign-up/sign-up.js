@@ -2,8 +2,7 @@ function isEmpty(str) {
     return (!str || str.length === 0 );
 }
 $('#submit').click(function(){
-	var fName = $('#firstName').val();
-	var lName = $('#lastNameTitle').val();
+	var namaLengkap = $('#namaLengkap').val();
 	var nip = $('#inputNIP').val();
 	var sekolah = $('#inputSekolah').val();
 	var jabatan = $('#inputJabatan').find(":selected").text();
@@ -11,15 +10,14 @@ $('#submit').click(function(){
 	var email = $('#inputEmail').val();
 	var username = $('#inputUsername').val();
 	var pass = $('#inputUsername').val();
-	console.log(fName+' '+lName+' '+nip+' '+sekolah+' '+jabatan+' '+mapel+' '+email+' '+username+' '+pass);
-	if(!isEmpty(fName) && !isEmpty(lName) && !isEmpty(nip) && !isEmpty(sekolah) && !isEmpty(jabatan) 
+	console.log(namaLengkap+' '+nip+' '+sekolah+' '+jabatan+' '+mapel+' '+email+' '+username+' '+pass);
+	if(!isEmpty(namaLengkap) && !isEmpty(nip) && !isEmpty(sekolah) && !isEmpty(jabatan) 
 		&& !isEmpty(mapel) && !isEmpty(email) && !isEmpty(username) && !isEmpty(pass) &&  $('#verif').is(":checked")){
 		$.ajax({
 	        url: '../backend/sign-up/sign-up.php',
 	        type: 'POST',
 	        data: {
-				fName: fName,
-				lName: lName,
+	        	namaLengkap: namaLengkap,
 				nip: nip,
 				sekolah: sekolah,
 				jabatan: jabatan,

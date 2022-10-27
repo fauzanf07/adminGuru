@@ -404,7 +404,7 @@
 															$r = mysqli_fetch_assoc($result);
 													    ?>
 													    <option value="Discovery Learning" <?php if($r['model_pembelajaran'] == "Discovery Learning") echo "selected"; ?>>Discovery Learning</option>
-													    <option value="Inquiry Learning Terbimbing" <?php if($r['model_pembelajaran'] == "Learning Terbimbing") echo "selected"; ?>>Inquiry Learning Terbimbing</option>
+													    <option value="Inquiry Learning Terbimbing" <?php if($r['model_pembelajaran'] == "Inquiry Learning Terbimbing") echo "selected"; ?>>Inquiry Learning Terbimbing</option>
 													    <option value="Problem Based Learning" <?php if($r['model_pembelajaran'] == "Problem Based Learning") echo "selected"; ?>>Problem Based Learning</option>
 													    <option value="Project Based Learning (PjBL)" <?php if($r['model_pembelajaran'] == "Project Based Learning (PjBL)") echo "selected"; ?>>Project Based Learning (PjBL)</option>
 													    <option value="Production based Training (PBT)" <?php if($r['model_pembelajaran'] == "Production based Training (PBT)") echo "selected"; ?>>Production based Training (PBT).</option>
@@ -650,7 +650,7 @@
 																		if($jmlRows > 0){
 																			$i=1;
 																			while($r = mysqli_fetch_assoc($result)){
-																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-inti" id="inputINTI'.$i.'"><span class="input-group-text" id="addon-wrapping-inti'.$i.'">'.$i.'</span><textarea class="form-control" name="inti'.$i.'" id="inputInti'.$i.'" rows="2" disabled>'.$r['kegiatan'].'</textarea><button class="btn btn-danger" id="button-addon2-inti'.$i.'"  type="button" data-inti="'.$i.'" onclick="hapusINTI(this);">Hapus</button></div>';
+																				echo '<div class="input-group flex-nowrap mb-3 mt-3 input-penutup" id="inputPENUTUP'.$i.'"><span class="input-group-text" id="addon-wrapping-penutup'.$i.'">'.$i.'</span><textarea class="form-control" name="penutup'.$i.'" id="inputPenutup'.$i.'" rows="2" disabled>'.$r['kegiatan'].'</textarea><button class="btn btn-danger" id="button-addon2-penutup'.$i.'"  type="button" data-penutup="'.$i.'" onclick="hapusPENUTUP(this);">Hapus</button></div>';
 																				$i++;
 																			}
 																			

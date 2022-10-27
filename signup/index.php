@@ -59,12 +59,9 @@
 					</div>
 					<form>
 						<div class="row form-group">
-							<label for="inputNama">Nama</label>
+							<label for="inputNama">Nama Lengkap dan Gelar</label>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama depan" id="firstName">
-							</div>
-							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama belakang dan gelar" id="lastNameTitle">
+							<input type="text" class="form-control" placeholder="Nama Lengkap dan Gelar" id="namaLengkap">
 							</div>
 						</div>
 						<div class="form-group">

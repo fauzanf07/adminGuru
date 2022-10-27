@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2022 at 05:59 PM
+-- Generation Time: Oct 26, 2022 at 10:12 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -42,7 +42,10 @@ INSERT INTO `ases_for` (`id`, `id_identitas`, `ases`) VALUES
 (63, 74, 'Apa yang sedang kamu rasakan saat ini?'),
 (64, 74, 'Bagaimana perasaanmu saat belajar sendiri di rumah?'),
 (65, 74, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?'),
-(66, 74, 'Apa yang kamu inginkan dalam pembelajaran hari ini?');
+(66, 74, 'Apa yang kamu inginkan dalam pembelajaran hari ini?'),
+(68, 76, 'Apa yang sedang kamu rasakan saat ini?'),
+(69, 76, 'Apa yang kamu inginkan dalam pembelajaran hari ini?'),
+(70, 77, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?');
 
 -- --------------------------------------------------------
 
@@ -61,7 +64,9 @@ CREATE TABLE `ases_kog` (
 --
 
 INSERT INTO `ases_kog` (`id`, `id_identitas`, `ases`) VALUES
-(49, 74, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
+(49, 74, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
+(51, 76, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
+(52, 77, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
 
 -- --------------------------------------------------------
 
@@ -82,7 +87,12 @@ CREATE TABLE `ases_non_kog` (
 INSERT INTO `ases_non_kog` (`id`, `id_identitas`, `ases`) VALUES
 (69, 74, 'Kuis'),
 (70, 74, 'Unjuk kerja'),
-(71, 74, 'Penilaian akhiran');
+(71, 74, 'Penilaian akhiran'),
+(73, 76, 'Kuis'),
+(74, 76, 'Unjuk kerja'),
+(75, 77, 'Unjuk kerja'),
+(76, 77, 'Kuis'),
+(77, 77, 'Penilaian akhiran');
 
 -- --------------------------------------------------------
 
@@ -101,7 +111,9 @@ CREATE TABLE `ases_sum` (
 --
 
 INSERT INTO `ases_sum` (`id`, `id_identitas`, `ases`) VALUES
-(43, 74, 'Penilaian Akhir Semester');
+(43, 74, 'Penilaian Akhir Semester'),
+(45, 76, 'Penilaian Akhir Semester'),
+(46, 77, 'Penilaian Akhir Semester');
 
 -- --------------------------------------------------------
 
@@ -120,7 +132,9 @@ CREATE TABLE `bahan_bacaan` (
 --
 
 INSERT INTO `bahan_bacaan` (`id`, `id_identitas`, `bahan_bacaan`) VALUES
-(104, 74, 'kkdnckdnkcnd');
+(104, 74, 'kkdnckdnkcnd'),
+(106, 76, 'nmnvmvnmvmn'),
+(107, 77, 'sjdksjdksjdk');
 
 -- --------------------------------------------------------
 
@@ -166,7 +180,9 @@ CREATE TABLE `daftar_pustaka` (
 --
 
 INSERT INTO `daftar_pustaka` (`id`, `id_identitas`, `daftar_pustaka`) VALUES
-(103, 74, 'kdmekdmekmdke');
+(103, 74, 'kdmekdmekmdke'),
+(105, 76, 'shfhdh'),
+(106, 77, 'kdckkdmckdmkcmdkmc');
 
 -- --------------------------------------------------------
 
@@ -212,7 +228,9 @@ CREATE TABLE `file_modul` (
 --
 
 INSERT INTO `file_modul` (`id`, `id_identitas`, `nama_file`) VALUES
-(41, 74, '22102022000210_Modul Ajar_Desain Komunikasi Visual ');
+(41, 74, '22102022000210_Modul Ajar_Desain Komunikasi Visual '),
+(43, 76, '26102022134120_Modul Ajar_Desain Komunikasi Visual '),
+(44, 77, '26102022135410_Modul Ajar_Desain Komunikasi Visual ');
 
 -- --------------------------------------------------------
 
@@ -231,7 +249,9 @@ CREATE TABLE `glosarium` (
 --
 
 INSERT INTO `glosarium` (`id`, `id_identitas`, `glosarium`) VALUES
-(108, 74, 'mkdmkemkdmekd');
+(108, 74, 'mkdmkemkdmekd'),
+(110, 76, 'hmhmjg,j'),
+(111, 77, 'kdjkfjdjfdkjfk');
 
 -- --------------------------------------------------------
 
@@ -261,7 +281,9 @@ CREATE TABLE `identitas_sekolah` (
 --
 
 INSERT INTO `identitas_sekolah` (`id`, `id_user`, `kepala_sekolah`, `tahun_ajaran`, `program_keahlian`, `mata_pelajaran`, `kelas`, `semester`, `fase`, `elemen`, `capaian_pembelajaran`, `alokasi_waktu`, `created_at`, `updated_at`) VALUES
-(74, 1, 'Subaryo, S.Pd., M.Pd', '2022/2023', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 1, 'E', 'Perkembangan teknologi di industri dan dunia kerja serta isu -isu global pada bidang Desain Komunikasi Visual', 'Pada akhir fase E peserta didik mampu memahami tentang perkembangan proses produksi industri Desain Komunikasi Visual mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, digital teknologi dalam dunia industri, isu pemanasan global, perubahan iklim, aspek - aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling.', '1 x 45 menit', '2022-10-22 00:02:10', '2022-10-22 00:02:10');
+(74, 1, 'Subaryo, S.Pd., M.Pd', '2022/2023', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 1, 'E', 'Perkembangan teknologi di industri dan dunia kerja serta isu -isu global pada bidang Desain Komunikasi Visual', 'Pada akhir fase E peserta didik mampu memahami tentang perkembangan proses produksi industri Desain Komunikasi Visual mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, digital teknologi dalam dunia industri, isu pemanasan global, perubahan iklim, aspek - aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling.', '1 x 45 menit', '2022-10-22 00:02:10', '2022-10-22 00:02:10'),
+(76, 1, 'Subaryo, S.Pd., M.Pd', '2022/2023', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 2, 'E', 'Sketsa dan ilustrasi', 'Pada akhir fase E melalui kreativitas dan berpikir kritis, peserta didik mampu menjelaskan konsep dasar karya dengan sketsa dan ilustrasi, menyiapkan bahan peralatan sketsa, mewujudkan sketsa, menyempurnakan sketsa, dan membuat ilustrasi dalam perancangan dan proses produksi untuk dikembangkan dalam eksekusi kerja Desain Komunikasi Visual.', '5 x 45 menit', '2022-10-26 13:41:20', '2022-10-26 13:41:20'),
+(77, 1, 'Suparno, S.Pd., M.Pd.', '2020/2021', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 2, 'E', 'Perkembangan teknologi di industri dan dunia kerja serta isu -isu global pada bidang Desain Komunikasi Visual', 'Pada akhir fase E peserta didik mampu memahami tentang perkembangan proses produksi industri Desain Komunikasi Visual mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, digital teknologi dalam dunia industri, isu pemanasan global, perubahan iklim, aspek - aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling.', '5 x 45', '2022-10-26 13:54:10', '2022-10-26 13:54:10');
 
 -- --------------------------------------------------------
 
@@ -283,7 +305,10 @@ INSERT INTO `inti` (`id`, `id_kegiatan`, `kegiatan`) VALUES
 (89, 74, 'Peserta didik dan guru berdiskusi melalui pertanyaan pemantik'),
 (90, 74, 'Guru menayangkan beberapa studi kasus'),
 (91, 74, 'Berdasarkan tayangan, siswa bertanya'),
-(92, 74, 'Guru memberikan jawaban');
+(92, 74, 'Guru memberikan jawaban'),
+(94, 76, 'Guru menayangkan beberapa studi kasus'),
+(95, 76, 'Peserta didik dan guru berdiskusi melalui pertanyaan pemantik'),
+(96, 77, 'Guru memberikan jawaban');
 
 -- --------------------------------------------------------
 
@@ -302,7 +327,9 @@ CREATE TABLE `kegiatan_pembelajaran` (
 --
 
 INSERT INTO `kegiatan_pembelajaran` (`id`, `id_identitas`, `pertemuan`) VALUES
-(74, 74, 1);
+(74, 74, 1),
+(76, 76, 1),
+(77, 77, 1);
 
 -- --------------------------------------------------------
 
@@ -321,7 +348,9 @@ CREATE TABLE `kompetensi_awal` (
 --
 
 INSERT INTO `kompetensi_awal` (`id`, `id_identitas`, `kompetensi`) VALUES
-(86, 74, 'Mengetahui apa itu desain komunikasi visual');
+(86, 74, 'Mengetahui apa itu desain komunikasi visual'),
+(88, 76, ''),
+(89, 77, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -458,10 +487,16 @@ CREATE TABLE `list_pendahuluan` (
 --
 
 INSERT INTO `list_pendahuluan` (`id`, `kegiatan`) VALUES
-(5, 'Peserta didik disapa dan melakukan pemeriksaan kehadiran bersama dengan guru.'),
-(6, 'Peserta didik disapa dan melakukan pemeriksaan kehadiran bersama dengan guru'),
-(7, 'Peserta didik bersama dengan guru membahas tentang kesepakatan yang akan diterapkan dalam pembelajaran'),
-(8, 'Peserta didik dan guru berdiskusi melalui pertanyaan pemantik');
+(9, 'Guru memberi salam dan mengajak berdo\'a sebelum pembelajaran dimulai'),
+(10, 'Guru mengecek kehadiran peserta didik'),
+(11, 'Guru memberi apersepsi tentang materi yang akan dipelajari\r\n'),
+(12, 'Guru memberi motivasi kepada peserta didik dan menanyakan kondisi kesehatannya'),
+(13, 'Guru menyampaikan tujuan yang akan dicapai pada pembelajaran hari ini'),
+(14, 'Guru menyampaikan garis besar cakupan materi yang dipelajari'),
+(15, 'Guru menyampaikan metode pembelajaran dan teknik penilaian yang  akan digunakan '),
+(16, 'Guru membuat kesepakatan belajar bersama peserta didik'),
+(17, 'Guru melakukan review materi sebelumnya dengan memberi pertanyaan - pertanyaan'),
+(18, 'Guru bersama peserta didik membentuk kelompok belajar');
 
 -- --------------------------------------------------------
 
@@ -606,7 +641,9 @@ CREATE TABLE `lkpd` (
 --
 
 INSERT INTO `lkpd` (`id`, `id_identitas`, `lkpd`) VALUES
-(22, 74, 'Transformasi ERD ke Skema Tabel.pptx');
+(22, 74, 'Transformasi ERD ke Skema Tabel.pptx'),
+(24, 76, '261707819_304282834940048_5789406664642199275_n.jpg'),
+(25, 77, '1619203522615-3102021whyamilikethiscvlogov4.jpeg');
 
 -- --------------------------------------------------------
 
@@ -646,7 +683,9 @@ CREATE TABLE `materi` (
 INSERT INTO `materi` (`id`, `id_identitas`, `materi`) VALUES
 (81, 74, 'Memahami pekerjaan atau profesi'),
 (82, 74, 'Membaca peluang pasar dan usaha'),
-(83, 74, 'Membangun visi dan passion');
+(83, 74, 'Membangun visi dan passion'),
+(84, 77, 'Memahami pekerjaan atau profesi'),
+(85, 77, 'Membaca peluang pasar dan usaha');
 
 -- --------------------------------------------------------
 
@@ -668,7 +707,10 @@ INSERT INTO `media` (`id`, `id_identitas`, `media`) VALUES
 (97, 74, 'Lembar kerja peserta didik'),
 (98, 74, 'Laptop'),
 (99, 74, 'Handphone'),
-(100, 74, 'LCD');
+(100, 74, 'LCD'),
+(103, 76, 'Lembar kerja peserta didik'),
+(104, 76, 'Laptop'),
+(105, 77, 'Lembar kerja peserta didik');
 
 -- --------------------------------------------------------
 
@@ -687,7 +729,9 @@ CREATE TABLE `model_pembelajaran` (
 --
 
 INSERT INTO `model_pembelajaran` (`id`, `id_identitas`, `model_pembelajaran`) VALUES
-(74, 74, 'Inquiry Learning Terbimbing');
+(74, 74, 'Inquiry Learning Terbimbing'),
+(76, 76, 'Project Based Learning (PjBL)'),
+(77, 77, 'Kontekstual');
 
 -- --------------------------------------------------------
 
@@ -707,7 +751,9 @@ CREATE TABLE `pemahaman_bermakna` (
 
 INSERT INTO `pemahaman_bermakna` (`id`, `id_identitas`, `pemahaman_bermakna`) VALUES
 (115, 74, 'Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(116, 74, 'Dapat membaca peluang usaha');
+(116, 74, 'Dapat membaca peluang usaha'),
+(118, 76, ''),
+(119, 77, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -728,7 +774,8 @@ CREATE TABLE `pendahuluan` (
 INSERT INTO `pendahuluan` (`id`, `id_kegiatan`, `kegiatan`) VALUES
 (65, 74, 'Peserta didik disapa dan melakukan pemeriksaan kehadiran bersama dengan guru.'),
 (66, 74, 'Peserta didik bersama dengan guru membahas tentang kesepakatan yang akan diterapkan dalam pembelajaran'),
-(67, 74, 'Peserta didik dan guru berdiskusi melalui pertanyaan pemantik');
+(67, 74, 'Peserta didik dan guru berdiskusi melalui pertanyaan pemantik'),
+(68, 77, 'Guru memberi salam dan mengajak berdoï¿½a sebelum pembelajaran  dimulai');
 
 -- --------------------------------------------------------
 
@@ -748,7 +795,10 @@ CREATE TABLE `pengayaan_remedial` (
 
 INSERT INTO `pengayaan_remedial` (`id`, `id_identitas`, `pengayaan_remedial`) VALUES
 (52, 74, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
-(53, 74, 'Remedial diberikan kepada peserta didik yang belum menguasai materi dengan baik, yaitu dengan cara memberikan pengulangan materi dasar serta materi spesifik yang kurang dikuasai oleh peserta didik.');
+(53, 74, 'Remedial diberikan kepada peserta didik yang belum menguasai materi dengan baik, yaitu dengan cara memberikan pengulangan materi dasar serta materi spesifik yang kurang dikuasai oleh peserta didik.'),
+(55, 76, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
+(56, 77, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
+(57, 77, 'Remedial diberikan kepada peserta didik yang belum menguasai materi dengan baik, yaitu dengan cara memberikan pengulangan materi dasar serta materi spesifik yang kurang dikuasai oleh peserta didik.');
 
 -- --------------------------------------------------------
 
@@ -769,7 +819,10 @@ CREATE TABLE `penutup` (
 INSERT INTO `penutup` (`id`, `id_kegiatan`, `kegiatan`) VALUES
 (58, 74, 'Peserta didik menanyakan hal yang tidak dipahami kepada guru'),
 (59, 74, 'Siswa mengkomunikasikan kendala yang dihadapi selama melakukan kegiatan pegerjaan tugas'),
-(60, 74, 'Siswa menerima apresiasi dan motivasi dari Guru');
+(60, 74, 'Siswa menerima apresiasi dan motivasi dari Guru'),
+(62, 76, 'Siswa menerima apresiasi dan motivasi dari Guru'),
+(63, 76, 'Peserta didik menanyakan hal yang tidak dipahami kepada guru'),
+(64, 77, 'Siswa mengkomunikasikan kendala yang dihadapi selama melakukan kegiatan pegerjaan tugas');
 
 -- --------------------------------------------------------
 
@@ -790,7 +843,11 @@ CREATE TABLE `persiapan_pembelajaran` (
 INSERT INTO `persiapan_pembelajaran` (`id`, `id_identitas`, `persiapan_pembelajaran`) VALUES
 (90, 74, 'Guru melakukan tes diagnostic'),
 (91, 74, 'Guru menyusun LKPD'),
-(92, 74, 'Guru menyusun instrument assesmen yang digunakan');
+(92, 74, 'Guru menyusun instrument assesmen yang digunakan'),
+(95, 76, 'Guru menyusun instrument assesmen yang digunakan'),
+(96, 76, 'Guru melakukan tes diagnostic'),
+(97, 77, 'Guru melakukan tes diagnostic'),
+(98, 77, 'Guru menyusun instrument assesmen yang digunakan');
 
 -- --------------------------------------------------------
 
@@ -809,7 +866,9 @@ CREATE TABLE `pertanyaan_pemantik` (
 --
 
 INSERT INTO `pertanyaan_pemantik` (`id`, `id_identitas`, `pertanyaan_pemantik`) VALUES
-(99, 74, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
+(99, 74, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
+(102, 76, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
+(103, 77, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
 
 -- --------------------------------------------------------
 
@@ -830,7 +889,9 @@ CREATE TABLE `profil_pancasila` (
 INSERT INTO `profil_pancasila` (`id`, `id_identitas`, `profil_pancasila`) VALUES
 (76, 74, 'Mandiri'),
 (77, 74, 'Berfikir Kritis'),
-(78, 74, 'Kreatif');
+(78, 74, 'Kreatif'),
+(79, 77, 'Mandiri'),
+(80, 77, 'Kreatif');
 
 -- --------------------------------------------------------
 
@@ -868,7 +929,10 @@ CREATE TABLE `refleksi` (
 
 INSERT INTO `refleksi` (`id`, `id_identitas`, `refleksi`) VALUES
 (57, 74, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
-(58, 74, 'Apakah aktivitas pembelajaran hari ini bermakna dalam kehidupan saya?');
+(58, 74, 'Apakah aktivitas pembelajaran hari ini bermakna dalam kehidupan saya?'),
+(60, 76, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
+(61, 77, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
+(62, 77, 'Apakah aktivitas pembelajaran hari ini bermakna dalam kehidupan saya?');
 
 -- --------------------------------------------------------
 
@@ -891,7 +955,10 @@ INSERT INTO `sumber` (`id`, `id_identitas`, `sumber`) VALUES
 (90, 74, 'Laman E-Learning'),
 (91, 74, 'E-book'),
 (92, 74, 'Buku bacaan'),
-(93, 74, 'Youtube');
+(93, 74, 'Youtube'),
+(95, 76, 'E-book'),
+(96, 76, 'Laman E-Learning'),
+(97, 77, 'Buku bacaan');
 
 -- --------------------------------------------------------
 
@@ -916,7 +983,8 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `nip`, `nama`, `username`, `email`, `jabatan`, `sekolah`, `mapel`, `password`) VALUES
-(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Animasi', '$2y$10$v/Rk9f1nXT7NjSVjLEJtSuVxT5sskf.4K0tSrJjbt6XE3IHuOuHVC');
+(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Animasi', '$2y$10$oSiY6g/mn0FsbBFUwoNwlOCVCo8eYL1P046Pd8Rl5DwifSmuhBaQ6'),
+(2, '192891291829829', 'Fauzan Fiqriansyah, S.Pd.', 'ffiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'SMKN 13 BANDUNG', '$2y$10$oSiY6g/mn0FsbBFUwoNwlOCVCo8eYL1P046Pd8Rl5DwifSmuhBaQ6');
 
 -- --------------------------------------------------------
 
@@ -935,7 +1003,9 @@ CREATE TABLE `target_peserta_didik` (
 --
 
 INSERT INTO `target_peserta_didik` (`id`, `id_identitas`, `target_peserta`) VALUES
-(74, 74, ' Peserta didik regular Siswa Desain Komunikasi visual');
+(74, 74, ' Peserta didik regular Siswa Desain Komunikasi visual'),
+(76, 76, ' Peserta didik regular Siswa Desain Komunikasi visual'),
+(77, 77, ' Peserta didik regular Siswa Desain Komunikasi visual');
 
 -- --------------------------------------------------------
 
@@ -955,7 +1025,9 @@ CREATE TABLE `tujuan_pembelajaran` (
 
 INSERT INTO `tujuan_pembelajaran` (`id`, `id_identitas`, `tujuan_pembelajaran`) VALUES
 (40, 74, 'Memahami tentang perkembangan proses produksi industri Desain Komunikasi Visual mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, digital teknologi dalam dunia industri, isu pemanasan global, perubahan iklim, aspek -aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling'),
-(41, 74, 'Melakukan pemotretan ');
+(41, 74, 'Melakukan pemotretan '),
+(42, 77, 'Memahami tentang perkembangan proses produksi industri Desain Komunikasi Visual mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, digital teknologi dalam dunia industri, isu pemanasan global, perubahan iklim, aspek -aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling'),
+(43, 77, 'Melakukan pemotretan ');
 
 --
 -- Indexes for dumped tables
@@ -1265,31 +1337,31 @@ ALTER TABLE `tujuan_pembelajaran`
 -- AUTO_INCREMENT for table `ases_for`
 --
 ALTER TABLE `ases_for`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 
 --
 -- AUTO_INCREMENT for table `ases_kog`
 --
 ALTER TABLE `ases_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `ases_non_kog`
 --
 ALTER TABLE `ases_non_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `ases_sum`
 --
 ALTER TABLE `ases_sum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=47;
 
 --
 -- AUTO_INCREMENT for table `bahan_bacaan`
 --
 ALTER TABLE `bahan_bacaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT for table `capaian_pembelajaran`
@@ -1301,7 +1373,7 @@ ALTER TABLE `capaian_pembelajaran`
 -- AUTO_INCREMENT for table `daftar_pustaka`
 --
 ALTER TABLE `daftar_pustaka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 
 --
 -- AUTO_INCREMENT for table `elemen`
@@ -1313,37 +1385,37 @@ ALTER TABLE `elemen`
 -- AUTO_INCREMENT for table `file_modul`
 --
 ALTER TABLE `file_modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `glosarium`
 --
 ALTER TABLE `glosarium`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
 
 --
 -- AUTO_INCREMENT for table `identitas_sekolah`
 --
 ALTER TABLE `identitas_sekolah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `inti`
 --
 ALTER TABLE `inti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT for table `kegiatan_pembelajaran`
 --
 ALTER TABLE `kegiatan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `kompetensi_awal`
 --
 ALTER TABLE `kompetensi_awal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=87;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `list_ases_for`
@@ -1385,7 +1457,7 @@ ALTER TABLE `list_materi`
 -- AUTO_INCREMENT for table `list_pendahuluan`
 --
 ALTER TABLE `list_pendahuluan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `list_pengayaan_remedial`
@@ -1421,7 +1493,7 @@ ALTER TABLE `list_tp`
 -- AUTO_INCREMENT for table `lkpd`
 --
 ALTER TABLE `lkpd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
@@ -1433,61 +1505,61 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `model_pembelajaran`
 --
 ALTER TABLE `model_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `pemahaman_bermakna`
 --
 ALTER TABLE `pemahaman_bermakna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=117;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- AUTO_INCREMENT for table `pendahuluan`
 --
 ALTER TABLE `pendahuluan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `pengayaan_remedial`
 --
 ALTER TABLE `pengayaan_remedial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `penutup`
 --
 ALTER TABLE `penutup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT for table `persiapan_pembelajaran`
 --
 ALTER TABLE `persiapan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `pertanyaan_pemantik`
 --
 ALTER TABLE `pertanyaan_pemantik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `profil_pancasila`
 --
 ALTER TABLE `profil_pancasila`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
 
 --
 -- AUTO_INCREMENT for table `program_keahlian`
@@ -1499,31 +1571,31 @@ ALTER TABLE `program_keahlian`
 -- AUTO_INCREMENT for table `refleksi`
 --
 ALTER TABLE `refleksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 
 --
 -- AUTO_INCREMENT for table `sumber`
 --
 ALTER TABLE `sumber`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `target_peserta_didik`
 --
 ALTER TABLE `target_peserta_didik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=75;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=78;
 
 --
 -- AUTO_INCREMENT for table `tujuan_pembelajaran`
 --
 ALTER TABLE `tujuan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- Constraints for dumped tables

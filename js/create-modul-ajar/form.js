@@ -60,6 +60,7 @@ function hapusKA(id){
 			$('#inputKa'+i).attr('name', 'ka'+(i-1));
 			$('#button-addon2-ka'+i).attr('data-ka',(i-1));
 			$('#inputKA'+i).attr('id','inputKA'+(i-1));
+			$('#inputKa'+i).attr('placeholder','Kompetensi Awal '+(i-1));
 			$('#addon-wrapping-ka'+i).attr('id','addon-wrapping-ka'+(i-1));
 			$('#inputKa'+i).attr('id','inputKa'+(i-1));
 			$('#button-addon2-ka'+i).attr('id','button-addon2-ka'+(i-1));

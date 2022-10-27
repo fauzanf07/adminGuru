@@ -1,7 +1,7 @@
 function isEmpty(str) {
     return (!str || str.length === 0 );
 }
-var idMateri = 0;
+var idMateri = $('.input-materi').length;
 function addMateri(){
 	var materi = $('#materi-input').val();
 
@@ -38,7 +38,7 @@ function hapusMATERI(id){
 }
 
 
-var ka = 1;
+var ka = $('.input-ka').length;
 $('#addKA').click(function(){
 	ka = ka+1;
 	$('#inputs-ka').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA'+ka+
@@ -59,6 +59,7 @@ function hapusKA(id){
 			$('#inputKa'+i).attr('name', 'ka'+(i-1));
 			$('#button-addon2-ka'+i).attr('data-ka',(i-1));
 			$('#inputKA'+i).attr('id','inputKA'+(i-1));
+			$('#inputKa'+i).attr('placeholder','Kompetensi Awal '+(i-1));
 			$('#addon-wrapping-ka'+i).attr('id','addon-wrapping-ka'+(i-1));
 			$('#inputKa'+i).attr('id','inputKa'+(i-1));
 			$('#button-addon2-ka'+i).attr('id','button-addon2-ka'+(i-1));
@@ -67,7 +68,7 @@ function hapusKA(id){
 	}	
 }
 
-var pp = 0;
+var pp = $('.input-pp').length;
 function addPP(){
 	var isiPP = $('#pp-input').val();
 
@@ -105,7 +106,7 @@ function hapusPP(id){
 	}	
 }
 
-var idMedia = 0;
+var idMedia = $('.input-media').length;
 function addMedia(){
 	var media = $('#media-input').val();
 
@@ -141,7 +142,7 @@ function hapusMEDIA(id){
 	}	
 }
 
-var idSumber = 0;
+var idSumber = $('.input-sumber').length;
 function addSumber(){
 	var sumber = $('#sumber-input').val();
 	if(!isEmpty(sumber)){	
@@ -176,7 +177,7 @@ function hapusSUMBER(id){
 	}	
 }
 
-var idTp = 0;
+var idTp =  $('.input-tp').length;
 function addTP(){
 	var tp = $('#tp-input').val();
 	if(!isEmpty(tp)){	
@@ -212,7 +213,7 @@ function hapusTP(id){
 	}	
 }
 
-var pb = 1;
+var pb = $('.input-pb').length;
 $('#addPB').click(function(){
 	pb = pb+1;
 	$('#inputs-pb').append('<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB'+pb+
@@ -242,7 +243,7 @@ function hapusPB(id){
 	}	
 }
 
-var perpem = 1;
+var perpem = $('.input-perpem').length;
 $('#addPERPEM').click(function(){
 	perpem = perpem+1;
 	$('#inputs-perpem').append('<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM'+perpem+
@@ -272,7 +273,7 @@ function hapusPERPEM(id){
 	}	
 }
 
-var idPerpemb = 0;
+var idPerpemb = $('.input-perpemb').length;
 function addPerpemb(){
 	var perpemb = $('#perpemb-input').val();
 	if(!isEmpty(perpemb)){	
@@ -307,7 +308,7 @@ function hapusPERPEMB(id){
 	}	
 }
 
-var idPend = 0;
+var idPend = $('.input-pend').length;;
 function addPEND(){
 	var pend = $('#pend-input').val();
 	if(!isEmpty(pend)){	
@@ -342,7 +343,7 @@ function hapusPEND(id){
 	}	
 }
 
-var idInti = 0;
+var idInti = $('.input-inti').length;
 function addINTI(){
 	var inti = $('#inti-input').val();
 	if(!isEmpty(inti)){	
@@ -377,7 +378,7 @@ function hapusINTI(id){
 	}	
 }
 
-var idPenutup = 0;
+var idPenutup = $('.input-penutup').length;
 function addPENUTUP(){
 	var penutup = $('#penutup-input').val();
 	if(!isEmpty(penutup)){	
@@ -412,7 +413,7 @@ function hapusPENUTUP(id){
 	}	
 }
 
-var idAsesNon = 0;
+var idAsesNon = $('.input-ases-non').length;
 function addAsesNon(){
 	var asesNon = $('#ases-non-input').val();
 	if(!isEmpty(asesNon)){	
@@ -448,7 +449,7 @@ function hapusAsesNon(id){
 		}
 }
 
-var idAsesKog = 0;
+var idAsesKog = $('.input-ases-kog').length;
 function addAsesKog(){
 	var asesKog = $('#ases-kog-input').val();
 	if(!isEmpty(asesKog)){	
@@ -484,7 +485,7 @@ function hapusAsesKog(id){
 		}
 }
 
-var idAsesFor = 0;
+var idAsesFor = $('.input-ases-for').length;;
 function addAsesFor(){
 	var asesFor = $('#ases-for-input').val();
 	if(!isEmpty(asesFor)){	
@@ -520,7 +521,7 @@ function hapusAsesFor(id){
 		}
 }
 
-var idAsesSum = 0;
+var idAsesSum = $('.input-ases-sum').length;
 function addAsesSum(){
 	var asesSum = $('#ases-sum-input').val();
 	if(!isEmpty(asesSum)){	
@@ -556,7 +557,7 @@ function hapusAsesSum(id){
 		}
 }
 
-var idPenmed = 0;
+var idPenmed = $('.input-penmed').length;
 function addPenmed(){
 	var penmed = $('#penmed-input').val();
 	if(!isEmpty(penmed)){	
@@ -592,7 +593,7 @@ function hapusPenmed(id){
 		}
 }
 
-var idRefleksi = 0;
+var idRefleksi = $('.input-refleksi').length;
 function addRefleksi(){
 	var refleksi = $('#refleksi-input').val();
 	if(!isEmpty(refleksi)){	
@@ -628,7 +629,7 @@ function hapusRefleksi(id){
 		}
 }
 
-var bahan = 1;
+var bahan = $('.input-bahan').length;
 $('#addBAHAN').click(function(){
 	bahan = bahan+1;
 	$('#inputs-bahan').append('<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN'+bahan+
@@ -657,7 +658,7 @@ function hapusBAHAN(id){
 	}	
 }
 
-var glos = 1;
+var glos = $('.input-glos').length;
 $('#addGLOS').click(function(){
 	glos = glos+1;
 	$('#inputs-glos').append('<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS'+glos+
@@ -686,7 +687,7 @@ function hapusGLOS(id){
 	}	
 }
 
-var dafpus = 1;
+var dafpus = $('.input-dafpus').length;
 $('#addDAFPUS').click(function(){
 	dafpus = dafpus+1;
 	$('#inputs-dafpus').append('<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS'+dafpus+
