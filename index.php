@@ -11,11 +11,13 @@
 	<link rel="icon" type="image/x-icon" href="images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+	<meta name="viewport" content="width=device-width, initial-scale=0.7">
 </head>
 
 <body>
 	<div class="nav-parent">
-		<nav class="navbar bg-transparent navbar-expand-lg sticky-top navbar-dark" style="background-color: #FFFFFF;">
+		<nav class="navbar navbar-expand-lg sticky-top navbar-light">
+			<div class="pink-on-top"></div>
 			<div class="container-fluid">
 				<div class="logo-parent">
 					<div class="logo">
@@ -25,36 +27,34 @@
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarNav"  >
-					<ul class="navbar-nav mb-2 mb-lg-0">
-						<li class="nav-text" >
-							<a class="nav-link" aria-current="page" href="blog">Blog</a>
+
+                <div class="collapse navbar-collapse navbar-left" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">About us</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                
+				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
+					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
+                        <li class="nav-text">
+					          <a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
+					    </li>
+						<li class="nav-icon icon-sosmed">
+							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
 						</li>
-						<li class="nav-text">
-							<?php 	
-								if(isset($_SESSION['nama'])){
-									echo '<a class="nav-link active" href="backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>';
-								}else{
-									echo '<a class="nav-link active" href="login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a>';
-								}
-							 ?>
-							
+						<li class="nav-icon icon-sosmed">
+							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
 						</li>
-						<li class="nav-text">
-							<?php 	
-								if(isset($_SESSION['nama'])){
-									echo '<a class="nav-link" href="create-modul-ajar">Create Modul</a>';
-								}
-							 ?>
-						</li>
-						<li class="nav-icon">
-							<a class="nav-link" href="#"><i class="bi bi-facebook"></i></a>
-						</li>
-						<li class="nav-icon">
-							<a class="nav-link" href="#"><i class="bi bi-twitter"></i></a>
-						</li>
-						<li class="nav-icon">
-							<a class="nav-link" href="#"><i class="bi bi-youtube"></i></a>
+						<li class="nav-icon icon-sosmed">
+							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-youtube"></i></a>
 						</li>
 					</ul>
 				</div>
@@ -62,17 +62,30 @@
 		</nav>
 	</div>
 
-	<div class="background">
-	</div>
-	
-	<div class="headline">
-		<h1>SMARTEACH</h1>
-		<h2>Menjadikan Pekerjaan Guru Lebih Mudah</h2>
-		<button href="#" type="button" class="btn btn-success btn-lg">Contact Us</button>
-	</div>
-
 	<div class="content">
+
 		<div class="row-1">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-6">
+						<h1 class="title-row-1">
+							ADMINISTRASI<br><span>GURU</span>
+						</h1>
+						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
+						<div class="btn-contact">
+							<button type="button" class="btn btn-primary btn-lg">CONTACT US</button>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="img-laptop">
+							<img src="images/laptop.png" alt="laptop">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row-2">
 			<div class="container">
 			  	<div class="row">
 				    <div class="col">
@@ -87,7 +100,7 @@
 			</div>
 		</div>
 
-		<div class="row-2">
+		<div class="row-3">
 			<h2>HOW DID IT WORK</h2>
 			<div class="tutorial">
 				<div class="container">
@@ -123,7 +136,7 @@
 				<button type="button" class="btn btn-outline-dark btn-lg">Reserve My Spot</button>
 			</div>
 		</div>
-		<div class="row-3">
+		<div class="row-4">
 			<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 			  <div class="carousel-indicators">
 			    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -156,7 +169,7 @@
 			</div>
 		</div>
 
-		<div class="row-4">
+		<div class="row-5">
 			<h2>Featured On</h2>
 			<div class="row-1">
 				<div class="container">

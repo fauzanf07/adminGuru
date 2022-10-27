@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
 
 html {
 	width: 100%;
@@ -14,24 +14,15 @@ body{
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: url(../../images/background-classroom.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
-}
-
-.row-3 .carousel-indicators button {
-  width: 8px;
-  height: 8px;
-  border-radius: 100%;
-  margin-left: 10px;
+	font-family: 'Fredoka One', cursive;
+	display: flex;
+    flex-direction: column;
 }
 
 .logo-parent{
-	margin-top: 1%;
+	margin-top: 0.2%;
 	margin-left: 3%;
-	margin-bottom: 1%;
+	margin-bottom: 0.2%;
 	z-index: 3;
 }
 
@@ -42,7 +33,25 @@ body{
 	z-index: 3;
 }
 
-.collapse{
+.logo-toast{
+	height: 30px;
+	width: auto;
+}
+
+.navbar-left{
+    display: inline-block;
+    justify-content: start;
+	width: auto;
+	white-space: nowrap;
+    z-index: 3;
+    margin-left: 3%;
+}
+
+.navbar-nav .nav-item{
+    margin-right: 30px;
+}
+
+.navbar-right{
 	display: inline-block;
 	justify-content: end;
 	width: auto;
@@ -55,10 +64,7 @@ nav{
 	position: relative;
 	z-index: 1;
 	top: 0px;
-}
-
-.nav-parent .navbar{
-	background-color: black;
+    background-color: #A3F0FF;
 }
 
 .nav-text{
@@ -69,36 +75,60 @@ nav{
 	margin-right: 5px;
 }
 
-.headline{
+.row-1{
 	width: 100%;
-	padding: 12%;
-	padding-left: 15%;
-	padding-bottom: 25%;
-	font-family: 'montserrat';
-	color: #fff;
-}
-.headline h1{
-	font-size: 82px;
-	font-weight: 100;
+	padding-top: 100px;
+	padding-bottom: 140px;
+	background-color: #F4FDFF;
 }
 
-.headline h2{
-	font-size: 24px;
+.row-1 .container{
+	margin: auto
+}
+
+.img-laptop{
+	display: flex;
+	justify-content: center;
+}
+
+.title-row-1{
+	color: #1C3C7B;
+	font-weight: 700;
+	font-size: 350%;
+}
+
+.title-row-1 span{
+	font-size: 370%;
+}
+
+.desc-row-1{
+	color: #1C3C7B;
+	font-weight: 700;
+	font-size: 200%;
+}
+
+.btn-contact{
+	margin-top: 30px;
+	display: flex;
+	justify-content: center;
+}
+
+.btn-contact button{
+	background-color: #A3F0FF;
+	border-color: #A3F0FF;
 	font-weight: bolder;
 }
 
-.headline button{
-	margin-top: 10px;
+.img-laptop img{
+	width: 770px;
+	height: 560x;
 }
 
-.content{
-	background-color: #fff;
-}
-
-.row-1{
+.row-2{
 	width: 100%;
 	padding-top: 80px;
 	padding-bottom: 160px;
+	background-color: #A3F0FF;
 }
 
 .the-nineteen{
@@ -117,7 +147,7 @@ nav{
 	font-weight: 500;
 }
 
-.row-2{
+.row-3{
 	width: 100%;
 	text-align: center;
 	padding-bottom: 160px;
@@ -157,7 +187,7 @@ nav{
 	color: #D4EDEE;
 }
 
-.row-3{
+.row-4{
 	padding-bottom: 160px;
 }
 
@@ -166,7 +196,7 @@ nav{
 	margin-right: 3%;
 }
 
-.row-4{
+.row-5{
 	text-align: center;
 }
 
