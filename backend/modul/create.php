@@ -8,13 +8,17 @@ session_start();
 $nama = $_SESSION['nama'];
 $jmlSuccess = 0;
 
+$sql = "SELECT * FROM table_user WHERE nama = '$nama'";
+$result = mysqli_query($con, $sql);
+$r = mysqli_fetch_assoc($result);
+$kepalaSekolah = $r['kepala_sekolah'];
+
 $sql = "SELECT * FROM identitas_sekolah WHERE id = '$id'";
 $result = mysqli_query($con, $sql);
 $link = "http://localhost";
 
 $r = mysqli_fetch_assoc($result);
 $id_user = $r['id_user'];
-$kepalaSekolah = $r['kepala_sekolah'];
 $date_created = $r['created_at'];
 $programKeahlian = $r['program_keahlian'];
 $satuanPend = $_SESSION['sekolah'];
