@@ -160,10 +160,6 @@
 												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $_SESSION['sekolah']; ?>" disabled="disabled" id="satuanPend" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
-												  <span class="input-group-text" id="basic-addon1">Kepala Sekolah</span>
-												  <input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepala_sekolah" required>
-												</div>
-												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran</span>
 												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" required>
 												    <datalist id="tahunajar-options">

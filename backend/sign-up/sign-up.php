@@ -4,6 +4,7 @@
 	$namaLengkap = $_POST['namaLengkap'];
 	$nip = $_POST['nip'];
 	$sekolah = $_POST['sekolah'];
+	$kepsek = $_POST['kepsek'];
 	$jabatan = $_POST['jabatan'];
 	$mapel = $_POST['mapel'];
 	$email = $_POST['email'];
@@ -16,7 +17,7 @@
 		echo json_encode(array('statusCode' => 203));
 	}else{
 		$pass = password_hash($pass, PASSWORD_DEFAULT);
-		$query = "INSERT INTO table_user VALUES('','$nip','$namaLengkap','$username','$email', '$jabatan','$sekolah','$mapel','$pass')";
+		$query = "INSERT INTO table_user VALUES('','$nip','$namaLengkap','$username','$email', '$jabatan','$sekolah','$kepsek','$mapel','$pass')";
 		$result = mysqli_query($con,$query);
 		if($result){
 			echo json_encode(array('statusCode' => 201));

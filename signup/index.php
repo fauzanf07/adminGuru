@@ -2,9 +2,8 @@
 <html>
 
 <head>
-	<title>adminguru &centerdot; Signup</title>
+	<title>SmartTeach</title>
 	<link rel="stylesheet" type="text/css" href="../style/signup/style.css">
-	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -87,6 +86,12 @@
 							<div class="form-group col-md-4">
 								<label for="inputMapel">Mata Pelajaran</label>
 								<input type="text" class="form-control" id="inputMapel" placeholder="Mapel yang diajarkan">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label for="inputNama">Kepala Sekolah</label>
+							<div class="col">
+							<input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepsek">
 							</div>
 						</div>
 						<div class="form-group">

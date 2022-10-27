@@ -104,7 +104,6 @@ $('#buatModulAjar').click(function(){
 	var modul_ajar = new Object();
 	modul_ajar.nama = $('#namaPenyusun').val();
 	modul_ajar.satuanPend = $('#satuanPend').val();
-	modul_ajar.kepala_sekolah = $('#kepala_sekolah').val();
 	modul_ajar.tahunAjar = $('#tahunAjar').val();
 	modul_ajar.programKeahlian = $('#programKeahlian').find(":selected").text();
 	modul_ajar.mapel = $('#mapel').find(":selected").text();

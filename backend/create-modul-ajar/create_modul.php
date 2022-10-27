@@ -23,8 +23,8 @@
 
 	$r = mysqli_fetch_assoc($result);
 	$id_user = $r['id'];
+	$kepalaSekolah = $r['kepala_sekolah'];
 
-	$kepalaSekolah = $objModul->kepala_sekolah;
 	$tahunAjar = $objModul->tahunAjar;
 	$programKeahlian = $objModul->programKeahlian;
 	$mapel = $objModul->mapel;
@@ -36,7 +36,7 @@
 	$cp = $objModul->cp;
 	$alokasiW = $objModul->alokasiW;
 	$date = date('Y-m-d H:i:s');
-	$sql = "INSERT INTO identitas_sekolah VALUES('','$id_user','$kepalaSekolah', '$tahunAjar', '$programKeahlian', '$mapel', '$kelas','$semester', '$fase', '$elemen','$cp','$alokasiW','$date','$date')";
+	$sql = "INSERT INTO identitas_sekolah VALUES('','$id_user', '$tahunAjar', '$programKeahlian', '$mapel', '$kelas','$semester', '$fase', '$elemen','$cp','$alokasiW','$date','$date')";
 	$result = mysqli_query($con, $sql);
 	if($result){
 		$last_id = mysqli_insert_id($con);

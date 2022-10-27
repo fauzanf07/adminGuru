@@ -5,13 +5,14 @@ $('#submit').click(function(){
 	var namaLengkap = $('#namaLengkap').val();
 	var nip = $('#inputNIP').val();
 	var sekolah = $('#inputSekolah').val();
+	var kepsek = $('#kepsek').val();
 	var jabatan = $('#inputJabatan').find(":selected").text();
 	var mapel = $('#inputMapel').val();
 	var email = $('#inputEmail').val();
 	var username = $('#inputUsername').val();
 	var pass = $('#inputUsername').val();
-	console.log(namaLengkap+' '+nip+' '+sekolah+' '+jabatan+' '+mapel+' '+email+' '+username+' '+pass);
-	if(!isEmpty(namaLengkap) && !isEmpty(nip) && !isEmpty(sekolah) && !isEmpty(jabatan) 
+	console.log(namaLengkap+' '+nip+' '+sekolah+' '+kepsek+' '+jabatan+' '+mapel+' '+email+' '+username+' '+pass);
+	if(!isEmpty(namaLengkap) && !isEmpty(nip)  && !isEmpty(kepsek) && !isEmpty(sekolah) && !isEmpty(jabatan) 
 		&& !isEmpty(mapel) && !isEmpty(email) && !isEmpty(username) && !isEmpty(pass) &&  $('#verif').is(":checked")){
 		$.ajax({
 	        url: '../backend/sign-up/sign-up.php',
@@ -20,6 +21,7 @@ $('#submit').click(function(){
 	        	namaLengkap: namaLengkap,
 				nip: nip,
 				sekolah: sekolah,
+				kepsek: kepsek,
 				jabatan: jabatan,
 				mapel: mapel,
 				email: email,
