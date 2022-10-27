@@ -94,29 +94,29 @@ nav{
 .title-row-1{
 	color: #1C3C7B;
 	font-weight: 700;
-	font-size: 350%;
+	font-size: 60px;
 }
 
 .title-row-1 span{
-	font-size: 370%;
+	font-size: 150px;
 }
 
 .desc-row-1{
 	color: #1C3C7B;
-	font-weight: 700;
-	font-size: 200%;
+	font-size: 23px;
 }
 
 .btn-contact{
+	width: 100%;
 	margin-top: 30px;
 	display: flex;
-	justify-content: center;
 }
 
 .btn-contact button{
 	background-color: #A3F0FF;
 	border-color: #A3F0FF;
 	font-weight: bolder;
+	margin-left: 22%;
 }
 
 .img-laptop img{

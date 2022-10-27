@@ -1,7 +1,7 @@
 <?php 	
 	session_start();
 	if(isset($_SESSION['nama'])){
-		header("Location: http://localhost/adminGuru/create-modul-ajar");
+		header("Location: ../create-modul-ajar");
 	}
 ?>
 <!DOCTYPE html>
