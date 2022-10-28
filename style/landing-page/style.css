@@ -95,6 +95,7 @@ nav{
 	color: #1C3C7B;
 	font-weight: 700;
 	font-size: 60px;
+	margin-bottom: 5%;
 }
 
 .title-row-1 span{
@@ -104,6 +105,7 @@ nav{
 .desc-row-1{
 	color: #1C3C7B;
 	font-size: 23px;
+	margin-bottom: 7%;
 }
 
 .btn-contact{
@@ -120,25 +122,57 @@ nav{
 }
 
 .img-laptop img{
-	width: 770px;
-	height: 560x;
+	width: 120%;
+  	height: auto;
 }
 
 .row-2{
 	width: 100%;
-	padding-top: 80px;
-	padding-bottom: 160px;
+	padding-top: 100px;
+	padding-bottom: 100px;
 	background-color: #A3F0FF;
 }
 
-.the-nineteen{
-	font-weight: 700;
-	font-size: 41px;
+.img-row-2 img{
+	width: 100%;
+  	height: auto;
 }
 
-.jargon{
-	font-weight: 500;
-	font-size: 25px;
+.divtitle-row-2{
+	display: flex;
+	justify-content: center;
+}
+
+.title-row-2{
+	display: inline-block;
+	padding-right: 60px;
+	padding-left: 60px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 50px;
+  	background: #fff;
+	margin-bottom: 50px;
+	font-weight: 450;
+	color: #1C3C7B;
+}
+
+.advantage-row-2{
+	margin-bottom: 50px;
+	border-radius: 50px;
+  	background: #fff;
+	padding-right: 40px;
+	padding-left: 10px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 450;
+	color: #1C3C7B;
+}
+
+.number-row-2{
+	border-radius: 100px;
+	padding-right: 20px;
+	padding-left: 20px;
+  	background: #A3F0FF;
 }
 
 .quotes{

@@ -93,16 +93,29 @@
 
 		<div class="row-2">
 			<div class="container">
-			  	<div class="row">
-				    <div class="col">
-				     	<img src="https://static.wixstatic.com/media/4c1c57_fc8e75822abf45fea52c68746752d473~mv2.png/v1/crop/x_516,y_0,w_887,h_758/fill/w_550,h_470,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/62d12fd15647b.png" alt="Books" width="550px" height="470px">
-				    </div>
-				    <div class="col font-col">
-				     	<h2 class="the-nineteen">THE NINETEEN</h2>
-				     	<h3 class="jargon">Providing solutions for Indonesian education</h3>
-				     	<p class="quotes">“Pendidikan adalah senjata paling<br>mematikan di dunia, karena dengan pendidikan,<br>kamu dapat mengubah dunia” – Nelson Mandela</p>
-				    </div>
-			  	</div>
+				<div class="row g-5">
+					<div class="col-lg-6 img-row-2">
+						<img src="images/woman.png" alt="woman">
+					</div>
+					<div class="col-lg-6">
+						<div class="desc-row-2">
+							<div class="divtitle-row-2">
+								<h1 class="title-row-2">
+									KEUNGGULAN
+								</h1>
+							</div>
+							<h1 class="advantage-row-2">
+								<span class="number-row-2">1</span> Semudah pilihan ganda
+							</h1>
+							<h1 class="advantage-row-2">
+								<span class="number-row-2">2</span> Tanpa perlu instalasi
+							</h1>
+							<h1 class="advantage-row-2">
+								<span class="number-row-2">3</span> Dikerjakan dimana saja
+							</h1>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 
