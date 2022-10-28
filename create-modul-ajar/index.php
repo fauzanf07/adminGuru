@@ -230,7 +230,7 @@
 												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
 												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
 												</div>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-bs-slide="next">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-next="2" onclick="validatePage1();">
 											    	<span >Next</span>
 								  				</button>
 
@@ -335,7 +335,7 @@
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage2();">
 											    	<span >Next</span>
 								  				</button>
 									    	</div>
@@ -406,7 +406,7 @@
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage3();">
 											    	<span >Next</span>
 								  				</button>
 									    	</div>
@@ -496,7 +496,7 @@
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage4();">
 											    	<span >Next</span>
 								  				</button>
 									    	</div>
@@ -612,7 +612,7 @@
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage5();">
 											    	<span >Next</span>
 								  				</button>
 									    	</div>
@@ -665,7 +665,7 @@
 									    		<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage6();">
 											    	<span >Next</span>
 								  				</button>
 									    	</div>
@@ -751,6 +751,18 @@
 		      	</div>
 		    </div>
 		</div>
+	</div>
+
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	    <div class="toast-header">
+	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
+	      <strong class="me-auto">Admin Guru</strong>
+	      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	    </div>
+	    <div class="toast-body" id="msg-toast">
+	    </div>
+	  </div>
 	</div>
 	
 	
