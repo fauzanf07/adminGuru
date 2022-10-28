@@ -93,7 +93,7 @@
 
 		<div class="row-2">
 			<div class="container">
-				<div class="row g-5">
+				<div class="row gx-5">
 					<div class="col-lg-6 img-row-2">
 						<img src="images/woman.png" alt="woman">
 					</div>
@@ -120,41 +120,17 @@
 		</div>
 
 		<div class="row-3">
-			<h2>HOW DID IT WORK</h2>
-			<div class="tutorial">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<div class="text-background">
-								<p class="number-1">01</p>
-								<div class="text-frontground">
-									<p>BUY OUR APP LICENSE</p>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="text-background">
-								<p class="number-2">02</p>
-								<div class="text-frontground">
-									<p>INSTALL ON YOUR DESKTOP</p>
-								</div>
-							</div>
-						</div>
-						<div class="col">
-							<div class="text-background">
-								<p class="number-3">03</p>
-								<div class="text-frontground">
-									<p>MAKE ADMINISTRATION 10x FASTER</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>	
+			<h1 class="title-row-3">
+				CARA PENGERJAAN
+			</h1>
+			<div class="img-tutorial">
+				<img src="images/tutorial.png" alt="tutorial">
 			</div>
-			<div class="button-reserve">
-				<button type="button" class="btn btn-outline-dark btn-lg">Reserve My Spot</button>
+			<div class="link-video-tutorial">
+				<a href="#" class="btn btn-lg" role="button" aria-pressed="true"><i class="fa-solid fa-play"></i>TUTORIAL</a>
 			</div>
 		</div>
+
 		<div class="row-4">
 			<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
 			  <div class="carousel-indicators">
@@ -210,4 +186,5 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script type="text/javascript" src="js/landing-page/landing-page.js"></script>
+<script src="https://kit.fontawesome.com/e12a3e12fa.js" crossorigin="anonymous"></script>
 </html>
