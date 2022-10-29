@@ -79,7 +79,7 @@
 		<div class="container">
 			<div class="row row-profile">
 				<div class="col-lg-3">
-					<center><img src="../images/avatar.jpg" class="profile-pic" id="profile-pic"></center>
+					<center><img src="../images/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic"></center>
 					<h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
 					<span class="username">@<?php echo $_SESSION['username']; ?></span>
 					<div class="info">

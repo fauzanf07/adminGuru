@@ -5,12 +5,12 @@
 	}
 	include("../backend/conn.php");
 
-	$nama = $_SESSION['nama'];
 
-	$sql = "SELECT id FROM table_user WHERE nama = '$nama'";
+	$id_user = $_GET['id'];
+
+	$sql = "SELECT * FROM table_user WHERE id = '$id_user'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
-	$id_user = $r['id'];
 
 
  ?>
@@ -77,9 +77,9 @@
 
     <div class="row-1">
 		<div class="container">
-			<div class="row">
+			<div class="row row-profile">
 				<div class="col-lg-3">
-                    <center><img src="../images/avatar.jpg" class="profile-pic" id="profile-pic"></center>
+                    <center><img src="../images/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic"></center>
                     <h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
                     <span class="username">@<?php echo $_SESSION['username']; ?></span>
                     <div class="info">
@@ -90,7 +90,7 @@
                         <span class="info-item"><i class="bi bi-person"></i>&nbsp;&nbsp; <?php echo $_SESSION['mapel']; ?></span>
                     </div>
                 </div>
-				<div class="col-lg-9">
+				<div class="col-lg-9 nav-info-user">
 					<div class="editprofile-title">
 						<h1>Edit Profile</h1>
 					</div>
@@ -98,43 +98,49 @@
 						<div class="row form-group">
 							<label for="inputNama">Nama Lengkap dan Gelar</label>
 							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama Lengkap dan Gelar" id="namaLengkap">
+							<input type="text" class="form-control" placeholder="Nama Lengkap dan Gelar" id="namaLengkap" value="<?php echo $r['nama']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputNIP">NIP</label>
-							<input type="text" class="form-control" id="inputNIP" placeholder="NIP">
+							<input type="text" class="form-control" id="inputNIP" placeholder="NIP" value="<?php echo $r['nip']; ?>">
 						</div>
 						<div class="row">
 							<div class="form-group col-md-4">
 								<label for="inputSekolah">Sekolah</label>
-								<input type="text" class="form-control" id="inputSekolah" placeholder="Sekolah">
+								<input type="text" class="form-control" id="inputSekolah" placeholder="Sekolah" value="<?php echo $r['sekolah']; ?>">
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputJabatan">Jabatan</label>
 								<select id="inputJabatan" class="form-control">
-									<option selected>Pilih...</option>
-									<option>Kepala Sekolah</option>
-									<option>Staff Sekolah</option>
-									<option>Guru</option>
-									<option>lainnya</option>
+									<option>Pilih...</option>
+									<option <?php if($r['jabatan'] == "Kepala Sekolah") echo "selected"; ?>>Kepala Sekolah</option>
+									<option <?php if($r['jabatan'] == "Staff Sekolah") echo "selected"; ?>>Staff Sekolah</option>
+									<option <?php if($r['jabatan'] == "Guru") echo "selected"; ?>>Guru</option>
+									<option <?php if($r['jabatan'] == "lainnya") echo "selected"; ?>>lainnya</option>
 								</select>
 							</div>
 							<div class="form-group col-md-4">
 								<label for="inputMapel">Mata Pelajaran</label>
-								<input type="text" class="form-control" id="inputMapel" placeholder="Mapel yang diajarkan">
+								<input type="text" class="form-control" id="inputMapel" placeholder="Mapel yang diajarkan" value="<?php echo $r['mapel']; ?>">
+							</div>
+						</div>
+						<div class="row form-group">
+							<label for="inputNama">Kepala Sekolah</label>
+							<div class="col">
+							<input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepsek" value="<?php echo $r['kepala_sekolah']; ?>">
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail">Email address</label>
-							<input type="email" class="form-control" id="inputEmail" placeholder="name@example.com">
+							<input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" value="<?php echo $r['email']; ?>">
 						</div>
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input" id="verif">
 							<label class="form-check-label" for="exampleCheck1" >Sudah yakin ingin merubah data</label>
 						</div>
 						<div class="class-btn">
-							<button type="button" class="btn btn-success submit-btn" id="submit">Submit</button>
+							<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Simpan Perubahan</button>
 						</div>
 					</form>
 				</div>
@@ -142,7 +148,23 @@
 		</div>
 	</div>
 
+	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	    <div class="toast-header">
+	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
+	      <strong class="me-auto">Admin Guru</strong>
+	      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	    </div>
+	    <div class="toast-body" id="toastBody">
+	      
+	    </div>
+	  </div>
+	</div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script type="text/javascript" src="../js/edit-profile/edit.js"></script>
 </html>

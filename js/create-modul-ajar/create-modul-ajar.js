@@ -9,6 +9,11 @@ $('#logout').click(function(){
 	window.location.href = "../backend/logout/logout.php";
 });
 
+$('#profile-pic').click(function(){
+	const id = $('#profile-pic').data('id');
+	window.location.href = "../edit-profile/edit.php?id="+id;
+});
+
 
 $('#programKeahlian').on('change',function(){
 	var prokel = $(this).val();

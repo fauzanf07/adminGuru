@@ -21,7 +21,7 @@
 		  	$_SESSION['jabatan'] = $row["jabatan"];
 		  	$_SESSION['sekolah'] = $row["sekolah"];
 		  	$_SESSION['mapel'] = $row["mapel"];
-		  	
+		  	$_SESSION['profile_img'] = $row["profile_img"];
 		}
 		else{
 		  	echo json_encode(array("statusCode"=>202));
