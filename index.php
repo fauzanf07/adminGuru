@@ -100,19 +100,19 @@
 					<div class="col-lg-6">
 						<div class="desc-row-2">
 							<div class="divtitle-row-2">
-								<h1 class="title-row-2">
+								<h2 class="title-row-2">
 									KEUNGGULAN
-								</h1>
+								</h2>
 							</div>
-							<h1 class="advantage-row-2">
+							<h2 class="advantage-row-2">
 								<span class="number-row-2">1</span> Semudah pilihan ganda
-							</h1>
-							<h1 class="advantage-row-2">
+							</h2>
+							<h2 class="advantage-row-2">
 								<span class="number-row-2">2</span> Tanpa perlu instalasi
-							</h1>
-							<h1 class="advantage-row-2">
+							</h2>
+							<h2 class="advantage-row-2">
 								<span class="number-row-2">3</span> Dikerjakan dimana saja
-							</h1>
+							</h2>
 						</div>
 					</div>
 				</div>
@@ -140,17 +140,13 @@
 			  </div>
 			  <div class="carousel-inner">
 			    <div class="carousel-item active">
-			      <img class="d-block w-100" src="images/slide1.jpg" alt="First slide">
+			      <img class="d-block w-100" src="images/slide 1.jpg" alt="First slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="images/slide2.jpg" alt="Second slide">
+			      <img class="d-block w-100" src="images/slide 2.jpg" alt="Second slide">
 			    </div>
 			    <div class="carousel-item">
-			      <img class="d-block w-100" src="images/slide3.jpg" alt="Third slide">
-			      <div class="carousel-caption d-none d-md-block">
-			        <h5>Third slide label</h5>
-			        <p>Some representative placeholder content for the third slide.</p>
-			      </div>
+			      <img class="d-block w-100" src="images/slide 3.jpg" alt="Third slide">
 			    </div>
 			  </div>
 			  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
@@ -165,21 +161,24 @@
 		</div>
 
 		<div class="row-5">
-			<h2>Featured On</h2>
-			<div class="row-1">
-				<div class="container">
-					<div class="row">
-						<div class="col">
-							<img class="windows" src="https://static.wixstatic.com/media/4c1c57_4313be106c5949c896ceed39a4a22d7c~mv2.png/v1/fill/w_407,h_75,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Windows_11_logo_svg.png" alt="Windows 11" width="407px" height="75px">
-						</div>
-						<div class="col">
-							<img src="https://static.wixstatic.com/media/4c1c57_76b3c55752394cf18f8a162cebe55afb~mv2.png/v1/fill/w_158,h_152,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/download%20(3).png" alt="Windows 11" width="158px" height="152px">
-						</div>
-					</div>
-				</div>
+			<h1 class="title-row-4">
+				BAGIAN DARI
+			</h1>
+			<div class="img-row-5-1">
+				<img src="images/wira-core.png" alt="Wirausaha Merdeka dan Core by LPIK ITB">
+			</div>
+			<div class="img-row-5-2">
+				<img src="images/ITB-LPiK ITB-lpdp-Kampus Merdeka.png" alt="ITB, LPiK ITB, lpdp, dan Kampus Merdeka">
 			</div>
 		</div>
 	</div>
+
+	<footer>
+		<div class="background-footer"></div>
+		<div class="copyright">
+			<p>© adminguru.id. Hak cipta dilindungi Undang-Undang.</p>
+		</div>
+	</footer>
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>

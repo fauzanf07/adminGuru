@@ -258,7 +258,21 @@ nav{
 }
 
 .row-4{
-	padding-bottom: 160px;
+	background-color: #A3F0FF;
+}
+
+.title-row-4{
+	display: inline-block;
+	margin-top: 100px;
+	margin-bottom: 70px;
+	border-radius: 50px;
+  	background: #1C3C7B;
+	padding-right: 80px;
+	padding-left: 80px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 450;
+	color: #F4FDFF;
 }
 
 .carousel{
@@ -270,6 +284,31 @@ nav{
 	text-align: center;
 }
 
-.windows{
-	margin-top: 30px;
+.img-row-5-1 img{
+	width: 70%;
+	height: auto;
+}
+
+.img-row-5-2 img{
+	margin-top: 5%;
+	width: 60%;
+	height: auto;
+}
+
+footer{
+	text-align: center;
+}
+.background-footer{
+	height: 70px;
+	background-color: #A3F0FF;
+}
+.copyright{
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+	font-weight: 600;
+}
+
+footer {
+	margin-top: auto;
 }
