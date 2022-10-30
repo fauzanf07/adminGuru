@@ -34,6 +34,7 @@
 	$sql .= "DELETE FROM kompetensi_awal WHERE id_identitas = '$id';";
 	$sql .= "DELETE FROM materi WHERE id_identitas = '$id';";
 	$sql .= "DELETE FROM file_modul WHERE id_identitas = '$id';";
+	$sql .= "DELETE FROM file_preview_modul WHERE id_identitas = '$id';";
 	$sql .= "DELETE FROM identitas_sekolah WHERE id = '$id';";
 
 

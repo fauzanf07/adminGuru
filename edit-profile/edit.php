@@ -6,11 +6,12 @@
 	include("../backend/conn.php");
 
 
-	$id_user = $_GET['id'];
+	$username = $_GET['username'];
 
-	$sql = "SELECT * FROM table_user WHERE id = '$id_user'";
+	$sql = "SELECT * FROM table_user WHERE username = '$username'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
+	$id_user = $r['id'];
 
 
  ?>
@@ -44,13 +45,13 @@
                 <div class="collapse navbar-collapse navbar-left" id="navbarNav">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active" aria-current="page" href="../">Home</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="#">About us</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
+                        <a class="nav-link" href="../blog">Blog</a>
                         </li>
                     </ul>
                 </div>
@@ -79,7 +80,7 @@
 		<div class="container">
 			<div class="row row-profile">
 				<div class="col-lg-3">
-                    <center><img src="../images/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic"></center>
+                    <center><img src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic"></center>
                     <h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
                     <span class="username">@<?php echo $_SESSION['username']; ?></span>
                     <div class="info">
@@ -97,7 +98,7 @@
 					<form>
 						<div class="row form-group choose-file">
 							<div class="col-md-3">
-								<img class="change-photo" src="../images/<?php echo $_SESSION['profile_img']; ?>" id="profile-pic">
+								<img class="change-photo" src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" id="profile-pic-edit">
 							</div>
 							<div class="col-md-9">
 								<label class="form-label" for="customFile">Foto Profil</label>
@@ -146,7 +147,7 @@
 						</div>
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input" id="verif">
-							<label class="form-check-label" for="exampleCheck1" >Sudah yakin ingin merubah data</label>
+							<label class="form-check-label" for="verif" >Sudah yakin ingin merubah data</label>
 						</div>
 						<div class="class-btn">
 							<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Simpan Perubahan</button>

@@ -108,7 +108,7 @@
 						</div>
 						<div class="form-group form-check">
 							<input type="checkbox" class="form-check-input" id="verif">
-							<label class="form-check-label" for="exampleCheck1" >Semua data sudah benar</label>
+							<label class="form-check-label" for="verif" >Semua data sudah benar</label>
 						</div>
 						<div class="class-btn">
 							<button type="button" class="btn btn-success submit-btn" id="submit">Submit</button>
