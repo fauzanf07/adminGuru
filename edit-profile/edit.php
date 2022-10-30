@@ -95,6 +95,15 @@
 						<h1>Edit Profile</h1>
 					</div>
 					<form>
+						<div class="row form-group choose-file">
+							<div class="col-md-3">
+								<img class="change-photo" src="../images/<?php echo $_SESSION['profile_img']; ?>" id="profile-pic">
+							</div>
+							<div class="col-md-9">
+								<label class="form-label" for="customFile">Foto Profil</label>
+								<input type="file" class="form-control" id="customFile" />
+							</div>
+						</div>
 						<div class="row form-group">
 							<label for="inputNama">Nama Lengkap dan Gelar</label>
 							<div class="col">

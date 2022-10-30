@@ -69,7 +69,6 @@
 	</div>
 
 	<div class="content">
-
 		<div class="row-1">
 			<div class="container">
 				<div class="row">
