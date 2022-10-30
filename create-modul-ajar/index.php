@@ -7,9 +7,10 @@
 
 	$nama = $_SESSION['nama'];
 
-	$sql = "SELECT id FROM table_user WHERE nama = '$nama'";
+	$sql = "SELECT id,username FROM table_user WHERE nama = '$nama'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
+	$username = $r['username'];
 	$id_user = $r['id'];
 
 
@@ -77,7 +78,7 @@
 		<div class="container">
 			<div class="row row-profile">
 				<div class="col-lg-3">
-					<center><img src="../images/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic" data-id='<?php echo $id_user; ?>'></center>
+					<center><img src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic" data-username='<?php echo $username; ?>'></center>
 					<h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
 					<span class="username">@<?php echo $_SESSION['username']; ?></span>
 					<div class="info">
@@ -735,17 +736,34 @@
 	</div>
 
 	<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-dialog modal-lg">
 		    <div class="modal-content">
 		    	<div class="modal-header">
 		    		<img class="logo-icon-modal" src="../images/logo-removebg-preview.png" alt="logo">
+		    		<h5>&nbsp;&nbsp;&nbsp;Preview Modul Ajar</h5>
 		        	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 		      	</div>
-		    	<div class="modal-body" style="text-align: center; color: #686868; padding: 10px 50px;">
-		    		<h4>Subscribe untuk melanjutkan</h4>
-		    		<p>Fitur ini dapat digunakan untuk yang berlangganan, yuk mulai berlangganan</p>
-		    		<button type="button" class="btn btn-outline-secondary btn-nanti" data-bs-dismiss="modal">Nanti Saja</button>
-		       		<button type="button" class="btn btn-success btn-subscribe" id="subscribe" onclick="downloadPdf(this);">Subscribe</button>
+		    	<div class="modal-body large" style="text-align: center; color: #686868; padding: 10px 50px;">
+		    		<div class="row">
+		    			<div class="col-8">
+		    				<embed
+							    src=""
+							    type="application/pdf"
+							    frameBorder="0"
+							    scrolling="auto"
+							    height="360px"
+							    width="100%"
+							    id="embedPDF"
+							></embed>
+		    			</div>
+		    			<div class="col-4">
+		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
+				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
+				    		<button type="button" class="btn btn-outline-secondary btn-nanti" data-bs-dismiss="modal">Download Preview</button>
+				       		<button type="button" class="btn btn-success btn-subscribe" id="subscribe" onclick="downloadPdf(this);">Berlangganan</button>
+		    			</div>
+		    		</div>
+		    		
 		    	</div>
 		    	<div class="modal-footer" style="padding:20px 0; ">
 		      	</div>
