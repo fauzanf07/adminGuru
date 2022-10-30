@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 27, 2022 at 12:26 PM
+-- Generation Time: Oct 30, 2022 at 09:14 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -34,6 +34,13 @@ CREATE TABLE `ases_for` (
   `ases` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ases_for`
+--
+
+INSERT INTO `ases_for` (`id`, `id_identitas`, `ases`) VALUES
+(3, 3, 'Bagaimana perasaanmu saat belajar sendiri di rumah?');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +52,13 @@ CREATE TABLE `ases_kog` (
   `id_identitas` int(11) DEFAULT NULL,
   `ases` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `ases_kog`
+--
+
+INSERT INTO `ases_kog` (`id`, `id_identitas`, `ases`) VALUES
+(3, 3, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
 
 -- --------------------------------------------------------
 
@@ -58,6 +72,14 @@ CREATE TABLE `ases_non_kog` (
   `ases` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ases_non_kog`
+--
+
+INSERT INTO `ases_non_kog` (`id`, `id_identitas`, `ases`) VALUES
+(5, 3, 'Kuis'),
+(6, 3, 'Unjuk kerja');
+
 -- --------------------------------------------------------
 
 --
@@ -70,6 +92,13 @@ CREATE TABLE `ases_sum` (
   `ases` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `ases_sum`
+--
+
+INSERT INTO `ases_sum` (`id`, `id_identitas`, `ases`) VALUES
+(3, 3, 'Penilaian Akhir Semester');
+
 -- --------------------------------------------------------
 
 --
@@ -81,6 +110,14 @@ CREATE TABLE `bahan_bacaan` (
   `id_identitas` int(11) DEFAULT NULL,
   `bahan_bacaan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `bahan_bacaan`
+--
+
+INSERT INTO `bahan_bacaan` (`id`, `id_identitas`, `bahan_bacaan`) VALUES
+(5, 3, 'mm,,m,,jkjkj'),
+(6, 3, 'njnjnjnjnj');
 
 -- --------------------------------------------------------
 
@@ -121,6 +158,14 @@ CREATE TABLE `daftar_pustaka` (
   `daftar_pustaka` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `daftar_pustaka`
+--
+
+INSERT INTO `daftar_pustaka` (`id`, `id_identitas`, `daftar_pustaka`) VALUES
+(5, 3, ',m,m,m,m,m,'),
+(6, 3, 'nnjnjnjnj');
+
 -- --------------------------------------------------------
 
 --
@@ -160,6 +205,13 @@ CREATE TABLE `file_modul` (
   `nama_file` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `file_modul`
+--
+
+INSERT INTO `file_modul` (`id`, `id_identitas`, `nama_file`) VALUES
+(3, 3, '29102022001218_Modul Ajar_Desain Komunikasi Visual ');
+
 -- --------------------------------------------------------
 
 --
@@ -171,6 +223,14 @@ CREATE TABLE `glosarium` (
   `id_identitas` int(11) DEFAULT NULL,
   `glosarium` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `glosarium`
+--
+
+INSERT INTO `glosarium` (`id`, `id_identitas`, `glosarium`) VALUES
+(5, 3, 'nmnmnmmnm'),
+(6, 3, 'mm,m,,,');
 
 -- --------------------------------------------------------
 
@@ -194,6 +254,13 @@ CREATE TABLE `identitas_sekolah` (
   `updated_at` datetime DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `identitas_sekolah`
+--
+
+INSERT INTO `identitas_sekolah` (`id`, `id_user`, `tahun_ajaran`, `program_keahlian`, `mata_pelajaran`, `kelas`, `semester`, `fase`, `elemen`, `capaian_pembelajaran`, `alokasi_waktu`, `created_at`, `updated_at`) VALUES
+(3, 1, '2020/2021', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 1, 'E', 'Proses bisnis berbagai industri di bidang Desain Komunikasi Visual', 'Pada akhir fase E peserta didik mampu memahami manajemen produksi bidang Desain secara menyeluruh pada berbagai industri ekonomi kreatif lainnya, antara lain K3LH, kreativitas dalam proses kreasi dasar desain, dan menerapkannya dalam elemen dasar perancangan dan proses desain dan produksi dalam eksekusi kerja desain komunikasi visual secara mandiri.', '1 x 45 menit', '2022-10-29 00:12:18', '2022-10-29 00:12:18');
+
 -- --------------------------------------------------------
 
 --
@@ -205,6 +272,13 @@ CREATE TABLE `inti` (
   `id_kegiatan` int(11) DEFAULT NULL,
   `kegiatan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `inti`
+--
+
+INSERT INTO `inti` (`id`, `id_kegiatan`, `kegiatan`) VALUES
+(3, 3, 'Guru menyampaikan materi dengan media Buku Paket');
 
 -- --------------------------------------------------------
 
@@ -218,6 +292,13 @@ CREATE TABLE `kegiatan_pembelajaran` (
   `pertemuan` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `kegiatan_pembelajaran`
+--
+
+INSERT INTO `kegiatan_pembelajaran` (`id`, `id_identitas`, `pertemuan`) VALUES
+(3, 3, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -229,6 +310,13 @@ CREATE TABLE `kompetensi_awal` (
   `id_identitas` int(11) DEFAULT NULL,
   `kompetensi` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `kompetensi_awal`
+--
+
+INSERT INTO `kompetensi_awal` (`id`, `id_identitas`, `kompetensi`) VALUES
+(3, 3, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -527,6 +615,13 @@ CREATE TABLE `lkpd` (
   `lkpd` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `lkpd`
+--
+
+INSERT INTO `lkpd` (`id`, `id_identitas`, `lkpd`) VALUES
+(3, 3, 'MODUL AJAR INFORMATIKA_KELAS X.pdf');
+
 -- --------------------------------------------------------
 
 --
@@ -558,6 +653,13 @@ CREATE TABLE `materi` (
   `materi` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `materi`
+--
+
+INSERT INTO `materi` (`id`, `id_identitas`, `materi`) VALUES
+(3, 3, 'Membaca peluang pasar dan usaha');
+
 -- --------------------------------------------------------
 
 --
@@ -569,6 +671,13 @@ CREATE TABLE `media` (
   `id_identitas` int(11) DEFAULT NULL,
   `media` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `media`
+--
+
+INSERT INTO `media` (`id`, `id_identitas`, `media`) VALUES
+(3, 3, 'Lembar kerja peserta didik');
 
 -- --------------------------------------------------------
 
@@ -582,6 +691,13 @@ CREATE TABLE `model_pembelajaran` (
   `model_pembelajaran` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `model_pembelajaran`
+--
+
+INSERT INTO `model_pembelajaran` (`id`, `id_identitas`, `model_pembelajaran`) VALUES
+(3, 3, 'Inquiry Learning Terbimbing');
+
 -- --------------------------------------------------------
 
 --
@@ -593,6 +709,13 @@ CREATE TABLE `pemahaman_bermakna` (
   `id_identitas` int(11) DEFAULT NULL,
   `pemahaman_bermakna` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pemahaman_bermakna`
+--
+
+INSERT INTO `pemahaman_bermakna` (`id`, `id_identitas`, `pemahaman_bermakna`) VALUES
+(3, 3, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -606,6 +729,13 @@ CREATE TABLE `pendahuluan` (
   `kegiatan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pendahuluan`
+--
+
+INSERT INTO `pendahuluan` (`id`, `id_kegiatan`, `kegiatan`) VALUES
+(3, 3, 'Guru memberi apersepsi tentang materi yang akan dipelajari');
+
 -- --------------------------------------------------------
 
 --
@@ -617,6 +747,13 @@ CREATE TABLE `pengayaan_remedial` (
   `id_identitas` int(11) DEFAULT NULL,
   `pengayaan_remedial` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pengayaan_remedial`
+--
+
+INSERT INTO `pengayaan_remedial` (`id`, `id_identitas`, `pengayaan_remedial`) VALUES
+(3, 3, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.');
 
 -- --------------------------------------------------------
 
@@ -630,6 +767,13 @@ CREATE TABLE `penutup` (
   `kegiatan` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `penutup`
+--
+
+INSERT INTO `penutup` (`id`, `id_kegiatan`, `kegiatan`) VALUES
+(3, 3, 'Menutup pelajaran dengan memberi motivasi kepada siswa');
+
 -- --------------------------------------------------------
 
 --
@@ -641,6 +785,13 @@ CREATE TABLE `persiapan_pembelajaran` (
   `id_identitas` int(11) DEFAULT NULL,
   `persiapan_pembelajaran` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `persiapan_pembelajaran`
+--
+
+INSERT INTO `persiapan_pembelajaran` (`id`, `id_identitas`, `persiapan_pembelajaran`) VALUES
+(3, 3, 'Guru menyusun instrument assesmen yang digunakan');
 
 -- --------------------------------------------------------
 
@@ -654,6 +805,13 @@ CREATE TABLE `pertanyaan_pemantik` (
   `pertanyaan_pemantik` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `pertanyaan_pemantik`
+--
+
+INSERT INTO `pertanyaan_pemantik` (`id`, `id_identitas`, `pertanyaan_pemantik`) VALUES
+(3, 3, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
+
 -- --------------------------------------------------------
 
 --
@@ -665,6 +823,13 @@ CREATE TABLE `profil_pancasila` (
   `id_identitas` int(11) DEFAULT NULL,
   `profil_pancasila` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `profil_pancasila`
+--
+
+INSERT INTO `profil_pancasila` (`id`, `id_identitas`, `profil_pancasila`) VALUES
+(3, 3, 'Mandiri');
 
 -- --------------------------------------------------------
 
@@ -696,6 +861,13 @@ CREATE TABLE `refleksi` (
   `refleksi` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `refleksi`
+--
+
+INSERT INTO `refleksi` (`id`, `id_identitas`, `refleksi`) VALUES
+(3, 3, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?');
+
 -- --------------------------------------------------------
 
 --
@@ -707,6 +879,13 @@ CREATE TABLE `sumber` (
   `id_identitas` int(11) DEFAULT NULL,
   `sumber` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sumber`
+--
+
+INSERT INTO `sumber` (`id`, `id_identitas`, `sumber`) VALUES
+(3, 3, 'E-book');
 
 -- --------------------------------------------------------
 
@@ -724,17 +903,18 @@ CREATE TABLE `table_user` (
   `sekolah` varchar(255) NOT NULL,
   `kepala_sekolah` varchar(255) NOT NULL,
   `mapel` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `password` varchar(255) NOT NULL,
+  `profile_img` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `table_user`
 --
 
-INSERT INTO `table_user` (`id`, `nip`, `nama`, `username`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`) VALUES
-(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$scjPgx8XOWb3m3DAiXDPyeENFreCz0TOWkvDjI.tuHZIo2o8c3X4S'),
-(2, '192891291829829', 'Fauzan Fiqriansyah, S.Pd.', 'ffiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S.Pd., M.Pd', 'SMKN 13 BANDUNG', '$2y$10$scjPgx8XOWb3m3DAiXDPyeENFreCz0TOWkvDjI.tuHZIo2o8c3X4S'),
-(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangz', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$F4lsB4qycl4dzF640.y8vOiiqfsVp8YKRtf75yz/RDSOIuQtkU.Pe');
+INSERT INTO `table_user` (`id`, `nip`, `nama`, `username`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`, `profile_img`) VALUES
+(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya', 'willysuryaw@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$scjPgx8XOWb3m3DAiXDPyeENFreCz0TOWkvDjI.tuHZIo2o8c3X4S', 'avatar.jpg'),
+(2, '192891291829829', 'Fauzan Fiqriansyah, S.Pd.', 'ffiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S.Pd., M.Pd', 'SMKN 13 BANDUNG', '$2y$10$scjPgx8XOWb3m3DAiXDPyeENFreCz0TOWkvDjI.tuHZIo2o8c3X4S', 'avatar.jpg'),
+(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangz', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$F4lsB4qycl4dzF640.y8vOiiqfsVp8YKRtf75yz/RDSOIuQtkU.Pe', 'avatar.jpg');
 
 -- --------------------------------------------------------
 
@@ -748,6 +928,13 @@ CREATE TABLE `target_peserta_didik` (
   `target_peserta` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `target_peserta_didik`
+--
+
+INSERT INTO `target_peserta_didik` (`id`, `id_identitas`, `target_peserta`) VALUES
+(3, 3, ' Peserta didik regular Siswa Desain Komunikasi visual');
+
 -- --------------------------------------------------------
 
 --
@@ -759,6 +946,13 @@ CREATE TABLE `tujuan_pembelajaran` (
   `id_identitas` int(11) DEFAULT NULL,
   `tujuan_pembelajaran` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tujuan_pembelajaran`
+--
+
+INSERT INTO `tujuan_pembelajaran` (`id`, `id_identitas`, `tujuan_pembelajaran`) VALUES
+(3, 3, 'Memahami manajemen produksi bidang Desain secara menyeluruh pada berbagai industri ekonomi kreatif lainnya,');
 
 --
 -- Indexes for dumped tables
@@ -1068,31 +1262,31 @@ ALTER TABLE `tujuan_pembelajaran`
 -- AUTO_INCREMENT for table `ases_for`
 --
 ALTER TABLE `ases_for`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ases_kog`
 --
 ALTER TABLE `ases_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `ases_non_kog`
 --
 ALTER TABLE `ases_non_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `ases_sum`
 --
 ALTER TABLE `ases_sum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `bahan_bacaan`
 --
 ALTER TABLE `bahan_bacaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `capaian_pembelajaran`
@@ -1104,7 +1298,7 @@ ALTER TABLE `capaian_pembelajaran`
 -- AUTO_INCREMENT for table `daftar_pustaka`
 --
 ALTER TABLE `daftar_pustaka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `elemen`
@@ -1116,37 +1310,37 @@ ALTER TABLE `elemen`
 -- AUTO_INCREMENT for table `file_modul`
 --
 ALTER TABLE `file_modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `glosarium`
 --
 ALTER TABLE `glosarium`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `identitas_sekolah`
 --
 ALTER TABLE `identitas_sekolah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `inti`
 --
 ALTER TABLE `inti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kegiatan_pembelajaran`
 --
 ALTER TABLE `kegiatan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `kompetensi_awal`
 --
 ALTER TABLE `kompetensi_awal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `list_ases_for`
@@ -1224,7 +1418,7 @@ ALTER TABLE `list_tp`
 -- AUTO_INCREMENT for table `lkpd`
 --
 ALTER TABLE `lkpd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
@@ -1236,61 +1430,61 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=123;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `model_pembelajaran`
 --
 ALTER TABLE `model_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pemahaman_bermakna`
 --
 ALTER TABLE `pemahaman_bermakna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pendahuluan`
 --
 ALTER TABLE `pendahuluan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pengayaan_remedial`
 --
 ALTER TABLE `pengayaan_remedial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `penutup`
 --
 ALTER TABLE `penutup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `persiapan_pembelajaran`
 --
 ALTER TABLE `persiapan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `pertanyaan_pemantik`
 --
 ALTER TABLE `pertanyaan_pemantik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=115;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `profil_pancasila`
 --
 ALTER TABLE `profil_pancasila`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `program_keahlian`
@@ -1302,13 +1496,13 @@ ALTER TABLE `program_keahlian`
 -- AUTO_INCREMENT for table `refleksi`
 --
 ALTER TABLE `refleksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `sumber`
 --
 ALTER TABLE `sumber`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=114;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `table_user`
@@ -1320,13 +1514,13 @@ ALTER TABLE `table_user`
 -- AUTO_INCREMENT for table `target_peserta_didik`
 --
 ALTER TABLE `target_peserta_didik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tujuan_pembelajaran`
 --
 ALTER TABLE `tujuan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
