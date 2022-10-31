@@ -501,9 +501,68 @@ function downloadPdf(id){
 	});
 }
 
+function downloadPreviewPdf(id){
+	var id_identitas = $(id).data('id');
+	$('#spinnerDownload'+id_identitas).css('display','inline-block');
+	$.ajax({
+		url: "../backend/create-modul-ajar/is_prev_modul_created.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			if(dataResult.statusCode==202){
+				createModulPdf(id_identitas);
+			}
+			else if(dataResult.statusCode==201){
+				window.open('./download-prev-modul.php?id='+id_identitas+'&ext=pdf', '_blank');
+				$('#spinnerDownload').css('display','none');
+			}
+		}
+	});
+}
+
+function downloadPreviewDocs(id){
+	var id_identitas = $(id).data('id');
+	$('#spinnerDownload'+id_identitas).css('display','inline-block');
+	$.ajax({
+		url: "../backend/create-modul-ajar/is_prev_modul_created.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			if(dataResult.statusCode==201){
+				window.open('./download-prev-modul.php?id='+id_identitas+'&ext=docx', '_blank');
+				$('#spinnerDownload').css('display','none');
+			}
+		}
+	});
+}
+
 function subscribe(id){
 	var id_identitas = $(id).data('id');
-	$('#subscribe').attr('data-id',id_identitas);
+	$('#subscribePdf').attr('data-id',id_identitas);
+	$('#previewPdf').attr('data-id',id_identitas);
+
+	$('#subscribeDocx').attr('data-id',id_identitas);
+	$('#previewDocx').attr('data-id',id_identitas);
+
+	var ext = $(id).data('ext');
+
+	if(ext == 'docx'){
+		$('.btn-docx').css('display','block');
+		$('.btn-pdf').css('display','none');
+	}else{
+		$('.btn-docx').css('display','none');
+		$('.btn-pdf').css('display','block');
+	}
 
 	$.ajax({
 			url: "../backend/modul/get-preview-modul.php",

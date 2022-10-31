@@ -127,8 +127,8 @@
 										        		<td>".$r['mata_pelajaran']."</td>
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>
-										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' onclick='downloadDocs(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
-										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
+										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' data-ext='docx' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
+										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' data-ext='pdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
 										        		</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
@@ -759,8 +759,10 @@
 		    			<div class="col-4">
 		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
 				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
-				    		<button type="button" class="btn btn-outline-secondary btn-nanti" data-bs-dismiss="modal">Download Preview</button>
-				       		<button type="button" class="btn btn-success btn-subscribe" id="subscribe" onclick="downloadPdf(this);">Berlangganan</button>
+				    		<button type="button" class="btn btn-outline-secondary btn-nanti btn-pdf" id="previewPdf" onclick="downloadPreviewPdf(this);">Download Preview</button>
+				       		<button type="button" class="btn btn-success btn-subscribe btn-pdf" id="subscribePdf" onclick="downloadPdf(this);">Berlangganan</button>
+				       		<button type="button" class="btn btn-outline-secondary btn-nanti btn-docx" id="previewDocx" onclick="downloadPreviewDocs(this);">Download Preview</button>
+				       		<button type="button" class="btn btn-success btn-subscribe btn-docx" id="subscribeDocx" onclick="downloadDocs(this);">Berlangganan</button>
 		    			</div>
 		    		</div>
 		    		
