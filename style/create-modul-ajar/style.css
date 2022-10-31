@@ -28,18 +28,25 @@ body{
 	z-index: 3;
 }
 
-.logo-icon-modal{
-	height: 35px;
+.logo-toast{
+	height: 30px;
 	width: auto;
-	display: inline-block;
 }
 
-.nav-item{
-	margin-right: 20px;
-	z-index: 3;
+.navbar-left{
+    display: inline-block;
+    justify-content: start;
+	width: auto;
+	white-space: nowrap;
+    z-index: 3;
+    margin-left: 3%;
 }
 
-.collapse{
+.navbar-nav .nav-item{
+    margin-right: 30px;
+}
+
+.navbar-right{
 	display: inline-block;
 	justify-content: end;
 	width: auto;
@@ -52,14 +59,19 @@ nav{
 	position: relative;
 	z-index: 1;
 	top: 0px;
-	background: url(../../images/background-paper.jpg) no-repeat center center fixed;
+    background-color: #A3F0FF;
 }
 
 .nav-text{
 	margin-right: 20px;
 }
+
 .nav-icon{
 	margin-right: 5px;
+}
+
+.nav-info-user{
+	padding-left: 25px;
 }
 
 .profile-pic{
