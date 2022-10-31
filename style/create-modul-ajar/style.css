@@ -28,6 +28,12 @@ body{
 	z-index: 3;
 }
 
+.logo-icon-modal{
+	width: 50px;
+	height: auto;
+}
+
+
 .logo-toast{
 	height: 30px;
 	width: auto;
