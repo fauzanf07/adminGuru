@@ -17,7 +17,7 @@
 		echo json_encode(array('statusCode' => 203));
 	}else{
 		$pass = password_hash($pass, PASSWORD_DEFAULT);
-		$query = "INSERT INTO table_user VALUES('','$nip','$namaLengkap','$username','$email', '$jabatan','$sekolah','$kepsek','$mapel','$pass')";
+		$query = "INSERT INTO table_user VALUES('','$nip','$namaLengkap','$username','$email', '$jabatan','$sekolah','$kepsek','$mapel','$pass', 'avatar.jpg')";
 		$result = mysqli_query($con,$query);
 		if($result){
 			echo json_encode(array('statusCode' => 201));

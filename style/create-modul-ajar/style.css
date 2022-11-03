@@ -188,6 +188,7 @@ nav{
 .btn-create{
 	width: 100px;
 	margin-top: 20px;
+	display: inline-block;
 }
 .ml-10{
 	margin-left: 10px;
@@ -230,6 +231,14 @@ nav{
 
 #spinnerDownload{
 	display: none;
+}
+
+.ket-slide{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 20px;
+	font-size:17px;
+	margin-left: 10px;
 }
 
 @media screen and (max-width: 401px) {

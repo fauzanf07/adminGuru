@@ -137,7 +137,7 @@
 										        		<td>".$r['mata_pelajaran']."</td>
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>
-										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' data-ext='docx' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);' >Download Docs <span class='spinner-border spinner-border-sm' role='status' aria-hidden='true' id='spinnerDownload'".$r['id']."></span></button></center>
+										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' data-ext='docx' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);' >Download Docs </button></center>
 										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' data-ext='pdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
 										        		</td>
 										        		<td>
@@ -241,9 +241,13 @@
 												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
 												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
 												</div>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-next="2" onclick="validatePage1();">
-											    	<span >Next</span>
-								  				</button>
+												<div class="outer-btn">
+													<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-next="2" onclick="validatePage1();">
+											    		<span >Next</span>
+									  				</button>
+									  				<span class="ket-slide">1 dari 7</span>
+												</div>
+											  	
 
 									    	</div>
 									    	<div class="carousel-item">
@@ -346,9 +350,10 @@
 												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage2();">
-											    	<span >Next</span>
-								  				</button>
+												  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage2();">
+												    	<span >Next</span>
+									  				</button>
+									  				<span class="ket-slide">2 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>A. TUJUAN PEMBELAJARAN (KOMPONEN INTI)</h5>
@@ -420,6 +425,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage3();">
 											    	<span >Next</span>
 								  				</button>
+								  				<span class="ket-slide">3 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>E. KEGIATAN PEMBELAJARAN</h5>
@@ -510,6 +516,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage4();">
 											    	<span >Next</span>
 								  				</button>
+								  				<span class="ket-slide">4 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>F. ASESMEN</h5>
@@ -626,6 +633,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage5();">
 											    	<span >Next</span>
 								  				</button>
+								  				<span class="ket-slide">5 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>G. PENGAYAAN DAN REMEDIAL</h5>
@@ -679,6 +687,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage6();">
 											    	<span >Next</span>
 								  				</button>
+								  				<span class="ket-slide">6 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)</h5>
@@ -731,6 +740,7 @@
 											    	<span >Buat Modul Ajar&nbsp;</span>
 											    	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
 								  				</button>
+								  				<span class="ket-slide">7 dari 7</span>
 									    	</div>
 
 								    	</form>
@@ -766,13 +776,19 @@
 							    id="embedPDF"
 							></embed>
 		    			</div>
-		    			<div class="col-4">
+		    			<div class="col-4 btn-pdf">
 		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
 				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
-				    		<button type="button" class="btn btn-outline-secondary btn-nanti btn-pdf" id="previewPdf" onclick="downloadPreviewPdf(this);">Download Preview</button>
-				       		<button type="button" class="btn btn-success btn-subscribe btn-pdf" id="subscribePdf" onclick="downloadPdf(this);">Berlangganan</button>
-				       		<button type="button" class="btn btn-outline-secondary btn-nanti btn-docx" id="previewDocx" onclick="downloadPreviewDocs(this);">Download Preview</button>
-				       		<button type="button" class="btn btn-success btn-subscribe btn-docx" id="subscribeDocx" onclick="downloadDocs(this);">Berlangganan</button>
+				    		<a class="btn btn-outline-secondary btn-nanti" target="_blank" id="previewPdf">Download Preview</a>
+				       		<a class="btn btn-success btn-subscribe " target="_blank" id="subscribePdf">Berlangganan</a>
+				  
+		    			</div>
+
+		    			<div class="col-4 btn-docx">
+		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
+				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
+				       		<a class="btn btn-outline-secondary btn-nanti " target="_blank" id="previewDocx">Download Preview</a>
+				       		<a class="btn btn-success btn-subscribe btn-docx" target="_blank" id="subscribeDocx">Berlangganan</a>
 		    			</div>
 		    		</div>
 		    		
