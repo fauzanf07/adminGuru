@@ -95,64 +95,89 @@
 					<div class="editprofile-title">
 						<h1>Edit Profile</h1>
 					</div>
-					<form>
-						<div class="row form-group choose-file">
-							<div class="col-md-3">
-								<img class="change-photo" src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" id="profile-pic-edit">
+					<div class=form-1>
+						<form>
+							<div class="row form-group choose-file">
+								<div class="col-md-3">
+									<img class="change-photo" src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" id="profile-pic-edit">
+								</div>
+								<div class="col-md-9">
+									<label class="form-label" for="customFile">Foto Profil</label>
+									<input type="file" class="form-control" id="customFile" />
+								</div>
 							</div>
-							<div class="col-md-9">
-								<label class="form-label" for="customFile">Foto Profil</label>
-								<input type="file" class="form-control" id="customFile" />
+							<div class="row form-group">
+								<label for="inputNama">Nama Lengkap dan Gelar<span>*</span></label>
+								<div class="col">
+								<input type="text" class="form-control" placeholder="Nama Lengkap dan Gelar" id="namaLengkap" value="<?php echo $r['nama']; ?>">
+								</div>
 							</div>
-						</div>
-						<div class="row form-group">
-							<label for="inputNama">Nama Lengkap dan Gelar</label>
-							<div class="col">
-							<input type="text" class="form-control" placeholder="Nama Lengkap dan Gelar" id="namaLengkap" value="<?php echo $r['nama']; ?>">
+							<div class="form-group">
+								<label for="inputNIP">NIP<span>*</span></label>
+								<input type="text" class="form-control" id="inputNIP" placeholder="NIP" value="<?php echo $r['nip']; ?>">
 							</div>
-						</div>
-						<div class="form-group">
-							<label for="inputNIP">NIP</label>
-							<input type="text" class="form-control" id="inputNIP" placeholder="NIP" value="<?php echo $r['nip']; ?>">
-						</div>
-						<div class="row">
-							<div class="form-group col-md-4">
-								<label for="inputSekolah">Sekolah</label>
-								<input type="text" class="form-control" id="inputSekolah" placeholder="Sekolah" value="<?php echo $r['sekolah']; ?>">
+							<div class="row">
+								<div class="form-group col-md-4">
+									<label for="inputSekolah">Sekolah<span>*</span></label>
+									<input type="text" class="form-control" id="inputSekolah" placeholder="Sekolah" value="<?php echo $r['sekolah']; ?>">
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputJabatan">Jabatan<span>*</span></label>
+									<select id="inputJabatan" class="form-control">
+										<option>Pilih...</option>
+										<option <?php if($r['jabatan'] == "Kepala Sekolah") echo "selected"; ?>>Kepala Sekolah</option>
+										<option <?php if($r['jabatan'] == "Staff Sekolah") echo "selected"; ?>>Staff Sekolah</option>
+										<option <?php if($r['jabatan'] == "Guru") echo "selected"; ?>>Guru</option>
+										<option <?php if($r['jabatan'] == "lainnya") echo "selected"; ?>>lainnya</option>
+									</select>
+								</div>
+								<div class="form-group col-md-4">
+									<label for="inputMapel">Mata Pelajaran<span>*</span></label>
+									<input type="text" class="form-control" id="inputMapel" placeholder="Mapel yang diajarkan" value="<?php echo $r['mapel']; ?>">
+								</div>
 							</div>
-							<div class="form-group col-md-4">
-								<label for="inputJabatan">Jabatan</label>
-								<select id="inputJabatan" class="form-control">
-									<option>Pilih...</option>
-									<option <?php if($r['jabatan'] == "Kepala Sekolah") echo "selected"; ?>>Kepala Sekolah</option>
-									<option <?php if($r['jabatan'] == "Staff Sekolah") echo "selected"; ?>>Staff Sekolah</option>
-									<option <?php if($r['jabatan'] == "Guru") echo "selected"; ?>>Guru</option>
-									<option <?php if($r['jabatan'] == "lainnya") echo "selected"; ?>>lainnya</option>
-								</select>
+							<div class="row form-group">
+								<label for="inputNama">Kepala Sekolah<span>*</span></label>
+								<div class="col">
+								<input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepsek" value="<?php echo $r['kepala_sekolah']; ?>">
+								</div>
 							</div>
-							<div class="form-group col-md-4">
-								<label for="inputMapel">Mata Pelajaran</label>
-								<input type="text" class="form-control" id="inputMapel" placeholder="Mapel yang diajarkan" value="<?php echo $r['mapel']; ?>">
+							<div class="form-group">
+								<label for="inputEmail">Email address<span>*</span></label>
+								<input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" value="<?php echo $r['email']; ?>">
 							</div>
-						</div>
-						<div class="row form-group">
-							<label for="inputNama">Kepala Sekolah</label>
-							<div class="col">
-							<input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepsek" value="<?php echo $r['kepala_sekolah']; ?>">
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="verif">
+								<label class="form-check-label" for="verif" >Sudah yakin ingin merubah data<span>*</span></label>
 							</div>
+							<div class="class-btn">
+								<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Simpan Perubahan</button>
+							</div>
+						</form>
+					</div>
+					
+					<div class="form-2">
+						<div class="editprofile-title">
+							<h1>Ganti Password</h1>
 						</div>
-						<div class="form-group">
-							<label for="inputEmail">Email address</label>
-							<input type="email" class="form-control" id="inputEmail" placeholder="name@example.com" value="<?php echo $r['email']; ?>">
-						</div>
-						<div class="form-group form-check">
-							<input type="checkbox" class="form-check-input" id="verif">
-							<label class="form-check-label" for="verif" >Sudah yakin ingin merubah data</label>
-						</div>
-						<div class="class-btn">
-							<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Simpan Perubahan</button>
-						</div>
-					</form>
+						<form>
+							<div class="form-group">
+								<label for="inputPasswordLama">Password Lama</label>
+								<input type="password" class="form-control" id="inputPasswordLama" placeholder="Password Lama" value="<?php echo $r['nip']; ?>">
+							</div>
+							<div class="form-group">
+								<label for="inputPasswordBaru">Password Baru</label>
+								<input type="password" class="form-control" id="inputPasswordBaru" placeholder="Password Baru" value="<?php echo $r['nip']; ?>">
+							</div>
+							<div class="form-group form-check">
+								<input type="checkbox" class="form-check-input" id="verif">
+								<label class="form-check-label" for="verif" >Sudah yakin ingin mengganti password<span>*</span></label>
+							</div>
+							<div class="class-btn">
+								<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Ganti Password</button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -6,7 +6,7 @@
 <html>
 
 <head>
-	<title>SmartTeach</title>
+	<title>Admin Guru</title>
 	<link rel="stylesheet" type="text/css" href="style/landing-page/style.css">
 	<link rel="icon" type="image/x-icon" href="images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -74,11 +74,12 @@
 				<div class="row">
 					<div class="col-lg-6">
 						<h1 class="title-row-1">
-							ADMINISTRASI<br><span>GURU</span>
+							ASISTEN ADMINISTRASI<br><span>GURU</span>
 						</h1>
 						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
 						<div class="btn-contact">
-							<button type="button" class="btn btn-primary btn-lg">CONTACT US</button>
+							<button type="button" class="btn btn-primary btn-lg btn-kontak">KONTAK KAMI</button>
+							<button type="button" class="btn btn-primary btn-lg btn-daftar">DAFTAR</button>
 						</div>
 					</div>
 					<div class="col-lg-6">

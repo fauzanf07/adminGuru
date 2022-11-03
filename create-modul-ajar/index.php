@@ -171,7 +171,7 @@
 												  <input type="text" class="form-control" placeholder="Satuan Pendidikan" value="<?php echo $_SESSION['sekolah']; ?>" disabled="disabled" id="satuanPend" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
-												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran</span>
+												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran<span class="bintang-merah">*</span></span>
 												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" required>
 												    <datalist id="tahunajar-options">
 														<option value="2020/2021">2020/2021</option>
@@ -180,7 +180,7 @@
 													</datalist>
 												</div>
 												<div class="input-group mb-3">
-													<label class="input-group-text" for="inputGroupSelect01">Program Keahlian</label>
+													<label class="input-group-text" for="inputGroupSelect01">Program Keahlian<span class="bintang-merah">*</span></label>
 													<select class="form-select" id="programKeahlian" required>
 													    <option value="" selected>Choose...</option>
 													    <?php
@@ -193,13 +193,13 @@
 													</select>
 												</div>
 												<div class="input-group mb-3">
-													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran</label>
+													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran<span class="bintang-merah">*</span></label>
 													<select class="form-select" id="mapel" required>
 															<option selected>Choose...</option>
 													</select>
 												</div>
 												<div class="input-group mb-3">
-												  <span class="input-group-text">Kelas, Semester, dan Fase</span>
+												  <span class="input-group-text">Kelas, Semester, dan Fase<span class="bintang-merah">*</span></span>
 												  	<select class="form-select" id="kelas" required>
 													    <option selected>Choose...</option>
 													    <option value="x">X</option>
@@ -214,17 +214,17 @@
 													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" value="" disabled="disabled">
 												</div>
 												<div class="input-group mb-3">
-														<span class="input-group-text">Elemen</span>
+														<span class="input-group-text">Elemen<span class="bintang-merah">*</span></span>
 														<select class="form-select" id="elemen" required>
 															<option selected>Choose...</option>
 														</select>
 												</div>
 												<div class="input-group mb-3">
-														<span class="input-group-text">Capaian Pembelajaran</span>
+														<span class="input-group-text">Capaian Pembelajaran<span class="bintang-merah">*</span></span>
 														<textarea class="form-control" id="cp" name="cp" disabled="disabled" rows="6" required></textarea>
 												</div>
 												<div class="multiple-inputs" id="multipleInputs">
-														<span>Meteri : </span>
+														<span>Meteri :<span class="bintang-merah">*</span></span>
 														<div class="list-input mt-3">
 															<div id="inputs-materi">
 																<div class="list-kosong" id="list-kosong-materi">Tidak ada materi</div>
@@ -238,7 +238,7 @@
 														</div>
 												</div>
 												<div class="input-group mb-3 mt-3">
-												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
+												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu<span class="bintang-merah">*</span></span>
 												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
 												</div>
 												<div class="outer-btn">
@@ -251,7 +251,7 @@
 
 									    	</div>
 									    	<div class="carousel-item">
-									    		<h5>B. KOMPETENSI AWAL</h5>
+									    		<h5>B. KOMPETENSI AWAL<span class="bintang-merah">*</span></h5>
 									      		<div class="multiple-inputs" id="multipleInputs">
 													<div id="inputs-ka">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA1">
@@ -265,7 +265,7 @@
 												<br/>
 												<h5>C.  PROFIL PELAJAR PANCASILA</h5>
 												<div class="multiple-inputs " id="multipleInputs">
-														<span>Profil Pelajar Pancasila : </span>
+														<span>Profil Pelajar Pancasila : <span class="bintang-merah">*</span></span>
 														<div class="list-input mt-3">
 															<div id="inputs-pp">
 																<div class="list-kosong" id="list-kosong-pp">Tidak ada Profil Pelajar Pancasila</div>
@@ -285,7 +285,7 @@
 												<h5>D. SARANA DAN PRASARANA</h5>
 												<div class="multiple-inputs " id="multipleInputs">
 													<div  class="multiple-inputs">
-														<span>Media pembelajaran yang digunakan : </span>
+														<span>Media pembelajaran yang digunakan :<span class="bintang-merah">*</span></span>
 														<div class="list-input mt-3">
 															<div id="inputs-media">
 																<div class="list-kosong" id="list-kosong-media">Tidak ada media pembelajaran yang digunakan</div>
@@ -304,7 +304,7 @@
 													</div>
 													
 													<div  class="multiple-inputs mt-3">
-														<span>Sumber belajar yang digunakan : </span>
+														<span>Sumber belajar yang digunakan :<span class="bintang-merah">*</span></span>
 														<div class="list-input mt-3">
 															<div id="inputs-sumber">
 																<div class="list-kosong" id="list-kosong-sumber">Tidak ada sumber belajar yang digunakan</div>
@@ -326,13 +326,13 @@
 												<br/>
 												<h5>E. TARGET PESERTA DIDIK</h5>
 												<div class="input-group mb-3 mt-3">
-													<span class="input-group-text" id="basic-addon1">Target Peserta Didik</span>
+													<span class="input-group-text" id="basic-addon1">Target Peserta Didik<span class="bintang-merah">*</span></span>
 													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target">
 												</div>
 												<br/>
 												<h5>F. MODEL PEMBELAJARAN</h5>
 												<div class="input-group mb-3 mt-3">
-													<span class="input-group-text" id="basic-addon1">Model Pembelajaran</span>
+													<span class="input-group-text" id="basic-addon1">Model Pembelajaran<span class="bintang-merah">*</span></span>
 													<select class="form-select" id="model">
 													    <option selected>Choose...</option>
 													    <option value="Discovery Learning">Discovery Learning</option>
@@ -358,7 +358,7 @@
 									    	<div class="carousel-item">
 									    		<h5>A. TUJUAN PEMBELAJARAN (KOMPONEN INTI)</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-														<span>Tujuan Pembelajaran : </span>
+														<span>Tujuan Pembelajaran :<span class="bintang-merah">*</span></span>
 														<div class="list-input mt-3">
 															<div id="inputs-tp">
 																<div class="list-kosong" id="list-kosong-tp">Tidak ada tujuan pembelajaran</div>
@@ -373,7 +373,7 @@
 														</div>
 												</div>
 												<br/>
-												<h5>B. PEMAHAMAN BERMAKNA</h5>
+												<h5>B. PEMAHAMAN BERMAKNA<span class="bintang-merah">*</span></h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 													<div id="inputs-pb">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB1">
@@ -385,7 +385,7 @@
 													<button type="button" class="btn btn-success" id="addPB"> + Pemahaman Bermakna</button>
 												</div>
 												<br/>
-												<h5>C. PERTANYAAN PEMANTIK</h5>
+												<h5>C. PERTANYAAN PEMANTIK<span class="bintang-merah">*</span></h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 													<div id="inputs-perpem">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM1">
@@ -399,7 +399,7 @@
 												<br/>
 												<h5>D. PERSIAPAN PEMBELAJARAN</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-														<span>Persiapan Pembelajaran : </span>
+														<span>Persiapan Pembelajaran :<span class="bintang-merah">*</span></span>
 														<div class="list-input mt-3">
 															<div id="inputs-perpemb">
 																<div class="list-kosong" id="list-kosong-perpemb">Tidak ada persiapan pembelajaran</div>
@@ -436,7 +436,7 @@
 															<span>Pendahuluan</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Kegiatan Pendahuluan : </span>
+															<span>Kegiatan Pendahuluan :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-pend">
 																	<div class="list-kosong" id="list-kosong-pend">Tidak ada Pendahuluan</div>
@@ -462,7 +462,7 @@
 															<span>Inti</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Kegiatan Inti : </span>
+															<span>Kegiatan Inti :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-inti">
 																	<div class="list-kosong" id="list-kosong-inti">Tidak ada Inti</div>
@@ -488,7 +488,7 @@
 															<span>Penutup</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Kegiatan Penutup : </span>
+															<span>Kegiatan Penutup :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-penutup">
 																	<div class="list-kosong" id="list-kosong-penutup">Tidak ada Penutup</div>
@@ -526,7 +526,7 @@
 															<span>Asesmen non Kognitif</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Asesmen non Kognitif : </span>
+															<span>Asesmen non Kognitif :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-non">
 																	<div class="list-kosong" id="list-kosong-ases-non">Tidak ada Asesmen Non Kognitif</div>
@@ -552,7 +552,7 @@
 															<span>Asesmen Kognitif</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Asesmen Kognitif : </span>
+															<span>Asesmen Kognitif :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-kog">
 																	<div class="list-kosong" id="list-kosong-ases-kog">Tidak ada Asesmen Kognitif</div>
@@ -579,7 +579,7 @@
 															<span>Asesmen Formatif</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Asesmen Formatif : </span>
+															<span>Asesmen Formatif :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-for">
 																	<div class="list-kosong" id="list-kosong-ases-for">Tidak ada Asesmen Formatif</div>
@@ -605,7 +605,7 @@
 															<span>Asesmen Sumatif</span>
 														</div>
 														<div class="col-lg-9">
-															<span>Asesmen Suamtif : </span>
+															<span>Asesmen Suamtif :<span class="bintang-merah">*</span></span>
 															<div class="list-input mt-3">
 																<div id="inputs-ases-sum">
 																	<div class="list-kosong" id="list-kosong-ases-sum">Tidak ada Asesmen Sumatif</div>
@@ -638,7 +638,7 @@
 									    	<div class="carousel-item">
 									    		<h5>G. PENGAYAAN DAN REMEDIAL</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-							    					<span>Pengayaan dan Remedial : </span>
+							    					<span>Pengayaan dan Remedial :<span class="bintang-merah">*</span></span>
 													<div class="list-input mt-3">
 														<div id="inputs-penmed">
 															<div class="list-kosong" id="list-kosong-penmed">Tidak ada Pengayaan dan Remedial</div>
@@ -661,7 +661,7 @@
 									    		<br/>
 									    		<h5>H. REFLEKSI PESERTA DIDIK DAN GURU</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<span>Refleksi Peserta Didik dan Guru : </span>
+									    			<span>Refleksi Peserta Didik dan Guru :<span class="bintang-merah">*</span></span>
 													<div class="list-input mt-3">
 														<div id="inputs-refleksi">
 															<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>
@@ -690,14 +690,14 @@
 								  				<span class="ket-slide">6 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
-									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)</h5>
+									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)<span class="bintang-merah">*</span></h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<div class="input-group">
 														<input type="file" class="form-control" id="lkpd">
 													</div>
 									    		</div>
 									    		<br/>
-									    		<h5>B. BAHAN BACAAN GURU DAN PESERTA DIDIK</h5>
+									    		<h5>B. BAHAN BACAAN GURU DAN PESERTA DIDIK<span class="bintang-merah">*</span></h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<div id="inputs-bahan">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN1">
@@ -709,7 +709,7 @@
 													<button type="button" class="btn btn-success" id="addBAHAN"> + Bahan Bacaan</button>
 									    		</div>
 									    		<br/>
-									    		<h5>C. GLOSARIUM</h5>
+									    		<h5>C. GLOSARIUM<span class="bintang-merah">*</span></h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<div id="inputs-glos">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS1">
@@ -721,7 +721,7 @@
 													<button type="button" class="btn btn-success" id="addGLOS"> + Glosarium</button>
 									    		</div>
 									    		<br/>
-									    		<h5>D. DAFTAR PUSTAKA</h5>
+									    		<h5>D. DAFTAR PUSTAKA<span class="bintang-merah">*</span></h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<div id="inputs-dafpus">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS1">
