@@ -160,10 +160,23 @@ nav{
 	margin-bottom: 30px;
 }
 
+.form-group span{
+	color: red;
+}
+
+.class-btn{
+	display: block;
+}
+
 .submit-btn{
+	display: block;
 	margin-top: 10px;
-	margin-bottom: 100px;
+	margin-bottom: 50px;
 	float: right;
+}
+
+.form-2{
+	margin-top: 10%;
 }
 
 .background-footer{

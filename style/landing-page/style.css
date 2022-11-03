@@ -117,6 +117,14 @@ nav{
 	justify-content: center;
 }
 
+.btn-kontak{
+	margin-right: 1%;
+}
+
+.btn-daftar{
+	margin-left: 1%;
+}
+
 .btn-contact button{
 	background-color: #A3F0FF;
 	border-color: #A3F0FF;
