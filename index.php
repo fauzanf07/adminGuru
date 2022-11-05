@@ -78,8 +78,8 @@
 						</h1>
 						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
 						<div class="btn-contact">
-							<button type="button" class="btn btn-primary btn-lg btn-kontak" data-bs-toggle='modal' data-bs-target='#exampleModal'>KONTAK KAMI</button>
-							<button type="button" class="btn btn-primary btn-lg btn-daftar">DAFTAR</button>
+							<a class="btn btn-primary btn-lg btn-kontak" data-bs-toggle='modal' data-bs-target='#exampleModal'>KONTAK KAMI</a>
+							<a href="signup" class="btn btn-primary btn-lg btn-daftar">DAFTAR</a>
 						</div>
 					</div>
 					<div class="col-lg-6">
