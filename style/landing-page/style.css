@@ -131,6 +131,16 @@ nav{
 	font-weight: bolder;
 }
 
+.logo-icon-modal{
+	width: 50px;
+	height: auto;
+}
+
+.logo-sosmed{
+	padding-top: 7%;
+	padding-bottom: 7%;
+}
+
 .img-laptop img{
 	width: 120%;
   	height: auto;

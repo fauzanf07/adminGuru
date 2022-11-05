@@ -78,7 +78,7 @@
 						</h1>
 						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
 						<div class="btn-contact">
-							<button type="button" class="btn btn-primary btn-lg btn-kontak">KONTAK KAMI</button>
+							<button type="button" class="btn btn-primary btn-lg btn-kontak" data-bs-toggle='modal' data-bs-target='#exampleModal'>KONTAK KAMI</button>
 							<button type="button" class="btn btn-primary btn-lg btn-daftar">DAFTAR</button>
 						</div>
 					</div>
@@ -86,6 +86,36 @@
 						<div class="img-laptop">
 							<img src="images/laptop.png" alt="laptop">
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<img class="logo-icon-modal" src="images/logo-removebg-preview.png" alt="logo">
+						<h5>&nbsp;&nbsp;&nbsp;Kontak Kami</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body large" style="text-align: center; color: #686868; padding: 10px 50px;">
+						<div class="row logo-sosmed">
+							<div class="col">
+								<a href="https://www.freepnglogos.com/pics/whatsapp-logo-png" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/whatsapp-logo-app-png-4.png" width="200" alt="whatsapp logo app png" /></a>
+								<p>+62 85156811350</p>
+							</div>
+							<div class="col">
+								<a href="https://www.freepnglogos.com/pics/logo-instagram-png" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/instagram-logos-png-images-free-download-5.png" width="200" alt="instagram logos png images free download" /></a>
+								<p>@adminGuru</p>
+							</div>
+							<div class="col">
+								<a href="https://www.freepnglogos.com/pics/logo-gmail" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-file-gmail-icon-svg-wikimedia-commons-0.png" width="200" alt="logo gmail png file gmail icon svg wikimedia commons" /></a>
+								<p>adminGuru@gmail.com</p>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer" style="padding:20px 0; ">
 					</div>
 				</div>
 			</div>
