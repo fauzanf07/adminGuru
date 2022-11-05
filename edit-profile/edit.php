@@ -162,19 +162,19 @@
 						</div>
 						<form>
 							<div class="form-group">
-								<label for="inputPasswordLama">Password Lama</label>
-								<input type="password" class="form-control" id="inputPasswordLama" placeholder="Password Lama" value="<?php echo $r['nip']; ?>">
+								<label for="inputPasswordLama">Password Lama<span>*</span></label>
+								<input type="password" class="form-control" id="inputPasswordLama" placeholder="Password Lama">
 							</div>
 							<div class="form-group">
-								<label for="inputPasswordBaru">Password Baru</label>
-								<input type="password" class="form-control" id="inputPasswordBaru" placeholder="Password Baru" value="<?php echo $r['nip']; ?>">
+								<label for="inputPasswordBaru">Password Baru<span>*</span></label>
+								<input type="password" class="form-control" id="inputPasswordBaru" placeholder="Password Baru">
 							</div>
 							<div class="form-group form-check">
-								<input type="checkbox" class="form-check-input" id="verif">
-								<label class="form-check-label" for="verif" >Sudah yakin ingin mengganti password<span>*</span></label>
+								<input type="checkbox" class="form-check-input" id="verifPasw">
+								<label class="form-check-label" for="verifPasw" >Sudah yakin ingin mengganti password<span>*</span></label>
 							</div>
 							<div class="class-btn">
-								<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Ganti Password</button>
+								<button type="button" class="btn btn-success submit-btn" id="submitPasw" data-id='<?php echo $id_user; ?>' onclick="changePassword();">Ganti Password</button>
 							</div>
 						</form>
 					</div>

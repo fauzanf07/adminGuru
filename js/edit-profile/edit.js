@@ -135,3 +135,62 @@ function getToast(msg){
 
     toast.show();
 }
+
+function changePassword(){
+	var id = $('#submit').data('id');
+	var oldPass = $('#inputPasswordLama').val();
+	var newPass = $('#inputPasswordBaru').val();
+
+	var verifPass = $('#verifPasw').val();
+	if(!isEmpty(oldPass) && !isEmpty(newPass) && $('#verifPasw').is(":checked")){
+		$.ajax({
+	        url: '../backend/edit-profile/change-pasw.php',
+	        type: 'POST',
+	        data: {
+	        	id: id,
+	        	oldPass: oldPass,
+				newPass: newPass
+			},
+			cache: false,
+	        success: function(dataResult){
+	        	var dataResult = JSON.parse(dataResult);
+				console.log(dataResult);
+	            if(dataResult.statusCode==200){
+	            	Swal.fire({
+						title: 'Success!',
+						text: 'Ubah Password berhasil',
+						icon: 'success',
+						confirmButtonText: 'Ok',
+						confirmButtonColor: "#d63630"
+					}).then((result) =>{
+						if(result.isConfirmed){
+							location.reload();	
+						}
+					});
+	            }
+	            else if(dataResult.statusCode==202){
+	            	Swal.fire({
+						title: 'Error!',
+						text: 'Password lama salah',
+						icon: 'error',
+						confirmButtonText: 'Ok',
+						confirmButtonColor: "#d63630"
+					})
+	            }
+	            else{
+	                Swal.fire({
+						title: 'Error!',
+						text: 'Ada sesuatu yang error dengan server',
+						icon: 'error',
+						confirmButtonText: 'Ok',
+						confirmButtonColor: "#d63630"
+					})
+	            }
+	        },
+	   });
+
+	}else{
+    	getToast("Ada input yang belum diisi. Silahkan isi terlebih dahulu!");
+	}
+
+}

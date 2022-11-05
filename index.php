@@ -92,7 +92,7 @@
 		</div>
 
 		<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-lg">
+			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
 				<div class="modal-content">
 					<div class="modal-header">
 						<img class="logo-icon-modal" src="images/logo-removebg-preview.png" alt="logo">
@@ -102,16 +102,16 @@
 					<div class="modal-body large" style="text-align: center; color: #686868; padding: 10px 50px;">
 						<div class="row logo-sosmed">
 							<div class="col">
-								<a href="https://www.freepnglogos.com/pics/whatsapp-logo-png" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/whatsapp-logo-app-png-4.png" width="200" alt="whatsapp logo app png" /></a>
-								<p>+62 85156811350</p>
+								<a href="https://www.instagram.com/adminguru.id/" target="_blank" title="Instagram"><img src="images/instagram-icon.png" width="100" alt="instagram logo app png" /></a>
 							</div>
 							<div class="col">
-								<a href="https://www.freepnglogos.com/pics/logo-instagram-png" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/instagram-logos-png-images-free-download-5.png" width="200" alt="instagram logos png images free download" /></a>
-								<p>@adminGuru</p>
+								<a href="" title="Facebook"><img src="images/facebook-icon.png" width="100" alt="facebook logo app png" /></a>
 							</div>
 							<div class="col">
-								<a href="https://www.freepnglogos.com/pics/logo-gmail" title="Image from freepnglogos.com"><img src="https://www.freepnglogos.com/uploads/logo-gmail-png/logo-gmail-png-file-gmail-icon-svg-wikimedia-commons-0.png" width="200" alt="logo gmail png file gmail icon svg wikimedia commons" /></a>
-								<p>adminGuru@gmail.com</p>
+								<a href="https://wa.me/62895322042052" target="_blank" title="Whatsapp"><img src="images/whatsapp-icon.png" width="100" alt="whatsapp logo app png" /></a>
+							</div>
+							<div class="col">
+								<a href="https://mail.google.com/mail/?view=cm&fs=1&to=adminguru@adminguru.id" target="_blank" title="Email"><img src="images/gmail-icon.png" width="100" alt="Gmail logo app png" /></a>
 							</div>
 						</div>
 					</div>
@@ -209,6 +209,7 @@
 			<p>© adminguru.id. Hak cipta dilindungi Undang-Undang.</p>
 		</div>
 	</footer>
+	
 </body>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
