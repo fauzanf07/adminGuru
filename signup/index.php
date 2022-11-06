@@ -125,7 +125,7 @@
 							<label class="form-check-label" for="verif" >Semua data sudah benar</label>
 						</div>
 						<div class="class-btn">
-							<button type="button" class="btn btn-success submit-btn" id="submit">Submit</button>
+							<button type="button" class="btn btn-success submit-btn" id="submit">Submit <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></button>
 						</div>
 					</form>
 				</div>

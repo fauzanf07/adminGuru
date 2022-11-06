@@ -6,5 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Mailjet' => array($vendorDir . '/mailjet/mailjet-apiv3-php/src'),
     'ConvertApi\\' => array($vendorDir . '/convertapi/convertapi-php/lib'),
 );
