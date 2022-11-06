@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 03, 2022 at 08:11 AM
+-- Generation Time: Nov 06, 2022 at 07:18 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -981,10 +981,10 @@ CREATE TABLE `table_user` (
 --
 
 INSERT INTO `table_user` (`id`, `nip`, `nama`, `username`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`, `profile_img`) VALUES
-(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya', 'willysuryaw@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$scjPgx8XOWb3m3DAiXDPyeENFreCz0TOWkvDjI.tuHZIo2o8c3X4S', 'storm_trooper.jpg'),
-(2, '192891291829829', 'Fauzan Fiqriansyah, S.Pd.', 'ffiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S.Pd., M.Pd', 'SMKN 13 BANDUNG', '$2y$10$scjPgx8XOWb3m3DAiXDPyeENFreCz0TOWkvDjI.tuHZIo2o8c3X4S', 'avatar.jpg'),
-(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangz', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$F4lsB4qycl4dzF640.y8vOiiqfsVp8YKRtf75yz/RDSOIuQtkU.Pe', 'avatar.jpg'),
-(5, '131983928392938', 'Agustian, S.Pd.', 'agustian', 'fauzanfiqriansyah126@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$dRe9dCSuXhKtsmfskElq4Om7bslPgc5SIrhsw3Q9meyDFvq0sJ7le', 'avatar.jpg');
+(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$9eRo1FcczZNtotwnuxkTsOgTp.XPCfi6qPOBWur4Hfgm1fj8oMteW', 'storm_trooper.jpg'),
+(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangz', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$9eRo1FcczZNtotwnuxkTsOgTp.XPCfi6qPOBWur4Hfgm1fj8oMteW', 'avatar.jpg'),
+(5, '131983928392938', 'Agustian, S.Pd.', 'agustian', 'fauzanfiqriansyah126@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$9eRo1FcczZNtotwnuxkTsOgTp.XPCfi6qPOBWur4Hfgm1fj8oMteW', 'avatar.jpg'),
+(10, '198609262015051000', 'Fauzan Fiqriansyah', 'ffiqriansyah', 'fauzanfiqriansyah127@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Basis Data', '$2y$10$9eRo1FcczZNtotwnuxkTsOgTp.XPCfi6qPOBWur4Hfgm1fj8oMteW', 'avatar.jpg');
 
 -- --------------------------------------------------------
 
@@ -1593,7 +1593,7 @@ ALTER TABLE `sumber`
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `target_peserta_didik`
