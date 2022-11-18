@@ -50,7 +50,7 @@
                 
 				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
-						<li class="nav-text active"><a class="nav-link active" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>';
+						<li class="nav-text active"><a class="nav-link active" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>
 						
 						<li class="nav-icon icon-sosmed">
 							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
