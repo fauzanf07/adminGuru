@@ -9,12 +9,15 @@
 <html>
 
 <head>
+	
 	<title>adminguru &centerdot; Login</title>
 	<link rel="stylesheet" type="text/css" href="../style/login/style.css">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-signin-client_id" content="490224088263-crefev9r8rsorjan5op7ep4e2e8gi82v.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -85,7 +88,8 @@
 										</div>
 										<div class="login-button">
 											<div class="d-grid gap-2">
-												<button class="btn btn-primary btn btn-success" type="button" id="login">Log in</button>
+												<button class=" btn btn-success" type="button" id="login">Log in</button>
+												<div class="btn g-signin2" data-onsuccess="onSignIn"></div>
 											</div>
 										</div>
 									</form>

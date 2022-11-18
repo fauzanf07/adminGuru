@@ -3,7 +3,7 @@
 
 	$prokel = $_POST['prokel'];
 
-	$sql = "SELECT * FROM mata_pelajaran WHERE `id_pk` = '$prokel'" ;
+	$sql = "SELECT * FROM mata_pelajaran WHERE `id_pk` = '$prokel' OR `umum` = 1" ;
 	$result = mysqli_query($con,$sql);
 	$rows = array();
 

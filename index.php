@@ -28,22 +28,23 @@
 				<span class="navbar-toggler-icon"></span>
 				</button>
 
-                <div class="collapse navbar-collapse navbar-left" id="navbarNav">
+                <div class="collapse navbar-collapse navbar-right" id="navbarNav">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="blog">Blog</a>
-                        </li>
+                        
                     </ul>
                 </div>
                 
 				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
+						<li class="nav-item">
+                        	<a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                        	<a class="nav-link" href="#">About us</a>
+                        </li>
+                        <li class="nav-item">
+                        	<a class="nav-link" href="blog">Blog</a>
+                        </li>
 						<?php
 							if(!isset($_SESSION['nama'])){
 								echo '<li class="nav-text"><a class="nav-link active" href="./login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>';
@@ -78,7 +79,7 @@
 						</h1>
 						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
 						<div class="btn-contact">
-							<a class="btn btn-primary btn-lg btn-kontak" data-bs-toggle='modal' data-bs-target='#exampleModal'>KONTAK KAMI</a>
+							<a class="btn btn-primary btn-lg btn-kontak" href="https://wa.me/6283824779390">KONTAK KAMI</a>
 							<a href="signup" class="btn btn-primary btn-lg btn-daftar">DAFTAR</a>
 						</div>
 					</div>
@@ -86,36 +87,6 @@
 						<div class="img-laptop">
 							<img src="images/laptop.png" alt="laptop">
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-				<div class="modal-content">
-					<div class="modal-header">
-						<img class="logo-icon-modal" src="images/logo-removebg-preview.png" alt="logo">
-						<h5>&nbsp;&nbsp;&nbsp;Kontak Kami</h5>
-						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-					</div>
-					<div class="modal-body large" style="text-align: center; color: #686868; padding: 10px 50px;">
-						<div class="row logo-sosmed">
-							<div class="col">
-								<a href="https://www.instagram.com/adminguru.id/" target="_blank" title="Instagram"><img src="images/instagram-icon.png" width="100" alt="instagram logo app png" /></a>
-							</div>
-							<div class="col">
-								<a href="" title="Facebook"><img src="images/facebook-icon.png" width="100" alt="facebook logo app png" /></a>
-							</div>
-							<div class="col">
-								<a href="https://wa.me/62895322042052" target="_blank" title="Whatsapp"><img src="images/whatsapp-icon.png" width="100" alt="whatsapp logo app png" /></a>
-							</div>
-							<div class="col">
-								<a href="https://mail.google.com/mail/?view=cm&fs=1&to=adminguru@adminguru.id" target="_blank" title="Email"><img src="images/gmail-icon.png" width="100" alt="Gmail logo app png" /></a>
-							</div>
-						</div>
-					</div>
-					<div class="modal-footer" style="padding:20px 0; ">
 					</div>
 				</div>
 			</div>
