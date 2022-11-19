@@ -3,7 +3,7 @@
 
    session_start();
 
-   $username = $_SESSION['username'];
+   $email = $_SESSION['email'];
 
    if(isset($_FILES['file']['name'])){
 
@@ -18,7 +18,7 @@
       $response = 0;
       if(in_array(strtolower($imageFileType), $valid_extensions)) {
          if(move_uploaded_file($_FILES['file']['tmp_name'],$location)){
-            $changeSql = "UPDATE table_user SET `profile_img` = '$filename' WHERE `username` = '$username'";
+            $changeSql = "UPDATE table_user SET `profile_img` = '$filename' WHERE `email` = '$email'";
             $rs = mysqli_query($con,$changeSql);
             if($rs){
                $_SESSION['profile_img'] = $filename;

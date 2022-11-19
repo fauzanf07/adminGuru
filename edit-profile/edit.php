@@ -6,9 +6,9 @@
 	include("../backend/conn.php");
 
 
-	$username = $_GET['username'];
+	$email = $_GET['email'];
 
-	$sql = "SELECT * FROM table_user WHERE username = '$username'";
+	$sql = "SELECT * FROM table_user WHERE email = '$email'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
 	$id_user = $r['id'];
@@ -82,7 +82,6 @@
 				<div class="col-lg-3">
                     <center><img src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic"></center>
                     <h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
-                    <span class="username">@<?php echo $_SESSION['username']; ?></span>
                     <div class="info">
                         <span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  <?php echo $_SESSION['nip']; ?></span>
                         <span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; <?php echo $_SESSION['sekolah']; ?></span>
@@ -152,29 +151,6 @@
 							</div>
 							<div class="class-btn">
 								<button type="button" class="btn btn-success submit-btn" id="submit" data-id='<?php echo $id_user; ?>'>Simpan Perubahan</button>
-							</div>
-						</form>
-					</div>
-					
-					<div class="form-2">
-						<div class="editprofile-title">
-							<h1>Ganti Password</h1>
-						</div>
-						<form>
-							<div class="form-group">
-								<label for="inputPasswordLama">Password Lama<span>*</span></label>
-								<input type="password" class="form-control" id="inputPasswordLama" placeholder="Password Lama">
-							</div>
-							<div class="form-group">
-								<label for="inputPasswordBaru">Password Baru<span>*</span></label>
-								<input type="password" class="form-control" id="inputPasswordBaru" placeholder="Password Baru">
-							</div>
-							<div class="form-group form-check">
-								<input type="checkbox" class="form-check-input" id="verifPasw">
-								<label class="form-check-label" for="verifPasw" >Sudah yakin ingin mengganti password<span>*</span></label>
-							</div>
-							<div class="class-btn">
-								<button type="button" class="btn btn-success submit-btn" id="submitPasw" data-id='<?php echo $id_user; ?>' onclick="changePassword();">Ganti Password</button>
 							</div>
 						</form>
 					</div>

@@ -1,4 +1,6 @@
-<?php 	
+<?php 
+	require_once '../config-google-api.php';
+
 	session_start();
 	if(isset($_SESSION['nama'])){
 		header("Location: ../create-modul-ajar");
@@ -16,8 +18,6 @@
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="google-signin-client_id" content="490224088263-crefev9r8rsorjan5op7ep4e2e8gi82v.apps.googleusercontent.com">
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 
 <body>
@@ -78,8 +78,8 @@
 								<div class="border">
 									<form>
 										<div class="form-group">
-											<label for="exampleInputEmail1">Email address/Username</label>
-											<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter email or username">
+											<label for="exampleInputEmail1">Email address</label>
+											<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter your email">
 											<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 										</div>
 										<div class="form-group">
@@ -89,8 +89,8 @@
 										<div class="login-button">
 											<div class="d-grid gap-2">
 												<button class=" btn btn-success" type="button" id="login">Log in</button>
-												<div class="btn g-signin2" data-onsuccess="onSignIn"></div>
 											</div>
+											<?php 	echo "<a href='".$client->createAuthUrl()."' class='login-with-google-btn'>Sign in with Google</a>"; ?>
 										</div>
 									</form>
 								</div>
@@ -138,7 +138,6 @@
 
 
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>

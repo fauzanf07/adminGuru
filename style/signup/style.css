@@ -107,6 +107,10 @@ nav{
 	text-align: center;
 }
 
+.g-signin{
+	float: right;
+}
+
 footer {
 	margin-top: auto;
 	font-family: 'Fredoka', sans-serif;

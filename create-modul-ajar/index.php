@@ -2,15 +2,16 @@
 	session_start();
 	if(!isset($_SESSION['nama'])){
 		header("Location: ../login");
+	}else if(isset($_SESSION['nama']) && empty($_SESSION['nip'])){
+		header("Location: ../data-profile");
 	}
 	include("../backend/conn.php");
 
-	$nama = $_SESSION['nama'];
+	$email = $_SESSION['email'];
 
-	$sql = "SELECT id,username FROM table_user WHERE nama = '$nama'";
+	$sql = "SELECT id FROM table_user WHERE email = '$email'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
-	$username = $r['username'];
 	$id_user = $r['id'];
 
 
@@ -88,15 +89,29 @@
 		<div class="container">
 			<div class="row row-profile">
 				<div class="col-lg-3">
-					<center><img src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic" data-username='<?php echo $username; ?>'></center>
+					<center><img src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic" data-email='<?php echo $email; ?>'></center>
 					<h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
-					<span class="username">@<?php echo $_SESSION['username']; ?></span>
 					<div class="info">
-						<span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  <?php echo $_SESSION['nip']; ?></span>
-						<span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; <?php echo $_SESSION['sekolah']; ?></span>
-						<span class="info-item"><i class="bi bi-briefcase"></i>&nbsp;&nbsp; <?php echo $_SESSION['jabatan']; ?></span>
-						<span class="info-item"><i class="bi bi-envelope"></i>&nbsp;&nbsp; <?php echo $_SESSION['email']; ?></span>
-						<span class="info-item"><i class="bi bi-person"></i>&nbsp;&nbsp; <?php echo $_SESSION['mapel']; ?></span>
+						<span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  
+							<?php if(empty($_SESSION['nip'])){
+								echo "Belum diisi";
+							}else { echo $_SESSION['nip']; } ?></span>
+						<span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; 
+							<?php if(empty($_SESSION['sekolah'])){
+								echo "Belum diisi";
+							}else { echo $_SESSION['sekolah']; }?></span>
+						<span class="info-item"><i class="bi bi-briefcase"></i>&nbsp;&nbsp; 
+							<?php if(empty($_SESSION['jabatan'])){
+								echo "Belum diisi";
+							}else { echo $_SESSION['jabatan']; }?>
+						<span class="info-item"><i class="bi bi-envelope"></i>&nbsp;&nbsp; 
+							<?php if(empty($_SESSION['email'])){
+								echo "Belum diisi";
+							}else { echo $_SESSION['email']; }?>
+						<span class="info-item"><i class="bi bi-person"></i>&nbsp;&nbsp; 
+							<?php if(empty($_SESSION['mapel'])){
+								echo "Belum diisi";
+							}else { echo $_SESSION['mapel']; }?></span>
 					</div>
 				</div>
 				<div class="col-lg-9 nav-info-user">
@@ -797,6 +812,24 @@
 		      	</div>
 		    </div>
 		</div>
+	</div>
+
+	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+	      </div>
+	      <div class="modal-body">
+	        ...
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+	        <button type="button" class="btn btn-primary">Understood</button>
+	      </div>
+	    </div>
+	  </div>
 	</div>
 
 	<div class="toast-container position-fixed bottom-0 end-0 p-3">

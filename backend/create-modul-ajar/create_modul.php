@@ -9,11 +9,11 @@
 
 
 	session_start();
-	$nama = $_SESSION['nama'];
+	$email = $_SESSION['email'];
 	$error = array();
 	$jmlSuccess = 0;
 
-	$sql = "SELECT id FROM table_user WHERE nama = '$nama'";
+	$sql = "SELECT id FROM table_user WHERE email = '$email'";
 	$result = mysqli_query($con, $sql);
 	if ($result) {
 		$jmlSuccess++;

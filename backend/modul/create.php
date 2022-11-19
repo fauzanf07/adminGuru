@@ -5,10 +5,11 @@ include("../conn.php");
 $id =  $_POST['id'];
 
 session_start();
+$email = $_SESSION['email'];
 $nama = $_SESSION['nama'];
 $jmlSuccess = 0;
 
-$sql = "SELECT * FROM table_user WHERE nama = '$nama'";
+$sql = "SELECT * FROM table_user WHERE email = '$email'";
 $result = mysqli_query($con, $sql);
 $r = mysqli_fetch_assoc($result);
 $kepalaSekolah = $r['kepala_sekolah'];

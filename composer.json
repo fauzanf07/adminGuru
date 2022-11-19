@@ -3,6 +3,7 @@
         "phpoffice/phpword": "^0.18.3",
         "ncjoes/office-converter": "^1.0",
         "convertapi/convertapi-php": "^1.6",
-        "mailjet/mailjet-apiv3-php": "^1.5"
+        "mailjet/mailjet-apiv3-php": "^1.5",
+        "google/apiclient": "^2.0"
     }
 }

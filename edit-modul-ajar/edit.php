@@ -97,7 +97,6 @@
 				<div class="col-lg-3">
 					<center><img src="../images/profile-img/<?php echo $_SESSION['profile_img']; ?>" class="profile-pic" id="profile-pic"></center>
 					<h3 class="profile-name"><?php echo $_SESSION['nama']; ?></h3>
-					<span class="username">@<?php echo $_SESSION['username']; ?></span>
 					<div class="info">
 						<span class="info-item"><i class="bi bi-card-heading"></i>&nbsp;&nbsp;  <?php echo $_SESSION['nip']; ?></span>
 						<span class="info-item"><i class="bi bi-building"></i>&nbsp;&nbsp; <?php echo $_SESSION['sekolah']; ?></span>

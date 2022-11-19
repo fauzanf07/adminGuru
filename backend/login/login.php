@@ -4,7 +4,7 @@
 	$txtUsername = $_POST['username'];
 	$txtPassword = $_POST['password'];
 
-	$sql = "SELECT * FROM table_user WHERE `username` = '$txtUsername' OR `email` = '$txtUsername' " ;
+	$sql = "SELECT * FROM table_user WHERE `email` = '$txtUsername' " ;
 	$result = mysqli_query($con,$sql);
 	$pass = "";
 
@@ -16,7 +16,6 @@
 		  	echo json_encode(array("statusCode"=>201));
 		  	$_SESSION['nip'] = $row["nip"];
 		  	$_SESSION['nama'] = $row["nama"];
-		  	$_SESSION['username'] = $row["username"];
 		  	$_SESSION['email'] = $row["email"];
 		  	$_SESSION['jabatan'] = $row["jabatan"];
 		  	$_SESSION['sekolah'] = $row["sekolah"];

@@ -8,7 +8,6 @@ $apikey = '80dc46415a9e93fbd2b3d816ab5d6af9';
 $apisecret = 'e8a4f891a2646df9876abf251f2f7b72';
 
 $email = $_POST['email'];
-$nama = $_POST['nama'];
 
 $mj = new \Mailjet\Client($apikey, $apisecret,true,['version' => 'v3.1']);
 $body = [
@@ -20,8 +19,7 @@ $body = [
 	    	],
 	        'To' => [
 	          [
-	            'Email' => $email,
-	            'Name' => $nama
+	            'Email' => $email
 	          ]
 	    	],
 	        'TemplateID' => 4335494,

@@ -1,3 +1,4 @@
+
 function isEmpty(str) {
     return (!str || str.length === 0 );
 }
@@ -10,8 +11,8 @@ $('#logout').click(function(){
 });
 
 $('#profile-pic').click(function(){
-	const username = $('#profile-pic').data('username');
-	window.location.href = "../edit-profile/edit.php?username="+username;
+	const email = $('#profile-pic').data('email');
+	window.location.href = "../edit-profile/edit.php?email="+email;
 });
 
 
