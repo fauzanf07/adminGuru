@@ -17,6 +17,7 @@ body{
 	font-family: 'Fredoka', sans-serif;
 	display: flex;
     flex-direction: column;
+	background-image: linear-gradient(to right, rgba(22,55,120,1), rgba(42,218,253,1));
 }
 
 .logo-parent{
