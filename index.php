@@ -79,7 +79,7 @@
 						</h1>
 						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
 						<div class="btn-contact">
-							<a class="btn btn-primary btn-lg btn-kontak" href="https://wa.me/6283824779390">KONTAK KAMI</a>
+							<a class="btn btn-primary btn-lg btn-kontak" href="https://wa.me/6283824779390">HUBUNGI KAMI</a>
 							<a href="signup" class="btn btn-primary btn-lg btn-daftar">DAFTAR</a>
 						</div>
 					</div>
@@ -93,27 +93,52 @@
 		</div>
 
 		<div class="row-2">
-			<div class="container">
+			<div class="container-1">
+				<div class="divtitle-row-2">
+					<h2 class="title-row-2">
+						KEUNGGULAN
+					</h2>
+				</div>
+			</div>
+			<div class="container-2">
 				<div class="row">
-					<div class="col-lg-6 img-row-2">
-						<img src="images/woman.png" alt="woman">
-					</div>
-					<div class="col-lg-6">
-						<div class="desc-row-2">
-							<div class="divtitle-row-2">
-								<h2 class="title-row-2">
-									KEUNGGULAN
-								</h2>
+					<div class="col">
+						<div class="col-down">
+							<div class="img-keunggulan">
+								<img src="images/keunggulan-1.png" alt="semudah pilihan ganda">
 							</div>
-							<h2 class="advantage-row-2">
-								<span class="number-row-2">1</span> Semudah pilihan ganda
-							</h2>
-							<h2 class="advantage-row-2">
-								<span class="number-row-2">2</span> Tanpa perlu instalasi
-							</h2>
-							<h2 class="advantage-row-2">
-								<span class="number-row-2">3</span> Dikerjakan dimana saja
-							</h2>
+							<div class="divtitle-row-2">
+								<div class="desc-keunggulan">
+									<h5>Mengerjakan semudah<br>pilihan ganda</h5>
+								</div>
+							</div>
+							<h5 class="desckeunggulan">Cukup mencentang pilihan dalam form,<br>membuat pengerjaan Modul Ajar menjadi<br>cepat dan mudah.</h5>
+						</div>
+					</div>
+					<div class="col">
+						<div class="col-up">
+							<div class="img-keunggulan">
+								<img src="images/keunggulan-2.png" alt="tanpa instalasi">
+							</div>
+							<div class="divtitle-row-2">
+								<div class="desc-keunggulan">
+									<h5>Tanpa perlu instalasi</h5>
+								</div>
+							</div>
+							<h5 class="desckeunggulan">Dimana saja Anda, selama terkoneksi internet,<br>langsung dapat mengerjakan di website.</h5>
+						</div>
+					</div>
+					<div class="col">
+						<div class="col-down">
+							<div class="img-keunggulan">
+								<img src="images/keunggulan-3.png" alt="sesuai kurikulum terbaru">
+							</div>
+							<div class="divtitle-row-2">
+								<div class="desc-keunggulan">
+									<h5>Format sesuai dengan<br>kurikulum terbaru</h5>
+								</div>
+							</div>
+							<h5 class="desckeunggulan">Bentuk Modul Ajar dan database<br>mata pelajaran telah disesuaikan dengan Kurikulum Merdeka.</h5>
 						</div>
 					</div>
 				</div>

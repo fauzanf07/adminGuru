@@ -148,21 +148,10 @@ nav{
 
 .row-2{
 	width: 100%;
-	padding-top: 10%;
+	padding-top: 5%;
 	padding-bottom: 10%;
 	background-color: #A3F0FF;
 	font-family: 'Fredoka', sans-serif;
-}
-
-.img-row-2 img{
-	width: 100%;
-  	height: auto;
-}
-
-.col-lg-6{
-	overflow-x: hidden;
-	padding-right: 0%;
-	padding-left: 0%;
 }
 
 .divtitle-row-2{
@@ -181,6 +170,33 @@ nav{
 	margin-bottom: 50px;
 	font-weight: 450;
 	color: #1C3C7B;
+}
+
+.desc-keunggulan{
+	display: inline-block;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-radius: 10px;
+  	background: #F4FDFF;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-weight: 450;
+	color: #1C3C7B;
+}
+
+.desc-keunggulan h5{
+	text-align: center;
+}
+
+.desckeunggulan{
+	text-align: center;
+	color: #1C3C7B;
+}
+
+.col-down{
+	margin-top: 40%;
 }
 
 .advantage-row-2{
@@ -206,6 +222,16 @@ nav{
 	font-size: 18px;
 	padding-top: 10px;
 	font-weight: 500;
+}
+
+.img-keunggulan img{
+	width: 45%;
+	height: auto;
+}
+
+.img-keunggulan{
+	display: flex;
+	justify-content: center;
 }
 
 .row-3{
