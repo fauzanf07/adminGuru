@@ -1,5 +1,6 @@
 <?php
 require_once '../../vendor/autoload.php';
+require_once '../../server.php';
 include("../conn.php");
 
 $id =  $_POST['id'];
@@ -387,7 +388,7 @@ $section->addTitle('LEMBAR KERJA PESERTA DIDIK', 2);
 $sql = "SELECT lkpd FROM lkpd WHERE id_identitas ='$id'";
 $result = mysqli_query($con, $sql);
 $r = mysqli_fetch_assoc($result);
-$link = "http://localhost/adminGuru/";
+$link = $mainUrl;
 $dirLkpd = "lkpd/".$r['lkpd'];
 $link .= $dirLkpd;
 $section->addLink($link,"LKPD ".$mapel,array('bold' => false, 'color' => '#0061ff'),$pName);

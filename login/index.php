@@ -21,51 +21,6 @@
 </head>
 
 <body>
-	<div class="nav-parent">
-		<nav class="navbar navbar-expand-lg sticky-top navbar-light">
-			<div class="pink-on-top"></div>
-			<div class="container-fluid">
-				<div class="logo-parent">
-					<div class="logo">
-						<img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo">
-					</div>
-				</div>
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-				</button>
-
-                <div class="collapse navbar-collapse navbar-left" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="../blog">Blog</a>
-                        </li>
-                    </ul>
-                </div>
-                
-				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
-					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
-						<li class="nav-text active"><a class="nav-link active" href="#"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>
-						
-						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
-						</li>
-						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
-						</li>
-						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-youtube"></i></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
 
 	<div id="page-container">
 		<div id="content-wrap">
@@ -73,36 +28,36 @@
 				<div class="row-1">
 					<div class="container">
 						<div class="row">
-							<div class="col-lg-3 col-blank"></div>
+							<div class="col-lg-6 col-blank">
+                                <img src="../images/woman.png" alt="woman">
+                            </div>
 							<div class="col-lg-6 col-content">
-								<div class="border">
-									<form>
-										<div class="form-group">
-											<label for="exampleInputEmail1">Email address</label>
-											<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter your email">
-											<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+								<form>
+									<div class="logo-parent">
+										<div class="logo">
+											<center><a href="../"><img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo"></a></center>
 										</div>
-										<div class="form-group">
-											<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="../forgot-password"><span class="forgot-password">Forgot password?</span></a></label>
-											<input type="password" class="form-control" id="password" placeholder="Password">
-										</div>
-										<div class="login-button">
-											<div class="d-grid gap-2">
-												<button class=" btn btn-success" type="button" id="login">Log in</button>
-											</div>
-											<?php 	echo "<a href='".$client->createAuthUrl()."' class='login-with-google-btn'>Sign in with Google</a>"; ?>
-										</div>
-									</form>
-								</div>
-
-								<div class="border">
-									<div class="signup-direction">
-										<p>New to adminGuru? <span><a href="../signup">Create an account</a></span></p>
 									</div>
-								</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email address</label>
+										<input type="email" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Enter your email">
+										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputPassword1" style="width: 100%;"><span>Password</span> <a href="../forgot-password"><span class="forgot-password">Forgot password?</span></a></label>
+										<input type="password" class="form-control" id="password" placeholder="Password">
+									</div>
+									<div class="login-button">
+										<div class="d-grid gap-2">
+											<button class=" btn btn-success" type="button" id="login">Log in</button>
+										</div>
+										<?php 	echo "<a href='".$client->createAuthUrl()."' class='login-with-google-btn'>Sign in with Google</a>"; ?>
+									</div>
+								</form>
 
-							</div>
-							<div class="col-lg-3 col-blank">
+								<div class="signup-direction">
+									<p>New to adminGuru? <span><a href="../signup">Create an account</a></span></p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -115,7 +70,6 @@
 		<div class="copyright">
 			<p>© 2022 by The Nineteen</p>
 		</div>
-		<div class="background-footer"></div>
 	</footer>
 
 	<div class="toast-container position-fixed bottom-0 end-0 p-3">
