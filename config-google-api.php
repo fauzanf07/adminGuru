@@ -1,8 +1,8 @@
 <?php 
 	require_once 'vendor/autoload.php';	
 	require_once 'server.php';	
-	$clientID = "162998556341-m5bkjc0jbj85j6qofut1u088ft3s4a7f.apps.googleusercontent.com";
-	$clientSecret = "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";
+	$clientID = "162998556341-adcfjivoriaiqkeql7d1rvle8eqk9a3c.apps.googleusercontent.com";
+	$clientSecret = "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";
 	$redirectUri = $mainUrl. "backend/login/signinWithGoogle.php";
 
 	$client = new Google_Client();

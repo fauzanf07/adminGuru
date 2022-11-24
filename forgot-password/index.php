@@ -31,8 +31,10 @@
 				<span class="navbar-toggler-icon"></span>
 				</button>
 
-                <div class="collapse navbar-collapse navbar-left" id="navbarNav">
-                    <ul class="navbar-nav">
+                
+                
+				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
+					<ul class="navbar-nav">
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                         </li>
@@ -43,9 +45,6 @@
                         <a class="nav-link" href="blog">Blog</a>
                         </li>
                     </ul>
-                </div>
-                
-				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
 						<?php
 							if(!isset($_SESSION['nama'])){

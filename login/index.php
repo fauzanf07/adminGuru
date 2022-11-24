@@ -25,6 +25,12 @@
 	<div id="page-container">
 		<div id="content-wrap">
 			<div class="content">
+				<div class="logo-adminguru">
+					<div class="logo-1">
+						<img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo">
+					</div>
+				</div>
+
 				<div class="row-1">
 					<div class="container">
 						<div class="row">
@@ -35,7 +41,8 @@
 								<form>
 									<div class="logo-parent">
 										<div class="logo">
-											<center><a href="../"><img class="logo-icon" src="../images/logo-removebg-preview.png" alt="logo"></a></center>
+											<a href="../"><img src="../images/login-masuk.png" style="width:80px;height:auto;"></a>
+											<h1>Masuk.<br><span class="desc-login">Masuk menggunakan akun anda</span></h1>
 										</div>
 									</div>
 									<div class="form-group">
@@ -51,7 +58,10 @@
 										<div class="d-grid gap-2">
 											<button class=" btn btn-success" type="button" id="login">Log in</button>
 										</div>
-										<?php 	echo "<a href='".$client->createAuthUrl()."' class='login-with-google-btn'>Sign in with Google</a>"; ?>
+										<h4>Atau</h4>
+										<div class="d-grid gap-2">
+											<a class=" btn btn-google" type="button" id="login" href="<?php echo $client->createAuthUrl(); ?>"><img src="../images/google-icon.png" width="17" height="17" class="google-icon"/>Masuk menggunakan akun google</a>
+										</div>
 									</div>
 								</form>
 

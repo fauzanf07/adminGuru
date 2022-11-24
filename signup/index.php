@@ -8,8 +8,9 @@
 <html>
 
 <head>
-	<title>SmartTeach</title>
+	<title>adminguru &centerdot; Daftar</title>
 	<link rel="stylesheet" type="text/css" href="../style/signup/style.css">
+	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -30,21 +31,20 @@
 				<span class="navbar-toggler-icon"></span>
 				</button>
 
-                <div class="collapse navbar-collapse navbar-left" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="../">Home</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About us</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="../blog">Blog</a>
-                        </li>
-                    </ul>
-                </div>
+                
                 
 				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
+					<ul class="navbar-nav">
+						<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="../">Home</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" href="#">About us</a>
+						</li>
+						<li class="nav-item">
+						<a class="nav-link" href="../blog">Blog</a>
+						</li>
+					</ul>
 					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
 						<li class="nav-text"><a class="nav-link active" href="../login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>'
 						

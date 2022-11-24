@@ -73,14 +73,15 @@
 		<div class="row-1">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-6">
+					<div class="col-lg-6 col-title">
 						<h1 class="title-row-1">
-							ASISTEN ADMINISTRASI<br><span>GURU</span>
+							ASISTEN ADMINISTRASI<br>GURU
 						</h1>
-						<h3 class="desc-row-1">Menjadikan pekerjaan guru lebih mudah.</h3>
+						<h3 class="desc-row-1">Membantu guru membuat modul ajar.</h3>
 						<div class="btn-contact">
-							<a class="btn btn-primary btn-lg btn-kontak" href="https://wa.me/6283824779390">HUBUNGI KAMI</a>
 							<a href="signup" class="btn btn-primary btn-lg btn-daftar">DAFTAR</a>
+							<a class="btn btn-primary btn-lg btn-kontak" href="https://wa.me/6283824779390">HUBUNGI KAMI</a>
+							
 						</div>
 					</div>
 					<div class="col-lg-6">

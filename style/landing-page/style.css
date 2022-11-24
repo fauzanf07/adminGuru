@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
 
 html {
 	width: 100%;
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body{
@@ -17,6 +18,7 @@ body{
 	font-family: 'Fredoka', sans-serif;
 	display: flex;
     flex-direction: column;
+	overflow-x: hidden;
 }
 
 .logo-parent{
@@ -95,42 +97,39 @@ nav{
 
 .title-row-1{
 	color: #1C3C7B;
-	font-weight: 700;
-	font-size: 60px;
+	font-weight: 600;
+	font-size: 80px;
 	margin-bottom: 5%;
-	text-align: center;
-}
-
-.title-row-1 span{
-	font-size: 150px;
 }
 
 .desc-row-1{
 	color: #1C3C7B;
 	font-size: 23px;
 	margin-bottom: 7%;
-	text-align: center;
+	font-weight: bold;
+	margin-left: 7px;
 }
 
 .btn-contact{
 	width: 100%;
 	margin-top: 30px;
-	display: flex;
-	justify-content: center;
 }
 
 .btn-kontak{
-	margin-right: 1%;
+	margin-left: 1%;
+	
 }
 
 .btn-daftar{
-	margin-left: 1%;
+	margin-right: 1%;
 }
 
 .btn-contact a{
-	background-color: #A3F0FF;
-	border-color: #A3F0FF;
+	background-color: #2ADCFF;
+	border-color: #2ADCFF;
 	font-weight: bolder;
+	width: 205px;
+	border-radius: 20px;
 }
 
 .logo-icon-modal{
@@ -370,13 +369,12 @@ footer {
 	margin-top: auto;
 }
 
-@media screen and (max-width: 425px) {
+@media screen and (min-width: 425px) {
 	.title-row-1{
-		font-size: 40px;
+		font-size: 70px;
 	}
-
-	.title-row-1 span{
-		font-size: 90px;
+	.col-title{
+		padding-left: 30px !important;
 	}
 
 	.img-laptop img{
