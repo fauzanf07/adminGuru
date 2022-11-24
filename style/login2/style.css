@@ -17,11 +17,25 @@ body{
 	font-family: 'Fredoka', sans-serif;
 	display: flex;
     flex-direction: column;
-	background-image: linear-gradient(to right, rgba(22,55,120,1), rgba(42,218,253,1));
+	background-color: white;
+}
+
+.logo-adminguru{
+	margin-top: 3%;
+	margin-left: 3%;
+	margin-bottom: 0.2%;
+	z-index: 3;
+}
+
+.logo-icon{
+	height: 50px;
+	display: inline-block;
+	vertical-align: top;
+	z-index: 3;
 }
 
 .row-1{
-	padding-top: 150px;
+	padding-top: 60px;
 	padding-bottom: 100px;
 	font-family: 'Fredoka', sans-serif;
 }
@@ -29,7 +43,7 @@ body{
 .col-blank img{
     width: 100%;
   	height: auto;
-	margin-top: 5%;
+	margin-top: 20%;
 	margin-bottom: 10%;
 }
 
@@ -76,9 +90,80 @@ form{
 	justify-content: center;
 }
 
-.logo img{
-	width: 20%;
-  	height: auto;
+.logo h1{
+	color: #1C3C7B;
+	line-height: 70%;
+	margin-top: 3%;
+	margin-left: 3%;
+}
+
+.desc-login{
+	font-size: 40%;
+}
+
+.form-control{
+	background-color: #2ADCFF !important;
+	border-color: #2ADCFF !important;
+	color: white !important;
+	border-radius: 30px !important;
+}
+
+form, input, label, p {
+    color: #163677 !important;
+}
+
+.form-control::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: white !important;
+	opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: white !important;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+	color: white !important;
+}
+
+.btn-success{
+	background-image: linear-gradient(to right, #163778 , #2ADAFD);
+}
+
+.btn-google{
+	background-color: #A3F0FF !important;
+}
+
+.google-icon{
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.d-grid button{
+	border-color: white;
+	border-radius: 20px;
+}
+
+.d-grid a{
+	border-color: white;
+	border-radius: 20px;
+}
+
+h4 {
+	display: flex;
+	flex-direction: row;
+	font-size: 16px !important;
+	margin-top: 5% !important;
+	margin-bottom: 5% !important;
+	color: #163677;
+	font-weight: bold !important;
+}
+  
+h4:before,
+h4:after {
+	content: "";
+	flex: 1 1;
+	border-bottom: 2px solid #163677;
+	margin: auto;
 }
 
 footer{
