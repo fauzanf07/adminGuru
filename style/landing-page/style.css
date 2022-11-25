@@ -369,7 +369,7 @@ footer {
 	margin-top: auto;
 }
 
-@media screen and (min-width: 425px) {
+@media screen and (min-width: 403px) {
 	.title-row-1{
 		font-size: 70px;
 	}
@@ -392,5 +392,9 @@ footer {
 
 	.copyright p{
 		font-size: 15px;
+	}
+
+	.col-down{
+		margin-top: 40%;
 	}
 }
