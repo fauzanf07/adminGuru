@@ -55,7 +55,7 @@
 					'Messages' => [
 						[
 							'From' => [
-							'Email' => "adminguru@adminguru.id",
+							'Email' => "halo@adminguru.id",
 							'Name' => "Admin Guru"
 							],
 							'To' => [

@@ -21,7 +21,7 @@
 			<div class="container-fluid">
 				<div class="logo-parent">
 					<div class="logo">
-						<img class="logo-icon" src="images/logo-removebg-preview.png" alt="logo">
+						<img class="logo-icon" src="images/Logo-removebg-preview.png" alt="logo">
 					</div>
 				</div>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,7 +86,7 @@
 					</div>
 					<div class="col-lg-6">
 						<div class="img-laptop">
-							<img src="images/laptop.png" alt="laptop">
+							<img src="images/Laptop.png" alt="laptop">
 						</div>
 					</div>
 				</div>
