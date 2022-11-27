@@ -1,4 +1,5 @@
-<?php 
+<?php
+	require_once '../server.php';
 	session_start();
 	if(!isset($_SESSION['nama'])){
 		header("Location: ../login");
@@ -70,7 +71,7 @@
 								if(!isset($_SESSION['nama'])){
 									echo '<li class="nav-text"><a class="nav-link active" href="./login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>';
 								}else{
-									echo '<li class="nav-text"><a class="nav-link active" href="backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a></li><li class="nav-text"><a class="nav-link active" href="./create-modul-ajar">Create Modul</a></li>';
+									echo '<li class="nav-text"><a class="nav-link active" href="backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a></li><li class="nav-text"><a class="nav-link active" href="../create-modul-ajar">Create Modul</a></li>';
 								}
 
 							?>
@@ -129,7 +130,7 @@
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Kepala Sekolah</span>
-												  <input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepala_sekolah" value="<?php echo $idSekolah['kepala_sekolah']; ?>" required>
+												  <input type="text" class="form-control" placeholder="Kepala Sekolah" id="kepala_sekolah" value="<?php echo $user['kepala_sekolah']; ?>" required>
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran</span>
@@ -168,7 +169,7 @@
 																$r = mysqli_fetch_assoc($result);
 																$id_pk = $r['id'];
 
-																$query = "SELECT * FROM mata_pelajaran WHERE id_pk = '$id_pk'";
+																$query = "SELECT * FROM mata_pelajaran WHERE id_pk = '$id_pk' OR id_pk is NULL";
 																$result = mysqli_query($con, $query);
 																while($r = mysqli_fetch_assoc($result)){
 																	if($r['mata_pelajaran'] == $idSekolah['mata_pelajaran']){
@@ -259,9 +260,10 @@
 												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu</span>
 												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" value="<?php echo $idSekolah['alokasi_waktu']; ?>" required>
 												</div>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-bs-slide="next">
+												<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
 								  				</button>
+									  			<span class="ket-slide">1 dari 7</span>
 
 									    	</div>
 									    	<div class="carousel-item">
@@ -435,6 +437,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
 								  				</button>
+												<span class="ket-slide">2 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>A. TUJUAN PEMBELAJARAN (KOMPONEN INTI)</h5>
@@ -560,6 +563,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
 								  				</button>
+												<span class="ket-slide">3 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>E. KEGIATAN PEMBELAJARAN</h5>
@@ -697,6 +701,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
 								  				</button>
+												<span class="ket-slide">4 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>F. ASESMEN</h5>
@@ -875,6 +880,7 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
 								  				</button>
+												<span class="ket-slide">5 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>G. PENGAYAAN DAN REMEDIAL</h5>
@@ -959,12 +965,26 @@
 											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
 											    	<span >Next</span>
 								  				</button>
+												<span class="ket-slide">6 dari 7</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<div class="input-group">
+													<span> File saat ini : 
+														<?php
+														    	$query = "SELECT * FROM lkpd WHERE id_identitas = '$id_identitas'";
+														    	$result = mysqli_query($con,$query);
+														    	while($r = mysqli_fetch_assoc($result)) {
+																    echo '<a href="'.$mainUrl.'lkpd/'.$r['lkpd'].'">'.$r['lkpd'].'</a>';
+																	$fileName = $r['lkpd'];
+																}
+														?>
+													</span>
+													<input type="text" value="<?php echo $fileName ?>" id="fileName" hidden>
+													
+									    			<div class="input-group" style="margin-top:10px;">
 														<input type="file" class="form-control" id="lkpd">
+														<label class="input-group-text" for="lkpd">Ganti File</label>
 													</div>
 									    		</div>
 									    		<br/>
@@ -1016,32 +1036,35 @@
 									    		<br/>
 									    		<h5>D. DAFTAR PUSTAKA</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
-									    			<?php 
-														$query = "SELECT * FROM daftar_pustaka WHERE id_identitas = '$id_identitas'";
-														$result = mysqli_query($con, $query);
-														$jmlRows = mysqli_num_rows($result);
-														if($jmlRows > 0){
-															$i=1;
-															while($r = mysqli_fetch_assoc($result)){
-																echo '<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS'.$i.'"><span class="input-group-text" id="addon-wrapping-dafpus'.$i.'">'.$i.'</span><textarea class="form-control" name="dafpus'.$i.'" id="inputDafpus'.$i.'" rows="2" placeholder="Daftar Pustaka '.$i.'">'.$r['daftar_pustaka'].'</textarea><button class="btn btn-danger" id="button-addon2-dafpus'.$i.'"  type="button" data-dafpus="'.$i.'" onclick="hapusDAFPUS(this);">Hapus</button></div>';
-																$i++;
+													<div id="inputs-dafpus">
+														<?php 
+															$query = "SELECT * FROM daftar_pustaka WHERE id_identitas = '$id_identitas'";
+															$result = mysqli_query($con, $query);
+															$jmlRows = mysqli_num_rows($result);
+															if($jmlRows > 0){
+																$i=1;
+																while($r = mysqli_fetch_assoc($result)){
+																	echo '<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS'.$i.'"><span class="input-group-text" id="addon-wrapping-dafpus'.$i.'">'.$i.'</span><textarea class="form-control" name="dafpus'.$i.'" id="inputDafpus'.$i.'" rows="2" placeholder="Daftar Pustaka '.$i.'">'.$r['daftar_pustaka'].'</textarea><button class="btn btn-danger" id="button-addon2-dafpus'.$i.'"  type="button" data-dafpus="'.$i.'" onclick="hapusDAFPUS(this);">Hapus</button></div>';
+																	$i++;
+																}
+																
 															}
-															
-														}
-														else{
-															echo '<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>';
-														}
-													?>
+															else{
+																echo '<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>';
+															}
+														?>
+													</div>
 													<button type="button" class="btn btn-success" id="addDAFPUS"> + Daftar Pustaka</button>
 									    		</div>
 											  	</button>
 											  	<button class="btn btn-primary btn-create mt-3" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-success ml-10 mt-3" type="button" id="buatModulAjar">
-											    	<span >Buat Modul Ajar&nbsp;</span>
+											  	<button class="btn btn-success ml-10 mt-3" type="button" id="editModulAjar" data-id="<?php echo $id_identitas; ?>">
+											    	<span >Edit Modul Ajar&nbsp;</span>
 											    	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
 								  				</button>
+												<span class="ket-slide">7 dari 7</span>
 									    	</div>
 
 								    	</form>

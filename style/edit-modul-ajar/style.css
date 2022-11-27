@@ -18,9 +18,9 @@ body{
 }
 
 .logo-parent{
-	margin-top: 0.2%;
+	margin-top: 1%;
 	margin-left: 3%;
-	margin-bottom: 0.2%;
+	margin-bottom: 1%;
 	z-index: 3;
 }
 
@@ -29,6 +29,11 @@ body{
 	display: inline-block;
 	vertical-align: top;
 	z-index: 3;
+}
+
+.logo-icon-modal{
+	width: 50px;
+	height: auto;
 }
 
 .logo-toast{
@@ -74,6 +79,10 @@ nav{
 	margin-right: 5px;
 }
 
+.nav-info-user{
+	padding-left: 25px;
+}
+
 .container{
 	font-family: 'Fredoka', sans-serif;
 }
@@ -85,6 +94,11 @@ nav{
 }
 .profile-pic:hover{
 	cursor: pointer;
+}
+
+.logo-toast{
+	height: 30px;
+	width: auto;
 }
 .container .row-profile{
 	padding-top: 50px;
@@ -98,6 +112,22 @@ nav{
 	text-align: center;
 	display: block;
 	font-size: 20px;
+}
+.modal-content{
+	background-color: #EFEFEF !important;
+}
+
+.btn-nanti{
+	width: 100%;
+	background-color: #fff !important;
+}
+.btn-nanti:hover{
+	color: #000 !important;
+}
+
+.btn-subscribe{
+	width: 100%; 
+	margin-top: 15px;
 }
 
 .info{
@@ -161,10 +191,15 @@ nav{
 	margin-top: 60px;
 }
 
+.bintang-merah{
+	color: red;
+}
+
 
 .btn-create{
 	width: 100px;
 	margin-top: 20px;
+	display: inline-block;
 }
 .ml-10{
 	margin-left: 10px;
@@ -207,4 +242,40 @@ nav{
 
 #spinnerDownload{
 	display: none;
+}
+
+.ket-slide{
+	display: inline-block;
+	vertical-align: middle;
+	margin-top: 20px;
+	font-size:17px;
+	margin-left: 10px;
+}
+
+@media screen and (max-width: 401px) {
+	.title{
+		font-size: medium;
+	}
+
+	.dataTables_wrapper{
+		margin-top: 60px;
+	}
+
+}
+
+@media screen and (max-width: 375px) {
+	.title{
+		font-size: medium;
+	}
+
+	.dataTables_wrapper{
+		margin-top: 60px;
+	}
+
+}
+
+@media screen and (max-width: 320px) {
+	.dataTables_wrapper{
+		margin-top: 60px;
+	}
 }

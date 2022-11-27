@@ -138,7 +138,7 @@
 							        </thead>
 							        <tbody>
 							        	<?php
-							        		$sql = "SELECT * FROM identitas_sekolah WHERE id_user = '$id_user'";
+							        		$sql = "SELECT * FROM identitas_sekolah WHERE id_user = '$id_user' ORDER BY created_at DESC";
 							        		$result = mysqli_query($con, $sql);
 							        		$i=1;
 											while($r = mysqli_fetch_assoc($result)){
@@ -792,16 +792,16 @@
 		    			<div class="col-4 btn-pdf">
 		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
 				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
-				    		<a class="btn btn-outline-secondary btn-nanti" target="_blank" id="previewPdf">Download Preview</a>
-				       		<a class="btn btn-success btn-subscribe " target="_blank" id="subscribePdf">Berlangganan</a>
+				    		<a class="btn btn-outline-secondary btn-nanti" target="_blank" id="previewPdf" onclick="getMotivasi();">Download Preview</a>
+				       		<a class="btn btn-success btn-subscribe " target="_blank" id="subscribePdf" onclick="getMotivasi();">Berlangganan</a>
 				  
 		    			</div>
 
 		    			<div class="col-4 btn-docx">
 		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
 				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
-				       		<a class="btn btn-outline-secondary btn-nanti " target="_blank" id="previewDocx">Download Preview</a>
-				       		<a class="btn btn-success btn-subscribe btn-docx" target="_blank" id="subscribeDocx">Berlangganan</a>
+				       		<a class="btn btn-outline-secondary btn-nanti " target="_blank" id="previewDocx" onclick="getMotivasi();">Download Preview</a>
+				       		<a class="btn btn-success btn-subscribe btn-docx" target="_blank" id="subscribeDocx" onclick="getMotivasi();">Berlangganan</a>
 		    			</div>
 		    		</div>
 		    		
@@ -847,9 +847,9 @@
 	    <div class="toast-header">
 	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
 	      <strong class="me-auto">Admin Guru</strong>
-	      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+	      <button type="button" class="btn-close" data-bs-dismiss="toast" data-bs-config='{"delay":10000}' aria-label="Close"></button>
 	    </div>
-	    <div class="toast-body" id="msg-toast">
+	    <div class="toast-body" id="msg-motiv-toast">
 	    </div>
 	  </div>
 	</div>

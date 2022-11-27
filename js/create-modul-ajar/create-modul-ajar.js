@@ -1,4 +1,3 @@
-
 function isEmpty(str) {
     return (!str || str.length === 0 );
 }
@@ -774,5 +773,18 @@ function validatePage7(){
 	return res;
 }
 
+function getMotivasi(){
+	$.getJSON("../js/motivasi.json", function(motivasi) {
+		const rand = Math.floor(Math.random() * 5);
+		msg = motivasi.motivasi[rand].quote + " - " + motivasi.motivasi[rand].dari;
+		$('#msg-motiv-toast').html(msg);
+		const toastLiveExample = document.getElementById('motivationToast');
+		const toast = new bootstrap.Toast(toastLiveExample);
+
+		toast.show();
+		console.log(motivasi.motivasi[rand].quote);
+	});
+	return false;
+}
 
 

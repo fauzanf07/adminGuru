@@ -98,9 +98,35 @@ $('#elemen').on('change',function(){
 });
 
 
-$('#buatModulAjar').click(function(){
+$('#editModulAjar').click(function(){
+	const id_identitas = $(this).data('id');
 	$('#spinner').css('display','inline-block');
+	$.ajax({
+		url: "../backend/hapus-modul/hapus_modul.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			if(dataResult.statusCode==201){
+				buatModulAjar();
+			}else if(dataResult.statusCode==202){
+				Swal.fire({
+					title: 'Error!',
+					text: 'There is something wrong',
+					icon: 'error',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				})
+			}
+		}
+	});
+});
 
+function buatModulAjar(){
 	var modul_ajar = new Object();
 	modul_ajar.nama = $('#namaPenyusun').val();
 	modul_ajar.satuanPend = $('#satuanPend').val();
@@ -318,41 +344,47 @@ $('#buatModulAjar').click(function(){
 			}
 		}
 	});
-});
+}
 
 
 function uploadLkpd(id){
-	var fd = new FormData();
-    var files = $('#lkpd')[0].files[0];
-    fd.append('file', files);
-    var last_id = id;
+	if($('#lkpd').get(0).files.length === 0){
+		const last_id = id;
+		const fileName = $('#fileName').val();
+		uploadToDB(last_id,fileName);
+	}else{
+		var fd = new FormData();
+		var files = $('#lkpd')[0].files[0];
+		fd.append('file', files);
+		var last_id = id;
 
-	$.ajax({
-        url: '../backend/create-modul-ajar/upload_file.php',
-        type: 'POST',
-        data: fd,
-        contentType: false,
-       	processData: false,
-        success: function(dataResult){
-        	var dataResult = JSON.parse(dataResult);
-			console.log(dataResult);
-            if(dataResult.statusCode==201){
-            	var fileName = dataResult.fileName;
-                uploadToDB(last_id,fileName);
-            }
-            else{
-                Swal.fire({
-					title: 'Error!',
-					text: 'There is something wrong with uploading lkpd',
-					icon: 'error',
-					confirmButtonText: 'Ok',
-					confirmButtonColor: "#d63630"
-				})
-            }
-        },
-   });
+		$.ajax({
+			url: '../backend/create-modul-ajar/upload_file.php',
+			type: 'POST',
+			data: fd,
+			contentType: false,
+			processData: false,
+			success: function(dataResult){
+				var dataResult = JSON.parse(dataResult);
+				console.log(dataResult);
+				if(dataResult.statusCode==201){
+					var fileName = dataResult.fileName;
+					uploadToDB(last_id,fileName);
+				}
+				else{
+					Swal.fire({
+						title: 'Error!',
+						text: 'There is something wrong with uploading lkpd',
+						icon: 'error',
+						confirmButtonText: 'Ok',
+						confirmButtonColor: "#d63630"
+					})
+				}
+			},
+		});
+	}
+	
 }
-
 function uploadToDB(id,fileName){
 	var last_id = id;
 	var fileName = fileName;
@@ -395,6 +427,21 @@ function createModulDocx(id){
 		},
 		cache: false,
 		success: function(dataResult){
+			createPreviewModulDocx(id_identitas);
+		}
+	});
+}
+
+function createPreviewModulDocx(id){
+	var id_identitas = id;
+	$.ajax({
+		url: "../backend/modul/create-preview.php",
+		type: "POST",
+		data: {
+			id: id_identitas		
+		},
+		cache: false,
+		success: function(dataResult){
 			createModulPdf(id_identitas);
 		}
 	});
@@ -402,7 +449,6 @@ function createModulDocx(id){
 
 function createModulPdf(id){
 	var id_identitas = id;
-	$('#spinner').css('display','none');
 	$.ajax({
 		url: "../backend/modul/create-pdf.php",
 		type: "POST",
@@ -411,6 +457,7 @@ function createModulPdf(id){
 		},
 		cache: false,
 		success: function(dataResult){
+			$('#spinner').css('display','none');
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult.statusCode);
 			Swal.fire({
@@ -421,115 +468,9 @@ function createModulPdf(id){
 					confirmButtonColor: "#d63630"
 				}).then((result) =>{
 					if(result.isConfirmed){
-						location.reload();
+						window.location.href = '../create-modul-ajar';
 					}
 			});
 		}
 	});
 }
-
-function downloadDocs(id){
-	var id_identitas = $(id).data('id');
-	$('#spinnerDownload'+id_identitas).css('display','inline-block');
-	$.ajax({
-		url: "../backend/create-modul-ajar/is_modul_created.php",
-		type: "POST",
-		data: {
-			id: id_identitas		
-		},
-		cache: false,
-		success: function(dataResult){
-			var dataResult = JSON.parse(dataResult);
-			console.log(dataResult.statusCode);
-			if(dataResult.statusCode==202){
-				createModulDocx(id_identitas);
-			}
-			else if(dataResult.statusCode==201){
-				window.open('./download-modul.php?id='+id_identitas+'&ext=docx', '_blank');
-				$('#spinnerDownload').css('display','none');
-			}
-		}
-	});
-}
-
-function downloadPdf(id){
-	var id_identitas = $(id).data('id');
-	$('#spinnerDownload'+id_identitas).css('display','inline-block');
-	$.ajax({
-		url: "../backend/create-modul-ajar/is_modul_created.php",
-		type: "POST",
-		data: {
-			id: id_identitas		
-		},
-		cache: false,
-		success: function(dataResult){
-			var dataResult = JSON.parse(dataResult);
-			console.log(dataResult.statusCode);
-			if(dataResult.statusCode==202){
-				createModulPdf(id_identitas);
-			}
-			else if(dataResult.statusCode==201){
-				window.open('./download-modul.php?id='+id_identitas+'&ext=pdf', '_blank');
-				$('#spinnerDownload').css('display','none');
-			}
-		}
-	});
-}
-
-function subscribe(id){
-	var id_identitas = $(id).data('id');
-	$('#subscribe').attr('data-id',id_identitas);
-}
-
-
-function hapusModul(id){
-	var id_identitas = $(id).data('id');
-	Swal.fire({
-	  title: 'Are you sure?',
-	  text: "You won't be able to revert this!",
-	  icon: 'warning',
-	  showCancelButton: true,
-	  confirmButtonColor: '#24576E',
-	  cancelButtonColor: '#d33',
-	  confirmButtonText: 'Yes, delete it!'
-	}).then((result) => {
-	  if (result.isConfirmed) {
-	  	$.ajax({
-			url: "../backend/hapus-modul/hapus_modul.php",
-			type: "POST",
-			data: {
-				id: id_identitas		
-			},
-			cache: false,
-			success: function(dataResult){
-				var dataResult = JSON.parse(dataResult);
-				console.log(dataResult.statusCode);
-				if(dataResult.statusCode==202){
-					createModul(id_identitas);
-				}
-				else if(dataResult.statusCode==201){
-					Swal.fire({
-						title: 'Success!',
-						text: 'Data berhasil dihapus',
-						icon: 'success',
-						confirmButtonText: 'Ok',
-						confirmButtonColor: "#d63630"
-					}).then((result) =>{
-						if(result.isConfirmed){
-							location.reload();
-						}
-					});
-				}
-			}
-		});
-	  }
-	})
-	
-}
-
-function editModul(id){
-	var id_identitas = $(id).data('id');
-	window.location.href = '../edit-modul-ajar/edit.php?id_identitas='+id_identitas;
-}
-
-
