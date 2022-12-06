@@ -2,13 +2,13 @@
 	include("../conn.php");
 	session_start();
 	$id = $_POST['id'];
-	$namaLengkap = $_POST['namaLengkap'];
-	$nip = $_POST['nip'];
-	$sekolah = $_POST['sekolah'];
-	$kepsek = $_POST['kepsek'];
-	$jabatan = $_POST['jabatan'];
-	$mapel = $_POST['mapel'];
-	$email = $_POST['email'];
+	$namaLengkap = mysqli_real_escape_string($_POST['namaLengkap']);
+	$nip = mysqli_real_escape_string($_POST['nip']);
+	$sekolah = mysqli_real_escape_string($_POST['sekolah']);
+	$kepsek = mysqli_real_escape_string($_POST['kepsek']);
+	$jabatan = mysqli_real_escape_string($_POST['jabatan']);
+	$mapel = mysqli_real_escape_string($_POST['mapel']);
+	$email = mysqli_real_escape_string($_POST['email']);
 	$query = "UPDATE table_user SET nama='$namaLengkap', nip = '$nip', sekolah='$sekolah', kepala_sekolah='$kepsek', jabatan='$jabatan', mapel='$mapel', email='$email' WHERE id='$id'";
 	$result = mysqli_query($con,$query);
 	if($result){

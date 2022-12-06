@@ -2,6 +2,8 @@
 require_once '../../vendor/autoload.php';
 include("../conn.php");
 use \ConvertApi\ConvertApi;
+$dotenv = Dotenv\Dotenv::createImmutable('../..');
+$dotenv->load();
 
 $id =  $_POST['id'];
 
@@ -17,7 +19,9 @@ $r = mysqli_fetch_assoc($result);
 
 $file_preview_modul = $r['nama_file'];
 
-ConvertApi::setApiSecret('pITrXqBuOGG1DZ16');
+$apiSecret = $_ENV['API_SECRET_PDF'];
+
+ConvertApi::setApiSecret($apiSecret);
 
 $result = ConvertApi::convert('pdf', ['File' => '../../modul-ajar/'.$file_name.'.docx']);
 

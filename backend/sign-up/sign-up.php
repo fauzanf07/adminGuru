@@ -1,9 +1,9 @@
 <?php 
 	include("../conn.php");
 
-	$email = $_POST['email'];
-	$pass = $_POST['pass'];
-	$confPass = $_POST['confPass'];
+	$email = mysqli_real_escape_string($_POST['email']);
+	$pass = mysqli_real_escape_string($_POST['pass']);
+	$confPass = mysqli_real_escape_string($_POST['confPass']);
 	$query = "SELECT * FROM table_user WHERE email='$email'";
 	$result = mysqli_query($con,$query);
 	$row = mysqli_num_rows($result);

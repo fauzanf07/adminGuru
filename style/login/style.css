@@ -26,6 +26,10 @@ body{
 	margin-bottom: 0.2%;
 	z-index: 3;
 }
+.logo-toast{
+	height: 30px;
+	width: auto;
+}
 
 .logo-icon{
 	height: 50px;

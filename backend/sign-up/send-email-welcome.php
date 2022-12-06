@@ -4,8 +4,11 @@ require_once '../../vendor/autoload.php';
 
 use \Mailjet\Resources;
 
-$apikey = '80dc46415a9e93fbd2b3d816ab5d6af9';
-$apisecret = 'e8a4f891a2646df9876abf251f2f7b72';
+$dotenv = Dotenv\Dotenv::createImmutable('../..');
+$dotenv->load();
+
+$apikey = $_ENV['API_KEY_MAIL'];
+$apisecret = $_ENV['API_SECRET_MAIL'];
 
 $email = $_POST['email'];
 
