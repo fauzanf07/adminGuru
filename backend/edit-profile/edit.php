@@ -2,13 +2,13 @@
 	include("../conn.php");
 	session_start();
 	$id = $_POST['id'];
-	$namaLengkap = mysqli_real_escape_string($_POST['namaLengkap']);
-	$nip = mysqli_real_escape_string($_POST['nip']);
-	$sekolah = mysqli_real_escape_string($_POST['sekolah']);
-	$kepsek = mysqli_real_escape_string($_POST['kepsek']);
-	$jabatan = mysqli_real_escape_string($_POST['jabatan']);
-	$mapel = mysqli_real_escape_string($_POST['mapel']);
-	$email = mysqli_real_escape_string($_POST['email']);
+	$namaLengkap = mysqli_real_escape_string($con,$_POST['namaLengkap']);
+	$nip = mysqli_real_escape_string($con,$_POST['nip']);
+	$sekolah = mysqli_real_escape_string($con,$_POST['sekolah']);
+	$kepsek = mysqli_real_escape_string($con,$_POST['kepsek']);
+	$jabatan = mysqli_real_escape_string($con,$_POST['jabatan']);
+	$mapel = mysqli_real_escape_string($con,$_POST['mapel']);
+	$email = mysqli_real_escape_string($con,$_POST['email']);
 	$query = "UPDATE table_user SET nama='$namaLengkap', nip = '$nip', sekolah='$sekolah', kepala_sekolah='$kepsek', jabatan='$jabatan', mapel='$mapel', email='$email' WHERE id='$id'";
 	$result = mysqli_query($con,$query);
 	if($result){

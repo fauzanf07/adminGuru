@@ -25,7 +25,7 @@ $body = [
 	            'Email' => $email
 	          ]
 	    	],
-	        'TemplateID' => 4335494,
+	        'TemplateID' => 4412998,
 	        'TemplateLanguage' => true,
 	        'Subject' => "Welcome to Admin Guru",
 	    ]

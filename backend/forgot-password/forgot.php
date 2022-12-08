@@ -1,21 +1,50 @@
 <?php 
 	include("../conn.php");
+	require_once '../../vendor/autoload.php';
 
-	$email = mysqli_real_escape_string($_POST['email']);
-	$username = mysqli_real_escape_string($_POST['username']);
-	$newPass = mysqli_real_escape_string(password_hash($_POST['newPass'], PASSWORD_DEFAULT));
+	use \Mailjet\Resources;
+	
+	$dotenv = Dotenv\Dotenv::createImmutable('../..');
+	$dotenv->load();
 
-	$query = "SELECT * FROM table_user WHERE username='$username' AND email='$email'";
+	$apikey = $_ENV['API_KEY_MAIL'];
+	$apisecret = $_ENV['API_SECRET_MAIL'];
+
+	$email = mysqli_real_escape_string($con,$_POST['email']);
+	$query = "SELECT * FROM table_user WHERE email='$email'";
 	$result = mysqli_query($con,$query);
 	$row = mysqli_num_rows($result);
 	if($row>0){
-		$query = "UPDATE table_user SET password = '$newPass'";
+		$uniqID = uniqid('',true);
+		$query = "INSERT INTO reset_password VALUES('','$uniqID','$email')";
 		$result = mysqli_query($con,$query);
 		if($result){
-			echo json_encode(array("statusCode"=>201));
+			$mj = new \Mailjet\Client($apikey, $apisecret,true,['version' => 'v3.1']);
+			$body = [
+				'Messages' => [
+					[
+						'From' => [
+						'Email' => "halo@adminguru.id",
+						'Name' => "Admin Guru"
+						],
+						'To' => [
+						[
+							'Email' => $email
+						]
+						],
+						'TemplateID' => 4413407,
+						'TemplateLanguage' => true,
+						'Subject' => "Ubah kata sandi",
+						'Variables' => json_decode('{"sess": "'.$uniqID.'"}', true)
+					]
+				]
+			];
+			$response = $mj->post(Resources::$Email, ['body' => $body]);
+			echo json_encode(array('statusCode' => $response->getStatus(), 'reason', $response->getReasonPhrase()));
 		}else{
 			echo json_encode(array("statusCode"=>202));
 		}
+		
 	}else{
 		echo json_encode(array("statusCode"=>203));
 	}

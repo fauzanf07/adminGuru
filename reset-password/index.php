@@ -1,15 +1,26 @@
 <?php 	
+    include("../backend/conn.php");
 	session_start();
 	if(isset($_SESSION['nama'])){
 		header("Location: ../create-modul-ajar");
-	}
+	}else{
+        $sess = mysqli_real_escape_string($con,$_GET['sess']);
+        $query = "SELECT * FROM reset_password WHERE sess='$sess'";
+        $result = mysqli_query($con,$query);
+        $numRows = mysqli_num_rows($result);
+        if($numRows==0){
+            header("Location: ../forgot-password");
+        }else{
+            $row = mysqli_fetch_assoc($result);
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
 	<title>adminguru &centerdot; Forgot Password</title>
-	<link rel="stylesheet" type="text/css" href="../style/forgot-password/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/reset-password/style.css">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -73,29 +84,26 @@
     <div class="row-1" id="emailForm">
         <div class="container">
             <div class="signup-title">
-                <center><h5><span style="font-size:50px;"><i class="bi bi-envelope-at-fill"></i></span><br/>Silahkan isi Email Anda untuk mengganti Password Baru</h5></center>
+                <center><h5><span style="font-size:50px;"><i class="bi bi-lock-fill"></i></span><br/>Silahkan masukan kata sandi baru anda</h5></center>
             </div>
             <form method="POST" id="form">
                 <div class="form-group row">
-                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                    <input type="email" class="form-control" id="inputEmail" placeholder="email@example.com" required="required" name="email">
+                    <label for="inputEmail" class="col-sm-4 col-form-label">Password Baru</label>
+                    <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputPassword" placeholder="Password Baru" required="required">
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label for="inputEmail" class="col-sm-4 col-form-label">Konfirmasi Password</label>
+                    <div class="col-sm-8">
+                    <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Konfirmasi Password" required="required">
+                    </div>
+                </div>
+                <input type="email" class="form-control" id="inputEmail" value="<?php echo $row['email']; ?>"  required="required" hidden>
 				<div class="submit-btn">
 					<center><button type="button" class="btn btn-success" id="submit">Submit</button></center>
 				</div>
             </form>
-        </div>
-    </div>
-
-	<div class="row-1" id="success">
-        <div class="container">
-            <div class="signup-title">
-                <center><h5><span style="font-size:50px;" class="text-success"><i class="bi bi-check-circle-fill"></i></span><br/>Sukses!</h5></center>
-            </div>
-			<p>Kami telah mengirimkan email berisi instruksi penggantian kata sandi baru ke email anda. Silahkan cek email anda dan ikuti instruksi yang diberikan!</p>
-			<span>Tim <a href="../">adminguru.id</a></span>
         </div>
     </div>
 
@@ -106,21 +114,20 @@
 		<div class="background-footer"></div>
 	</footer>
 
-	<div class="toast-container position-fixed bottom-0 end-0 p-3">
+	<div class="toast-container position-fixed bottom-0 end-0 p-3" id="toast">
 	  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
 	    <div class="toast-header">
 	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
 	      <strong class="me-auto">Admin Guru</strong>
 	      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
 	    </div>
-	    <div class="toast-body">
-	      Ada input yang belum diisi. Silahkan isi terlebih dahulu!
+	    <div class="toast-body" id="toastBody">
 	    </div>
 	  </div>
 	</div>
 
 </body>
-<script type="text/javascript" src="../js/forgot-password/forgot.js"></script>
+<script type="text/javascript" src="../js/reset-password/reset-password.js"></script>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>

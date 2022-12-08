@@ -1,8 +1,8 @@
 <?php 
 	include("../conn.php");
 
-	$txtUsername = mysqli_real_escape_string($_POST['username']);
-	$txtPassword = mysqli_real_escape_string($_POST['password']);
+	$txtUsername = mysqli_real_escape_string($con,$_POST['username']);
+	$txtPassword = mysqli_real_escape_string($con,$_POST['password']);
 
 	$sql = "SELECT * FROM table_user WHERE `email` = '$txtUsername' " ;
 	$result = mysqli_query($con,$sql);

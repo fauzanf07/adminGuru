@@ -3,33 +3,20 @@ function isEmpty(str) {
 }
 $('#submit').click(function(){
 	var email = $('#inputEmail').val();
-	var username = $('#inputUsername').val();
-	var newPass = $('#inputPasswordBaru').val();
-	if(!isEmpty(email) && !isEmpty(username) && !isEmpty(newPass)){
+	if(!isEmpty(email)){
 		$.ajax({
 	        url: '../backend/forgot-password/forgot.php',
 	        type: 'POST',
 	        data: {
-				email: email,
-				username: username,
-				newPass: newPass			
+				email: email			
 			},
 			cache: false,
 	        success: function(dataResult){
 	        	var dataResult = JSON.parse(dataResult);
 				console.log(dataResult);
-	            if(dataResult.statusCode==201){
-	            	Swal.fire({
-						title: 'Success!',
-						text: 'Anda telah mengganti password baru',
-						icon: 'success',
-						confirmButtonText: 'Ok',
-						confirmButtonColor: "#d63630"
-					}).then((result) =>{
-						if(result.isConfirmed){
-							window.location.href = "../login";	
-						}
-					});
+	            if(dataResult.statusCode==200){
+	            	$('#emailForm').css('display','none');
+					$('#success').css('display','block');
 	            }
 	            else if(dataResult.statusCode==202){
 	                Swal.fire({
@@ -39,15 +26,23 @@ $('#submit').click(function(){
 						confirmButtonText: 'Ok',
 						confirmButtonColor: "#d63630"
 					})
-	            }else{
+	            }else if(dataResult.statusCode==203){
 	            	Swal.fire({
 						title: 'Error!',
-						text: 'Email atau username salah. Silahkan isi Email dan Username dengan benar!',
+						text: 'Email yang anda masukan belum terdaftar!',
 						icon: 'error',
 						confirmButtonText: 'Ok',
 						confirmButtonColor: "#d63630"
 					})
-	            }
+	            }else{
+					Swal.fire({
+						title: 'Error!',
+						text: dataResult.statusCode + ' '+ dataResult.reason,
+						icon: 'error',
+						confirmButtonText: 'Ok',
+						confirmButtonColor: "#d63630"
+					});
+				}
 	        },
 	   });
 
