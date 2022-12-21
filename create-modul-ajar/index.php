@@ -22,7 +22,7 @@
 	<title>adminguru &centerdot; Pembuatan Modul Ajar</title>
 	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Inter&family=Roboto+Slab&display=swap" rel="stylesheet">
@@ -30,12 +30,6 @@
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"
-      integrity="sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
 </head>
 <body>
 	<div class="wrapper">
@@ -110,6 +104,7 @@
 							<?php if(empty($_SESSION['mapel'])){
 								echo "Belum diisi";
 							}else { echo $_SESSION['mapel']; }?></span>
+						
 					</div>
 				</div>
 				<div class="col-lg-9 nav-info-user">
@@ -250,9 +245,16 @@
 															<button class="btn btn-success" type="button" data-pp="1" onclick="addMateri();">+</button>
 														</div>
 												</div>
+												
 												<div class="input-group mb-3 mt-3">
-												  <span class="input-group-text" id="basic-addon1">Alokasi Waktu<span class="bintang-merah">*</span></span>
-												  <input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
+													<span class="input-group-text" id="basic-addon1">Alokasi Waktu<span class="bintang-merah">*</span></span>
+													<input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
+													<button type="button" class="btn"
+															data-bs-toggle="tooltip" data-bs-placement="top"
+															data-bs-html="true"
+															data-bs-title="<b>Contoh:</b><br/>1 x 45 menit">
+															<i class="bi bi-info-circle"></i>
+													</button>
 												</div>
 												<div class="outer-btn">
 													<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-next="2" onclick="validatePage1();">
@@ -855,7 +857,7 @@
 	</div>
 	
 </body>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 

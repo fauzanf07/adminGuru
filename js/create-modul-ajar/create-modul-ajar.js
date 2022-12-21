@@ -1,9 +1,13 @@
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+
 function isEmpty(str) {
     return (!str || str.length === 0 );
 }
 $(document).ready( function () {
     $('#tableModul').DataTable();
 } );
+
 
 $('#logout').click(function(){
 	window.location.href = "../backend/logout/logout.php";
