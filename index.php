@@ -81,7 +81,6 @@
 						<div class="btn-contact">
 							<a href="signup" class="btn btn-primary btn-lg btn-daftar">DAFTAR</a>
 							<a class="btn btn-primary btn-lg btn-kontak" href="https://wa.me/6283824779390">HUBUNGI KAMI</a>
-							
 						</div>
 					</div>
 					<div class="col-lg-6">
