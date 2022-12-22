@@ -114,6 +114,26 @@
 					</div>
 				</div>
 			</div>
+			<div class="col col-premium">
+				<div class="bord-3">
+					<div class="title-premium">
+						<h4>AdminGuru Professional</h4>
+						<h3>10$ / month</h3>
+					</div>
+					<h4>30days or 1 month</h4>
+					<div class="list-category">
+						<h4>- Unlimited Figma files</h4>
+						<h4>- Unlimited version history</h4>
+						<h4>- Sharing permissions</h4>
+						<h4>- Shared and private projects</h4>
+						<h4>- Team libraries</h4>
+						<h4>- Audio conversations</h4>
+					</div>
+					<div class="button-premium">
+						<a href="signup" class="btn btn-primary btn-lg btn-professional">CHOOSE PROFESSIONAL</a>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </body>

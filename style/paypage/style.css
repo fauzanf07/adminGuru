@@ -96,27 +96,43 @@ nav{
 }
 
 .bord-1{
-	margin-right: 16%;
-	margin-left: 16%;
+	margin-right: 5%;
+	margin-left: 5%;
 	padding-top: 10%;
 	padding-bottom: 10%;
 	border: 2px solid grey;
 	border-top: 6px solid #1C3C7B;
 	border-radius: 10px;
 	color: grey;
+	height: 130%;
+	position: relative;
 }
 
 .bord-2{
-	margin-right: 16%;
-	margin-left: 16%;
+	margin-right: 5%;
+	margin-left: 5%;
 	padding-top: 10%;
 	padding-bottom: 10%;
 	border: 2px solid grey;
 	border-top: 6px solid green;
 	border-radius: 10px;
 	color: grey;
+	height: 130%;
+	position: relative;
 }
 
+.bord-3{
+	margin-right: 5%;
+	margin-left: 5%;
+	padding-top: 10%;
+	padding-bottom: 10%;
+	border: 2px solid grey;
+	border-top: 6px solid red;
+	border-radius: 10px;
+	color: grey;
+	height: 130%;
+	position: relative;
+}
 
 .title-starter{
 	color: #1C3C7B;
@@ -132,6 +148,13 @@ nav{
 
 .list-category{
 	margin-top: 7%;
+}
+
+.button-starter{
+	position: absolute;
+	bottom: 5%;
+	right: 0;
+	left: 0;
 }
 
 .button-starter a{
@@ -156,10 +179,46 @@ nav{
 	font-weight: 800;
 }
 
+.button-professional{
+	position: absolute;
+	bottom: 5%;
+	right: 0;
+	left: 0;
+}
+
 .button-professional a{
 	margin-top: 7%;
 	background-color: green;
 	border: 3px solid green;
+	font-weight: bolder;
+	width: 80%;
+	border-radius: 20px;
+	color: white;
+}
+
+.title-premium{
+	color: red
+}
+
+.title-premium h4{
+	font-weight: 800;
+}
+
+.title-premium h3{
+	font-weight: 800;
+}
+
+.button-premium{
+	position: absolute;
+	bottom: 5%;
+	right: 0;
+	left: 0;
+}
+
+.button-premium a{
+	margin-top: 7%;
+	background-color: red;
+	border: 3px solid red;
 	font-weight: bolder;
 	width: 80%;
 	border-radius: 20px;
