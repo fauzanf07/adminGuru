@@ -89,13 +89,30 @@
 						<h4>- Plugins, widgets, and templates</h4>
 						<h4>- Mobile app</h4>
 					</div>
-					<div class="button">
-						<a href="signup" class="btn btn-primary btn-lg btn-daftar">CHOOSE STARTER</a>
+					<div class="button-starter">
+						<a href="signup" class="btn btn-primary btn-lg btn-starter">CHOOSE STARTER</a>
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<h4>AdminGuru Professional</h4>
+			<div class="col col-professional">
+				<div class="starter">
+					<div class="title-professional">
+						<h4>AdminGuru Professional</h4>
+						<h3>10$ / month</h3>
+					</div>
+					<h4>30days or 1 month</h4>
+					<div class="list-category">
+						<h4>- Unlimited Figma files</h4>
+						<h4>- Unlimited version history</h4>
+						<h4>- Sharing permissions</h4>
+						<h4>- Shared and private projects</h4>
+						<h4>- Team libraries</h4>
+						<h4>- Audio conversations</h4>
+					</div>
+					<div class="button-professional">
+						<a href="signup" class="btn btn-primary btn-lg btn-professional">CHOOSE PROFESSIONAL</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

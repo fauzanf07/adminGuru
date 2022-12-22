@@ -85,6 +85,7 @@ nav{
 	background-color: #F4FDFF;
 	font-family: 'Fredoka', sans-serif;
 	text-align: center;
+	color: #1C3C7B;
 }
 
 .row-2{
@@ -120,12 +121,34 @@ nav{
 	margin-top: 7%;
 }
 
-.button a{
+.button-starter a{
 	margin-top: 7%;
 	background-color: white;
-	border: 3px solid black;
+	border: 3px solid #1C3C7B;
 	font-weight: bolder;
-	width: 205px;
+	width: 80%;
 	border-radius: 20px;
-	color: black;
+	color: #1C3C7B;
+}
+
+.title-professional{
+	color: green;
+}
+
+.title-professional h4{
+	font-weight: 800;
+}
+
+.title-professional h3{
+	font-weight: 800;
+}
+
+.button-professional a{
+	margin-top: 7%;
+	background-color: white;
+	border: 3px solid green;
+	font-weight: bolder;
+	width: 80%;
+	border-radius: 20px;
+	color: green;
 }
