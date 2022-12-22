@@ -76,7 +76,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col col-free">
-				<div class="starter">
+				<div class="bord-1">
 					<div class="title-starter">
 						<h4>Starter</h4>
 						<h3>Free</h3>
@@ -95,7 +95,7 @@
 				</div>
 			</div>
 			<div class="col col-professional">
-				<div class="starter">
+				<div class="bord-2">
 					<div class="title-professional">
 						<h4>AdminGuru Professional</h4>
 						<h3>10$ / month</h3>
