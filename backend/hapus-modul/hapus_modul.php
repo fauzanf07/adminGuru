@@ -6,6 +6,18 @@
 	$result = mysqli_query($con,$sql);
 	$r = mysqli_fetch_assoc($result);
 	$id_kegiatan = $r['id'];
+	$sql = "SELECT nama_file FROM file_modul WHERE id_identitas = '$id'";
+	$result = mysqli_query($con,$sql);
+	$r = mysqli_fetch_assoc($result);
+	$file_modul = $r['nama_file'];
+	$sql = "SELECT nama_file FROM file_preview_modul WHERE id_identitas = '$id'";
+	$result = mysqli_query($con,$sql);
+	$r = mysqli_fetch_assoc($result);
+	$file_preview_modul = $r['nama_file'];
+	$sql = "SELECT lkpd FROM lkpd WHERE id_identitas = '$id'";
+	$result = mysqli_query($con,$sql);
+	$r = mysqli_fetch_assoc($result);
+	$lkpd = $r['lkpd'];
 
 	$sql = "DELETE FROM daftar_pustaka WHERE id_identitas = '$id';";
 	$sql .= "DELETE FROM glosarium WHERE id_identitas = '$id';";
@@ -39,7 +51,8 @@
 
 
 	$result = mysqli_multi_query($con,$sql);
-	if($result){
+	if($result && unlink("../../lkpd/".$lkpd) && unlink("../../modul-ajar/".$file_modul.".docx") && unlink("../../modul-ajar/".$file_modul.".pdf")
+	&& unlink("../../preview-modul/".$file_preview_modul.".docx") && unlink("../../preview-modul/".$file_preview_modul.".pdf")){
 		echo json_encode(array('statusCode' => 201));
 	}else{
 		echo json_encode(array('statusCode' => 202));

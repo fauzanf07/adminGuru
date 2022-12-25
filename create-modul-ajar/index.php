@@ -64,13 +64,13 @@
 								<a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a>
 							</li>
 							<li class="nav-icon icon-sosmed">
+								<a class="nav-link icon-sosmed" href="../pricing"><i class="bi bi-cart-fill"></i></a>
+							</li>
+							<li class="nav-icon icon-sosmed">
 								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
 							</li>
 							<li class="nav-icon icon-sosmed">
 								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
-							</li>
-							<li class="nav-icon icon-sosmed">
-								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-youtube"></i></a>
 							</li>
 						</ul>
 					</div>
@@ -104,8 +104,16 @@
 							<?php if(empty($_SESSION['mapel'])){
 								echo "Belum diisi";
 							}else { echo $_SESSION['mapel']; }?></span>
-						
+						<div class="free-premium-limit">
+							<center><span><b>Mode Gratis</b></span><br/></center>
+							<span>Batas Download :<span>
+							<div class="progress">
+								<div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">1 / 5</div>
+							</div>
+							<a href="../pricing" class="btn btn-primary btn-try-sub">Coba Berlangganan!</a>
+						</div>
 					</div>
+					
 				</div>
 				<div class="col-lg-9 nav-info-user">
 					<nav>
@@ -256,17 +264,8 @@
 															<i class="bi bi-info-circle"></i>
 													</button>
 												</div>
-												<div class="outer-btn">
-													<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-next="2" onclick="validatePage1();">
-											    		<span >Next</span>
-									  				</button>
-									  				<span class="ket-slide">1 dari 7</span>
-												</div>
-											  	
-
-									    	</div>
-									    	<div class="carousel-item">
-									    		<h5>B. KOMPETENSI AWAL<span class="bintang-merah">*</span></h5>
+												<br/>
+												<h5>B. KOMPETENSI AWAL<span class="bintang-merah">*</span></h5>
 									      		<div class="multiple-inputs" id="multipleInputs">
 													<div id="inputs-ka">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA1">
@@ -362,13 +361,14 @@
 
 													</select>
 												</div>
-												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-											    	<span>Previous</span>
-											  	</button>
-												  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage2();">
-												    	<span >Next</span>
+												<div class="outer-btn">
+													<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" id="next1" data-next="2" onclick="validatePage1();">
+											    		<span >Next</span>
 									  				</button>
-									  				<span class="ket-slide">2 dari 7</span>
+									  				<span class="ket-slide">1 dari 3</span>
+												</div>
+											  	
+
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>A. TUJUAN PEMBELAJARAN (KOMPONEN INTI)</h5>
@@ -434,16 +434,8 @@
 															<button class="btn btn-success" type="button" onclick="addPerpemb();">+</button>
 														</div>
 												</div>
-												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-											    	<span>Previous</span>
-											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage3();">
-											    	<span >Next</span>
-								  				</button>
-								  				<span class="ket-slide">3 dari 7</span>
-									    	</div>
-									    	<div class="carousel-item">
-									    		<h5>E. KEGIATAN PEMBELAJARAN</h5>
+												<br/>
+												<h5>E. KEGIATAN PEMBELAJARAN</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 									    			<b><span>Pertemuan 1</span></b>
 													<div class="row mt-3">
@@ -472,6 +464,7 @@
 															</div>
 														</div>
 													</div>
+													<br/>
 													<div class="row mt-3">
 														<div class="col-lg-3 bg-head">
 															<span>Inti</span>
@@ -525,16 +518,8 @@
 														</div>
 													</div>
 												</div>
-												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-											    	<span>Previous</span>
-											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage4();">
-											    	<span >Next</span>
-								  				</button>
-								  				<span class="ket-slide">4 dari 7</span>
-									    	</div>
-									    	<div class="carousel-item">
-									    		<h5>F. ASESMEN</h5>
+												<br/>
+												<h5>F. ASESMEN</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 													<div class="row mt-3">
 														<div class="col-lg-3 bg-head">
@@ -642,16 +627,8 @@
 														</div>
 													</div>
 												</div>
-												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-											    	<span>Previous</span>
-											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage5();">
-											    	<span >Next</span>
-								  				</button>
-								  				<span class="ket-slide">5 dari 7</span>
-									    	</div>
-									    	<div class="carousel-item">
-									    		<h5>G. PENGAYAAN DAN REMEDIAL</h5>
+												<br/>
+												<h5>G. PENGAYAAN DAN REMEDIAL</h5>
 									    		<div class="multiple-inputs " id="multipleInputs">
 							    					<span>Pengayaan dan Remedial :<span class="bintang-merah">*</span></span>
 													<div class="list-input mt-3">
@@ -696,13 +673,13 @@
 														<button class="btn btn-success" type="button" onclick="addRefleksi();">+</button>
 													</div>
 									    		</div>
-									    		<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+												<button class="btn btn-primary btn-create" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage6();">
+											  	<button class="btn btn-primary btn-create ml-10" type="button" data-bs-target="#carouselExampleControls" onclick="validatePage2();">
 											    	<span >Next</span>
 								  				</button>
-								  				<span class="ket-slide">6 dari 7</span>
+								  				<span class="ket-slide">2 dari 3</span>
 									    	</div>
 									    	<div class="carousel-item">
 									    		<h5>A. LEMBAR KERJA PESERTA DIDIK (LAMPIRAN)<span class="bintang-merah">*</span></h5>
@@ -755,7 +732,7 @@
 											    	<span >Buat Modul Ajar&nbsp;</span>
 											    	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
 								  				</button>
-								  				<span class="ket-slide">7 dari 7</span>
+								  				<span class="ket-slide">3 dari 3</span>
 									    	</div>
 
 								    	</form>
@@ -769,71 +746,10 @@
 			</div>
 		</div>
 	</div>
-
-	<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-		    <div class="modal-content">
-		    	<div class="modal-header">
-		    		<img class="logo-icon-modal" src="../images/logo-removebg-preview.png" alt="logo">
-		    		<h5>&nbsp;&nbsp;&nbsp;Preview Modul Ajar</h5>
-		        	<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-		      	</div>
-		    	<div class="modal-body large" style="text-align: center; color: #686868; padding: 10px 50px;">
-		    		<div class="row">
-		    			<div class="col-8">
-		    				<embed
-							    src=""
-							    type="application/pdf"
-							    frameBorder="0"
-							    scrolling="auto"
-							    height="360px"
-							    width="100%"
-							    id="embedPDF"
-							></embed>
-		    			</div>
-		    			<div class="col-4 btn-pdf">
-		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
-				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
-				    		<a class="btn btn-outline-secondary btn-nanti" target="_blank" id="previewPdf" onclick="getMotivasi();">Download Preview</a>
-				       		<a class="btn btn-success btn-subscribe " target="_blank" id="subscribePdf" onclick="getMotivasi();">Berlangganan</a>
-				  
-		    			</div>
-
-		    			<div class="col-4 btn-docx">
-		    				<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
-				    		<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
-				       		<a class="btn btn-outline-secondary btn-nanti " target="_blank" id="previewDocx" onclick="getMotivasi();">Download Preview</a>
-				       		<a class="btn btn-success btn-subscribe btn-docx" target="_blank" id="subscribeDocx" onclick="getMotivasi();">Berlangganan</a>
-		    			</div>
-		    		</div>
-		    		
-		    	</div>
-		    	<div class="modal-footer" style="padding:20px 0; ">
-		      	</div>
-		    </div>
-		</div>
-	</div>
-
-	<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
-	        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-	      </div>
-	      <div class="modal-body">
-	        ...
-	      </div>
-	      <div class="modal-footer">
-	        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-	        <button type="button" class="btn btn-primary">Understood</button>
-	      </div>
-	    </div>
-	  </div>
-	</div>
+	
 
 	<div class="toast-container position-fixed bottom-0 end-0 p-3">
-	  <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+	  <div id="showMsg" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
 	    <div class="toast-header">
 	      <img src="../images/Logo-removebg-preview.png" class="me-2 logo-toast" alt="...">
 	      <strong class="me-auto">Admin Guru</strong>
@@ -843,6 +759,7 @@
 	    </div>
 	  </div>
 	</div>
+	
 	
 	<div class="toast-container position-fixed top-0 end-0 p-3">
 	  <div id="motivationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">

@@ -8,6 +8,17 @@ $(document).ready( function () {
     $('#tableModul').DataTable();
 } );
 
+// $(window).scroll(function(e){ 
+// 	var $el = $('.free-premium-limit'); 
+// 	var isPositionFixed = ($el.css('position') == 'fixed');
+// 	if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+// 	  $el.css({'position': 'fixed', 'top': '0px'}); 
+// 	}
+// 	if ($(this).scrollTop() < 200 && isPositionFixed){
+// 	  $el.css({'position': 'static', 'top': '0px'}); 
+// 	} 
+//   });
+
 
 $('#logout').click(function(){
 	window.location.href = "../backend/logout/logout.php";
@@ -111,7 +122,7 @@ $('#elemen').on('change',function(){
 
 
 $('#buatModulAjar').click(function(){
-	if(validatePage7()){
+	if(validatePage3()){
 		$('#spinner').css('display','inline-block');
 
 		var modul_ajar = new Object();
@@ -565,24 +576,9 @@ function validatePage1(){
 	}else if(isEmpty($('#alokasiW').val())){
 		msg = "Alokasi Waktu";
 	}
-	if(isEmpty(msg)){
-		$('#carouselExampleControls').carousel('next');
-	}else{
-		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
-		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
-	}
-}
-
-function validatePage2(){
-	var msg = "";
-
 	var kaLen = $('.input-ka').length;
 	for(var i=0;i<kaLen;i++){
-		if(isEmpty($('#inputKa'+(i+1)).val())){
+		if(isEmpty($('#inputKa'+(i+1)).val()) && isEmpty(msg)){
 			msg = "Kompetensi Awal "+(i+1);
 			break;
 		}
@@ -599,21 +595,17 @@ function validatePage2(){
 	}else if($('#model').find(":selected").text() == "Choose..." && isEmpty(msg)){
 		msg = "Model Pembelajaran";
 	}
-	console.log(msg);
-
+		console.log(msg);
 	if(isEmpty(msg)){
 		$('#carouselExampleControls').carousel('next');
 	}else{
 		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
 		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
+		showToast(msg);
 	}
 }
 
-function validatePage3(){
+function validatePage2(){
 	var msg = "";
 
 	if($('.input-tp').length == 0){
@@ -638,50 +630,13 @@ function validatePage3(){
 
 	if( $('.input-perpemb').length == 0 && isEmpty(msg)){
 		msg = "Persiapan Pembelajaran";
-	}
-
-	console.log(msg);
-
-	if(isEmpty(msg)){
-		$('#carouselExampleControls').carousel('next');
-	}else{
-		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
-		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
-	}
-}
-
-function validatePage4(){
-	var msg = "";
-
-	if($('.input-pend').length == 0){
+	}else if($('.input-pend').length == 0){
 		msg = "Pendahuluan";
 	}else if($('.input-inti').length == 0){
 		msg = "Inti";
 	}else if($('.input-penutup').length == 0){
 		msg = "Penutup";
-	}
-	console.log(msg);
-
-	if(isEmpty(msg)){
-		$('#carouselExampleControls').carousel('next');
-	}else{
-		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
-		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
-	}
-}
-
-function validatePage5(){
-	var msg = "";
-
-	if($('.input-ases-non').length == 0){
+	}else if($('.input-ases-non').length == 0){
 		msg = "Asesmen Non Kognitif";
 	}else if($('.input-ases-kog').length == 0){
 		msg = "Asesmen Kognitif";
@@ -689,26 +644,7 @@ function validatePage5(){
 		msg = "Asesmen Fomatif";
 	}else if($('.input-ases-sum').length == 0){
 		msg = "Asesmen Sumatif";
-	}
-
-	console.log(msg);
-
-	if(isEmpty(msg)){
-		$('#carouselExampleControls').carousel('next');
-	}else{
-		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
-		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
-	}
-}
-
-function validatePage6(){
-	var msg = "";
-
-	if($('.input-penmed').length == 0){
+	}else if($('.input-penmed').length == 0){
 		msg = "Pengayaan dan Remedial";
 	}else if($('.input-refleksi').length == 0){
 		msg = "Refleksi";
@@ -721,14 +657,12 @@ function validatePage6(){
 	}else{
 		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
 		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
+		showToast(msg);
 	}
 }
 
-function validatePage7(){
+
+function validatePage3(){
 	var res = false;
 	var msg = "";
 
@@ -768,13 +702,17 @@ function validatePage7(){
 	}else{
 		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
 		$('#msg-toast').html(msg);
-		const toastLiveExample = document.getElementById('liveToast');
-		const toast = new bootstrap.Toast(toastLiveExample);
-
-		toast.show();
+		showToast(msg);
 	}
 
 	return res;
+}
+
+function showToast(msg){
+	const toastLiveExample = document.getElementById('showMsg');
+	const toast = new bootstrap.Toast(toastLiveExample)
+
+    toast.show()
 }
 
 function getMotivasi(){
