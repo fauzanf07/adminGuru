@@ -121,14 +121,14 @@
 							
 						</div>
 						<div class="button-starter">
-							<button class="btn  btn-lg btn-starter" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">BERLANGGANAN</button>
+							<button class="btn  btn-lg btn-starter" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="1" onclick="subscribe(this);">BERLANGGANAN</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-4 col-professional">
 					<div class="bord-2">
 						<div class="title title-professional">
-							<h4>AdminGuru Professional</h4>
+							<h4>AdminGuru<br/>Basic</h4>
 							<h3>10$ / month</h3>
 						</div>
 						<h4>30days or 1 month</h4>
@@ -173,7 +173,7 @@
 							</div>
 						</div>
 						<div class="button-professional">
-							<button class="btn btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">BERLANGGANAN</button>
+							<button class="btn btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="2" onclick="subscribe(this);">BERLANGGANAN</button>
 						</div>
 					</div>
 				</div>
@@ -225,7 +225,7 @@
 							</div>
 						</div>
 						<div class="button-premium">
-							<button class="btn  btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">BERLANGGANAN</button>
+							<button class="btn  btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="3" onclick="subscribe(this);">BERLANGGANAN</button>
 						</div>
 					</div>
 				</div>
@@ -272,23 +272,23 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>AdminGuru Professional</td>
-							<td><input type="text" value="500000" class="input-amount" disabled/></td>
+							<td id="productName"></td>
+							<td><input type="text" value="" class="input-amount" id="amount" disabled/></td>
 						</tr>
 						<tr>
 							<td class="text-center"><b>Total</b></td>
-							<td class="text-end">500000</td>
+							<td class="text-end" id="totalAmount"></td>
 						</tr>
 						<tr>
 							<td colspan="2" class="align-middle"><h5 class="fw-semibold text-center">Customer Details</h5></td>
 						</tr>
 						<tr>
 							<td>Name</td>
-							<td><input type="text" class="input-amount" id="name" disabled/></td>
+							<td><input type="text" value="<?php echo $_SESSION['nama']; ?>"class="input-amount" id="name" disabled/></td>
 						</tr>
 						<tr>
 							<td>Email</td>
-							<td><input type="text" class="input-amount" id="email" disabled/></td>
+							<td><input type="text" value="<?php echo $_SESSION['email']; ?>" class="input-amount" id="email" disabled/></td>
 						</tr>
 						<tr>
 							<td>Phone no</td>

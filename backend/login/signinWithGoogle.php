@@ -39,7 +39,7 @@
     		unset($_SESSION['access_token']);  
 		  	header("Location: ../../create-modul-ajar");
   		}else{
-  			$sql = "INSERT INTO table_user VALUES('','','$fullname','$email', '','','','','', 'avatar.jpg')";
+  			$sql = "INSERT INTO table_user VALUES('','','$fullname','$email', '','','','','', 'avatar.jpg','0','5','0')";
   			$result = mysqli_query($con,$sql);
 			if($result){
 				$sql = "SELECT * FROM table_user WHERE email ='$email'";

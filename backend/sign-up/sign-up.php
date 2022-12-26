@@ -11,7 +11,7 @@
 		echo json_encode(array('statusCode' => 203));
 	}else{
 		$pass = password_hash($pass, PASSWORD_DEFAULT);
-		$query = "INSERT INTO table_user VALUES('','','','$email', '','','','','$pass', 'avatar.jpg')";
+		$query = "INSERT INTO table_user VALUES('','','','$email', '','','','','$pass', 'avatar.jpg','0','5','0')";
 		$result = mysqli_query($con,$query);
 		if($result){
 			echo json_encode(array('statusCode' => 201));

@@ -472,11 +472,21 @@ function createModulPdf(id){
 
 function subscribe(id){
 	var id_identitas = $(id).data('id');
+	var downloads_free = $(id).data('downloads');
+	var limit_free = $(id).data('limit');
 	console.log(id_identitas);
-	$('#subscribePdf').attr('href','./download-modul.php?id='+id_identitas+'&ext=pdf');
-	$('#previewPdf').attr('href','./download-prev-modul.php?id='+id_identitas+'&ext=pdf');
+	console.log(downloads_free);
+	console.log(limit_free);
 
-	$('#subscribeDocx').attr('href','./download-modul.php?id='+id_identitas+'&ext=docx');
+	if(downloads_free<limit_free){
+		$('#subscribePdf').attr('href','./download-modul.php?id='+id_identitas+'&ext=pdf');
+		$('#subscribeDocx').attr('href','./download-modul.php?id='+id_identitas+'&ext=docx');
+	}else{
+		$('#subscribePdf').attr('href','../pricing');
+		$('#subscribeDocx').attr('href','../pricing');
+	}
+	
+	$('#previewPdf').attr('href','./download-prev-modul.php?id='+id_identitas+'&ext=pdf');
 	$('#previewDocx').attr('href','./download-prev-modul.php?id='+id_identitas+'&ext=docx');
 
 	var ext = $(id).data('ext');
@@ -713,6 +723,35 @@ function showToast(msg){
 	const toast = new bootstrap.Toast(toastLiveExample)
 
     toast.show()
+}
+
+function downloadsFree(){
+	$.ajax({
+		url: "../backend/update/downloads_free.php",
+		type: "POST",
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			if(dataResult.statusCode==201){
+				$('#downloadFree').css('width',((dataResult.downloads_free/dataResult.limit_free)*100)+'%');
+				$('#downloadFree').html(dataResult.downloads_free+' / '+dataResult.limit_free);
+				getMotivasi();
+				$('#downloadDocs').data('downloads',dataResult.downloads_free);
+				$('#downloadPdf').data('downloads',dataResult.downloads_free);
+				$('#exampleModal').modal('hide');
+			}
+			else{
+				Swal.fire({
+					title: 'Error!',
+					text: 'There is something wrong',
+					icon: 'error',
+					confirmButtonText: 'Ok',
+					confirmButtonColor: "#d63630"
+				});
+			}
+		}
+	});
 }
 
 function getMotivasi(){

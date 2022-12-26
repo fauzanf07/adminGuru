@@ -104,14 +104,18 @@
 							<?php if(empty($_SESSION['mapel'])){
 								echo "Belum diisi";
 							}else { echo $_SESSION['mapel']; }?></span>
-						<div class="free-premium-limit">
-							<center><span><b>Mode Gratis</b></span><br/></center>
-							<span>Batas Download :<span>
-							<div class="progress">
-								<div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 20%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">1 / 5</div>
+						<?php
+							if($_SESSION['is_premium']==0){
+						?>
+							<div class="free-premium-limit">
+								<center><span><b>Mode Gratis</b></span><br/></center>
+								<span>Batas Download :<span>
+								<div class="progress">
+									<div class="progress-bar" id="downloadFree" role="progressbar" aria-label="Example with label" style="width: <?php echo ($_SESSION['downloads_free']/$_SESSION['limit_free'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><?php echo $_SESSION['downloads_free'] . " / ". $_SESSION['limit_free']; ?></div>
+								</div>
+								<a href="../pricing" class="btn btn-primary btn-try-sub">Coba Berlangganan!</a>
 							</div>
-							<a href="../pricing" class="btn btn-primary btn-try-sub">Coba Berlangganan!</a>
-						</div>
+						<?php } ?>
 					</div>
 					
 				</div>
@@ -152,10 +156,21 @@
 										        		<td>".$r['program_keahlian']."</td>
 										        		<td>".$r['mata_pelajaran']."</td>
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
-										        		<td>
-										        			<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' id='downloadDocs' data-ext='docx' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);' >Download Docs </button></center>
-										        			<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' id='downloadPdf' data-ext='pdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
-										        		</td>
+										        		<td>";
+															if($_SESSION['is_premium']==0){
+																echo "
+																	<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' data-limit='".$_SESSION['limit_free']."' data-downloads='".$_SESSION['downloads_free']."' id='downloadDocs' data-ext='docx' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);' >Download Docs </button></center>
+																	<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' data-limit='".$_SESSION['limit_free']."' data-downloads='".$_SESSION['downloads_free']."' id='downloadPdf' data-ext='pdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
+																";
+															}else{
+																echo "
+																	<a class='btn btn-primary btn-download' href='./download-modul.php?id=".$r['id']."&ext=docx' target='_blank' id='subscribePdf' onclick='getMotivasi();'>Download Docs</a>
+																	<a class='btn btn-danger btn-download mt-10' href='./download-modul.php?id=".$r['id']."&ext=pdf' target='_blank' id='subscribePdf' onclick='getMotivasi();'>Download PDF</a>
+																";
+															}
+										        			
+										        echo "
+															</td>
 										        		<td>
 										        			<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
 										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>
@@ -746,6 +761,52 @@
 			</div>
 		</div>
 	</div>
+	
+	<?php if($_SESSION['is_premium']==0){ ?>
+		<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<img class="logo-icon-modal" src="../images/logo-removebg-preview.png" alt="logo">
+						<h5>&nbsp;&nbsp;&nbsp;Preview Modul Ajar</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body large" style="text-align: center; color: #686868; padding: 10px 50px;">
+						<div class="row">
+							<div class="col-8">
+								<embed
+									src=""
+									type="application/pdf"
+									frameBorder="0"
+									scrolling="auto"
+									height="360px"
+									width="100%"
+									id="embedPDF"
+								></embed>
+							</div>
+							<div class="col-4 btn-pdf">
+								<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
+								<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
+								<a class="btn btn-outline-secondary btn-nanti" target="_blank" id="previewPdf" onclick="getMotivasi();">Download Preview</a>
+								<a class="btn btn-success btn-subscribe " target="_blank" id="subscribePdf" onclick="downloadsFree();">Download Full Modul</a>
+
+							</div>
+
+							<div class="col-4 btn-docx">
+								<h4>Subscribe untuk menampilkan semua poin pada modul ajar</h4>
+								<p>Semua poin akan tercetak di dalam modul jika anda berlangganan, yuk mulai berlangganan!</p>
+								<a class="btn btn-outline-secondary btn-nanti " target="_blank" id="previewDocx" onclick="getMotivasi();">Download Preview</a>
+								<a class="btn btn-success btn-subscribe btn-docx"  target="_blank" id="subscribeDocx" onclick="downloadsFree();">Download Full Modul</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="modal-footer" style="padding:20px 0; ">
+					</div>
+				</div>
+			</div>
+		</div>
+	<?php } ?>
 	
 
 	<div class="toast-container position-fixed bottom-0 end-0 p-3">
