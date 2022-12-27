@@ -215,6 +215,7 @@ nav{
 	margin-top: 7%;
 	background-color: white;
 	border: 3px solid #1C3C7B;
+	font-size: small;
 	font-weight: bolder;
 	width: 80%;
 	border-radius: 20px;
@@ -244,6 +245,7 @@ nav{
 	margin-top: 7%;
 	background-color: green;
 	border: 3px solid green;
+	font-size: small;
 	font-weight: bolder;
 	width: 80%;
 	border-radius: 20px;
@@ -273,6 +275,7 @@ nav{
 	margin-top: 7%;
 	background-color: red;
 	border: 3px solid red;
+	font-size: small;
 	font-weight: bolder;
 	width: 80%;
 	border-radius: 20px;
@@ -305,4 +308,22 @@ nav{
 }
 .input-amount{
 	text-align: right;
+}
+
+@media screen and (max-width: 1199px) {
+	.col-history{
+		margin-top: 10% !important;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.col-history{
+		margin-top: 20% !important;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.col-history{
+		margin-top: 50% !important;
+	}
 }
