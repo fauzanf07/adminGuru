@@ -306,10 +306,14 @@ nav{
 	width: 100%;
 	font-size: 30px;
 }
-.input-amount{
-	text-align: right;
+
+.btn-payment{
+	width: 100px;
 }
 
+.card-body{
+	overflow-x: scroll;
+}
 @media screen and (max-width: 1199px) {
 	.col-history{
 		margin-top: 10% !important;
@@ -319,11 +323,5 @@ nav{
 @media screen and (max-width: 991px) {
 	.col-history{
 		margin-top: 20% !important;
-	}
-}
-
-@media screen and (max-width: 767px) {
-	.col-history{
-		margin-top: 50% !important;
 	}
 }

@@ -5,6 +5,7 @@
         "convertapi/convertapi-php": "^1.6",
         "mailjet/mailjet-apiv3-php": "^1.5",
         "google/apiclient": "^2.0",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "midtrans/midtrans-php": "^2.5"
     }
 }

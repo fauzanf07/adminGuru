@@ -48,6 +48,7 @@ class ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea
         'M' => 
         array (
             'Monolog\\' => 8,
+            'Midtrans\\' => 9,
         ),
         'L' => 
         array (
@@ -127,6 +128,10 @@ class ComposerStaticInitea77b9a382bd0d87103f32937d90c0ea
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
+        ),
+        'Midtrans\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/midtrans/midtrans-php/Midtrans',
         ),
         'Laminas\\ZendFrameworkBridge\\' => 
         array (
