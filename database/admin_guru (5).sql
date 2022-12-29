@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 27, 2022 at 05:05 PM
+-- Generation Time: Dec 29, 2022 at 08:50 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -39,12 +39,8 @@ CREATE TABLE `ases_for` (
 --
 
 INSERT INTO `ases_for` (`id`, `id_identitas`, `ases`) VALUES
-(29, 15, 'Apa yang sedang kamu rasakan saat ini?'),
 (31, 17, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?'),
-(32, 18, 'Apa yang sedang kamu rasakan saat ini?'),
-(38, 24, 'Apa yang sedang kamu rasakan saat ini?'),
-(41, 27, 'Apa yang sedang kamu rasakan saat ini?'),
-(42, 28, 'Apa yang sedang kamu rasakan saat ini?');
+(43, 29, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?');
 
 -- --------------------------------------------------------
 
@@ -63,12 +59,8 @@ CREATE TABLE `ases_kog` (
 --
 
 INSERT INTO `ases_kog` (`id`, `id_identitas`, `ases`) VALUES
-(15, 15, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
 (17, 17, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
-(18, 18, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
-(24, 24, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
-(27, 27, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
-(28, 28, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
+(29, 29, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
 
 -- --------------------------------------------------------
 
@@ -87,15 +79,8 @@ CREATE TABLE `ases_non_kog` (
 --
 
 INSERT INTO `ases_non_kog` (`id`, `id_identitas`, `ases`) VALUES
-(34, 15, 'Unjuk kerja'),
-(35, 15, 'Kuis'),
 (37, 17, 'Unjuk kerja'),
-(38, 18, 'Kuis'),
-(49, 24, 'Kuis'),
-(50, 24, 'Unjuk kerja'),
-(55, 27, 'Kuis'),
-(56, 27, 'Unjuk kerja'),
-(57, 28, 'Kuis');
+(58, 29, 'Unjuk kerja');
 
 -- --------------------------------------------------------
 
@@ -114,12 +99,8 @@ CREATE TABLE `ases_sum` (
 --
 
 INSERT INTO `ases_sum` (`id`, `id_identitas`, `ases`) VALUES
-(15, 15, 'Penilaian Akhir Semester'),
 (17, 17, 'Penilaian Akhir Semester'),
-(18, 18, 'Penilaian Akhir Semester'),
-(24, 24, 'Penilaian Akhir Semester'),
-(27, 27, 'Penilaian Akhir Semester'),
-(28, 28, 'Penilaian Akhir Semester');
+(29, 29, 'Penilaian Akhir Semester');
 
 -- --------------------------------------------------------
 
@@ -138,12 +119,8 @@ CREATE TABLE `bahan_bacaan` (
 --
 
 INSERT INTO `bahan_bacaan` (`id`, `id_identitas`, `bahan_bacaan`) VALUES
-(18, 15, 'skksnknsknwksn'),
 (20, 17, 'knknkknknkk'),
-(21, 18, 'kljlkjkjl'),
-(27, 24, 'smdknkjjjjjjjjsnfjkdfknsjdnkfksdnfjnknkjnkjnnknb'),
-(30, 27, 'smdknkjjjjjjjjsnfjkdfknsjdnkfksdnfjnknkjnkjnnknb'),
-(31, 28, 'ksakjskaj');
+(32, 29, 'jjhjhjdhhdjhdj');
 
 -- --------------------------------------------------------
 
@@ -270,7 +247,80 @@ INSERT INTO `capaian_pembelajaran` (`id`, `id_elemen`, `capaian_pembelajaran`) V
 (106, 112, 'Peserta didik mampu mengevaluasi berbagai\r\ngagasan dan pandangan berdasarkan kaidah\r\nlogika berpikir dari menyimak berbagai jenis teks (nonfiksi dan fiksi) dalam bentuk monolog, dialog, dan gelar wicara;\r\nmengkreasi dan mengapresiasi gagasan dan pendapat untuk menanggapi teks yang disimak.'),
 (107, 113, 'Peserta didik mampu mengevaluasi gagasan dan pandangan berdasarkan kaidah logika berpikir dari membaca berbagai tipe teks (nonfiksi dan fiksi) di media cetak dan\r\nelektronik. Peserta didik mampu engapresiasi teks fiksi dan nonfiksi. akurasi dan kualitas data serta membandingkan isi teks.'),
 (108, 114, 'Peserta didik mampu menyajikan gagasan, pikiran, dan kreativitas dalam berbahasa dalam bentuk monolog, dialog, dan gelar wicara secara logis, sistematis, kritis, dan kreatif; mampu menyajikan karya sastra secara kreatif dan menarik. Peserta didik mampu mengkreasi teks sesuai dengan norma kesopanan dan budaya Indonesia. Peserta didik mampu menyajikan dan mempertahankan hasil penelitian, serta menyimpulkan masukan dari mitra diskusi'),
-(109, 115, 'Peserta didik mampu menulis gagasan,pikiran, pandangan, pengetahuan metakognisi untuk berbagai tujuan secara logis, kritis, dan kreatif. Peserta didik mampu menulis berbagai jenis karya sastra. Peserta didik mampu menulis teks refleksi diri. Peserta didik mampu menulis hasil penelitian, teks fungsional dunia kerja, dan pengembangan studi lanjut. Peserta didik mampu memodifikasi/mendekonstruksikan karya sastra untuk tujuan ekonomi kreatif. Peserta didik mampu menerbitkan tulisan hasil karyanya di media cetak maupun digital');
+(109, 115, 'Peserta didik mampu menulis gagasan,pikiran, pandangan, pengetahuan metakognisi untuk berbagai tujuan secara logis, kritis, dan kreatif. Peserta didik mampu menulis berbagai jenis karya sastra. Peserta didik mampu menulis teks refleksi diri. Peserta didik mampu menulis hasil penelitian, teks fungsional dunia kerja, dan pengembangan studi lanjut. Peserta didik mampu memodifikasi/mendekonstruksikan karya sastra untuk tujuan ekonomi kreatif. Peserta didik mampu menerbitkan tulisan hasil karyanya di media cetak maupun digital'),
+(111, 116, 'Mengasah keterampilan problem solving yang efektif, efisien, dan optimal sebagai landasan untuk menghasilkan solusi dengan menerapkan penalaran kritis, kreatif dan mandiri.Pada akhir fase E, peserta didik mampu menerapkan strategi algoritmik standar untuk menghasilkan beberapa solusi persoalan dengan data diskrit bervolume tidak kecil pada kehidupan sehari-harimaupun implementasinya dalam program komputer.'),
+(112, 117, 'Pada akhir fase E, peserta didik mampu memanfaatkan berbagai aplikasi secara bersamaan dan optimal untuk berkomunikasi, mencari sumber data yang akan diolah menjadi informasi, baik di dunia nyata maupun di internet, serta mahir menggunakan fitur lanjut aplikasi perkantoran (pengolah kata, angka, dan presentasi) beserta otomasinya untuk mengintegrasikan dan menyajikan konten aplikasi dalam berbagai representasi yang memudahkan analisis dan interpretasi konten tersebut.'),
+(113, 118, 'Pada akhir fase E, peserta didik mampu memahami peran sistem operasi dan mekanisme internal yang terjadi pada interaksi antara perangkat keras, perangkat lunak, dan pengguna.'),
+(114, 119, 'Pada akhir fase E, peserta didik mampu menerapkan konektivitas jaringan lokal, komunikasi data via ponsel, konektivitas internet melalui jaringan kabel dan nirkabel (bluetooth, wifi, internet), enkripsi untuk memproteksi data pada saat melakukan penyambungan perangkat ke jaringan lokal maupun internet yang tersedia.'),
+(115, 120, 'Pada akhir fase E, peserta didik mampu memahami aspek privasi dan keamanan data, mengumpulkan data secara otomatis dari berbagai sumber data, memodel kandata berbagai bidang, menerapkan siklus pengolahan data (pengumpulan, pengolahan, visualisasi, analisis, interpretasi, dan publikasi) dengan menggunakan perkakas TIK yang sesuai, serta menerapkan strategi pengelolaan data yang tepat guna dengan mempertimbangkan volume dan kompleksitasnya.'),
+(116, 121, 'Pada akhir fase E, peserta didik mampu menerapkan praktik baik konsep pemrograman prosedural dalam salah satu bahasa pemrograman prosedural dan mampu mengembangkan program yang terstruktur dalam notasi algoritma atau notasi lain, berdasarkan strategi algoritmik yang tepat.'),
+(117, 122, 'Pada akhir fase E, peserta didik mampu memahami sejarah perkembangan komputer dan tokoh-tokohnya, memahami hak kekayaan intelektual, lisensi, aspek teknis, hukum, ekonomi, lingkungan, dan sosial dari produk TIK, memahami berbagai bidang studi dan profesi bidang Informatika serta peran Informatika pada bidang lain.'),
+(118, 123, 'Pada akhir fase E, peserta didik mampu bergotong royong dalam tim inklusif untuk mengerjakan projek bertema Informatika dengan mengidentifikasi persoalan, merancang, mengimplementasi, menguji, dan menyempurnakan program komputer didasari strategi algoritma yang sesuai sebagai solusi persoalan masyarakat serta mengomunikasikan produk, proses pengembangan dan manfaatnya bagi masyarakat secara lisan maupun tertulis.'),
+(119, 124, 'Pada akhir Fase F peserta didik mampu mengidentifikasi permasalahan ekonomi, memahami model dan pelaku ekonomi, memahami kegiatan ekonomi, menerapkan ilmu ekonomi dalam kegiatan usaha, serta memahami administrasi dan fungsifungsi manajemen.'),
+(120, 125, 'Pada akhir Fase F peserta didik mampu memahami pengelolaan kas mulai dari menganalisis transaksi dan pelaporan kas kecil, pencatatan penerimaan, pengeluaran, dan pelaporan kas bank. Peserta didik juga mampu menganalisis transaksi dan pelaporan kliring, membuat laporan rekonsiliasi bank, dan mengevaluasi transaksi pengelolaan kas, serta membuat laporan transaksi pengelolaan kas.'),
+(121, 126, 'Pada akhir Fase F peserta didik mampu menganalisis sistem perbankan di Indonesia, menerapkan pemasaran produk/layanan perbankan yang terintegrasi dengan perkembangan teknologi, serta menerapkan penggunaan kartu ATM, kartu kredit, mobile banking, dan safe deposit box. Peserta didik dapat menganalisis bank garansi, menganalisis berbagai transaksi (leasing, modal ventura, pegadaian, asuransi, pasar modal, pasar uang, dana pensiun, dan piutang), serta membuat laporan jasa lembaga keuangan.'),
+(122, 127, 'Pada akhir Fase F peserta didik mampu memahami perbedaan akuntansi bank dengan akuntansi keuangan, memahami persamaan dasar akuntansi bank, melakukan pencatatan transaksi produk layanan perbankan, serta melakukan pencatatan transaksi valuta asing. Peserta didik juga dapat melakukan pencatatan penerimaan dan pembayaran bunga, menerapkan siklus akuntansi perbankan, serta membuat laporan akuntansi perbankan.'),
+(123, 128, 'Pada akhir Fase F peserta didik mampu mengoperasikan program aplikasi komputer akuntansi untuk mendukung pekerjaannya.'),
+(124, 129, 'Pada akhir Fase F peserta didik mampu memahami jenis-jenis pajak, melakukan perhitungan pajak terutang, menganalisis penyetoran pajak kurang bayar, membuat laporan pajak, serta memahami ketentuan umum dan tata cara perpajakan (KUP).');
+INSERT INTO `capaian_pembelajaran` (`id`, `id_elemen`, `capaian_pembelajaran`) VALUES
+(125, 130, 'Pada akhir fase E, peserta didik mampu mengamati, mengenal, merekam dan menuangkan pengalaman dan pengamatannya terhadap lingkungan, perasaan, empati atau penilaiannya secara visual dengan menggunakan proporsi, gestur, ruang yang rinci. Karya peserta didik mencerminkan penguasaan terhadap bahan, alat, teknik, teknologi dan prosedur yang dipilihnya (sesuai minat dan kemampuannya).'),
+(126, 131, 'Pada akhir fase E, peserta didik mampu menciptakan karya seni yang menunjukkan pilihan keterampilan, medium dan pengetahuan elemen seni rupa atau prinsip desain tertentu yang sesuai dengan tujuan karyanya, dalam konteks ekspresi pribadi atau sesuai topik tertentu.'),
+(127, 132, 'Pada akhir fase E, peserta didik mampu secara kritis mengevaluasi dan menganalisa efektivitas pesan dan penggunaan medium sebuah karya, pribadi maupun orang lain serta menggunakan informasi tersebut untuk merencanakan langkah pembelajaran selanjutnya.'),
+(128, 133, 'Pada akhir fase E, peserta didik mampu berkarya dan mengapresiasi berdasarkan perasaan, empati dan penilaian pada karya seni secara ekspresif, produktif, inventif dan inovatif. Peserta didik mampu menggunakan kreativitasnya, mengajukan pertanyaan yang bermakna dan mengembangkan gagasan dan menggunakan berbagai sudut pandang untuk mendapatkan gagasan, menciptakan peluang, menjawab tantangan dan menyelesaikan masalah dalam kehidupan sehari-hari. Peserta didik juga mampu bekerja secara mandiri, bergotong royong maupun berkolaborasi dengan bidang keilmuan lain atau masyarakat di lingkungan sekitar.'),
+(129, 134, 'Pada akhir fase E, peserta didik mampu membuat karya sendiri atas dasar perasaan, minat, nalar dan sesuai akar budaya pada masyarakatnya.'),
+(130, 135, 'Pada akhir fase F, peserta didik mampu mengamati, mengenal, merekam dan menuangkan pengalaman dan pengamatannya terhadap keterlibatan seni rupa dalam kehidupan sehari -hari secara visual dengan menggunakan proporsi, gestur, ruang yang rinci. Peserta didik bereksperimen dengan bahan, alat, teknik, teknologi dan prosedur yang dipilihnya (sesuai minat, kemampuan dan ketersediaan di daerahnya).'),
+(131, 136, 'Pada akhir fase F, peserta didik mampu menciptakan karya seni yang menunjukkan penguasaan atas pilihan keterampilan, medium, pengetahuan elemen seni rupa atau prinsip desain tertentu yang sesuai dengan tujuan karyanya, dalam konteks ekspresi pribadi atau sesuai topik tertentu.'),
+(132, 137, 'Pada akhir fase F, peserta didik mampu secara  kritis dan mendalam mengevaluasi dan menganalisa efektivitas dampak karya pribadi maupun orang lain serta menggunakan informasi tersebut untuk merencanakan langkah pembelajaran selanjutnya.'),
+(133, 138, 'Pada akhir fase F, peserta didik mampu \r\nberkarya dan mengapresiasi berdasarkan \r\nperasaan, empati dan penilaian pada karya seni \r\nsecara ekspresif, produktif, inventif dan inovatif. \r\nPeserta didik mampu menggunakan kreativitasnya, mengajukan pertanyaan yang bermakna dan mengembangkan gagasan dan menggunakan berbagai sudut pandang untuk mendapatkan gagasan, menciptakan peluang, menjawab tantangan dan menyelesaikan masalah dalam kehidupan sehari-hari. Peserta didik juga mampu bekerja secara mandiri, bergotong royong maupun berkolaborasi dengan bidang keilmuan lain atau masyarakat di lingkungan sekitar.'),
+(134, 139, 'Pada akhir fase F, peserta didik mampu membuat karya sendiri dengan mendeskripsikan konsep atas dasar perasaan, minat, nalar dan sesuai akar budaya dan perkembangannya yang ada di masyarakatnya.'),
+(135, 140, 'Pada akhir fase F, peserta didik mampu menganalisis beberapa strategi algoritmik secara kritis untuk menghasilkan banyak alternatif solusi dari satu persoalan dengan memberikan justifikasi efisiensi, kelebihan, dan keterbatasan dari setiap alternatif solusi, kemudian memilih dan menerapkan solusi terbaik, paling efisien, dan optimal dengan merancang struktur data yang lebih kompleks dan abstrak.'),
+(136, 141, '-'),
+(137, 142, 'Menghasilkan prototipe perangkat lunak yang berinteraksi dengan single board computer/controller atau kit elektronika untuk edukasi yang bisa diprogram, serta mampu mengomunikasikan produk dan proses pengembangan perangkat lunak yang dilakukan dengan menggunakan perangkat lunak aplikasi.'),
+(138, 143, 'Pada akhir fase F, peserta didik memahami konsep lanjutan jaringan komputer dan internet meliputi topologi jaringan yang menghubungkan beberapa komputer, aspek teknis berbagai jaringan komputer, lapisan informasi dalam suatu sistem jaringan komputer (OSI Layer), komponen jaringan komputer, dan mekanisme pertukaran data, konsep cyber security, tata kelola kontrol akses data, serta faktor-faktor dan konfigurasi keamanan jaringan.'),
+(139, 144, '-'),
+(140, 145, 'Pada akhir fase F, peserta didik mampu mengembangkan program modular yang berukuran besar menggunakan bahasa pemrograman yang ditentukan, mampu memahami, memelihara, dan menyempurnakan struktur program (aspek statik) dan eksekusi (aspek dinamik) suatu source code, memahami algoritma standar dan strategi efisiensinya, merancang dan mengimplementasikan struktur data abstrak yang kompleks seperti beberapa library standar termasuk library untuk Artificial Intelligence dan library untuk pengolahan data bervolume besar, serta menerjemahkan sebuah program dalam satu bahasa yang sudah dikenalnya ke bahasa lain berdasarkan kaidah translasi yang diberikan.'),
+(141, 146, 'Pada akhir fase F, peserta didik mampu mengkaji, menganalisis, dan memberikan berbagai argumentasi dan rasional secara kritis pada kasus-kasus sosial terkini terkait produk TIK dan sistem komputasi.'),
+(142, 147, 'Pada akhir fase F, peserta didik mampu bergotong royong dalam tim inklusif untuk mengerjakan projek pengembangan sistem komputasi dengan menganalisis dan mengidentifikasi persoalan, merancang, mengimplementasi, menguji, dan menyempurnakan sistem komputasi sebagai solusi dari persoalan tersebut, serta mengomunikasikan produk, proses pengembangan dan manfaatnya secara lisan dan tertulis.'),
+(143, 148, 'Peserta didik mampu mengidentifikasi sebuah teks/ujaran, memperkirakan, menafsirkan, menginterpretasikan maksud dan tujuan sebuah teks/informasi, memahami informasi yang disampaikan, menggunakan teks/informasi yang diperlukan, menyimpulkan dan menganalisis sebuah teks/informasi sederhana yang disampaikan.'),
+(144, 149, 'Peserta didik mampu menyebutkan dan mengulang sebuah teks/informasi yang disampaikan, menjelaskan tentang teks/informasi yang diperoleh, menerapkan dan menanggapi teks/informasi yang diterima, membandingkan dan menceritakan kembali tentang sebuah topik.'),
+(145, 150, 'Peserta didik mampu mengidentifikasi dan memahami sebuah teks/informasi, membaca dengan jelas dan tepat, menentukan teks/informasi penting, menganalisis dan menghubungkan suatu teks/informasi penting sederhana dan jelas.'),
+(146, 151, 'Peserta didik mampu mengidentifikasi sebuah pesan/konten/informasi, menuliskan pesan/konten/informasi singkat, menyampaikan pesan/ konten/informasi sederhana, menganalisis dan menyimpulkan sebuah pesan/konten/informasi secara sederhana, menyusun/mengarang pesan/konten/informasi sederhana sebuah topik.'),
+(147, 152, 'Pada akhir Fase F peserta didik mampu memahami ilmu ekonomi, pelaku kegiatan ekonomi, perilaku konsumen dan produsen, jenis pasar, bentuk badan usaha, lembaga keuangan, rencana usaha kecil dan menengah, e-commerce, serta dasar-dasar pemasaran.'),
+(148, 153, 'Pada akhir Fase F peserta didik mampu memahami pengelolaan administrasi umum mulai dari melaksanakan korespondensi menggunakan bahasa Indonesia dan bahasa Inggris, menerapkan penanganan surat (mail handling), memproses dokumen perjalanan dinas, akomodasi dan transportasi perjalanan dinas (business travelling arrangement), serta melakukan pengelolaan jadwal kegiatan pimpinan (daily agenda).'),
+(149, 154, 'Pada akhir Fase F peserta didik mampu menerapkan prosedur berkomunikasi lisan dalam bahasa Indonesia, bahasa Inggris dan/atau bahasa asing lainnya, baik melalui telepon maupun secara langsung dengan kolega/pelanggan, serta mengelola informasi di tempat kerja.'),
+(150, 155, 'Pada akhir Fase F peserta didik mampu menerapkan pengelolaan kearsipan mulai dari prosedur penyimpanan arsip, penggunaan arsip, pemeliharaan arsip, penentuan masa retensi arsip, penyusutan arsip, serta pengelolaan arsip secara elektronik/digital.'),
+(151, 156, 'Pada akhir Fase F peserta didik mampu menerapkan teknik mengetik cepat (keyboarding), mengoperasikan peralatan dan perlengkapan kantor (office supplies), mesin-mesin kantor (office machine), mengoperasikan aplikasi perkantoran (office software), menerapkan pembuatan dan penyimpanan file/data berbasis online (cloud computing), serta melakukan akses data/informasi melalui internet.'),
+(152, 157, 'Pada akhir Fase F peserta didik mampu menerapkan prosedur persiapan kegiatan rapat/pertemuan secara online maupun offline, menyiapkan bahan/materi presentasi, dan membuat notulen rapat.'),
+(153, 158, 'Pada akhir Fase F peserta didik mampu mengelola kas kecil, membuat laporan kas kecil, melaksanakan transaksi perbankan sederhana, serta melaksanakan transaksi kas dan nonkas.'),
+(154, 159, 'Pada akhir Fase F peserta didik mampu memahami peraturan ketenagakerjaan, menerapkan prosedur administrasi perencanaan, perekrutan, pengembangan, penghargaan, hubungan industrial, penilaian, dan pemberhentian karyawan.'),
+(155, 160, 'Pada akhir Fase F peserta didik mampu memahami peraturan sarana dan prasarana kantor, menerapkan prosedur administrasi pengadaan, penyimpanan, penyaluran, melakukan inventarisasi, pengoperasian, pemeliharaan, penghapusan sarana dan prasarana kantor, memahami furnitur kantor (office furniture), interior kantor (office arrangement), serta tata ruang kantor (office layout).'),
+(156, 161, 'Pada akhir Fase F peserta didik mampu memahami khalayak humas, etika dan kode etik profesi humas, membuat media komunikasi humas, menerapkan kegiatan kehumasan, menerapkan pelayanan kepada kolega/pelanggan, memahami peraturan keprotokolan, serta menerapkan kegiatan keprotokolan.'),
+(157, 162, 'Pada akhir fase E peserta didik mampu menjelaskan tentang kepribadian yang dibutuhkan agar dapat mengembangkan pola pikir kreatif, memadukan kearifan lokal dalam proses kreatif untuk menghasilkan solusi bisnis yang tepat sasaran, pengelolaan SDM di industri animasi dengan melihat potensi lokal, aspek pengetahuan media/platform dan teknologi untuk mendukung proses bisnis industri kreatif di bidang animasi.'),
+(158, 163, 'Pada akhir fase E peserta didik mampu menjelaskan tentang sejarah perkembangan teknologi dalam proses produksi animasi, mulai dari teknik tradisional sampai dengan teknologi modern, Industri 4.0,Internet of Things (IOT), teknologi digital dalam dunia industri, isu pemanasan global, perubahan iklim, aspek-aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse dan recycling.'),
+(159, 164, 'Pada akhir fase E peserta didik mampu mendeskripsikan tentang profesi-profesi dalam industri animasi, tugas dan tanggung jawab setiap profesi dalam industri animasi, mampu membaca peluang pasar dan usaha di bidang animasi dan ekonomi kreatif, technopreneur/pelaku wirausaha dalam bidang animasi untuk membangun visi dan passion, serta melakukan pembelajaran berbasis projek nyata sebagai simulasi projek kewirausahaan.'),
+(160, 165, 'Pada akhir fase E peserta didik mampu menjelaskan tentang proses produksi dan teknologi yang diaplikasikan dalam industri animasi secara tekun dan teliti, memahami perangkat kerja, pemakaian aplikasi atau tools untuk dioperasikan dalam ekosistem industri animasi (perangkat kerja produksi animasi), memahami sikap kerja dalam melakukan komunikasi dan kerja sama tim, produksi animasi yang meliputi istilah teknis atau bahasa, unit kerja, proses (pipeline), workflow pekerjaan, fungsi kerja (job desk) serta SOP pada produksi animasi. '),
+(161, 166, 'Pada akhir fase E peserta didik mampu menjelaskan tentang aspek legal dalam produksi animasi, Intelectual Property (IP) atau hak kekayaan intelektual (HAKI), serta kode etik yang berlaku di industri animasi baik dalam lingkup nasional maupun internasional, '),
+(162, 167, 'Pada akhir fase E peserta didik mampu mendeskripsikan pengawasan mutu hasil yang dibuat para pekerja animasi, dengan standar capaian yang disepakati. Pengetahuan berbagai jenis produk animasi dan kegunaanya disesuaikan dengan tuntutan kualitas dari masing-masing jenis animasi tersebut.'),
+(163, 168, 'Pada akhir fase E peserta didik mampu mengoperasikan pengoperasian perangkat kerja produksi baik yang digital maupun non-digital yang dibutuhkan di area kerja pada bidang kerja 2 dimensi maupun 3 dimensi, fungsi dan kegunaan perangkat kerja, workflow perangkat kerja, kapasitas perangkat kerja (digital/non-digital), area tools kerja pada perangkat kerja sesuai dengan kebutuhan pasar maupun partner industri.'),
+(164, 169, 'Pada akhir fase E peserta didik menjelaskan tentang tentang unsur-unsur visual dalam produksi animasi, penciptaan desain berdasarkan prinsip dan unsur desain (bidang, bentuk, warna dan komposisi), teknik yang benar dalam bervisual, dikaitkan dengan pencapaian nilai estetika.'),
+(165, 170, 'Pada akhir fase E peserta didik mampu menjelaskan pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam membuat gerak objek digital baik character maupun non-character, dasar pergerakan buatan berdasarkan instruksi kerja pergerakan objek, meliputi unsur gerak dalam kehidupan, suara, waktu, masa dan sifat objek yang akan digerakan.'),
+(166, 171, 'Pada akhir fase E peserta didik mampu menjelaskan shot/scene/sequence storyboard, pengambilan gambar, adegan, dan urutan storyboard serta menganalisis cerita, mampu memahami tentang alur cerita serta unsur-unsur dalam sebuah cerita.'),
+(167, 172, 'Pada akhir fase F, peserta didik mampu menerapkan teknik serta workflow kerja dalam pembuatan sekuensial gerak (motion) obyek digital karakter dan non karakter, body mechanic (interaction) karakter, gerak berulang karakter (motion loop), akting pergerakan karakter, dan lip sync. Peserta didik mampu membaca shot/scene/ sequences/storyboard pada bidang kerja 2 atau 3 dimensi yang dipilih sesuai dengan SOP (Standard Operational Procedure) yang berlaku pada lingkungan kerja industri animasi.'),
+(168, 173, 'Pada akhir fase F, peserta didik mampu menerapkan teknik serta workflow kerja dalam mengimplementasikan elemen visual baik berupa : aset visual animasi/visual latar belakang/set location (environment production design) sesuai desain produksi yang disepakati dan SOP (Standard Operational Procedure) yang berlaku pada lingkungan kerja industri animasi 2D maupun 3D. Peserta didik memahami teknik 2 dimensi meliputi pembuatan layout 2D, gambar latar (background) 2D, melakukan proses pewarnaan gambar latar (background) 2D dan objek gambar 2D (karakter dan non karakter), melakukan clean up gambar keypose 2D, dan membuat aset gambar 2D puppeteer pada bidang kerja 2 dimensi. Peserta didik memahami teknik 3 dimensi meliputi pembuatan model 3D berbasis hard surface/organik/digital sculpting, retopology permukaan objek 3D, membuat proyeksi UV mesh dari objek 3D, tekstur permukaan 3D, susunan (layout) aset pada bidang 3D, artistik pencahayaan 3D (set lighting artist), set design 3D (set dressing/3D set designer/look dev) dan proses rendering.'),
+(169, 174, 'Pada akhir fase F, peserta didik mampu mengimplementasikan pembuatan seni penceritaan animasi yang mencakup pembuatan gambar penceritaan animasi (storyboard), perencanaan rekam dialog animasi, pembuatan animatic, dan penyuntingan gambar akhir animasi (online editing) sesuai dengan SOP (Standard Operational Procedure) yang berlaku pada lingkungan kerja industri animasi.'),
+(170, 175, 'Pada akhir fase F, peserta didik mampu memahami rangkaian digital; memahami arsitektur mikrokontroler; memahami pemrograman mikrokontroler; membuat program aplikasi sistem pengendali berbasis mikrokontroler.'),
+(171, 176, 'Pada akhir fase F, peserta didik mampu memahami rangkaian elektronika analog; memahami sensor dan transduser; memahami rangkaian elektronika daya; membuat rangkaian catu daya; memahami rangkaian Uninterruptible Power Supplies (UPS); menginstalasi sistem pembangkit listrik tenaga surya (PLTS); membuat sistem keamanan berbasis elektronik.'),
+(172, 177, 'Pada akhir fase F, peserta didik mampu memahami sistem dan perencanaan akustik ruang; memahami psikoakustik anatomi telinga manusia; menginstalasi sistem audio rumah, mobil dan pertunjukan; menginstalasi sistem audio paging; menginstalasi master rekaman audio; mengoperasikan kamera; menginstalasi closed circuit television (CCTV), menginstalasi Multi Access Television (MATV).'),
+(173, 178, 'Pada akhir fase F, peserta didik memahami transmisi antena gelombang radio; memahami perekayasaan sinyal analog; memahami sistem penerima radio; memahami sistem penyiaran radio digital; memahami sistem penerima televisi.'),
+(174, 179, 'Pada akhir fase F, peserta didik mampu memahami user manual book dan service manual book; melakukan perawatan peralatan elektronika audio video; melakukan perbaikan perangkat audio video.'),
+(175, 180, 'Peserta didik mampu mengevaluasi dan mengkreasi informasi atau pesan (gagasan, pikiran, perasaan, pandangan, dan arahan) yang akurat dari berbagai tipe teks (fiksi dan nonfiksi) berbahasa Sunda dalam bentuk monolog, dialog, dan gelar wicara.'),
+(176, 181, 'Peserta didik mampu mengevaluasi dan mengkreasi informasi atau pesan (gagasan, pikiran, pandangan, arahan, dan perasaan) dan struktur tipe teks (fiksi dan nonfiksi) berbahasa Sunda tulis, visual dan audiovisual secara kreatif untuk menemukan makna yang tersurat dan tersirat. Peserta didik menggunakan sumber lain untuk menilai akurasi dan kualitas data serta membandingkan isi teks berbahasa Sunda.'),
+(177, 182, 'Peserta didik mampu mengolah dan menyajikan pesan (gagasan, pikiran, pandangan, atau arahan) untuk tujuan usul, perumusan masalah, dan solusi dalam bentuk monolog, dialog, dan gelar wicara berbahasa Sunda dengan menggunakan kata-kata khas atau idiom (pakeman basa) secara logis, runtut, kritis, dan kreatif, sesuai kaidah bahasa dan norma budaya Sunda. Peserta didik mampu mengungkapkan informasi dan perasaan (simpati, empati, peduli, penghargaan, dan pendapat) secara kreatif dalam berbagai tipe teks (fiksi dan nonfiksi) berbahasa Sunda lisan atau multimodal serta berkontribusi aktif dalam menyiapkan dan melaksanakan suatu percakapan atau diskusi sesuai kaidah bahasa dan norma budaya Sunda.'),
+(178, 183, 'Peserta didik mampu mengolah dan menyajikan informasi atau pesan (gagasan, pikiran, pandangan, atau arahan) untuk berbagai tujuan secara logis, kritis, kreatif, dan benar dalam berbagai tipe teks tulis (fiksi dan nonfiksi) berbahasa Sunda sesuai kaidah bahasa dan norma budaya Sunda. Peserta didik mampu menyajikan tulisan berbahasa Sunda sesuai kaidah dan konteks dalam media tulis, media cetak, atau media digital untuk tujuan tertentu sesuai kaidah bahasa dan norma budaya Sunda. Peserta didik mampu mengalihwahanakan dan mengkreasi satu teks ke teks lainnya dengan aksara Sunda atau bahasa yang berbeda sesuai kaidah dan konteks dalam media cetak atau elektronik untuk berbagai tujuan.'),
+(179, 184, 'Peserta didik mampu mengevaluasi dan mengkreasi berbagai informasi (perasaan, gagasan, pikiran, dan kehendak) dengan berpikir logis dari menyimak tipe teks\r\n(fiksi dan nonfiksi) berbahasa Sunda dalam\r\nberbagai bentuk (monolog, dialog, dan gelar wicara) serta mengapresiasi dan menanggapinya.'),
+(180, 185, 'Peserta didik mampu mengevaluasi dan mengkreasi berbagai informasi (perasaan, gagasan, pikiran, dan kehendak) dan struktur tipe teks (fiksi dan nonfiksi) berbahasa Sunda di media cetak dan elektronik dengan berpikir logis. Peserta didik mampu mengapresiasi beragam teks (fiksi dan nonfiksi) berbahasa Sunda di media cetak dan elektronik untuk menanggapinya.'),
+(181, 186, 'Peserta didik mampu menyajikan informasi atau pesan (gagasan, pikiran, atau perasaan) dan kreativitas dalam\r\nbentuk monolog, dialog, dan gelar wicara berbahasa Sunda secara logis, sistematis, kritis, kreatif, sesuai kaidah bahasa\r\ndan norma budaya Sunda. Peserta didik mampu mengkaji dan mengkreasi teks berbahasa Sunda sesuai kaidah bahasa dan norma budaya Sunda serta menyajikan,\r\nmempertahankan, dan menyimpulkannya dalam suatu percakapan atau diskusi.'),
+(182, 187, 'Peserta didik mampu menyajikan informasi atau pesan (gagasan, pikiran, atau perasaan) dan kreativitas dengan bahasa Sunda dalam tipe teks tulis nonfiksi secara benar, logis, kritis, kreatif, dan santun untuk tujuan tertentu sesuai\r\nkaidah bahasa dan norma budaya Sunda. Peserta didik mampu mendekonstruksikan atau memodifikasi karya sastra (fiksi) serta menyajikannya dengan berbahasa Sunda dalam berbagai media (tulis, cetak, elektronik, atau medsos) sesuai\r\nkaidah bahasa dan norma budaya Sunda. Peserta didik mampu menganalisis informasi faktual dan menyajikannya secara logis, kritis, dan kreatif dalam tipe teks tulis ilmiah berbahasa Sunda\r\nuntuk tujuan tertentu sesuai kaidah bahasa dan norma budaya Sunda.');
 
 -- --------------------------------------------------------
 
@@ -289,13 +339,8 @@ CREATE TABLE `daftar_pustaka` (
 --
 
 INSERT INTO `daftar_pustaka` (`id`, `id_identitas`, `daftar_pustaka`) VALUES
-(18, 15, 'nmndmsnmdnms'),
 (20, 17, 'mm,mkkmkmkm'),
-(21, 18, 'jkjkhkjhj'),
-(27, 24, 'djkjjjjjjjjjjjjjjjjjjjjjjjjkahskdhjakjhsdsd'),
-(30, 27, 'djkjjjjjjjjjjjjjjjjjjjjjjjjkahskdhjakjhsdsd'),
-(31, 27, 'mdmdkmsmdks'),
-(32, 28, 'nxmNxmnMxnmz');
+(33, 29, 'nxnbnbxbcnxb');
 
 -- --------------------------------------------------------
 
@@ -422,7 +467,79 @@ INSERT INTO `elemen` (`id`, `id_mapel`, `elemen`) VALUES
 (112, 25, 'Menyimak '),
 (113, 25, 'Membaca dan Memirsa'),
 (114, 25, 'Berbicara dan Mempresentasikan'),
-(115, 25, 'Menulis');
+(115, 25, 'Menulis'),
+(116, 26, 'Berpikir Komputasional (BK)'),
+(117, 26, 'Teknologi Informasi dan Komunikasi (TIK)'),
+(118, 26, 'Sistem Komputer (SK)'),
+(119, 26, 'Jaringan Komputer dan Internet (JKI)'),
+(120, 26, 'Analisis Data (AD)'),
+(121, 26, 'Algoritma dan Pemrograman (AP)'),
+(122, 26, 'Dampak Sosial Informatika (DSI)'),
+(123, 26, 'Praktik Lintas Bidang (PLB)'),
+(124, 28, 'Ekonomi Bisnis dan Administrasi Umum'),
+(125, 28, 'Pengelolaan Kas'),
+(126, 28, 'Layanan Lembaga Perbankan dan \r\nKeuangan Mikro'),
+(127, 28, 'Akuntansi Perbankan dan Keuangan Mikro'),
+(128, 28, 'Komputer Akuntansi'),
+(129, 28, 'Perpajakan'),
+(130, 29, 'Mengalami (Experiencing)'),
+(131, 29, 'Menciptakan (Making/Creating)'),
+(132, 29, 'Merefleksikan (Reflecting)'),
+(133, 29, 'Berpikir dan Bekerja Secara Artistik (Thinking and Working Artistically)'),
+(134, 29, 'Berdampak bagi Diri Sendiri dan Orang Lain (Impacting)'),
+(135, 30, 'Mengalami'),
+(136, 30, 'Menciptakan'),
+(137, 30, 'Merefleksikan'),
+(138, 30, 'Berpikir dan Bekerja Artistik'),
+(139, 30, 'Berdampak'),
+(140, 27, 'BK'),
+(141, 27, 'TIK'),
+(142, 27, 'SK'),
+(143, 27, 'JKI'),
+(144, 27, 'AD'),
+(145, 27, 'AP'),
+(146, 27, 'DSI'),
+(147, 27, 'PLB'),
+(148, 31, 'Menyimak'),
+(149, 31, 'Berbicara'),
+(150, 31, 'Membaca'),
+(151, 31, 'Menulis'),
+(152, 32, 'Ekonomi dan Bisnis'),
+(153, 32, 'Pengelolaan Administrasi Umum'),
+(154, 32, 'Komunikasi di Tempat Kerja'),
+(155, 32, 'Pengelolaan Kearsipan'),
+(156, 32, 'Teknologi Perkantoran'),
+(157, 32, 'Pengelolaan Rapat/Pertemuan'),
+(158, 32, 'Pengelolaan Keuangan Sederhana'),
+(159, 32, 'Pengelolaan Sumber Daya Manusia (SDM)'),
+(160, 32, 'Pengelolaan Sarana dan Prasarana'),
+(161, 32, 'Pengelolaan Humas dan Keprotokolan'),
+(162, 33, 'Proses bisnis industri kreatif di bidang animasi'),
+(163, 33, 'Perkembangan teknologi di industri dan dunia kerja serta isu-isu global pada bidang animasi'),
+(164, 33, 'Profil technopreneur, job profile, peluang \r\nusaha dan pekerjaan/profesi di bidang animasi'),
+(165, 33, 'Teknik dasar proses produksi pada industri animasi'),
+(166, 33, 'Aspek legal pada produksi animasi'),
+(167, 33, 'Quality control pada produksi animasi'),
+(168, 33, 'Aplikasi berbasis teknologi untuk digunakan selaras dengan kebutuhan industri'),
+(169, 33, 'Unsur visual untuk diterapkan dan \r\ndiaplikasikan ke dalam karya desain'),
+(170, 33, 'Dasar pergerakan buatan untuk diterapkan berdasarkan instruksi kerja'),
+(171, 33, 'Cerita secara visual'),
+(172, 34, 'Gerak (animation) '),
+(173, 34, 'Visual (asset creation) '),
+(174, 34, 'Editorial (visual story telling)'),
+(175, 35, 'Pemrograman dan aplikasi mikrokontroler'),
+(176, 35, 'Pemrograman dan aplikasi mikrokontroler'),
+(177, 35, 'Perencanaan dan Instalasi Sistem Audio Video'),
+(178, 35, 'Penerapan Sistem Radio dan Televisi'),
+(179, 35, 'Perawatan dan perbaikan peralatan elektronika audio video'),
+(180, 36, 'Menyimak (Ngaregepkeun)'),
+(181, 36, 'Membaca dan Memirsa (Maca jeung Miarsa)'),
+(182, 36, 'Berbicara Mempresentasikan (Nyarita jeung Midangkeun) '),
+(183, 36, 'Menulis (Nulis)'),
+(184, 37, 'Menyimak (Ngaregepkeun)'),
+(185, 37, 'Membaca dan Memirsa (Maca jeung Miarsa)'),
+(186, 37, 'Berbicara Mempresentasikan (Nyarita jeung Midangkeun) '),
+(187, 37, 'Menulis (Nulis)');
 
 -- --------------------------------------------------------
 
@@ -441,12 +558,7 @@ CREATE TABLE `file_modul` (
 --
 
 INSERT INTO `file_modul` (`id`, `id_identitas`, `nama_file`) VALUES
-(15, 15, '19112022214217_Modul Ajar_Manajemen Perkantoran dan Layanan Bisnis'),
-(17, 17, '19112022215629_Modul Ajar_Teknik Komputer dan Jaringan dan Telekomunikasi'),
-(18, 18, '20112022233019_Modul Ajar_Akuntasi dan Keuangan Lembaga'),
-(22, 24, '27112022215949_Modul Ajar_Desain Komunikasi Visual '),
-(25, 27, '27112022223533_Modul Ajar_Desain Komunikasi Visual '),
-(26, 28, '27112022224334_Modul Ajar_Desain Komunikasi Visual ');
+(27, 29, '27122022004659_Modul Ajar_Manajemen Perkantoran dan Layanan Bisnis');
 
 -- --------------------------------------------------------
 
@@ -465,11 +577,7 @@ CREATE TABLE `file_preview_modul` (
 --
 
 INSERT INTO `file_preview_modul` (`id`, `id_identitas`, `nama_file`) VALUES
-(11, 15, '19112022214217_Modul Ajar_Manajemen Perkantoran dan Layanan Bisnis_preview'),
-(13, 17, '19112022215629_Modul Ajar_Teknik Komputer dan Jaringan dan Telekomunikasi_preview'),
-(14, 18, '20112022233019_Modul Ajar_Akuntasi dan Keuangan Lembaga_preview'),
-(16, 27, '27112022223533_Modul Ajar_Desain Komunikasi Visual _preview'),
-(17, 28, '27112022224334_Modul Ajar_Desain Komunikasi Visual _preview');
+(18, 29, '27122022004659_Modul Ajar_Manajemen Perkantoran dan Layanan Bisnis_preview');
 
 -- --------------------------------------------------------
 
@@ -488,12 +596,8 @@ CREATE TABLE `glosarium` (
 --
 
 INSERT INTO `glosarium` (`id`, `id_identitas`, `glosarium`) VALUES
-(18, 15, 'smwmwnmsnwmns'),
 (20, 17, 'n,mnmnmnmn'),
-(21, 18, 'nnm,n,n'),
-(29, 24, 'kjdkldjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjksjdkjkj'),
-(32, 27, 'kjdkldjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjksjdkjkj'),
-(33, 28, 'kjksjkdjkxkkxm');
+(34, 29, 'nbnbnbnbn');
 
 -- --------------------------------------------------------
 
@@ -522,12 +626,8 @@ CREATE TABLE `identitas_sekolah` (
 --
 
 INSERT INTO `identitas_sekolah` (`id`, `id_user`, `tahun_ajaran`, `program_keahlian`, `mata_pelajaran`, `kelas`, `semester`, `fase`, `elemen`, `capaian_pembelajaran`, `alokasi_waktu`, `created_at`, `updated_at`) VALUES
-(15, 12, '2020/2021', 'Manajemen Perkantoran dan Layanan Bisnis', 'Dasar-Dasar Manajemen Perkantoran dan Layanan Bisnis', 'X', 2, 'E', 'Profil Pekerjaan Manajemen Perkantoran', 'Pada akhir fase E peserta didik mampu menjelaskan profil pekerjaan/profesi (job profile) di masa sekarang dan di masa mendatang, serta peluang usaha di bidang manajemen perkantoran dan layanan bisnis', '1 x 45 menit', '2022-11-19 21:42:17', '2022-11-19 21:42:17'),
 (17, 15, '2021/2022', 'Teknik Komputer dan Jaringan dan Telekomunikasi', 'Dasar-dasar Teknik Jaringan Komputer dan Telekomunikasi - E', 'XI', 1, 'F', 'Dasar-dasar teknik jaringan komputer dan telekomunikasi', 'Pada akhir fase E, peserta didik mampu memahami tentang jenis alat ukur dan penggunaannya dalam pemeliharaan jaringan komputer dan sistem telekomunikasi.', '3 x 45', '2022-11-19 21:56:29', '2022-11-19 21:56:29'),
-(18, 12, '2020/2021', 'Akuntasi dan Keuangan Lembaga', 'Sosiologi', 'X', 2, 'E', 'Keterampilan Proses', 'Pada akhir fase ini, peserta didik mampu melakukan penelitian sosial sederhana dengan memilih metode yang tepat untuk mengamati, menanya, mengumpulkan informasi, mengorganisasikan informasi, menarik kesimpulan, dan mengomunikasikan hasil penelitian tentang berbagai keragaman gejala sosial dengan konsep dasar sosiologi. Peserta didik mampu merefleksikan dan merencanakan projek lanjutan secara kolaboratif.', '1 x 45 menit', '2022-11-20 23:30:19', '2022-11-20 23:30:19'),
-(24, 1, '2021/2022', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 2, 'E', 'Isu -isu global pada bidang Desain Komunikasi Visual', '																																													Pada akhir fase E peserta didik mampu memahami industri ekonomi kreatif mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, teknologi Digital dalam dunia industri, isu pemanasan global, perubahan iklim, aspek - aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling produk																																										', '5 x 45', '2022-11-27 21:59:49', '2022-11-27 21:59:49'),
-(27, 1, '2021/2022', 'Desain Komunikasi Visual ', 'Dasar - Dasar Desain Komunikasi Visual', 'X', 2, 'E', 'Isu -isu global pada bidang Desain Komunikasi Visual', '																																																												Pada akhir fase E peserta didik mampu memahami industri ekonomi kreatif mulai dari teknologi konvensional sampai dengan teknologi modern, Industri 4.0, Internet of Things, teknologi Digital dalam dunia industri, isu pemanasan global, perubahan iklim, aspek - aspek ketenagakerjaan, Life Cycle produk industri sampai dengan reuse, recycling produk																																																								', '5 x 45', '2022-11-27 22:35:33', '2022-11-27 22:35:33'),
-(28, 1, '2022/2023', 'Desain Komunikasi Visual ', 'Bahasa Indonesia - E', 'X', 1, 'E', 'Berbicara dan Mempresentasikan', 'Peserta didik mampu mengolah dan menyajikan gagasan, pikiran, pandangan, arahan atau pesan untuk tujuan pengajuan usul,perumusan masalah, dan solusi dalam bentuk monolog, dialog, dan gelar wicara secara logis, \nruntut, kritis, dan kreatif. Peserta \ndidik mampu mengkreasi ungkapan sesuai dengan norma kesopanan dalam berkomunikasi. Peserta didik berkontribusi lebih aktif dalam diskusi dengan mempersiapkan materi diskusi, \nmelaksanakan tugas dan fungsi dalam diskusi. Peserta didik mampu mengungkapkan simpati, empati, peduli, perasaan, dan penghargaan secara kreatif dalam bentuk teks fiksi dan nonfiksi \nmultimodal.', '3 x 45', '2022-11-27 22:43:34', '2022-11-27 22:43:34');
+(29, 1, '2020/2021', 'Manajemen Perkantoran dan Layanan Bisnis', 'Kimia', 'X', 1, 'E', 'Keterampilan Proses', '1. Mengamati\n2. Mempertanyakan dan memprediksi\n3. Merencanakan dan melakukan penyelidikan\n4. Memproses, menganalisis data dan informasi Menafsirkan informasi yang didapatkan dengan jujur dan bertanggung jawab.\n5. Mengevaluasi dan refleksi\n6. Mengkomunikasikan hasil\n', '1 x 45 menit', '2022-12-27 00:46:59', '2022-12-27 00:46:59');
 
 -- --------------------------------------------------------
 
@@ -546,12 +646,8 @@ CREATE TABLE `inti` (
 --
 
 INSERT INTO `inti` (`id`, `id_kegiatan`, `kegiatan`) VALUES
-(25, 15, 'Guru mengajak peserta didik untuk melakukan observasi di luar ruangan'),
 (27, 17, 'Guru menyampaikan materi dengan media Buku Paket'),
-(28, 18, 'Guru menyampaikan materi dengan media Buku Paket'),
-(36, 24, 'Guru menyampaikan presentasi dengan power point'),
-(39, 27, 'Guru menyampaikan presentasi dengan power point'),
-(40, 28, 'Guru mengajak peserta didik untuk melakukan observasi di luar ruangan');
+(41, 29, 'Guru melakukan evaluasi terhadap siswa dengan tes tertulis atau tes lisan');
 
 -- --------------------------------------------------------
 
@@ -570,12 +666,8 @@ CREATE TABLE `kegiatan_pembelajaran` (
 --
 
 INSERT INTO `kegiatan_pembelajaran` (`id`, `id_identitas`, `pertemuan`) VALUES
-(15, 15, 1),
 (17, 17, 1),
-(18, 18, 1),
-(24, 24, 1),
-(27, 27, 1),
-(28, 28, 1);
+(29, 29, 1);
 
 -- --------------------------------------------------------
 
@@ -594,12 +686,8 @@ CREATE TABLE `kompetensi_awal` (
 --
 
 INSERT INTO `kompetensi_awal` (`id`, `id_identitas`, `kompetensi`) VALUES
-(15, 15, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
 (17, 17, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(18, 18, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(24, 24, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(27, 27, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(28, 28, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
+(29, 29, 'Mengetahui apa itu desain komunikasi visual');
 
 -- --------------------------------------------------------
 
@@ -1413,7 +1501,79 @@ INSERT INTO `list_tp` (`id`, `id_elemen`, `tp`) VALUES
 (577, 115, 'Menulis teks kritik karya kreatif berbasis\r\nsastra dari misal (novel Indonesia/terjemahan, cerpen, film pendek, film) yang dibaca (teks novel).'),
 (578, 115, 'Menulis resensi dari novel Indonesia (teks novel).'),
 (579, 115, 'Menyusun teks sastra untuk tujuan ekonomi kreatif (periklanan, penerbitan, film/film pendek) dengan tema tertentu (teks berdasarkan karya kreatif).'),
-(580, 115, 'Menuangkan gagasan dalam bentuk teks opini (teks opini).');
+(580, 115, 'Menuangkan gagasan dalam bentuk teks opini (teks opini).'),
+(581, 116, 'Mengasah keterampilan problem solving yang efektif, efisien, dan optimal sebagai landasan untuk menghasilkan solusi dengan menerapkan penalaran kritis, kreatif dan mandiri.'),
+(582, 117, 'Menjadi perkakas dalam berkarya dan sekaligus objek kajian yang memberikan inspirasi agar suatu hari peserta didik menjadi pencipta karya-karya berteknologi yang berlandaskan Informatika.\r\n'),
+(583, 118, 'Pengetahuan tentang bagaimana perangkat keras dan perangkat lunak berfungsi dan saling mendukung dalam mewujudkan suatu layanan bagi pengguna baik di luar maupun di dalam jaringan komputer/internet.'),
+(584, 119, 'Memfasilitasi pengguna untuk menghubungkan sistem komputer dengan jaringan lokal maupun internet.'),
+(585, 120, 'Memberikan kemampuan untuk menginput, memproses, memvisualisasi data dalam berbagai tampilan, menganalisis, menginterpretasi, dan memprediksi, serta mengambil kesimpulan serta keputusan berdasarkan penalaran.'),
+(586, 121, 'Mengarahkan peserta didik menuliskan langkah penyelesaian solusi secara runtut dan menerjemahkan solusi menjadi program yang dapat dijalankan oleh mesin (komputer).'),
+(587, 122, 'Menyadarkan peserta didik akan dampak Informatika dalam: (a) kehidupan bermasyarakat dan dirinya, khususnya dengan kehadiran dan pemanfaatan TIK, dan (b) bergabungnya manusia dalam jaringan komputer dan internet untuk membentuk masyarakat digital.'),
+(588, 123, 'Melatih peserta didik bergotong royong untuk untuk menghasilkan artefak komputasional secara kreatif dan inovatif dengan mengintegrasikan semua pengetahuan Informatika maupun pengetahuan dari mata pelajaran lain, menerapkan proses rekayasa atau pengembangan (designing, implementing, debugging, testing, refining), serta mendokumentasikan dan mengomunikasikan hasil karyanya.'),
+(589, 124, 'Meliputi permasalahan ekonomi, model dan pelaku ekonomi, kegiatan ekonomi, penerapan ilmu ekonomi dalam kegiatan usaha, administrasi, dan fungsi-fungsi manajemen.'),
+(590, 125, 'Meliputi transaksi dan pelaporan kas kecil, pencatatan penerimaan, pengeluaran, dan pelaporan kas bank, transaksi dan pelaporan kliring, laporan rekonsiliasi bank, serta transaksi pengelolaan kas dan laporan transaksi pengelolaan kas.'),
+(591, 126, 'Meliputi sistem perbankan di Indonesia, pemasaran produk/layanan perbankan yang terintegrasi dengan perkembangan teknologi, penggunaan kartu ATM, kartu kredit, mobile banking, dan safe deposit box, bank garansi, transaksi leasing, transaksi modal ventura, transaksi pegadaian, transaksi asuransi, transaksi pasar modal, transaksi pasar uang, transaksi dana pensiun, transaksi anjak piutang, serta laporan jasa lembaga keuangan.'),
+(592, 127, 'Meliputi perbedaan akuntansi bank dengan akuntansi keuangan, persamaan dasar akuntansi bank, pencatatan transaksi produk layanan perbankan, pencatatan transaksi valuta asing, pencatatan penerimaan dan pembayaran bunga, siklus akuntansi perbankan, dan evaluasi laporan akuntansi perbankan.'),
+(593, 128, 'Meliputi keterampilan peserta didik dalam mengoperasikan program aplikasi komputer akuntansi.'),
+(594, 129, 'Meliputi jenis-jenis pajak, perhitungan pajak terutang, penyetoran pajak kurang bayar, laporan pajak, serta ketentuan umum dan tata cara perpajakan (KUP).'),
+(595, 130, 'Mengarahkan peserta didik untuk mendapatkan pengalaman secara langsung dengan; mengamati, mengumpulkan, dan merekam informasi visual dari kehidupan sehari-hari sebagai sumber gagasan dalam berkarya. Peserta didik mengeksplorasi dan bereksperimen dengan berbagai bahan, alat, dan prosedur dalam menciptakan sebuah karya seni rupa.'),
+(600, 131, 'Memotivasi peserta didik untuk menciptakan sebuah karya seni rupa.'),
+(601, 132, 'Peserta didik mengevaluasi perkembangan diri, mampu menjelaskan, memberi komentar, dan umpan balik secara kritis atas karya pribadi maupun karya orang lain dengan mempresentasikannya secara runut, terperinci dan menggunakan kosa kata yang tepat.'),
+(605, 133, 'Peserta didik menggunakan berbagai sudut pandang, pengetahuan dan keterampilan artistik dalam menciptakan sebuah peluang, menjawab tantangan dan menyelesaikan permasalahan kehidupan sehari-hari. Peserta didik memiliki kebebasan dalam mengeksplorasi dan bereksperimen dengan alat, bahan dan prosedur sehingga menemukan cara mereka sendiri dalam mengembangkan gagasannya.'),
+(606, 134, 'Pembelajaran dan karya seni rupa peserta didik diharapkan memiliki dampak positif pada dirinya, lingkungan dan masyarakat serta dapat dipertanggungjawabkan.'),
+(610, 140, 'Mengasah keterampilan problem solving yang efektif, efisien, dan optimal sebagai landasan untuk menghasilkan solusi dengan menerapkan penalaran kritis, kreatif dan mandiri.'),
+(611, 141, 'Menjadi perkakas dalam berkarya dan sekaligus objek kajian yang memberikan inspirasi agar suatu hari peserta didik menjadi pencipta karya-karya berteknologi yang berlandaskan Informatika.\r\n'),
+(612, 142, 'Pengetahuan tentang bagaimana perangkat keras dan perangkat lunak berfungsi dan saling mendukung dalam mewujudkan suatu layanan bagi pengguna baik di luar maupun di dalam jaringan komputer/internet.'),
+(613, 143, 'Memfasilitasi pengguna untuk menghubungkan sistem komputer dengan jaringan lokal maupun internet.'),
+(614, 144, 'Memberikan kemampuan untuk menginput, memproses, memvisualisasi data dalam berbagai tampilan, menganalisis, menginterpretasi, dan memprediksi, serta mengambil kesimpulan serta keputusan berdasarkan penalaran.'),
+(615, 145, 'Mengarahkan peserta didik menuliskan langkah penyelesaian solusi secara runtut dan menerjemahkan solusi menjadi program yang dapat dijalankan oleh mesin (komputer).'),
+(616, 146, 'Menyadarkan peserta didik akan dampak Informatika dalam: (a) kehidupan bermasyarakat dan dirinya, khususnya dengan kehadiran dan pemanfaatan TIK, dan (b) bergabungnya manusia dalam jaringan komputer dan internet untuk membentuk masyarakat digital.'),
+(617, 147, 'Melatih peserta didik bergotong royong untuk untuk menghasilkan artefak komputasional secara kreatif dan inovatif dengan mengintegrasikan semua pengetahuan Informatika maupun pengetahuan dari mata pelajaran lain, menerapkan proses rekayasa atau pengembangan (designing, implementing, debugging, testing, refining), serta mendokumentasikan dan mengomunikasikan hasil karyanya.'),
+(618, 135, 'Mengarahkan peserta didik untuk mendapatkan pengalaman secara langsung dengan; mengamati, mengumpulkan, dan merekam informasi visual dari kehidupan sehari-hari sebagai sumber gagasan dalam berkarya. Peserta didik mengeksplorasi dan bereksperimen dengan berbagai bahan, alat, dan prosedur dalam menciptakan sebuah karya seni rupa.'),
+(619, 136, 'Memotivasi peserta didik untuk menciptakan sebuah karya seni rupa.'),
+(620, 137, 'Peserta didik mengevaluasi perkembangan diri, mampu menjelaskan, memberi komentar, dan umpan balik secara kritis atas karya pribadi maupun karya orang lain dengan mempresentasikannya secara runut, terperinci dan menggunakan kosa kata yang tepat.'),
+(621, 138, 'Peserta didik menggunakan berbagai sudut pandang, pengetahuan dan keterampilan artistik dalam menciptakan sebuah peluang, menjawab tantangan dan menyelesaikan permasalahan kehidupan sehari-hari. Peserta didik memiliki kebebasan dalam mengeksplorasi dan bereksperimen dengan alat, bahan dan prosedur sehingga menemukan cara mereka sendiri dalam mengembangkan gagasannya.'),
+(622, 139, 'Pembelajaran dan karya seni rupa peserta didik diharapkan memiliki dampak positif pada dirinya, lingkungan dan masyarakat serta dapat dipertanggungjawabkan.'),
+(623, 148, 'Menyimak adalah keterampilan seseorang menerima informasi, memberikan apresiasi kepada lawan bicara, dan memahami informasi yang didengar sehingga peserta didik dapat menyampaikan tanggapan secara relevan dan kontekstual. Proses yang terjadi dalam menyimak mencakup kegiatan seperti mendengarkan, mengidentifikasi, memahami, menginterpretasi bunyi bahasa, lalu menyimpulkan makna. Keterampilan menyimak juga merupakan kemampuan komunikasi nonverbal yang mencakup seberapa baik seseorang menangkap makna (tersirat dan tersurat) pada sebuah paparan lisan dan memahami ide pokok dan pendukung pada konten informasi maupun konteks yang melatari paparan tersebut.'),
+(624, 149, 'Berbicara adalah keterampilan seseorang untuk menyampaikan gagasan, pikiran, serta perasaan secara lisan dalam interaksi sosial.'),
+(625, 150, 'Membaca adalah keterampilan seseorang untuk memahami, menggunakan, dan merefleksi teks sesuai tujuan dan kepentingannya untuk mengembangkan pengetahuan dan potensinya agar peserta didik dapat berpartisipasi dengan masyarakat.'),
+(626, 151, 'Menulis adalah keterampilan seseorang untuk menyampaikan, mengomunikasikan gagasan, mengekspresikan kreativitas, dan mencipta dalam beragam genre teks tertulis, dengan cara yang efektif dan dapat dipahami serta diminati oleh pembaca.'),
+(627, 152, 'Meliputi ilmu ekonomi, pelaku kegiatan ekonomi, perilaku konsumen dan produsen, jenis pasar, bentuk badan usaha, lembaga keuangan, rencana usaha kecil dan menengah, e-commerce, serta dasar-dasar pemasaran.'),
+(628, 153, 'Meliputi korespondensi menggunakan bahasa Indonesia dan bahasa Inggris tingkat dasar, penanganan surat (mail handling), dokumen perjalanan dinas, akomodasi dan transportasi perjalanan dinas (business travelling arrangement), serta pengelolaan jadwal kegiatan pimpinan (daily agenda).'),
+(629, 154, 'Meliputi prosedur berkomunikasi lisan dalam bahasa Indonesia, bahasa Inggris dan/atau bahasa asing lainnya melalui telepon maupun secara langsung dengan kolega/pelanggan, serta mengelola informasi di tempat kerja.'),
+(630, 155, 'Meliputi prosedur penyimpanan arsip, penggunaan arsip, pemeliharaan arsip, penentuan masa retensi arsip, penyusutan arsip, serta pengelolaan arsip secara elektronik/digital.'),
+(631, 156, 'Meliputi teknik mengetik cepat (keyboarding), peralatan dan perlengkapan kantor (office supplies), mesin-mesin kantor (office machine), aplikasi perkantoran (office software), komputasi berbasis online (cloud computing), serta akses data/informasi melalui internet.'),
+(632, 157, 'Meliputi pengelolaan rapat/pertemuan secara online maupun offline, penyiapan materi presentasi, dan pembuatan notulen rapat.'),
+(633, 158, 'Meliputi pengelolaan kas kecil, pembuatan laporan kas kecil, pelaksanaan transaksi perbankan sederhana, \r\nserta pelaksanaan transaksi kas dan nonkas.'),
+(634, 159, 'Meliputi peraturan ketenagakerjaan, prosedur administrasi perencanaan, perekrutan, pengembangan, penghargaan, hubungan industrial, penilaian, dan pemberhentian karyawan.'),
+(635, 160, 'Meliputi peraturan sarana dan prasarana kantor, prosedur administrasi pengadaan, penyimpanan, penyaluran, inventarisasi, pengoperasian, pemeliharaan, penghapusan sarana dan prasarana kantor, furniture kantor (office furniture), interior kantor (office arrangement), dan tata ruang kantor (office layout).'),
+(636, 161, 'Meliputi khalayak humas, etika dan kode etik profesi humas, media komunikasi humas, kegiatan kehumasan, pelayanan kepada kolega/pelanggan, peraturan keprotokolan, dan penanganan berbagai kegiatan keprotokolan.'),
+(637, 162, 'Lingkup pembelajaran meliputi pemahaman peserta didik tentang kepribadian yang dibutuhkan agar dapat mengembangkan pola pikir kreatif, memadukan kearifan lokal dalam proses kreatif untuk menghasilkan solusi bisnis yang tepat sasaran, pengelolaan SDM di industri animasi dengan melihat potensi lokal, aspek pengetahuan media/platform dan teknologi untuk mendukung proses bisnis industri kreatif di bidang animasi.'),
+(638, 163, 'Lingkup pembelajaran meliputi pemahaman peserta didik tentang kepribadian yang dibutuhkan agar dapat mengembangkan pola pikir kreatif, memadukan kearifan lokal dalam proses kreatif untuk menghasilkan solusi bisnis yang tepat sasaran, pengelolaan SDM di industri animasi dengan melihat potensi lokal, aspek pengetahuan media/platform dan teknologi untuk mendukung proses bisnis industri kreatif di bidang animasi.'),
+(639, 164, 'Lingkup pembelajaran meliputi pemahaman tentang profesi-profesi dalam industri animasi, tugas dan tanggung jawab setiap profesi dalam industri animasi, mampu membaca peluang pasar dan usaha di bidang animasi dan ekonomi kreatif, technopreneur/pelaku wirausaha dalam bidang animasi untuk membangun visi dan passion, serta melakukan pembelajaran berbasis projek nyata sebagai simulasi projek kewirausahaan.'),
+(640, 165, 'Lingkup pembelajaran meliputi pemahaman tentang proses produksi dan teknologi yang diaplikasikan dalam industri animasi secara tekun dan teliti, memahami perangkat kerja, pemakaian aplikasi atau tools untuk dioperasikan dalam ekosistem industri animasi (perangkat kerja produksi animasi), memahami sikap kerja dalam melakukan komunikasi dan kerja sama tim, produksi animasi yang meliputi istilah teknis atau bahasa, unit kerja, proses (pipeline), workflow pekerjaan, fungsi kerja (job desk) serta SOP pada produksi animasi.'),
+(641, 166, 'Lingkup pembelajaran meliputi pemahaman tentang aspek legal dalam produksi animasi, Intelectual Property (IP) atau hak kekayaan intelektual (HAKI), serta kode etik yang berlaku di industri animasi baik dalam lingkup nasional maupun internasional.'),
+(642, 167, 'Lingkup pembelajaran meliputi pemahaman pengawasan mutu hasil yang dibuat para pekerja animasi, dengan standar capaian yang disepakati. Pengetahuan berbagai jenis produk animasi dan kegunaanya disesuaikan dengan tuntutan kualitas dari masing-masing jenis animasi tersebut.'),
+(643, 168, 'Lingkup pembelajaran meliputi pemahaman tentang pengoperasian perangkat kerja produksi baik yang digital maupun non digital yang dibutuhkan di area kerja pada bidang kerja 2 dimensi maupun 3 dimensi, fungsi dan kegunaan perangkat kerja, workflow perangkat kerja, kapasitas perangkat kerja (digital/non-digital), area tools kerja pada perangkat kerja sesuai dengan kebutuhan pasar maupun partner industri.'),
+(644, 169, 'Lingkup pembelajaran meliputi pemahaman tentang unsur-unsur visual dalam produksi animasi, penciptaan desain berdasarkan prinsip dan unsur desain (bidang, bentuk, warna dan komposisi), teknik yang benar dalam bervisual, dikaitkan dengan pencapaian nilai estetika.'),
+(645, 170, 'Meliputi pemahaman tentang pengetahuan, keterampilan dan sikap kerja yang dibutuhkan dalam membuat gerak objek digital baik character maupun non-character, dasar pergerakan buatan berdasarkan instruksi kerja pergerakan objek, meliputi unsur gerak dalam kehidupan, suara, waktu, masa dan sifat objek yang akan digerakan.'),
+(646, 171, 'Meliputi pemahaman tentang pembacaan shot/scene/sequence storyboard , pengambilan gambar, adegan, dan urutan storyboard serta menganalisis cerita, mampu memahami tentang alur cerita serta unsur-unsur dalam sebuah cerita.'),
+(647, 172, 'Meliputi kemampuan logika dan alur kerja suatu pergerakan, teknik menggerakan dan estetika pergerakan, yang mencakup sekuensial gerak karakter dan non karakter, mekanika gerak digital, aset gerak, dan akting, yang dapat diimplementasikan pada bidang kerja 2D atau 3D yang dipilih.'),
+(648, 173, 'Meliputi pengoperasian tools kerja visual, implementasi unsur artistik visual animasi yang mencakup pembuatan aset visual dan pembuatan artistik visual terakhir yang dapat diimplementasikan pada bidang kerja 2D atau 3D yang dipilih.'),
+(649, 174, 'Meliputi teknik bercerita secara visual, teknik cinematography adegan, teknik editing yang tercakup pada seni penceritaan animasi.'),
+(650, 175, 'Meliputi: rangkaian digital; arsitektur mikrokontroler; pemrograman mikrokontroler; pemrograman aplikasi sistem pengendali berbasis mikrokontroler.'),
+(651, 176, 'Meliputi: rangkaian elektronika analog; sensor dan transduser; rangkaian elektronika daya; rangkaian catu daya; rangkaian Uninterruptible Power Supplies (UPS); sistem pembangkit listrik tenaga surya (PLTS); sistem keamanan berbasis elektronik.'),
+(652, 177, 'Meliputi: sistem dan perencanaan akustik ruang; psikoakustik anatomi telinga manusia; sistem audio rumah, mobil dan pertunjukan; sistem audio paging; master rekaman audio; kamera; closed circuit television (CCTV), Multi Access Television (MATV).'),
+(653, 178, 'Meliputi: transmisi antena gelombang radio; perekayasaan sinyal analog; sistem penerima radio; sistem penyiaran radio digital; sistem penerima televisi.'),
+(654, 179, 'Meliputi: user manual book dan service manual book; perawatan peralatan elektronika audio video; perbaikan perangkat audio video.'),
+(655, 180, 'Kemampuan peserta didik dalam menerima, memahami informasi yang didengar, dan menyiapkan tanggapan secara relevan untuk memberikan apresiasi kepada mitra tutur. Prosesnya mencakup kegiatan mendengarkan, mengidentifikasi, memahami, menginterpretasi tuturan, memaknainya, dan/atau menyiapkan tanggapan kepada mitra tutur. Kemampuan menyimak berperanan penting karena menentukan tingkat kemampuan pelajar dalam memahami makna (tersurat dan tersirat) tuturan, memahami gagasan utama dan pendukung pada konten informasi dan konteks yang melatarinya. Komponen yang dikembangkan dapat berupa, antara lain, kepekaan terhadap bunyi bahasa, sistem isyarat, kosakata dan makna, struktur bahasa (tata bahasa), serta metakognisi.'),
+(656, 181, 'Kemampuan peserta didik dalam memahami, memaknai, menginterpretasi, dan merefleksi teks dan sajian visual dan/atau audiovisual sesuai tujuan dan kepentingannya untuk mengembangkan kompetensinya (pengetahuan, keterampilan, dan potensi). Komponen yang dikembangkan dalam membaca dan memirsa, dapat berupa, antara lain, kepekaan terhadap fonem atau huruf, sistem isyarat, kosakata dan makna, struktur bahasa (tata bahasa), serta metakognisi.'),
+(657, 182, 'Kemampuan peserta didik dalam menyampaikan pesan (gagasan, tanggapan, dan perasaan) dalam bentuk lisan dan multimodal (visual, digital, audio, dan audiovisual) secara fasih, akurat, bertanggung jawab, dan santun sesuai tujuan dan konteks komunikasi. Komponen yang dikembangkan dalam berbicara dan menyajikan dapat berupa, antara lain, kepekaan terhadap bunyi bahasa, sistem isyarat, kosakata dan makna, struktur bahasa (tata bahasa), serta metakognisi.'),
+(658, 183, 'Kemampuan peserta didik menyampaikan pesan (gagasan, tanggapan, dan perasaan) dalam bentuk tulis secara fasih, akurat, bertanggung jawab, dan santun sesuai tujuan dan konteks komunikasi. Komponen yang dikembangkan dalam menulis dapat berupa, antara lain, penerapan penggunaan ejaan, struktur bahasa (kata dan kalimat), paragraph, kosakata dan makna, serta metakognisi dalam beragam tipe teks.'),
+(659, 184, 'Kemampuan peserta didik dalam menerima, memahami informasi yang didengar, dan menyiapkan tanggapan secara relevan untuk memberikan apresiasi kepada mitra tutur. Prosesnya mencakup kegiatan mendengarkan, mengidentifikasi, memahami, menginterpretasi tuturan, memaknainya, dan/atau menyiapkan tanggapan kepada mitra tutur. Kemampuan menyimak berperanan penting karena menentukan tingkat kemampuan pelajar dalam memahami makna (tersurat dan tersirat) tuturan, memahami gagasan utama dan pendukung pada konten informasi dan konteks yang melatarinya. Komponen yang dikembangkan dapat berupa, antara lain, kepekaan terhadap bunyi bahasa, sistem isyarat, kosakata dan makna, struktur bahasa (tata bahasa), serta metakognisi.'),
+(660, 185, 'Kemampuan peserta didik dalam memahami, memaknai, menginterpretasi, dan merefleksi teks dan sajian visual dan/atau audiovisual sesuai tujuan dan kepentingannya untuk mengembangkan kompetensinya (pengetahuan, keterampilan, dan potensi). Komponen yang dikembangkan dalam membaca dan memirsa, dapat berupa, antara lain, kepekaan terhadap fonem atau huruf, sistem isyarat, kosakata dan makna, struktur bahasa (tata bahasa), serta metakognisi.'),
+(661, 186, 'Kemampuan peserta didik dalam menyampaikan pesan (gagasan, tanggapan, dan perasaan) dalam bentuk lisan dan multimodal (visual, digital, audio, dan audiovisual) secara fasih, akurat, bertanggung jawab, dan santun sesuai tujuan dan konteks komunikasi. Komponen yang dikembangkan dalam berbicara dan menyajikan dapat berupa, antara lain, kepekaan terhadap bunyi bahasa, sistem isyarat, kosakata dan makna, struktur bahasa (tata bahasa), serta metakognisi.'),
+(662, 187, 'Kemampuan peserta didik menyampaikan pesan (gagasan, tanggapan, dan perasaan) dalam bentuk tulis secara fasih, akurat, bertanggung jawab, dan santun sesuai tujuan dan konteks komunikasi. Komponen yang dikembangkan dalam menulis dapat berupa, antara lain, penerapan penggunaan ejaan, struktur bahasa (kata dan kalimat), paragraph, kosakata dan makna, serta metakognisi dalam beragam tipe teks.');
 
 -- --------------------------------------------------------
 
@@ -1432,12 +1592,8 @@ CREATE TABLE `lkpd` (
 --
 
 INSERT INTO `lkpd` (`id`, `id_identitas`, `lkpd`) VALUES
-(15, 15, '1902319_Fauzan Fiqriansyah_Media Pembelajaran Alat Evaluasi.pptx'),
 (17, 17, '1902319_Fauzan Fiqriansyah_UTS PERENCANAAN PEMBELAJARAN ILMU KOMPUTER.pdf'),
-(18, 18, '1902319_Fauzan Fiqriansyah_Tugas 1 EPIK.pdf'),
-(22, 24, '1902319_Fauzan Fiqriansyah_Final Transcript.pdf'),
-(25, 27, '20112022233019_Modul Ajar_Akuntasi dan Keuangan Lembaga (1).pdf'),
-(26, 28, '27112022223533_Modul Ajar_Desain Komunikasi Visual .pdf');
+(27, 29, 'Refleksi Pelaksanaan Pembelajaran.pptx');
 
 -- --------------------------------------------------------
 
@@ -1480,7 +1636,19 @@ INSERT INTO `mata_pelajaran` (`id`, `id_pk`, `mata_pelajaran`, `umum`) VALUES
 (22, NULL, 'Pendidikan Agama Islam dan Budi Pekerti', 1),
 (23, NULL, 'Pendidikan Jasmani Olahraga dan Kesehatan', 1),
 (24, NULL, 'Bahasa Indonesia - E', 1),
-(25, NULL, 'Bahasa Indonesia - F', 1);
+(25, NULL, 'Bahasa Indonesia - F', 1),
+(26, 8, 'Informatika - E', 0),
+(27, 8, 'Informatika - F', 0),
+(28, 3, 'Layanan Perbankan', 0),
+(29, NULL, 'Seni Budaya - E', 1),
+(30, NULL, 'Seni Budaya - F', 1),
+(31, NULL, 'Bahasa Jepang', 1),
+(32, 4, 'Manajemen Perkantoran', 0),
+(33, 9, 'Dasar-Dasar Animasi', 0),
+(34, 9, 'Animasi', 0),
+(35, NULL, 'Teknik Audio Video', 0),
+(36, NULL, 'Bahasa Sunda - E', 1),
+(37, NULL, 'Bahasa Sunda - F', 1);
 
 -- --------------------------------------------------------
 
@@ -1499,16 +1667,8 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id`, `id_identitas`, `materi`) VALUES
-(23, 15, 'Jajiaji'),
 (25, 17, 'njhkjkjnk'),
-(26, 18, 'Memahami pekerjaan atau profesi'),
-(38, 24, 'Memahami pekerjaan atau profesi'),
-(39, 24, 'Membaca peluang pasar dan usaha'),
-(40, 24, 'Membangun visi dan passion'),
-(47, 27, 'Memahami pekerjaan atau profesi'),
-(48, 27, 'Membaca peluang pasar dan usaha'),
-(49, 27, 'Membangun visi dan passion'),
-(50, 28, 'Memahami pekerjaan atau profesi');
+(51, 29, 'Memahami pekerjaan atau profesi');
 
 -- --------------------------------------------------------
 
@@ -1527,14 +1687,8 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`id`, `id_identitas`, `media`) VALUES
-(26, 15, 'Lembar kerja peserta didik'),
 (28, 17, 'Lembar kerja peserta didik'),
-(29, 18, 'Laptop'),
-(42, 24, 'Lembar kerja peserta didik'),
-(43, 24, 'Laptop'),
-(48, 27, 'Lembar kerja peserta didik'),
-(49, 27, 'Laptop'),
-(50, 28, 'LCD');
+(51, 29, 'Lembar kerja peserta didik');
 
 -- --------------------------------------------------------
 
@@ -1553,12 +1707,41 @@ CREATE TABLE `model_pembelajaran` (
 --
 
 INSERT INTO `model_pembelajaran` (`id`, `id_identitas`, `model_pembelajaran`) VALUES
-(15, 15, 'Production based Training (PBT).'),
 (17, 17, 'Project Based Learning (PjBL)'),
-(18, 18, 'Ekspositori'),
-(24, 24, 'Ekspositori'),
-(27, 27, 'Project Based Learning (PjBL)'),
-(28, 28, 'Kontekstual');
+(29, 29, 'Production based Training (PBT).');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_history`
+--
+
+CREATE TABLE `payment_history` (
+  `id` int(11) NOT NULL,
+  `order_id` bigint(25) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `phone_no` varchar(20) NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `school_name` varchar(255) NOT NULL,
+  `pay_status` int(11) NOT NULL,
+  `token` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `is_deleted` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payment_history`
+--
+
+INSERT INTO `payment_history` (`id`, `order_id`, `product_name`, `amount`, `name`, `email`, `phone_no`, `city`, `school_name`, `pay_status`, `token`, `created_at`, `is_deleted`) VALUES
+(11, 1520628741, 'AdminGuru Professional', 1000000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, '4e23797b-b1a4-4344-973a-f101ed2655bb', '2022-12-28 08:41:10', 1),
+(12, 1901921235, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'Fauzan', 2, 'bc9348c9-ce40-4306-b513-4461fe09f3e9', '2022-12-28 08:41:46', 1),
+(13, 648038522, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 0, '', '2022-12-28 08:43:22', 1),
+(14, 188145610, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, '3a45a3c1-89a5-435f-9e47-253f2a3e9112', '2022-12-28 14:43:08', 1),
+(15, 1570159197, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+628881867219', 'Bandung', 'SMKN 1 Cimahi', 2, 'd4754c6c-d647-4102-8aa3-ee863bb06916', '2022-12-29 02:07:17', 0);
 
 -- --------------------------------------------------------
 
@@ -1577,12 +1760,8 @@ CREATE TABLE `pemahaman_bermakna` (
 --
 
 INSERT INTO `pemahaman_bermakna` (`id`, `id_identitas`, `pemahaman_bermakna`) VALUES
-(15, 15, 'Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
 (17, 17, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(18, 18, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(24, 24, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(27, 27, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(28, 28, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
+(29, 29, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -1601,12 +1780,8 @@ CREATE TABLE `pendahuluan` (
 --
 
 INSERT INTO `pendahuluan` (`id`, `id_kegiatan`, `kegiatan`) VALUES
-(25, 15, 'Guru menyampaikan metode pembelajaran dan teknik penilaian yang akan digunakan'),
 (27, 17, 'Guru menyampaikan metode pembelajaran dan teknik penilaian yang akan digunakan'),
-(28, 18, 'Guru menyampaikan tujuan yang akan dicapai pada pembelajaran hari ini'),
-(36, 24, 'Guru memberi salam dan mengajak berdo\'a sebelum pembelajaran dimulai'),
-(39, 27, 'Guru memberi salam dan mengajak berdo\'a sebelum pembelajaran dimulai'),
-(40, 28, 'Guru menyampaikan garis besar cakupan materi yang dipelajari');
+(41, 29, 'Guru membuat kesepakatan belajar bersama peserta didik');
 
 -- --------------------------------------------------------
 
@@ -1625,12 +1800,8 @@ CREATE TABLE `pengayaan_remedial` (
 --
 
 INSERT INTO `pengayaan_remedial` (`id`, `id_identitas`, `pengayaan_remedial`) VALUES
-(25, 15, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
 (27, 17, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
-(28, 18, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
-(36, 24, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
-(39, 27, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
-(40, 28, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.');
+(41, 29, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.');
 
 -- --------------------------------------------------------
 
@@ -1649,13 +1820,8 @@ CREATE TABLE `penutup` (
 --
 
 INSERT INTO `penutup` (`id`, `id_kegiatan`, `kegiatan`) VALUES
-(28, 15, 'Menutup pelajaran dengan memberi motivasi kepada siswa'),
 (30, 17, 'Merencanakan kegiatan tindak lanjut dalam bentuk pembelajaran remedi, program pengayaan, dan layanan konseling'),
-(31, 18, 'Guru menunjuk siswa tertentu untuk menyampaikan penjelasannya tentang materi atau bagian dari materi yang sudah dipelajari'),
-(39, 24, 'Guru memberikan rangkuman poin-poin penting mengenai materi yang dipelajari'),
-(42, 27, 'Guru memberikan rangkuman poin-poin penting mengenai materi yang dipelajari'),
-(43, 27, 'dknsdkns'),
-(44, 28, 'Melakukan penilaian dan/atau refleksi terhadap kegiatan yang sudah dilaksanakan');
+(45, 29, 'Merencanakan kegiatan tindak lanjut dalam bentuk pembelajaran remedi, program pengayaan, dan layanan konseling');
 
 -- --------------------------------------------------------
 
@@ -1674,14 +1840,8 @@ CREATE TABLE `persiapan_pembelajaran` (
 --
 
 INSERT INTO `persiapan_pembelajaran` (`id`, `id_identitas`, `persiapan_pembelajaran`) VALUES
-(25, 15, 'Guru menyusun instrument assesmen yang digunakan'),
 (27, 17, 'Guru menyusun instrument assesmen yang digunakan'),
-(28, 18, 'Guru melakukan tes diagnostic'),
-(43, 24, 'Guru menyusun instrument assesmen yang digunakan'),
-(44, 24, 'kkkdkokdo'),
-(49, 27, 'Guru menyusun instrument assesmen yang digunakan'),
-(50, 27, 'kkkdkokdo'),
-(51, 28, 'Guru menyusun instrument assesmen yang digunakan');
+(52, 29, 'Guru menyusun instrument assesmen yang digunakan');
 
 -- --------------------------------------------------------
 
@@ -1700,15 +1860,8 @@ CREATE TABLE `pertanyaan_pemantik` (
 --
 
 INSERT INTO `pertanyaan_pemantik` (`id`, `id_identitas`, `pertanyaan_pemantik`) VALUES
-(15, 15, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
 (17, 17, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
-(18, 18, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
-(29, 24, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
-(30, 24, 'Apa itu Technopreneur?'),
-(35, 27, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
-(36, 27, 'Apa itu Technopreneur?'),
-(37, 27, 'sdksmdk'),
-(38, 28, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
+(39, 29, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
 
 -- --------------------------------------------------------
 
@@ -1727,17 +1880,8 @@ CREATE TABLE `profil_pancasila` (
 --
 
 INSERT INTO `profil_pancasila` (`id`, `id_identitas`, `profil_pancasila`) VALUES
-(30, 15, 'Mandiri'),
 (32, 17, 'Kreatif'),
-(33, 18, 'Kreatif'),
-(34, 18, 'Mandiri'),
-(50, 24, 'Mandiri'),
-(51, 24, 'Kreatif'),
-(52, 24, 'Berfikir Kritis'),
-(59, 27, 'Mandiri'),
-(60, 27, 'Kreatif'),
-(61, 27, 'Berfikir Kritis'),
-(62, 28, 'Berfikir Kritis');
+(63, 29, 'Kreatif');
 
 -- --------------------------------------------------------
 
@@ -1760,7 +1904,10 @@ INSERT INTO `program_keahlian` (`id`, `program_keahlian`) VALUES
 (4, 'Manajemen Perkantoran dan Layanan Bisnis'),
 (5, 'Teknik Komputer dan Jaringan dan Telekomunikasi'),
 (6, 'Akuntansi dan Keuangan Lembaga'),
-(7, 'Busana');
+(7, 'Busana'),
+(8, 'Teknik Komputer dan Informatika'),
+(9, 'Teknik Animasi'),
+(10, 'Teknik Audio Video');
 
 -- --------------------------------------------------------
 
@@ -1779,12 +1926,20 @@ CREATE TABLE `refleksi` (
 --
 
 INSERT INTO `refleksi` (`id`, `id_identitas`, `refleksi`) VALUES
-(25, 15, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
 (27, 17, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
-(28, 18, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
-(36, 24, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
-(39, 27, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
-(40, 28, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?');
+(41, 29, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `reset_password`
+--
+
+CREATE TABLE `reset_password` (
+  `id` int(11) NOT NULL,
+  `sess` varchar(23) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -1803,14 +1958,8 @@ CREATE TABLE `sumber` (
 --
 
 INSERT INTO `sumber` (`id`, `id_identitas`, `sumber`) VALUES
-(29, 15, 'Laman E-Learning'),
 (31, 17, 'Laman E-Learning'),
-(32, 18, 'Lembar kerja peserta didik'),
-(45, 24, 'Lembar kerja peserta didik'),
-(46, 24, 'Laman E-Learning'),
-(51, 27, 'Lembar kerja peserta didik'),
-(52, 27, 'Laman E-Learning'),
-(53, 28, 'E-book');
+(54, 29, 'Laman E-Learning');
 
 -- --------------------------------------------------------
 
@@ -1828,19 +1977,22 @@ CREATE TABLE `table_user` (
   `kepala_sekolah` varchar(255) NOT NULL,
   `mapel` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `profile_img` varchar(255) NOT NULL
+  `profile_img` varchar(255) NOT NULL,
+  `is_premium` tinyint(1) NOT NULL,
+  `limit_free` int(11) NOT NULL,
+  `downloads_free` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `table_user`
 --
 
-INSERT INTO `table_user` (`id`, `nip`, `nama`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`, `profile_img`) VALUES
-(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'storm_trooper.jpg'),
-(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'avatar.jpg'),
-(12, '198609262015051000', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah126@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Basis Data', '', 'avatar.jpg'),
-(15, '192891291829829', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M. Pd.', 'Matematika', '$2y$10$FGSGKTpV3f7qqmBxG9OjYeFq1ARzFPA7PbqMbdzaef8DJutxK5/Gu', 'storm_trooper.jpg'),
-(16, '190290298989829', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah127@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M. Pd.', 'Basis Data', '', 'avatar.jpg');
+INSERT INTO `table_user` (`id`, `nip`, `nama`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`, `profile_img`, `is_premium`, `limit_free`, `downloads_free`) VALUES
+(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'storm_trooper.jpg', 0, 3, 0),
+(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'avatar.jpg', 0, 3, 0),
+(12, '198609262015051000', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah126@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Basis Data', '', 'avatar.jpg', 0, 3, 0),
+(15, '192891291829829', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M. Pd.', 'Matematika', '$2y$10$FGSGKTpV3f7qqmBxG9OjYeFq1ARzFPA7PbqMbdzaef8DJutxK5/Gu', 'storm_trooper.jpg', 0, 3, 0),
+(20, '', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah127@gmail.com', '', '', '', '', '$2y$10$U5xHLbM/pcpG5wWXbKpxveKAgKduiw/jZLreJZKM3RBkKPK7val8q', 'avatar.jpg', 0, 3, 0);
 
 -- --------------------------------------------------------
 
@@ -1859,12 +2011,8 @@ CREATE TABLE `target_peserta_didik` (
 --
 
 INSERT INTO `target_peserta_didik` (`id`, `id_identitas`, `target_peserta`) VALUES
-(15, 15, ' Peserta didik regular Siswa Desain Komunikasi visual'),
 (17, 17, ' Peserta didik regular Siswa Desain Komunikasi visual'),
-(18, 18, ' Peserta didik regular Siswa Desain Komunikasi visual'),
-(24, 24, ' Peserta didik regular Siswa Desain Komunikasi visual'),
-(27, 27, ' Peserta didik regular Siswa Desain Komunikasi visual dfd'),
-(28, 28, ' Peserta didik regular Siswa Desain Komunikasi visual');
+(29, 29, ' Peserta didik regular Siswa Desain Komunikasi visual');
 
 -- --------------------------------------------------------
 
@@ -1883,12 +2031,8 @@ CREATE TABLE `tujuan_pembelajaran` (
 --
 
 INSERT INTO `tujuan_pembelajaran` (`id`, `id_identitas`, `tujuan_pembelajaran`) VALUES
-(15, 15, 'Menjelaskan jenis pekerjaan Administrasi secara umum serta Pekerjaan administrasi di masa sekarang dan masa depan (berbasis manual dan teknologi)'),
 (17, 17, 'Memahami jenis alat ukur pada jaringan komputer dan sistem telekomunikasi.'),
-(18, 18, 'Melakukan penelitian sosial sederhana tentang berbagai gejala sosial dengan menggunakan metode yang tepat untuk mengamati, menanya, mengumpulkan informasi, mengorganisasikan informasi, menarik kesimpulan, dan mengomunikasikan hasil penelitian.'),
-(24, 24, 'Memahami industri ekonomi kreatif mulai dari teknologi konvensional sampai dengan teknologi modern'),
-(27, 27, 'Memahami industri ekonomi kreatif mulai dari teknologi konvensional sampai dengan teknologi modern'),
-(28, 28, 'Menyajikan gagasan, pikiran, atau pandangan untuk tujuan pengajuan usul dalam bentuk dialog dan gelar wicara secara logis, runtut, kritis, dan kreatif.');
+(29, 29, 'Menerapkan konsep hukum-hukum dasar kimia untuk menyelesaikan perhitungan kimia');
 
 --
 -- Indexes for dumped tables
@@ -2109,6 +2253,12 @@ ALTER TABLE `model_pembelajaran`
   ADD KEY `id_identitas` (`id_identitas`);
 
 --
+-- Indexes for table `payment_history`
+--
+ALTER TABLE `payment_history`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `pemahaman_bermakna`
 --
 ALTER TABLE `pemahaman_bermakna`
@@ -2171,6 +2321,12 @@ ALTER TABLE `refleksi`
   ADD KEY `id_identitas` (`id_identitas`);
 
 --
+-- Indexes for table `reset_password`
+--
+ALTER TABLE `reset_password`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sumber`
 --
 ALTER TABLE `sumber`
@@ -2205,91 +2361,91 @@ ALTER TABLE `tujuan_pembelajaran`
 -- AUTO_INCREMENT for table `ases_for`
 --
 ALTER TABLE `ases_for`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
 
 --
 -- AUTO_INCREMENT for table `ases_kog`
 --
 ALTER TABLE `ases_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `ases_non_kog`
 --
 ALTER TABLE `ases_non_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT for table `ases_sum`
 --
 ALTER TABLE `ases_sum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `bahan_bacaan`
 --
 ALTER TABLE `bahan_bacaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `capaian_pembelajaran`
 --
 ALTER TABLE `capaian_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
 
 --
 -- AUTO_INCREMENT for table `daftar_pustaka`
 --
 ALTER TABLE `daftar_pustaka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `elemen`
 --
 ALTER TABLE `elemen`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=188;
 
 --
 -- AUTO_INCREMENT for table `file_modul`
 --
 ALTER TABLE `file_modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `file_preview_modul`
 --
 ALTER TABLE `file_preview_modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `glosarium`
 --
 ALTER TABLE `glosarium`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `identitas_sekolah`
 --
 ALTER TABLE `identitas_sekolah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `inti`
 --
 ALTER TABLE `inti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `kegiatan_pembelajaran`
 --
 ALTER TABLE `kegiatan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `kompetensi_awal`
 --
 ALTER TABLE `kompetensi_awal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `list_ases_for`
@@ -2361,115 +2517,127 @@ ALTER TABLE `list_refleksi`
 -- AUTO_INCREMENT for table `list_tp`
 --
 ALTER TABLE `list_tp`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=581;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=663;
 
 --
 -- AUTO_INCREMENT for table `lkpd`
 --
 ALTER TABLE `lkpd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
 --
 ALTER TABLE `mata_pelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `model_pembelajaran`
 --
 ALTER TABLE `model_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `payment_history`
+--
+ALTER TABLE `payment_history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `pemahaman_bermakna`
 --
 ALTER TABLE `pemahaman_bermakna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `pendahuluan`
 --
 ALTER TABLE `pendahuluan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `pengayaan_remedial`
 --
 ALTER TABLE `pengayaan_remedial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
 -- AUTO_INCREMENT for table `penutup`
 --
 ALTER TABLE `penutup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `persiapan_pembelajaran`
 --
 ALTER TABLE `persiapan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `pertanyaan_pemantik`
 --
 ALTER TABLE `pertanyaan_pemantik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- AUTO_INCREMENT for table `profil_pancasila`
 --
 ALTER TABLE `profil_pancasila`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `program_keahlian`
 --
 ALTER TABLE `program_keahlian`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `refleksi`
 --
 ALTER TABLE `refleksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+
+--
+-- AUTO_INCREMENT for table `reset_password`
+--
+ALTER TABLE `reset_password`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sumber`
 --
 ALTER TABLE `sumber`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `table_user`
 --
 ALTER TABLE `table_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `target_peserta_didik`
 --
 ALTER TABLE `target_peserta_didik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `tujuan_pembelajaran`
 --
 ALTER TABLE `tujuan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- Constraints for dumped tables
