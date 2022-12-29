@@ -325,3 +325,9 @@ nav{
 		margin-top: 20% !important;
 	}
 }
+
+@media screen and (max-width: 320px) {
+	.col{
+		margin-bottom: 50% !important;
+	}
+}
