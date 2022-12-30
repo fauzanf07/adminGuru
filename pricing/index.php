@@ -90,10 +90,10 @@
 				<div class="col-sm-12 col-md-12 col-lg-4 col-free">
 					<div class="bord-1">
 						<div class="title title-starter">
-							<h4>AdminGuru<br/>Starter</h4>
-							<h3>10$ / month</h3>
+							<h4>AdminGuru<br/>Basic</h4>
+							<h3><s>Rp20.000</s> Rp15.000/Modul <span class="badge text-bg-success">25%</span></h3>
 						</div>
-						<h4>Limited</h4>
+						<h4 class="subtitle">Limited</h4>
 						<div class="list-category">
 							<div class="row">
 								<div class="col-2">
@@ -137,10 +137,10 @@
 				<div class="col-sm-12 col-md-12 col-lg-4 col-professional">
 					<div class="bord-2">
 						<div class="title title-professional">
-							<h4>AdminGuru<br/>Basic</h4>
-							<h3>10$ / month</h3>
+							<h4>AdminGuru<br/>Individual</h4>
+							<h3>Rp300.000/Semester</h3>
 						</div>
-						<h4>30days or 1 month</h4>
+						<h4 class="subtitle">6 months or 1 semester</h4>
 						<div class="list-category">
 							<div class="row">
 								<div class="col-2">
@@ -189,10 +189,10 @@
 				<div class="col-sm-12 col-md-12 col-lg-4 col-premium">
 					<div class="bord-3">
 						<div class="title title-premium">
-							<h4>AdminGuru Professional</h4>
-							<h3>10$ / month</h3>
+							<h4>AdminGuru<br/>School</h4>
+							<h3>Rp*/Sekolah</h3>
 						</div>
-						<h4>30days or 1 month</h4>
+						<h4 class="subtitle">Customizable</h4>
 						<div class="list-category">
 							<div class="row">
 								<div class="col-2">
@@ -245,7 +245,7 @@
 			</div>
 		</div>
 		<div class="btn-pembayaran">
-			<a href="signup" class="btn btn-primary btn-lg btn-daftar">Lihat Pembayaran Anda</a>
+			<a href="../payment" class="btn btn-primary btn-lg btn-daftar">Lihat Pembayaran Anda</a>
 		</div>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 	</div>
@@ -261,39 +261,46 @@
 					<thead>
 						<tr>
 							<th scope="col">Product</th>
+							<th scope="col" class="text-center">Qty</th>
 							<th scope="col" class="text-end">Amount (Rp)</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
 							<td id="productName"></td>
+							<td class="text-center"><input type="number" class="qty" id="qty"/></td>
 							<td class="text-end"><span id="amount"></span></td>
 						</tr>
 						<tr>
 							<td class="text-center"><b>Total</b></td>
-							<td class="text-end" id="totalAmount"></td>
+							<td class="text-end" id="totalAmount" colspan="2"></td>
 						</tr>
 						<tr>
-							<td colspan="2" class="align-middle"><h5 class="fw-semibold text-center">Customer Details</h5></td>
+							<td colspan="3" class="align-middle"><h5 class="fw-semibold text-center">Customer Details</h5></td>
 						</tr>
 						<tr>
 							<td>Name</td>
+							<td></td>
 							<td><input type="text" value="<?php echo $_SESSION['nama']; ?>"class="input-amount" id="name" disabled/></td>
 						</tr>
 						<tr>
 							<td>Email</td>
+							<td></td>
 							<td><input type="text" value="<?php echo $_SESSION['email']; ?>" class="input-amount" id="email" disabled/></td>
 						</tr>
 						<tr>
 							<td>Phone no</td>
+							<td></td>
 							<td><input type="tel" class="input-amount" id="phone" placeholder="+62xxxxxxxxxxxx"/></td>
 						</tr>
 						<tr>
 							<td>City</td>
+							<td></td>
 							<td><input type="text" class="input-amount" id="city"/></td>
 						</tr>
 						<tr>
 							<td>School Name</td>
+							<td></td>
 							<td><input type="text" class="input-amount" id="schoolName"/></td>
 						</tr>
 

@@ -95,7 +95,9 @@
 										<th scope="col">#</th>
 										<th scope="col">Date</th>
 										<th scope="col">Product</th>
+										<th scope="col">Qty</th>
 										<th scope="col">Amount (Rp)</th>
+										<th scope="col">Total Amount (Rp)</th>
 										<th scope="col">Customer Details</th>
 										<th scope="col">Payment Status</th>
 										<th scope="col">Action</th>
@@ -112,7 +114,9 @@
 													<td>".$i."</td>
 													<td>".$r['created_at']."</td>
 													<td>".$r['product_name']."</td>
+													<td>".$r['qty']."</td>
 													<td>".$r['amount']."</td>
+													<td>".$r['qty']*$r['amount']."</td>
 													<td>
 														<span>".$r['name']."</span><br/>
 														<span>".$r['email']."</span><br/>

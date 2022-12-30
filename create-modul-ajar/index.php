@@ -105,7 +105,7 @@
 								echo "Belum diisi";
 							}else { echo $_SESSION['mapel']; }?></span>
 						<?php
-							if($_SESSION['is_premium']==0){
+							if($_SESSION['is_subscribe']==0){
 						?>
 							<div class="free-premium-limit">
 								<center><span><b>Mode Gratis</b></span><br/></center>
@@ -157,7 +157,7 @@
 										        		<td>".$r['mata_pelajaran']."</td>
 										        		<td>".$r['kelas']."/".$r['semester']."</td>
 										        		<td>";
-															if($_SESSION['is_premium']==0){
+															if($_SESSION['is_subscribe']==0){
 																echo "
 																	<center><button type='button' class='btn btn-primary btn-download' data-id='".$r['id']."' data-limit='".$_SESSION['limit_free']."' data-downloads='".$_SESSION['downloads_free']."' id='downloadDocs' data-ext='docx' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);' >Download Docs </button></center>
 																	<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' data-limit='".$_SESSION['limit_free']."' data-downloads='".$_SESSION['downloads_free']."' id='downloadPdf' data-ext='pdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
@@ -170,10 +170,18 @@
 															}
 										        			
 										        echo "
-															</td>
-										        		<td>
-										        			<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
-										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>
+														</td>
+										        		<td>";
+														if($_SESSION['is_subscribe']==0){
+															echo "
+																<center><a href='../pricing' class='btn btn-success btn-action'>Edit</a></center>
+										        				<center><a href='../pricing' class='btn btn-danger btn-action mt-10'>Hapus</a></center>";
+														}else{
+															echo "
+															<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
+										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>";
+														}
+										        echo "			
 										        		</td>
 										        	</tr>
 												";
@@ -762,7 +770,7 @@
 		</div>
 	</div>
 	
-	<?php if($_SESSION['is_premium']==0){ ?>
+	<?php if($_SESSION['is_subscribe']==0){ ?>
 		<div class="modal fade " id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg">
 				<div class="modal-content">

@@ -23,12 +23,10 @@
 
     $order_id = $r['order_id'];
 
-    if($r['product_name'] == "AdminGuru Starter"){
+    if($r['product_name'] == "AdminGuru Basic"){
         $idItem = 'a1';
-    }else if($r['product_name'] == "AdminGuru Basic"){
+    }else if($r['product_name'] == "AdminGuru Individual"){
         $idItem = 'a2';
-    }else{
-        $idItem = 'a3';
     }
 
     $parts = explode(" ", $r['name']);
@@ -45,7 +43,7 @@
     $item_details = array(
         'id' => $idItem,
         'price' => $r['amount'],
-        'quantity' => 1,
+        'quantity' => $r['qty'],
         'name' => $r['product_name']
     );
 
@@ -53,7 +51,7 @@
     $params = array(
         'transaction_details' => array(
             'order_id' => $order_id,
-            'gross_amount' => $r['amount'],
+            'gross_amount' => $r['amount']*$r['qty'],
         ),
         'customer_details' => array(
             'first_name' => $firstname,

@@ -35,11 +35,14 @@
 		  	$_SESSION['sekolah'] = $row["sekolah"];
 		  	$_SESSION['mapel'] = $row["mapel"];
 		  	$_SESSION['profile_img'] = $row["profile_img"];
+			$_SESSION['is_subscribe'] = $row["is_subscribe"];
+			$_SESSION['limit_free'] = $row["limit_free"];
+			$_SESSION['downloads_free'] = $row["downloads_free"];
 		  	$client->revokeToken($_SESSION['access_token']);
     		unset($_SESSION['access_token']);  
 		  	header("Location: ../../create-modul-ajar");
   		}else{
-  			$sql = "INSERT INTO table_user VALUES('','','$fullname','$email', '','','','','', 'avatar.jpg','0','3','0')";
+  			$sql = "INSERT INTO table_user VALUES('','','$fullname','$email', '','','','','', 'avatar.jpg','0','3','0','null')";
   			$result = mysqli_query($con,$sql);
 			if($result){
 				$sql = "SELECT * FROM table_user WHERE email ='$email'";
@@ -52,6 +55,9 @@
 			  	$_SESSION['sekolah'] = $row["sekolah"];
 			  	$_SESSION['mapel'] = $row["mapel"];
 			  	$_SESSION['profile_img'] = $row["profile_img"];
+				$_SESSION['is_subscribe'] = $row["is_subscribe"];
+				$_SESSION['limit_free'] = $row["limit_free"];
+				$_SESSION['downloads_free'] = $row["downloads_free"];
 			  	$client->revokeToken($_SESSION['access_token']);
     			unset($_SESSION['access_token']);  
 				$mj = new \Mailjet\Client($apikey, $apisecret,true,['version' => 'v3.1']);

@@ -289,7 +289,7 @@ nav{
 	width: 20%;
 	height: auto;
 	border-radius: 20px;
-	margin-top: 12%;
+	margin-top: 10%;
 }
 
 .offcanvas-header{
@@ -325,6 +325,19 @@ nav{
 	overflow-x: scroll;
 }
 
+.subtitle{
+	margin-top: 5%;
+}
+
+.qty{
+	width: 60px;
+	max-width: 60px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
 @media screen and (max-width: 1440px) {
 	.col-free{
 		margin-bottom: 10% !important;
@@ -395,15 +408,15 @@ nav{
 	}
 
 	.col-free{
-		margin-bottom: 40% !important;
+		margin-bottom: 50% !important;
 	}
 
 	.col-professional{
-		margin-bottom: 40% !important;
+		margin-bottom: 50% !important;
 	}
 
 	.col-premium{
-		margin-bottom: 40% !important;
+		margin-bottom: 50% !important;
 	}
 
 	.btn-pembayaran a{
@@ -419,15 +432,15 @@ nav{
 	}
 
 	.col-free{
-		margin-bottom: 40% !important;
+		margin-bottom: 50% !important;
 	}
 
 	.col-professional{
-		margin-bottom: 40% !important;
+		margin-bottom: 50% !important;
 	}
 
 	.col-premium{
-		margin-bottom: 40% !important;
+		margin-bottom: 50% !important;
 	}
 
 	.btn-pembayaran a{
@@ -443,15 +456,15 @@ nav{
 	}
 
 	.col-free{
-		margin-bottom: 50% !important;
+		margin-bottom: 60% !important;
 	}
 
 	.col-professional{
-		margin-bottom: 50% !important;
+		margin-bottom: 65% !important;
 	}
 
 	.col-premium{
-		margin-bottom: 50% !important;
+		margin-bottom: 60% !important;
 	}
 
 	.btn-pembayaran a{

@@ -5,43 +5,60 @@ $(document).ready( function () {
     $('#phone').mask('+62000000000000');
 } );
 
+$(document).on("wheel", "input[type=number]", function (e) {
+    $(this).blur();
+});
+
 function subscribe(id){
     const dataID = $(id).data('id');
     var productName = "";
     var amount = 0;
     switch(dataID){
         case 1:
-            productName = "AdminGuru Starter";
-            amount =0;
+            productName = "AdminGuru Basic";
+            qty = 1;
+            amount =15000;
+            $("#qty").keyup(function(){
+                qty = $("#qty").val();
+                console.log(qty);
+                if(qty<1 && !isEmpty(qty)){
+                    $("#qty").val(1);
+                    $('#totalAmount').html(1*amount);
+                }else{
+                    $('#totalAmount').html(qty*amount);
+                }
+                
+            });
             break;
         case 2:
-            productName = "AdminGuru Basic";
-            amount= 500000;
-            break;
-        case 3:
-            productName = "AdminGuru Professional";
-            amount = 1000000;
+            productName = "AdminGuru Individual";
+            qty = 1;
+            $('#qty').attr('disabled','disabled');
+            amount= 300000;
             break;
     }
     $('#productName').html(productName);
+    $('#qty').val(qty);
     $('#amount').html(amount);
     $('#totalAmount').html(amount);
 }
 
 function addPayment(){
     const productName = $('#productName').text();
+    const qty = $('#qty').val();
     const name = $('#name').val();
     const email = $('#email').val();
     const phone = $('#phone').val();
     const city = $('#city').val();
     const schoolName = $('#schoolName').val();
 
-    if(validateForm(phone,city,schoolName)){
+    if(validateForm(qty,phone,city,schoolName)){
         $.ajax({
             url: "../backend/payment/add.php",
             type: "POST",
             data: {
                 productName: productName,
+                qty: qty,
                 name: name,
                 email: email,
                 phone: phone,
@@ -74,10 +91,10 @@ function addPayment(){
     }
 }
 
-function validateForm(phone,city,schoolName){
+function validateForm(qty,phone,city,schoolName){
     var res = false;
     var msg = "Terdapat input yang belum diisi";
-    if(isEmpty(phone) || isEmpty(city) || isEmpty(schoolName)){
+    if(isEmpty(qty) ||isEmpty(phone) || isEmpty(city) || isEmpty(schoolName)){
         res= false;
 		showToast(msg);
     }else{

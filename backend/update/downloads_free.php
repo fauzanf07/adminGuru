@@ -19,5 +19,7 @@
         }else{
             echo json_encode(array('statusCode' => 202));
         }
+    }else{
+        header("Location: ../../pricing");
     }
 ?>

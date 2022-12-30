@@ -21,7 +21,7 @@
 		  	$_SESSION['sekolah'] = $row["sekolah"];
 		  	$_SESSION['mapel'] = $row["mapel"];
 		  	$_SESSION['profile_img'] = $row["profile_img"];
-			$_SESSION['is_premium'] = $row["is_premium"];
+			$_SESSION['is_subscribe'] = $row["is_subscribe"];
 			$_SESSION['limit_free'] = $row["limit_free"];
 			$_SESSION['downloads_free'] = $row["downloads_free"];
 		}

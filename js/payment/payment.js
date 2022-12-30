@@ -18,6 +18,7 @@ function checkout(id){
                 window.snap.pay(dataResult.token, {
                     onSuccess: function(result){
                         updatePayStatus(id,2);
+                        subscribe(result.order_id);
                         console.log(result);
                     },
                     onPending: function(result){
@@ -58,7 +59,6 @@ function updatePayStatus(id,status){
             var dataResult = JSON.parse(dataResult);
             if(dataResult.statusCode==201){
                 console.log("update success");
-                location.reload();
             }
         }
     });
@@ -84,24 +84,6 @@ function getUpdateStatus(id){
                 }else if(dataResult.transaction_status==="deny" || dataResult.transaction_status==="cancel" || dataResult.transaction_status==="expire"){
                     updatePayStatus(id,3);
                 }
-            }
-        }
-    });
-}
-function updatePayStatus(id,status){
-    $.ajax({
-        url: "../backend/payment/update_status.php",
-        type: "POST",
-        data: {
-            id: id,	
-            status: status,
-        },
-        cache: false,
-        success: function(dataResult){
-            var dataResult = JSON.parse(dataResult);
-            if(dataResult.statusCode==201){
-                console.log("update success");
-                location.reload();
             }
         }
     });
@@ -190,4 +172,40 @@ function deletePayment(id){
             });
         }
       })
+}
+
+function subscribe(orderId){
+        $.ajax({
+            url: "../backend/subscribe/subscribe.php",
+            type: "POST",
+            data: {
+                orderId:orderId
+            },
+            cache: false,
+            success: function(dataResult){
+                var dataResult = JSON.parse(dataResult);
+                if(dataResult.statusCode==201){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Anda telah berlangganan',
+                        icon: 'success',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    }).then((result) =>{
+                        if(result.isConfirmed){
+                            location.reload();
+                        }
+                    });
+                }
+                else if(dataResult.statusCode==202){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'There is something wrong with server',
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    })
+                }
+            }
+        });
 }
