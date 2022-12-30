@@ -87,7 +87,11 @@
 	<div class="row-2">
 		<div class="container">
 			<div class="row">
+<<<<<<< HEAD
 				<div class="col col-sm-12 col-md-12 col-lg-4 col-starter">
+=======
+				<div class="col-sm-12 col-md-12 col-lg-4 col-free">
+>>>>>>> e269e5e9ef6aeaf0e77df53327b92dc3890aa9a3
 					<div class="bord-1">
 						<div class="title title-starter">
 							<h4>AdminGuru<br/>Starter</h4>
@@ -134,7 +138,11 @@
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
 				<div class="col col-sm-12 col-md-12 col-lg-4 col-basic">
+=======
+				<div class="col-sm-12 col-md-12 col-lg-4 col-professional">
+>>>>>>> e269e5e9ef6aeaf0e77df53327b92dc3890aa9a3
 					<div class="bord-2">
 						<div class="title title-professional">
 							<h4>AdminGuru<br/>Basic</h4>
@@ -186,7 +194,11 @@
 						</div>
 					</div>
 				</div>
+<<<<<<< HEAD
 				<div class="col col-sm-12 col-md-12 col-lg-4 col-prof">
+=======
+				<div class="col-sm-12 col-md-12 col-lg-4 col-premium">
+>>>>>>> e269e5e9ef6aeaf0e77df53327b92dc3890aa9a3
 					<div class="bord-3">
 						<div class="title title-premium">
 							<h4>AdminGuru Professional</h4>
