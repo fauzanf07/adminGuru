@@ -282,6 +282,16 @@ nav{
 	color: white;
 }
 
+.btn-pembayaran a{
+	background-color: #1C3C7B;
+	border-color: #1C3C7B;
+	font-weight: bolder;
+	width: 20%;
+	height: auto;
+	border-radius: 20px;
+	margin-top: 12%;
+}
+
 .offcanvas-header{
 	background-color: #A3F0FF;
 	border-bottom: 1px solid grey;
@@ -314,17 +324,48 @@ nav{
 .card-body{
 	overflow-x: scroll;
 }
-@media screen and (max-width: 1199px) {
-	.col-history{
-		margin-top: 10% !important;
+
+@media screen and (max-width: 1440px) {
+	.col-free{
+		margin-bottom: 10% !important;
+	}
+
+	.col-professional{
+		margin-bottom: 10% !important;
+	}
+
+	.col-premium{
+		margin-bottom: 10% !important;
+	}
+
+	.btn-pembayaran a{
+		font-size: large;
+		width: 40%;
+		height: auto;
+	}
+}
+
+@media screen and (max-width: 1399px) {
+	.col-free{
+		margin-bottom: 10% !important;
+	}
+
+	.col-professional{
+		margin-bottom: 10% !important;
+	}
+
+	.col-premium{
+		margin-bottom: 10% !important;
+	}
+
+	.btn-pembayaran a{
+		font-size: large;
+		width: 40%;
+		height: auto;
 	}
 }
 
 @media screen and (max-width: 991px) {
-	.col-history{
-		margin-top: 20% !important;
-	}
-
 	.col-11 h4{
 		font-size: x-large;
 	}
@@ -339,11 +380,17 @@ nav{
 
 	.col-premium{
 		margin-bottom: 30% !important;
+	}
+
+	.btn-pembayaran a{
+		font-size: large;
+		width: 80%;
+		height: auto;
 	}
 }
 
 @media screen and (max-width: 575px) {
-	.col-11 h4{
+	.col-10 h4{
 		font-size: x-large;
 	}
 
@@ -358,28 +405,40 @@ nav{
 	.col-premium{
 		margin-bottom: 40% !important;
 	}
+
+	.btn-pembayaran a{
+		font-size: large;
+		width: 80%;
+		height: auto;
+	}
 }
 
 @media screen and (max-width: 392px) {
-	.col-11 h4{
+	.col-10 h4{
 		font-size: larger;
 	}
 
 	.col-free{
-		margin-bottom: 60% !important;
+		margin-bottom: 40% !important;
 	}
 
 	.col-professional{
-		margin-bottom: 60% !important;
+		margin-bottom: 40% !important;
 	}
 
 	.col-premium{
-		margin-bottom: 60% !important;
+		margin-bottom: 40% !important;
+	}
+
+	.btn-pembayaran a{
+		font-size: large;
+		width: 80%;
+		height: auto;
 	}
 }
 
 @media screen and (max-width: 320px) {
-	.col-11 h4{
+	.col-10 h4{
 		font-size: medium;
 	}
 
@@ -394,4 +453,11 @@ nav{
 	.col-premium{
 		margin-bottom: 50% !important;
 	}
+
+	.btn-pembayaran a{
+		font-size: medium;
+		width: 80%;
+		height: auto;
+	}
+	
 }

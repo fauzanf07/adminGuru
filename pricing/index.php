@@ -96,34 +96,34 @@
 						<h4>Limited</h4>
 						<div class="list-category">
 							<div class="row">
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>3 Figma and 3 FigJam files</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Unlimited personal files</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Unlimited collaborators</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Plugins, widgets, and templates</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Mobile app</h4>
 								</div>
 							</div>
@@ -143,40 +143,40 @@
 						<h4>30days or 1 month</h4>
 						<div class="list-category">
 							<div class="row">
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Unlimited Figma files</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Unlimited version history</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Sharing permissions</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Shared and private projects</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Team libraries</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Audio conversations</h4>
 								</div>
 							</div>
@@ -195,40 +195,40 @@
 						<h4>30days or 1 month</h4>
 						<div class="list-category">
 							<div class="row">
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Unlimited Figma files</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Unlimited version history</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Sharing permissions</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Shared and private projects</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 									<h4>Team libraries</h4>
 								</div>
-								<div class="col-1">
+								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
-								<div class="col-11">
+								<div class="col-10">
 								<h4>Audio conversations</h4>
 								</div>
 							</div>
@@ -243,6 +243,9 @@
 				</div>
 				
 			</div>
+		</div>
+		<div class="btn-pembayaran">
+			<a href="signup" class="btn btn-primary btn-lg btn-daftar">Lihat Pembayaran Anda</a>
 		</div>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 	</div>
