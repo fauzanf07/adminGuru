@@ -14,7 +14,7 @@
 
 <head>
 	<title>Admin Guru</title>
-	<link rel="stylesheet" type="text/css" href="../style/pricing/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/payment/style.css">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
@@ -66,14 +66,14 @@
 						 ?>
 						
 						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
-						</li>
-						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
-						</li>
-						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-youtube"></i></a>
-						</li>
+                            <a class="nav-link icon-sosmed" href="../pricing"><i class="bi bi-cart-fill"></i></a>
+                        </li>
+                        <li class="nav-icon icon-sosmed">
+                            <a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="nav-icon icon-sosmed">
+                            <a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
+                        </li>
 					</ul>
 				</div>
 			</div>
@@ -81,172 +81,86 @@
 	</div>
 
 	<div class="row-1">
-		<h1>Buat modul ajar dengan banyak dan unduh sepuasnya</h1>
-		<h3>Paket yang Tersedia</h3>
-	</div>
-	<div class="row-2">
 		<div class="container">
 			<div class="row">
-				<div class="col col-sm-12 col-md-12 col-lg-4 col-starter">
-					<div class="bord-1">
-						<div class="title title-starter">
-							<h4>AdminGuru<br/>Starter</h4>
-							<h3>10$ / month</h3>
+				<div class="col col-sm-12 col-md-12 col-lg-12 col-history">
+					<div class="card bord-4">
+						<div class="title-card">
+							<i class="bi bi-credit-card-2-back-fill"></i>&nbsp;&nbsp;Pembayaran Anda
 						</div>
-						<h4>Limited</h4>
-						<div class="list-category">
-							<div class="row">
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>3 Figma and 3 FigJam files</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Unlimited personal files</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Unlimited collaborators</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Plugins, widgets, and templates</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Mobile app</h4>
-								</div>
-							</div>
-							
-						</div>
-						<div class="button-starter">
-							<button class="btn  btn-lg btn-starter" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="1" onclick="subscribe(this);">BERLANGGANAN</button>
-						</div>
-					</div>
-				</div>
-				<div class="col col-sm-12 col-md-12 col-lg-4 col-basic">
-					<div class="bord-2">
-						<div class="title title-professional">
-							<h4>AdminGuru<br/>Basic</h4>
-							<h3>10$ / month</h3>
-						</div>
-						<h4>30days or 1 month</h4>
-						<div class="list-category">
-							<div class="row">
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Unlimited Figma files</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Unlimited version history</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Sharing permissions</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Shared and private projects</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Team libraries</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Audio conversations</h4>
-								</div>
-							</div>
-						</div>
-						<div class="button-professional">
-							<button class="btn btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="2" onclick="subscribe(this);">BERLANGGANAN</button>
+						<div class="card-body">
+							<table class="table" id="paymentTable">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Date</th>
+										<th scope="col">Product</th>
+										<th scope="col">Amount (Rp)</th>
+										<th scope="col">Customer Details</th>
+										<th scope="col">Payment Status</th>
+										<th scope="col">Action</th>
+									</tr>
+								</thead>
+								<tbody id="data-payment">
+									<?php
+							        		$sql = "SELECT * FROM payment_history WHERE email = '$email' AND is_deleted='0' ORDER BY created_at DESC";
+							        		$result = mysqli_query($con, $sql);
+							        		$i=1;
+											while($r = mysqli_fetch_assoc($result)){
+												echo "
+													<tr>
+													<td>".$i."</td>
+													<td>".$r['created_at']."</td>
+													<td>".$r['product_name']."</td>
+													<td>".$r['amount']."</td>
+													<td>
+														<span>".$r['name']."</span><br/>
+														<span>".$r['email']."</span><br/>
+														<span>".$r['phone_no']."</span><br/>
+														<span>".$r['city']."</span><br/>
+														<span>".$r['school_name']."</span>		
+													</td>
+													<td id='status-payment".$r['id']."'>";
+													switch($r['pay_status']){
+														case 0:
+															echo "<span class='badge text-bg-primary'>Waiting</span>";
+															break;
+														case 1:
+															echo "<span class='badge text-bg-warning'>Pending</span>";
+															break;
+														case 2:
+															echo "<span class='badge text-bg-success'>Success</span>";
+															break;
+														case 3:
+															echo "<span class='badge text-bg-danger'>Failed</span>";
+															break;
+													}	
+													echo "	
+													</td>
+													<td>";
+														if($r['pay_status']==2){
+															echo "<button class='btn btn-success mt-2 btn-payment' data-id='".$r['id']."' data-order='".$r['order_id']."'  onclick='getDetailsTrans(this);'>Details</button><br/>";
+														}else{
+															echo "<button class='btn btn-primary btn-payment' data-id='".$r['id']."' onclick='checkout(this);'>Checkout</button><br/>";
+															echo "<button class='btn btn-info mt-2 btn-payment text-white' data-id='".$r['id']."' data-order='".$r['order_id']."' onclick='getUpdateStatus(this);'><i class='bi bi-arrow-clockwise'/></i>&nbsp;&nbsp;Status</button><br/>";
+														}
+													echo "
+														<button class='btn btn-danger mt-2 btn-payment' data-id='".$r['id']."' onclick='deletePayment(this);'>Delete</button>
+													</td>
+												</tr>
+												";
+												$i++;
+											}
+							        	?>
+								</tbody>
+							</table>
 						</div>
 					</div>
 				</div>
-				<div class="col col-sm-12 col-md-12 col-lg-4 col-prof">
-					<div class="bord-3">
-						<div class="title title-premium">
-							<h4>AdminGuru Professional</h4>
-							<h3>10$ / month</h3>
-						</div>
-						<h4>30days or 1 month</h4>
-						<div class="list-category">
-							<div class="row">
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Unlimited Figma files</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Unlimited version history</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Sharing permissions</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Shared and private projects</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-									<h4>Team libraries</h4>
-								</div>
-								<div class="col-1">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-11">
-								<h4>Audio conversations</h4>
-								</div>
-							</div>
-						</div>
-						<div class="button-premium">
-							<button class="btn  btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="3" onclick="subscribe(this);">BERLANGGANAN</button>
-						</div>
-					</div>
-				</div>
-				<div class="col col-sm-12 col-md-12 col-lg-12">
-					
-				</div>
-				
 			</div>
 		</div>
-		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 	</div>
-	
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 		<div class="offcanvas-header">
 			<center><h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="bi bi-cart-fill"></i>&nbsp;&nbsp;&nbsp;Shopping Cart</h5></center>
@@ -394,5 +308,5 @@
 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-	<script type="text/javascript" src="../js/pricing/pricing.js"></script>
+	<script type="text/javascript" src="../js/payment/payment.js"></script>
 </html>
