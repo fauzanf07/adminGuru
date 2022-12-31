@@ -3,6 +3,7 @@
 
     $orderId = $_POST['orderId'];
     date_default_timezone_set('Asia/Jakarta');
+    session_start();
 
     $date = date('Y-m-d H:i:s');
 
@@ -14,7 +15,7 @@
 
     $productName = $r['product_name'];
     if($productName == "AdminGuru Basic"){
-        $sql = "INSERT INTO subs_basic VALUES('','$qty','$qty','$qty','$qty')";
+        $sql = "INSERT INTO subs_basic VALUES('','$qty','$qty','$qty','$qty','0','0','0','0')";
         $result = mysqli_query($con,$sql);
         $last_id = mysqli_insert_id($con);
         if($result){
@@ -25,6 +26,7 @@
                 $sql = "UPDATE table_user SET is_subscribe='1', id_subscribe='$last_id' WHERE email='$email'";
                 $result = mysqli_query($con,$sql);
                 if($result){
+                    $_SESSION['is_subscribe'] = 1;
                     echo json_encode(array('statusCode' => 201));
                 }else{
                     echo json_encode(array('statusCode' => 202));

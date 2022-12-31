@@ -21,7 +21,24 @@
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
 	$idKegiatan = $r['id'];
+	$email=$_SESSION['email'];
 
+	$email = $_SESSION['email'];
+    $sql = "SELECT * FROM table_user as a LEFT JOIN subscribe as b ON a.id_subscribe = b.id WHERE a.email ='$email'";
+	$result = mysqli_query($con, $sql);
+	$r = mysqli_fetch_assoc($result);
+    $id_paket_basic = $r['id_paket_basic'];
+
+    $sql = "SELECT * FROM subs_basic WHERE id='$id_paket_basic'";
+    $result = mysqli_query($con, $sql);
+    $r = mysqli_fetch_assoc($result);
+
+	$edit = $r['edit'];
+	$limit_edit= $r['limit_edit'];
+
+	if($edit>=$limit_edit){
+		header("Location: ../pricing");
+	}
  ?>
 <!DOCTYPE html>
 <html>

@@ -16,5 +16,4 @@
 	  	$materi[] = $row;
 	}
 	echo json_encode(array("statusCode"=>201, "elemen"=>$elemen,"materi"=>$materi));
-	  
  ?>

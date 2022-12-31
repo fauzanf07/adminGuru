@@ -9,7 +9,7 @@
 
 	$email = $_SESSION['email'];
 
-	$sql = "SELECT id FROM table_user WHERE email = '$email'";
+	$sql = "SELECT id,id_subscribe FROM table_user WHERE email = '$email'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
 	$id_user = $r['id'];
@@ -115,9 +115,46 @@
 								</div>
 								<a href="../pricing" class="btn btn-primary btn-try-sub">Coba Berlangganan!</a>
 							</div>
-						<?php } ?>
+						<?php }else{
+								$idSubscribe = $r['id_subscribe'];
+								$sql = "SELECT * FROM subscribe WHERE id = '$idSubscribe'";
+								$result = mysqli_query($con, $sql);
+								$r_subs = mysqli_fetch_assoc($result);
+								$paket = $r_subs['paket'];
+								if($paket==1){
+									$id_paket_basic=$r_subs['id_paket_basic'];
+									$sql = "SELECT * FROM subs_basic WHERE id = '$id_paket_basic'";
+									$result = mysqli_query($con, $sql);
+									$r_basic = mysqli_fetch_assoc($result);
+									?>
+									<div class="free-premium-limit">
+										<center><span><b>Mode Limited</b></span><br/></center>
+										<span>Batas Download Docx:<span>
+										<div class="progress">
+											<div class="progress-bar" id="downloadDocxBasic" role="progressbar" aria-label="Example with label" style="width: <?php echo ($r_basic['download_docx']/$r_basic['limit_download_docx'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><span id="contentPBDocx"><?php echo $r_basic['download_docx'] . " / ".$r_basic['limit_download_docx'] ?></span></div>
+										</div>
+										<br/>
+										<span>Batas Download PDF:<span>
+										<div class="progress">
+											<div class="progress-bar bg-info" id="downloadPDFBasic" role="progressbar" aria-label="Example with label" style="width: <?php echo ($r_basic['download_pdf']/$r_basic['limit_download_pdf'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><span id="contentPBPdf"><?php echo $r_basic['download_pdf'] . " / ".$r_basic['limit_download_pdf'] ?></span></div>
+										</div>
+										<br/>
+										<span>Batas Edit:<span>
+										<div class="progress">
+											<div class="progress-bar bg-success" id="editBasic" role="progressbar" aria-label="Example with label" style="width: <?php echo ($r_basic['edit']/$r_basic['limit_edit'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><?php echo $r_basic['edit'] . " / ".$r_basic['limit_edit'] ?></div>
+										</div>
+										<br/>
+										<span>Batas Hapus:<span>
+										<div class="progress">
+											<div class="progress-bar bg-danger" id="hapusBasic" role="progressbar" aria-label="Example with label" style="width: <?php echo ($r_basic['hapus']/$r_basic['limit_hapus'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><?php echo $r_basic['hapus'] . " / ".$r_basic['limit_hapus'] ?></div>
+										</div>
+									</div>
+						<?php			
+								}
+							}
+						?>
+							
 					</div>
-					
 				</div>
 				<div class="col-lg-9 nav-info-user">
 					<nav>
@@ -163,10 +200,18 @@
 																	<center><button type='button' class='btn btn-danger btn-download mt-10' data-id='".$r['id']."' data-limit='".$_SESSION['limit_free']."' data-downloads='".$_SESSION['downloads_free']."' id='downloadPdf' data-ext='pdf' data-bs-toggle='modal' data-bs-target='#exampleModal' onclick='subscribe(this);'>Download PDF</button></center>
 																";
 															}else{
-																echo "
-																	<a class='btn btn-primary btn-download' href='./download-modul.php?id=".$r['id']."&ext=docx' target='_blank' id='subscribePdf' onclick='getMotivasi();'>Download Docs</a>
-																	<a class='btn btn-danger btn-download mt-10' href='./download-modul.php?id=".$r['id']."&ext=pdf' target='_blank' id='subscribePdf' onclick='getMotivasi();'>Download PDF</a>
-																";
+																if($paket==1){
+																	echo "
+																		<a class='btn btn-primary btn-download' href='./download-modul.php?id=".$r['id']."&ext=docx' target='_blank' id='subscribePdf' onclick='downloadBasic(\"docx\");'>Download Docs</a>
+																		<a class='btn btn-danger btn-download mt-10' href='./download-modul.php?id=".$r['id']."&ext=pdf' target='_blank' id='subscribePdf' onclick='downloadBasic(\"pdf\");'>Download PDF</a>
+																	";
+																}else{
+																	echo "
+																		<a class='btn btn-primary btn-download' href='./download-modul.php?id=".$r['id']."&ext=docx' target='_blank' id='subscribePdf' onclick='getMotivasi();'>Download Docs</a>
+																		<a class='btn btn-danger btn-download mt-10' href='./download-modul.php?id=".$r['id']."&ext=pdf' target='_blank' id='subscribePdf' onclick='getMotivasi();'>Download PDF</a>
+																	";
+																}
+																
 															}
 										        			
 										        echo "
@@ -177,9 +222,15 @@
 																<center><a href='../pricing' class='btn btn-success btn-action'>Edit</a></center>
 										        				<center><a href='../pricing' class='btn btn-danger btn-action mt-10'>Hapus</a></center>";
 														}else{
-															echo "
-															<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
-										        			<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>";
+															if($paket==1 && $r_basic['hapus']>=$r_basic['limit_hapus']){
+																echo "
+																<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
+																<center><a href='../pricing' class='btn btn-danger btn-action mt-10'>Hapus</a></center>";
+															}else{
+																echo "
+																<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
+																<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>";
+															}
 														}
 										        echo "			
 										        		</td>

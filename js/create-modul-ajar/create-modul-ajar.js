@@ -65,6 +65,7 @@ $('#mapel').on('change',function(){
 		},
 		cache: false,
 		success: function(dataResult){
+			console.log(dataResult);
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult);
 			if(dataResult.statusCode==201){
@@ -446,7 +447,7 @@ function createModulPdf(id){
 		url: "../backend/modul/create-pdf.php",
 		type: "POST",
 		data: {
-			id: id_identitas		
+			id: id_identitas,	
 		},
 		cache: false,
 		success: function(dataResult){
@@ -766,6 +767,33 @@ function getMotivasi(){
 		console.log(motivasi.motivasi[rand].quote);
 	});
 	return false;
+}
+
+function downloadBasic(ext){
+	$.ajax({
+		url: "../backend/subscribe/download_modul_basic.php",
+		type: "POST",
+		cache: false,
+		data: {
+			ext:ext,		
+		},
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.statusCode);
+			if(dataResult.statusCode==201){
+				if(ext==="docx"){
+					$('#downloadDocxBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
+					$('#contentPBDocx').html(dataResult.download+" / "+dataResult.limit);
+				}else{
+					$('#downloadPDFBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
+					$('#contentPBPdf').html(dataResult.download+" / "+dataResult.limit);
+				}
+			}
+			else{
+				console.log("There's something wrong");
+			}
+		}
+	});
 }
 
 

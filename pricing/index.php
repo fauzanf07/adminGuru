@@ -100,13 +100,13 @@
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Limited download modul ajar PDF (1x)</h4>
+									<h4>Limited download full modul ajar PDF (1x)</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Limited download modul ajar DOCX (1x)</h4>
+									<h4>Limited download full modul ajar DOCX (1x)</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
@@ -147,13 +147,13 @@
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited download modul ajar PDF</h4>
+									<h4>Unlimited download full modul ajar PDF</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited download modul ajar DOCX</h4>
+									<h4>Unlimited download full modul ajar DOCX</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
@@ -193,13 +193,13 @@
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited download modul ajar PDF</h4>
+									<h4>Unlimited download full modul ajar PDF</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited download modul ajar DOCX</h4>
+									<h4>Unlimited download full modul ajar DOCX</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
@@ -225,6 +225,7 @@
 								<div class="col-10">
 									<h4>Training khusus AdminGuru ke sekolah bersangkutan</h4>
 								</div>
+								<i><span class="ket">*Harga dapat disesuaikan dan order via Whatsapp</span></i>
 							</div>
 						</div>
 						<div class="button-premium">

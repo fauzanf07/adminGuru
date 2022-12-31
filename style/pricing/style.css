@@ -326,12 +326,16 @@ nav{
 }
 
 .subtitle{
-	margin-top: 5%;
+	margin-top: 3%;
 }
 
 .qty{
 	width: 60px;
 	max-width: 60px;
+}
+.ket{
+	display: inline-block;
+	margin-top: 7%;
 }
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 

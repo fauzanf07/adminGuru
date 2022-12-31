@@ -105,7 +105,8 @@ $('#editModulAjar').click(function(){
 		url: "../backend/hapus-modul/hapus_modul.php",
 		type: "POST",
 		data: {
-			id: id_identitas		
+			id: id_identitas,
+			edit: true,		
 		},
 		cache: false,
 		success: function(dataResult){
@@ -324,7 +325,8 @@ function buatModulAjar(){
 		url: "../backend/create-modul-ajar/create_modul.php",
 		type: "POST",
 		data: {
-			modulAjar: modulAjar
+			modulAjar: modulAjar,
+			edit:true,
 		},
 		cache: false,
 		success: function(dataResult){
