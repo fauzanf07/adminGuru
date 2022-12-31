@@ -100,31 +100,31 @@
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>3 Figma and 3 FigJam files</h4>
+									<h4>Limited download modul ajar PDF (1x)</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited personal files</h4>
+									<h4>Limited download modul ajar DOCX (1x)</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited collaborators</h4>
+									<h4>Limited edit modul ajar (1x)</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Plugins, widgets, and templates</h4>
+									<h4>Limited hapus modul ajar (1x)</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Mobile app</h4>
+									<h4>Unlimited buat modul ajar</h4>
 								</div>
 							</div>
 							
@@ -147,37 +147,31 @@
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited Figma files</h4>
+									<h4>Unlimited download modul ajar PDF</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited version history</h4>
+									<h4>Unlimited download modul ajar DOCX</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Sharing permissions</h4>
+									<h4>Unlimited edit modul ajar</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Shared and private projects</h4>
+									<h4>Unlimited hapus modul ajar</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Team libraries</h4>
-								</div>
-								<div class="col-2">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-10">
-									<h4>Audio conversations</h4>
+									<h4>Unlimited buat modul ajar</h4>
 								</div>
 							</div>
 						</div>
@@ -195,41 +189,41 @@
 						<h4 class="subtitle">Customizable</h4>
 						<div class="list-category">
 							<div class="row">
-								<div class="col-2">
+							<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Unlimited Figma files</h4>
-								</div>
-								<div class="col-2">
-									<i class="bi bi-check-circle-fill"></i>
-								</div>
-								<div class="col-10">
-									<h4>Unlimited version history</h4>
+									<h4>Unlimited download modul ajar PDF</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Sharing permissions</h4>
+									<h4>Unlimited download modul ajar DOCX</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Shared and private projects</h4>
+									<h4>Unlimited edit modul ajar</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-									<h4>Team libraries</h4>
+									<h4>Unlimited hapus modul ajar</h4>
 								</div>
 								<div class="col-2">
 									<i class="bi bi-check-circle-fill"></i>
 								</div>
 								<div class="col-10">
-								<h4>Audio conversations</h4>
+									<h4>Unlimited buat modul ajar</h4>
+								</div>
+								<div class="col-2">
+									<i class="bi bi-check-circle-fill"></i>
+								</div>
+								<div class="col-10">
+									<h4>Training khusus AdminGuru ke sekolah bersangkutan</h4>
 								</div>
 							</div>
 						</div>

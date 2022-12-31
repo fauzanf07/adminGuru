@@ -83,7 +83,7 @@ nav{
 	padding-top: 5%;
 	padding-bottom: 5%;
 	background-color: #F4FDFF;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Fredoka', sans-serif;
 	text-align: center;
 	color: #1C3C7B;
 }
@@ -96,7 +96,7 @@ nav{
 .row-2{
 	width: 100%;
 	background-color: #F4FDFF;
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Fredoka', sans-serif;
 	text-align: center;
 }
 
@@ -289,7 +289,7 @@ nav{
 	width: 20%;
 	height: auto;
 	border-radius: 20px;
-	margin-top: 10%;
+	margin-top: 13%;
 }
 
 .offcanvas-header{
@@ -359,6 +359,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 1399px) {
+	.title h3{
+		font-size: large;
+	}
+
 	.col-free{
 		margin-bottom: 10% !important;
 	}
@@ -427,6 +431,10 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 @media screen and (max-width: 392px) {
+	.title h3{
+		font-size: large;
+	}
+
 	.col-10 h4{
 		font-size: larger;
 	}
