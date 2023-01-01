@@ -202,8 +202,8 @@
 															}else{
 																if($paket==1){
 																	echo "
-																		<a class='btn btn-primary btn-download' href='./download-modul.php?id=".$r['id']."&ext=docx' target='_blank' id='subscribePdf' onclick='downloadBasic(\"docx\");'>Download Docs</a>
-																		<a class='btn btn-danger btn-download mt-10' href='./download-modul.php?id=".$r['id']."&ext=pdf' target='_blank' id='subscribePdf' onclick='downloadBasic(\"pdf\");'>Download PDF</a>
+																		<button class='btn btn-primary btn-download' data-ext='docx' data-id='".$r['id']."'  id='subscribePdf' onclick='downloadBasic(this);'>Download Docs</button>
+																		<button class='btn btn-danger btn-download mt-10'  data-ext='pdf' data-id='".$r['id']."' id='subscribePdf' onclick='downloadBasic(this);'>Download PDF</button>
 																	";
 																}else{
 																	echo "

@@ -769,13 +769,16 @@ function getMotivasi(){
 	return false;
 }
 
-function downloadBasic(ext){
+function downloadBasic(id){
+	var ext = $(id).data('ext');
+	var id = $(id).data('id');
 	$.ajax({
 		url: "../backend/subscribe/download_modul_basic.php",
 		type: "POST",
 		cache: false,
 		data: {
-			ext:ext,		
+			ext:ext,
+			id:id,		
 		},
 		success: function(dataResult){
 			var dataResult = JSON.parse(dataResult);
@@ -784,9 +787,31 @@ function downloadBasic(ext){
 				if(ext==="docx"){
 					$('#downloadDocxBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
 					$('#contentPBDocx').html(dataResult.download+" / "+dataResult.limit);
+					console.log(dataResult);
+					if(dataResult.is_reached==1){
+						window.open('../pricing','_blank');
+					}else{
+						if(dataResult.is_download==1){
+							window.open('./download-modul.php?id='+id+'&ext=docx','_blank');
+						}
+						if(dataResult.update==1){
+							location.reload();
+						}
+					}
+					
 				}else{
 					$('#downloadPDFBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
 					$('#contentPBPdf').html(dataResult.download+" / "+dataResult.limit);
+					if(dataResult.is_reached==1){
+						window.open('../pricing','_blank');
+					}else{
+						if(dataResult.is_download==1){
+							window.open('./download-modul.php?id='+id+'&ext=pdf','_blank');
+						}
+						if(dataResult.update==1){
+							location.reload();
+						}
+					}
 				}
 			}
 			else{

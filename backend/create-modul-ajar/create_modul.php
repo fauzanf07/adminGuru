@@ -25,6 +25,7 @@
 
 		$edit = $r['edit'];
         $limit_edit= $r['limit_edit'];
+		$update = false;
 
 		if($edit<$limit_edit){
             $edit += 1;
@@ -39,13 +40,13 @@
 					$sql = "UPDATE table_user SET is_subscribe='0',id_subscribe=NULL WHERE email='$email'";
 					$res = mysqli_query($con, $sql);
 					$_SESSION['is_subscribe']=0;
+					if($res){
+						$update = true;
+					}else{
+						$update = false;
+					}
 				}
-				if($res){
-					$update = true;
-				}else{
-					$update = false;
-				}
-				
+				$update=true;
 			}else{
 				$update = false;
 			}
