@@ -27,18 +27,23 @@
     $sql = "SELECT * FROM table_user as a LEFT JOIN subscribe as b ON a.id_subscribe = b.id WHERE a.email ='$email'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
-    $id_paket_basic = $r['id_paket_basic'];
+	$paket = $r['paket'];
 
-    $sql = "SELECT * FROM subs_basic WHERE id='$id_paket_basic'";
-    $result = mysqli_query($con, $sql);
-    $r = mysqli_fetch_assoc($result);
+	if($paket==1){
+		$id_paket_basic = $r['id_paket_basic'];
 
-	$edit = $r['edit'];
-	$limit_edit= $r['limit_edit'];
+		$sql = "SELECT * FROM subs_basic WHERE id='$id_paket_basic'";
+		$result = mysqli_query($con, $sql);
+		$r = mysqli_fetch_assoc($result);
 
-	if($edit>=$limit_edit){
-		header("Location: ../pricing");
+		$edit = $r['edit'];
+		$limit_edit= $r['limit_edit'];
+
+		if($edit>=$limit_edit){
+			header("Location: ../pricing");
+		}
 	}
+    
  ?>
 <!DOCTYPE html>
 <html>
@@ -1077,7 +1082,7 @@
 											  	<button class="btn btn-primary btn-create mt-3" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
 											    	<span>Previous</span>
 											  	</button>
-											  	<button class="btn btn-success ml-10 mt-3" type="button" id="editModulAjar" data-id="<?php echo $id_identitas; ?>">
+											  	<button class="btn btn-success ml-10 mt-3" type="button" id="editModulAjar" data-paket="<?php echo $paket ?>" data-id="<?php echo $id_identitas; ?>">
 											    	<span >Edit Modul Ajar&nbsp;</span>
 											    	<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" id="spinner"></span>
 								  				</button>

@@ -271,7 +271,7 @@ nav{
 	left: 0;
 }
 
-.button-premium button{
+.button-premium a{
 	margin-top: 7%;
 	background-color: red;
 	border: 3px solid red;

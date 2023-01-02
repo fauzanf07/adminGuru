@@ -7,13 +7,18 @@
 	}
 	include("../backend/conn.php");
 
+	date_default_timezone_set('Asia/Jakarta');
+
+	$dateNow = date('Y-m-d');
+
 	$email = $_SESSION['email'];
 
-	$sql = "SELECT id,id_subscribe FROM table_user WHERE email = '$email'";
+	$sql = "SELECT id,is_subscribe,id_subscribe FROM table_user WHERE email = '$email'";
 	$result = mysqli_query($con, $sql);
 	$r = mysqli_fetch_assoc($result);
 	$id_user = $r['id'];
-
+	$is_subscribe = $r['is_subscribe'];
+	$_SESSION['is_subscribe'] = $is_subscribe;
 
  ?>
 <!DOCTYPE html>
@@ -128,7 +133,7 @@
 									$r_basic = mysqli_fetch_assoc($result);
 									?>
 									<div class="free-premium-limit">
-										<center><span><b>Mode Limited</b></span><br/></center>
+										<center><span><b>Paket Basic</b></span><br/></center>
 										<span>Batas Download Docx:<span>
 										<div class="progress">
 											<div class="progress-bar" id="downloadDocxBasic" role="progressbar" aria-label="Example with label" style="width: <?php echo ($r_basic['download_docx']/$r_basic['limit_download_docx'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><span id="contentPBDocx"><?php echo $r_basic['download_docx'] . " / ".$r_basic['limit_download_docx'] ?></span></div>
@@ -150,6 +155,28 @@
 										</div>
 									</div>
 						<?php			
+								}else if($paket==2){
+									$sql = "SELECT * FROM table_user as a LEFT JOIN subscribe as b ON a.id_subscribe = b.id LEFT JOIN unlimited_subs c ON c.id = b.id_paket_unli WHERE a.email ='$email'";
+									$result = mysqli_query($con, $sql);
+									$r = mysqli_fetch_assoc($result);
+
+									$dateCreated = $r['created_at'];
+									$dateExpired = $r['expired'];
+
+									$diff = strtotime($dateNow) - strtotime($dateCreated);
+									$daysTillNow = abs($diff/(60 * 60)/24);
+									
+									$diff = strtotime($dateExpired) - strtotime($dateCreated);
+									$daysTillExpired = abs($diff/(60 * 60)/24);
+						?>
+								<div class="free-premium-limit">
+									<center><span><b>Paket Individual</b></span><br/><br/></center>
+									<span>Batas Hari : <?php echo $dateExpired; ?></span>
+									<div class="progress">
+										<div class="progress-bar" id="downloadInd" role="progressbar" aria-label="Example with label" style="width: <?php echo ($daysTillNow/$daysTillExpired)*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><?php echo $daysTillNow . " / ". $daysTillExpired . "Hari"; ?></div>
+									</div>
+								</div>
+						<?php	
 								}
 							}
 						?>
@@ -229,7 +256,7 @@
 															}else{
 																echo "
 																<center><button type='button' class='btn btn-success btn-action' data-id='".$r['id']."' onclick='editModul(this);'>Edit</button></center>
-																<center><button type='button' class='btn btn-danger btn-action mt-10' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>";
+																<center><button type='button' class='btn btn-danger btn-action mt-10' data-paket='".$paket."' data-id='".$r['id']."' onclick='hapusModul(this);'>Hapus</button></center>";
 															}
 														}
 										        echo "			

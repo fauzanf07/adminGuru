@@ -229,7 +229,7 @@
 							</div>
 						</div>
 						<div class="button-premium">
-							<button class="btn  btn-lg btn-professional" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight" data-id="3" onclick="subscribe(this);">BERLANGGANAN</button>
+							<a href="https://wa.me/6283824779390?text=Halo%20saya%20tertarik%20untuk%20berlangganan%20adminGuru%20paket%20sekolah" target="_blank" class="btn  btn-lg btn-professional"><i class="bi bi-whatsapp"></i>&nbsp; BERLANGGANAN</a>
 						</div>
 					</div>
 				</div>

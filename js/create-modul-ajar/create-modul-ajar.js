@@ -520,6 +520,7 @@ function subscribe(id){
 
 function hapusModul(id){
 	var id_identitas = $(id).data('id');
+	var paket = $(id).data('paket');
 	Swal.fire({
 	  title: 'Are you sure?',
 	  text: "You won't be able to revert this!",
@@ -534,7 +535,8 @@ function hapusModul(id){
 			url: "../backend/hapus-modul/hapus_modul.php",
 			type: "POST",
 			data: {
-				id: id_identitas		
+				id: id_identitas,
+				paket: paket		
 			},
 			cache: false,
 			success: function(dataResult){

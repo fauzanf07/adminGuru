@@ -100,20 +100,22 @@ $('#elemen').on('change',function(){
 
 $('#editModulAjar').click(function(){
 	const id_identitas = $(this).data('id');
+	const paket = $(this).data('paket');
 	$('#spinner').css('display','inline-block');
 	$.ajax({
 		url: "../backend/hapus-modul/hapus_modul.php",
 		type: "POST",
 		data: {
 			id: id_identitas,
-			edit: true,		
+			edit: true,	
+			paket: paket,	
 		},
 		cache: false,
 		success: function(dataResult){
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult.statusCode);
 			if(dataResult.statusCode==201){
-				buatModulAjar();
+				buatModulAjar(paket);
 			}else if(dataResult.statusCode==202){
 				Swal.fire({
 					title: 'Error!',
@@ -127,7 +129,7 @@ $('#editModulAjar').click(function(){
 	});
 });
 
-function buatModulAjar(){
+function buatModulAjar(paket){
 	var modul_ajar = new Object();
 	modul_ajar.nama = $('#namaPenyusun').val();
 	modul_ajar.satuanPend = $('#satuanPend').val();
@@ -327,6 +329,8 @@ function buatModulAjar(){
 		data: {
 			modulAjar: modulAjar,
 			edit:true,
+			paket:paket
+			
 		},
 		cache: false,
 		success: function(dataResult){

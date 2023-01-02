@@ -16,7 +16,7 @@
 
     if($productName == "AdminGuru Basic"){
         $amount = 15000;
-    }else if($productName == "AdminGuru Individua"){
+    }else if($productName == "AdminGuru Individual"){
         $amount = 300000;
     }
     $sql = "SELECT * FROM payment_history WHERE email='$email' AND (pay_status='0' OR pay_status='1') AND is_deleted='0'";
@@ -41,5 +41,6 @@
             }
         }
     }
+
     
 ?>

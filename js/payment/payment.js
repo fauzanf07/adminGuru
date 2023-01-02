@@ -79,6 +79,8 @@ function getUpdateStatus(id){
             if(dataResult.status_code != 400 || dataResult.status_code!=401 || dataResult.status_code!=404){
                 if(dataResult.transaction_status==="capture" || dataResult.transaction_status==="settlement"){
                     updatePayStatus(id,2);
+                    subscribe(dataResult.order_id);
+                    location.reload();
                 }else if(dataResult.transaction_status==="pending"){
                     updatePayStatus(id,1);
                 }else if(dataResult.transaction_status==="deny" || dataResult.transaction_status==="cancel" || dataResult.transaction_status==="expire"){
