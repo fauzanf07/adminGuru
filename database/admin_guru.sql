@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 29, 2022 at 08:50 AM
+-- Generation Time: Jan 02, 2023 at 09:27 PM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 7.2.5
 
@@ -39,8 +39,7 @@ CREATE TABLE `ases_for` (
 --
 
 INSERT INTO `ases_for` (`id`, `id_identitas`, `ases`) VALUES
-(31, 17, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?'),
-(43, 29, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?');
+(31, 17, 'Hal apa yang paling menyenangkan dan tidak menyenangkan?');
 
 -- --------------------------------------------------------
 
@@ -59,8 +58,7 @@ CREATE TABLE `ases_kog` (
 --
 
 INSERT INTO `ases_kog` (`id`, `id_identitas`, `ases`) VALUES
-(17, 17, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya'),
-(29, 29, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
+(17, 17, 'Bagaimana Animasi dibuat dan sebutkan jenis-jenisnya');
 
 -- --------------------------------------------------------
 
@@ -79,8 +77,7 @@ CREATE TABLE `ases_non_kog` (
 --
 
 INSERT INTO `ases_non_kog` (`id`, `id_identitas`, `ases`) VALUES
-(37, 17, 'Unjuk kerja'),
-(58, 29, 'Unjuk kerja');
+(37, 17, 'Unjuk kerja');
 
 -- --------------------------------------------------------
 
@@ -99,8 +96,7 @@ CREATE TABLE `ases_sum` (
 --
 
 INSERT INTO `ases_sum` (`id`, `id_identitas`, `ases`) VALUES
-(17, 17, 'Penilaian Akhir Semester'),
-(29, 29, 'Penilaian Akhir Semester');
+(17, 17, 'Penilaian Akhir Semester');
 
 -- --------------------------------------------------------
 
@@ -119,8 +115,7 @@ CREATE TABLE `bahan_bacaan` (
 --
 
 INSERT INTO `bahan_bacaan` (`id`, `id_identitas`, `bahan_bacaan`) VALUES
-(20, 17, 'knknkknknkk'),
-(32, 29, 'jjhjhjdhhdjhdj');
+(20, 17, 'knknkknknkk');
 
 -- --------------------------------------------------------
 
@@ -225,11 +220,11 @@ INSERT INTO `capaian_pembelajaran` (`id`, `id_elemen`, `capaian_pembelajaran`) V
 (84, 90, 'Pada akhir fase ini, peserta didik mampu mengamati, menanya, mengumpulkan informasi, mengorganisasikan informasi, menarik kesimpulan, mengomunikasikan, merefleksikan dan merencanakan proyek lanjutan secara kolaboratif tentang pengantar dasar ilmu sejarah, jalur rempah dan asal usul nenek moyang bangsa Indonesia, kerajaan Hindu-Buddha, dan kerajaan Islam meliputi:\r\n\r\n1. Penelitian sejarah lokal dimulai dari lingkungan terdekat (sejarah keluarga, sejarah sekolah, sejarah jalur rempah di daerah, sejarah kerajaan di daerah, dan lain-lain); mengumpulkan sumber-sumber primer maupun sekunder melalui sarana lingkungan sekitar, perpustakaan, dan internet; melakukan seleksi dan kritik terhadap sumber-sumber primer maupun sekunder; melakukan penafsiran untuk mendeskripsikan makna di balik sumber-sumber primer dan/atau sekunder; dan menuliskan hasil penelitian dalam bentuk historiografi. \r\n2. Penjelasan peristiwa sejarah secara diakronis (kronologi) yang menitikberatkan pada proses dan/atau sinkronis yang menitikberatkan pada struktur; Penjelasan peristiwa sejarah berdasarkan hubungan kausalitas; Mengaitkan peristiwa sejarah dengan kehidupan sehari-hari; dan menempatkan peristiwa sejarah pada konteks zamannya.\r\n3. Penjelasan peristiwa sejarah dalam perspektif masa lalu, masa kini, dan masa depan; Penjelasan peristiwa sejarah dari pola perkembangan, perubahan, keberlanjutan, dan keberulangan.\r\n4. Penjelasan peristiwa sejarah dalam ruang lingkup lokal, nasional, dan global; Mengaitkan hubungan antara peristiwa sejarah lokal, nasional, dan global. \r\n5. Memaknai nilai-nilai dari peristiwa sejarah dan dikontekstualisasikan dalam kehidupan masa kini.\r\n6. Mengolah informasi sejarah secara non digital maupun digital dalam berbagai bentuk aplikasi sejarah, rekaman suara, film dokumenter, foto, maket, vlog, timeline, story board, infografis, videografis, komik, poster, dan lain-lain.'),
 (85, 91, 'Pada akhir fase ini, peserta didik mampu memahami fungsi sosiologi sebagai ilmu yang secara kritis mengkaji masyarakat. Di samping itu, peserta didik mampu mengenal identitas diri, menjelaskan tindakan sosial, menjelaskan hubungan sosial, menjelaskan peran lembaga sosial dalam mewujudkan tertib sosial, dan memahami berbagai ragam gejala sosial yang ada di masyarakat multikultural melalui konsep-konsep dasar sosiolog.'),
 (86, 92, 'Pada akhir fase ini, peserta didik mampu melakukan penelitian sosial sederhana dengan memilih metode yang tepat untuk mengamati, menanya, mengumpulkan informasi, mengorganisasikan informasi, menarik kesimpulan, dan mengomunikasikan hasil penelitian tentang berbagai keragaman gejala sosial dengan konsep dasar sosiologi. Peserta didik mampu merefleksikan dan merencanakan projek lanjutan secara kolaboratif.'),
-(87, 99, 'Peserta didik mampu menganalisis ayat Al-Qur’an dan hadis tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja erta larangan pergaulan bebas dan zina; dapat membaca Al-Qur’an dengan tartil, menghafal dengan fasih dan lancar ayat Al-Qur’an serta Hadis tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja serta bahaya dari pergaulan bebas dan zina; dapat menyajikan konten dan paparan tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja serta larangan pergaulan bebas dan zina; meyakini bahwa sikap kompetitif dalam kebaikan dan etos kerja serta menghindari pergaulan bebas dan perbuatan zina adalah perintah agama; dan membiasakan sikap kompetitif dalam kebaikan dan etos kerja serta menghindari pergaulan bebas dan perbuatan zina dengan lebih berhati-hati dan menjaga kehormatan diri.\r\n'),
-(88, 100, 'Peserta didik menganalisis makna syu‘ab al-iman (cabang-cabang iman), pengertian, dalil, macam dan manfaatnya; mempresentasikan makna syu‘ab al-iman (cabang-cabang iman), pengertian, dalil, macam dan manfaatnya; meyakini bahwa dalam terdapat banyak cabangcabangnya; serta menerapkan beberapa sikap dan karakter sebagai cerminan cabang iman dalam kehidupan.'),
-(89, 101, 'Peserta didik menganalisis manfaat menghindari akhlak ma?m?mah; membuat karya yang mengandung konten manfaat menghindari sikap ma?m?mah; meyakini bahwa akhlak ma?m?mah adalah larangan dan akhlak ma?m?dah adalah perintah agama; serta membiasakan diri untuk menghindari akhlakma?m?mah dan menampilkan akhlak ma?m?dah dalam kehidupan sehari-hari.'),
-(90, 102, 'Peserta didik mampu menganalisis implementasi fikih mu‘?malah dan al-kulliyy?t al-khamsah (lima prinsip dasar hukum Islam; menyajikan paparan tentang fikih mu‘?malah dan al-kulliyy?t al-khamsah meyakini bahwa ketentuan fikih mu‘?malah dan al-kulliyy?t al-khamsah adalah ajaran agama; serta menumbuhkan jiwa kewirausahaan, kepedulian, dan kepekaan sosial.'),
-(91, 103, 'Peserta didik mampu menganalisis implementasi fikih mu‘?malah dan al-kulliyy?t al-khamsah (lima prinsip dasar hukum Islam; menyajikan paparan tentang fikih mu‘?malah dan al-kulliyy?t al-khamsah meyakini bahwa ketentuan fikih mu‘?malah dan al-kulliyy?t al-khamsah adalah ajaran agama; serta menumbuhkan jiwa kewirausahaan, kepedulian, dan kepekaan sosial.'),
+(87, 99, 'Peserta didik mampu menganalisis ayat Al-Qur\'an dan hadis tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja erta larangan pergaulan bebas dan zina; dapat membaca Al-Qur\'an dengan tartil, menghafal dengan fasih dan lancar ayat Al-Qur\'an serta Hadis tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja serta bahaya dari pergaulan bebas dan zina; dapat menyajikan konten dan paparan tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja serta larangan pergaulan bebas dan zina; meyakini bahwa sikap kompetitif dalam kebaikan dan etos kerja serta menghindari pergaulan bebas dan perbuatan zina adalah perintah agama; dan membiasakan sikap kompetitif dalam kebaikan dan etos kerja serta menghindari pergaulan bebas dan perbuatan zina dengan lebih berhati-hati dan menjaga kehormatan diri.\r\n'),
+(88, 100, 'Peserta didik menganalisis makna syu\'ab al-iman (cabang-cabang iman), pengertian, dalil, macam dan manfaatnya; mempresentasikan makna syu\'ab al-iman (cabang-cabang iman), pengertian, dalil, macam dan manfaatnya; meyakini bahwa dalam terdapat banyak cabang-cabangnya; serta menerapkan beberapa sikap dan karakter sebagai cerminan cabang iman dalam kehidupan.'),
+(89, 101, 'Peserta didik menganalisis manfaat menghindari akhlak mu\'amalah; membuat karya yang mengandung konten manfaat menghindari sikap mu\'amalah; meyakini bahwa akhlak mu\'amalah adalah larangan dan akhlak mu\'amalah adalah perintah agama; serta membiasakan diri untuk menghindari akhlak mu\'amalah dan menampilkan akhlak mu\'amalah dalam kehidupan sehari-hari.'),
+(90, 102, 'Peserta didik mampu menganalisis implementasi fikih mu\'malah dan al-kulliyyat al-khamsah (lima prinsip dasar hukum Islam; menyajikan paparan tentang fikih mu\'amalah dan al-kulliyyat al-khamsah meyakini bahwa ketentuan fikih mu\'amalah dan al-kulliyyat al-khamsah adalah ajaran agama; serta menumbuhkan jiwa kewirausahaan, kepedulian, dan kepekaan sosial.'),
+(91, 103, 'Peserta didik mampu menganalisis implementasi fikih mu\'amalah dan al-kulliyyat al-khamsah (lima prinsip dasar hukum Islam; menyajikan paparan tentang fikih mu\'amalah dan al-kulliyyat al-khamsah meyakini bahwa ketentuan fikih mu\'amalah dan al-kulliyyat al-khamsah adalah ajaran agama; serta menumbuhkan jiwa kewirausahaan, kepedulian, dan kepekaan sosial.'),
 (92, 104, 'Pada akhir fase E peserta didikdapatmenunjukkan kemampuan dalam mempraktikkan hasil evaluasi penerapan keterampilan gerak berupa permainan dan olahraga, aktivitas senam, aktivitasgerakberirama, dan aktivitas permainan dan olahraga air (kondisional) secara matang pada permainan, aktivitas jasmani lainnya, dan kehidupan nyata sehari-hari.'),
 (93, 105, 'Pada akhir fase E peserta didik dapat mengevaluasi fakta, konsep, prinsip, dan prosedur dalam melakukan evaluasi \r\npenerapan keterampilan gerak berupa permainan dan olahraga, aktivitas senam, aktivitas gerak berirama, dan aktivitas permainan dan olahraga air (kondisional) pada permainan, aktivitas jasmani lainnya, dan kehidupan nyata sehari- hari.\r\n'),
 (94, 106, 'Pada akhir fase E peserta didik dapat mengevaluasi fakta,konsep, prinsip, dan prosedur dan mempraktikkan latihan pengembangan kebugaran jasmani terkait kesehatan (physical fittness related health) dan kebugaran jasmani terkait keterampilan (physical fittness related skills), berdasarkan prinsip latihan (Frequency, Intensity, Time, Type/FITT) untuk mendapatkan kebugaran dengan status baik. Peserta didik juga dapat menunjukkan kemampuan dalam mengembangkan pola perilaku hidup sehat berupa penerapan konsep dan  prinsip pergaulan sehat antar remaja dan orang lain di sekitarnya.'),
@@ -339,8 +334,7 @@ CREATE TABLE `daftar_pustaka` (
 --
 
 INSERT INTO `daftar_pustaka` (`id`, `id_identitas`, `daftar_pustaka`) VALUES
-(20, 17, 'mm,mkkmkmkm'),
-(33, 29, 'nxnbnbxbcnxb');
+(20, 17, 'mm,mkkmkmkm');
 
 -- --------------------------------------------------------
 
@@ -451,7 +445,7 @@ INSERT INTO `elemen` (`id`, `id_mapel`, `elemen`) VALUES
 (96, 20, 'Keterampilan Proses'),
 (97, 21, 'Pemahaman Biologi'),
 (98, 21, 'Keterampilan Proses'),
-(99, 22, 'Al-Qur’an dan Hadis'),
+(99, 22, 'Al-Qur\'an dan Hadis'),
 (100, 22, 'Aqidah'),
 (101, 22, 'Akhlak'),
 (102, 22, 'Fikih'),
@@ -553,13 +547,6 @@ CREATE TABLE `file_modul` (
   `nama_file` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `file_modul`
---
-
-INSERT INTO `file_modul` (`id`, `id_identitas`, `nama_file`) VALUES
-(27, 29, '27122022004659_Modul Ajar_Manajemen Perkantoran dan Layanan Bisnis');
-
 -- --------------------------------------------------------
 
 --
@@ -571,13 +558,6 @@ CREATE TABLE `file_preview_modul` (
   `id_identitas` int(11) DEFAULT NULL,
   `nama_file` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `file_preview_modul`
---
-
-INSERT INTO `file_preview_modul` (`id`, `id_identitas`, `nama_file`) VALUES
-(18, 29, '27122022004659_Modul Ajar_Manajemen Perkantoran dan Layanan Bisnis_preview');
 
 -- --------------------------------------------------------
 
@@ -596,8 +576,7 @@ CREATE TABLE `glosarium` (
 --
 
 INSERT INTO `glosarium` (`id`, `id_identitas`, `glosarium`) VALUES
-(20, 17, 'n,mnmnmnmn'),
-(34, 29, 'nbnbnbnbn');
+(20, 17, 'n,mnmnmnmn');
 
 -- --------------------------------------------------------
 
@@ -626,8 +605,7 @@ CREATE TABLE `identitas_sekolah` (
 --
 
 INSERT INTO `identitas_sekolah` (`id`, `id_user`, `tahun_ajaran`, `program_keahlian`, `mata_pelajaran`, `kelas`, `semester`, `fase`, `elemen`, `capaian_pembelajaran`, `alokasi_waktu`, `created_at`, `updated_at`) VALUES
-(17, 15, '2021/2022', 'Teknik Komputer dan Jaringan dan Telekomunikasi', 'Dasar-dasar Teknik Jaringan Komputer dan Telekomunikasi - E', 'XI', 1, 'F', 'Dasar-dasar teknik jaringan komputer dan telekomunikasi', 'Pada akhir fase E, peserta didik mampu memahami tentang jenis alat ukur dan penggunaannya dalam pemeliharaan jaringan komputer dan sistem telekomunikasi.', '3 x 45', '2022-11-19 21:56:29', '2022-11-19 21:56:29'),
-(29, 1, '2020/2021', 'Manajemen Perkantoran dan Layanan Bisnis', 'Kimia', 'X', 1, 'E', 'Keterampilan Proses', '1. Mengamati\n2. Mempertanyakan dan memprediksi\n3. Merencanakan dan melakukan penyelidikan\n4. Memproses, menganalisis data dan informasi Menafsirkan informasi yang didapatkan dengan jujur dan bertanggung jawab.\n5. Mengevaluasi dan refleksi\n6. Mengkomunikasikan hasil\n', '1 x 45 menit', '2022-12-27 00:46:59', '2022-12-27 00:46:59');
+(17, 15, '2021/2022', 'Teknik Komputer dan Jaringan dan Telekomunikasi', 'Dasar-dasar Teknik Jaringan Komputer dan Telekomunikasi - E', 'XI', 1, 'F', 'Dasar-dasar teknik jaringan komputer dan telekomunikasi', 'Pada akhir fase E, peserta didik mampu memahami tentang jenis alat ukur dan penggunaannya dalam pemeliharaan jaringan komputer dan sistem telekomunikasi.', '3 x 45', '2022-11-19 21:56:29', '2022-11-19 21:56:29');
 
 -- --------------------------------------------------------
 
@@ -646,8 +624,7 @@ CREATE TABLE `inti` (
 --
 
 INSERT INTO `inti` (`id`, `id_kegiatan`, `kegiatan`) VALUES
-(27, 17, 'Guru menyampaikan materi dengan media Buku Paket'),
-(41, 29, 'Guru melakukan evaluasi terhadap siswa dengan tes tertulis atau tes lisan');
+(27, 17, 'Guru menyampaikan materi dengan media Buku Paket');
 
 -- --------------------------------------------------------
 
@@ -666,8 +643,7 @@ CREATE TABLE `kegiatan_pembelajaran` (
 --
 
 INSERT INTO `kegiatan_pembelajaran` (`id`, `id_identitas`, `pertemuan`) VALUES
-(17, 17, 1),
-(29, 29, 1);
+(17, 17, 1);
 
 -- --------------------------------------------------------
 
@@ -686,8 +662,7 @@ CREATE TABLE `kompetensi_awal` (
 --
 
 INSERT INTO `kompetensi_awal` (`id`, `id_identitas`, `kompetensi`) VALUES
-(17, 17, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(29, 29, 'Mengetahui apa itu desain komunikasi visual');
+(17, 17, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -1373,11 +1348,11 @@ INSERT INTO `list_tp` (`id`, `id_elemen`, `tp`) VALUES
 (449, 91, 'Menganalisis peran lembaga sosial dalam mewujudkan tertib sosial.'),
 (450, 91, 'Menganalisis berbagai ragam gejala sosial yang ada di masyarakat multikultural.'),
 (451, 92, 'Melakukan penelitian sosial sederhana tentang berbagai gejala sosial dengan menggunakan metode yang tepat untuk mengamati, menanya, mengumpulkan informasi, mengorganisasikan informasi, menarik kesimpulan, dan mengomunikasikan hasil penelitian.'),
-(452, 99, 'Memahami ayat Al-Qur’an dan hadis tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja serta larangan pergaulan bebas dan zina.'),
-(453, 100, 'Memahami makna syu‘ab al-iman(cabang-cabang iman), pengertian, dalil, macam dan manfaatnya.\r\n'),
+(452, 99, 'Memahami ayat Al-Qur\'an dan hadis tentang perintah untuk berkompetisi dalam kebaikan dan etos kerja serta larangan pergaulan bebas dan zina.'),
+(453, 100, 'Memahami makna syu\'ab al-iman(cabang-cabang iman), pengertian, dalil, macam dan manfaatnya.\r\n'),
 (454, 101, 'Memahami manfaat menghindarkan diri dari akhlak mazmumah dan manfaat akhlak mahmudah.'),
-(455, 102, 'Memahami fikih mu‘amalahdan al-kulliyyat al-khamsah (lima prinsip dasar hukum Islam dalam rangka menumbuhkan jiwa kewirausahaan, kepedulian, dan kepekaan sosial).\r\n'),
-(456, 103, 'Memahami perkembangan peradaban di Indonesia adalah sunatullah dan metode dakwah yang santun, moderat, bi al-hikmah wa al- mau‘izat al-hasanah adalah perintah Allah Swt.\r\n'),
+(455, 102, 'Memahami fikih mu\'amalah dan al-kulliyyat al-khamsah (lima prinsip dasar hukum Islam dalam rangka menumbuhkan jiwa kewirausahaan, kepedulian, dan kepekaan sosial).\r\n'),
+(456, 103, 'Memahami perkembangan peradaban di Indonesia adalah sunatullah dan metode dakwah yang santun, moderat, bi al-hikmah wa al- mau\'izat al-hasanah adalah perintah Allah Swt.\r\n'),
 (457, 93, 'Memahami hakikat ilmu kimia, metode ilmiah dan keselamatan kerja di laboratorium'),
 (458, 93, 'Menerapkan konsep kimia dalam kehidupan sehari-hari yang mendukung pembangunan berkelanjutan (Sustainable Development Goals)'),
 (459, 93, 'Menerapkan konsep kimia dalam pemanfaatan limbah dan bahan alam sebagai salah satu solusi masalah pencemaran lingkungan'),
@@ -1587,14 +1562,6 @@ CREATE TABLE `lkpd` (
   `lkpd` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `lkpd`
---
-
-INSERT INTO `lkpd` (`id`, `id_identitas`, `lkpd`) VALUES
-(17, 17, '1902319_Fauzan Fiqriansyah_UTS PERENCANAAN PEMBELAJARAN ILMU KOMPUTER.pdf'),
-(27, 29, 'Refleksi Pelaksanaan Pembelajaran.pptx');
-
 -- --------------------------------------------------------
 
 --
@@ -1667,8 +1634,7 @@ CREATE TABLE `materi` (
 --
 
 INSERT INTO `materi` (`id`, `id_identitas`, `materi`) VALUES
-(25, 17, 'njhkjkjnk'),
-(51, 29, 'Memahami pekerjaan atau profesi');
+(25, 17, 'njhkjkjnk');
 
 -- --------------------------------------------------------
 
@@ -1687,8 +1653,7 @@ CREATE TABLE `media` (
 --
 
 INSERT INTO `media` (`id`, `id_identitas`, `media`) VALUES
-(28, 17, 'Lembar kerja peserta didik'),
-(51, 29, 'Lembar kerja peserta didik');
+(28, 17, 'Lembar kerja peserta didik');
 
 -- --------------------------------------------------------
 
@@ -1707,8 +1672,7 @@ CREATE TABLE `model_pembelajaran` (
 --
 
 INSERT INTO `model_pembelajaran` (`id`, `id_identitas`, `model_pembelajaran`) VALUES
-(17, 17, 'Project Based Learning (PjBL)'),
-(29, 29, 'Production based Training (PBT).');
+(17, 17, 'Project Based Learning (PjBL)');
 
 -- --------------------------------------------------------
 
@@ -1720,6 +1684,7 @@ CREATE TABLE `payment_history` (
   `id` int(11) NOT NULL,
   `order_id` bigint(25) NOT NULL,
   `product_name` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
   `amount` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
@@ -1736,12 +1701,12 @@ CREATE TABLE `payment_history` (
 -- Dumping data for table `payment_history`
 --
 
-INSERT INTO `payment_history` (`id`, `order_id`, `product_name`, `amount`, `name`, `email`, `phone_no`, `city`, `school_name`, `pay_status`, `token`, `created_at`, `is_deleted`) VALUES
-(11, 1520628741, 'AdminGuru Professional', 1000000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, '4e23797b-b1a4-4344-973a-f101ed2655bb', '2022-12-28 08:41:10', 1),
-(12, 1901921235, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'Fauzan', 2, 'bc9348c9-ce40-4306-b513-4461fe09f3e9', '2022-12-28 08:41:46', 1),
-(13, 648038522, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 0, '', '2022-12-28 08:43:22', 1),
-(14, 188145610, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, '3a45a3c1-89a5-435f-9e47-253f2a3e9112', '2022-12-28 14:43:08', 1),
-(15, 1570159197, 'AdminGuru Basic', 500000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+628881867219', 'Bandung', 'SMKN 1 Cimahi', 2, 'd4754c6c-d647-4102-8aa3-ee863bb06916', '2022-12-29 02:07:17', 0);
+INSERT INTO `payment_history` (`id`, `order_id`, `product_name`, `qty`, `amount`, `name`, `email`, `phone_no`, `city`, `school_name`, `pay_status`, `token`, `created_at`, `is_deleted`) VALUES
+(32, 256649115, 'AdminGuru Individual', 1, 300000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, 'b699b69a-19d7-41d5-b670-49c364af30b7', '2023-01-02 11:32:28', 0),
+(33, 1199853559, 'AdminGuru Individual', 1, 300000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, 'ad204215-483d-48f3-917a-65fcf5e779f0', '2023-01-02 11:44:19', 0),
+(34, 2098192926, 'AdminGuru Individual', 1, 300000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+62888387287381', 'dhjhsdhjdshd', 'SMK 1 Cimahi', 2, '80060e74-8666-4769-a690-1523a0563e0d', '2023-01-02 11:59:44', 0),
+(35, 1197224744, 'AdminGuru Individual', 1, 300000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+6288801867219', 'Bandung', 'SMK 1 Cimahi', 2, '0a3f7f7b-5587-4239-9fc8-b4717cfafa40', '2023-01-02 12:04:24', 0),
+(36, 462325730, 'AdminGuru Basic', 1, 15000, 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', '+628881867219', 'Bandung', 'SMKN 1 Cimahi', 2, '87fd0d8a-8c41-44de-a256-12a359ed2b01', '2023-01-02 20:17:07', 0);
 
 -- --------------------------------------------------------
 
@@ -1760,8 +1725,7 @@ CREATE TABLE `pemahaman_bermakna` (
 --
 
 INSERT INTO `pemahaman_bermakna` (`id`, `id_identitas`, `pemahaman_bermakna`) VALUES
-(17, 17, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif'),
-(29, 29, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
+(17, 17, ' Mengetahui pekerjaan atau profesi dalam bidang Desain Komunikasi Visual,  dan kewirausahaan di bidang ekonomi kreatif');
 
 -- --------------------------------------------------------
 
@@ -1780,8 +1744,7 @@ CREATE TABLE `pendahuluan` (
 --
 
 INSERT INTO `pendahuluan` (`id`, `id_kegiatan`, `kegiatan`) VALUES
-(27, 17, 'Guru menyampaikan metode pembelajaran dan teknik penilaian yang akan digunakan'),
-(41, 29, 'Guru membuat kesepakatan belajar bersama peserta didik');
+(27, 17, 'Guru menyampaikan metode pembelajaran dan teknik penilaian yang akan digunakan');
 
 -- --------------------------------------------------------
 
@@ -1800,8 +1763,7 @@ CREATE TABLE `pengayaan_remedial` (
 --
 
 INSERT INTO `pengayaan_remedial` (`id`, `id_identitas`, `pengayaan_remedial`) VALUES
-(27, 17, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.'),
-(41, 29, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.');
+(27, 17, 'Pengayaan diberikan kepada peserta didik yang menguasai materi ini dengan sangat baik, yaitu dengan cara memberikan ragam soal yang tingkatannya lebih tinggi.');
 
 -- --------------------------------------------------------
 
@@ -1820,8 +1782,7 @@ CREATE TABLE `penutup` (
 --
 
 INSERT INTO `penutup` (`id`, `id_kegiatan`, `kegiatan`) VALUES
-(30, 17, 'Merencanakan kegiatan tindak lanjut dalam bentuk pembelajaran remedi, program pengayaan, dan layanan konseling'),
-(45, 29, 'Merencanakan kegiatan tindak lanjut dalam bentuk pembelajaran remedi, program pengayaan, dan layanan konseling');
+(30, 17, 'Merencanakan kegiatan tindak lanjut dalam bentuk pembelajaran remedi, program pengayaan, dan layanan konseling');
 
 -- --------------------------------------------------------
 
@@ -1840,8 +1801,7 @@ CREATE TABLE `persiapan_pembelajaran` (
 --
 
 INSERT INTO `persiapan_pembelajaran` (`id`, `id_identitas`, `persiapan_pembelajaran`) VALUES
-(27, 17, 'Guru menyusun instrument assesmen yang digunakan'),
-(52, 29, 'Guru menyusun instrument assesmen yang digunakan');
+(27, 17, 'Guru menyusun instrument assesmen yang digunakan');
 
 -- --------------------------------------------------------
 
@@ -1860,8 +1820,7 @@ CREATE TABLE `pertanyaan_pemantik` (
 --
 
 INSERT INTO `pertanyaan_pemantik` (`id`, `id_identitas`, `pertanyaan_pemantik`) VALUES
-(17, 17, 'Apakah Anda pernah mendengar tentang Technopreneur ?'),
-(39, 29, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
+(17, 17, 'Apakah Anda pernah mendengar tentang Technopreneur ?');
 
 -- --------------------------------------------------------
 
@@ -1880,8 +1839,7 @@ CREATE TABLE `profil_pancasila` (
 --
 
 INSERT INTO `profil_pancasila` (`id`, `id_identitas`, `profil_pancasila`) VALUES
-(32, 17, 'Kreatif'),
-(63, 29, 'Kreatif');
+(32, 17, 'Kreatif');
 
 -- --------------------------------------------------------
 
@@ -1926,8 +1884,7 @@ CREATE TABLE `refleksi` (
 --
 
 INSERT INTO `refleksi` (`id`, `id_identitas`, `refleksi`) VALUES
-(27, 17, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?'),
-(41, 29, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?');
+(27, 17, 'Apa yang menyenangkan dalam kegiatan pembelajaran hari ini?');
 
 -- --------------------------------------------------------
 
@@ -1940,6 +1897,56 @@ CREATE TABLE `reset_password` (
   `sess` varchar(23) NOT NULL,
   `email` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subscribe`
+--
+
+CREATE TABLE `subscribe` (
+  `id` int(11) NOT NULL,
+  `paket` int(11) NOT NULL,
+  `id_paket_basic` int(11) DEFAULT NULL,
+  `id_paket_unli` int(11) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subscribe`
+--
+
+INSERT INTO `subscribe` (`id`, `paket`, `id_paket_basic`, `id_paket_unli`, `created_at`) VALUES
+(11, 2, NULL, 5, '2023-01-02 11:44:19'),
+(12, 2, NULL, 6, '2023-01-02 12:04:24'),
+(13, 1, 5, NULL, '2023-01-02 20:17:07');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subs_basic`
+--
+
+CREATE TABLE `subs_basic` (
+  `id` int(11) NOT NULL,
+  `limit_download_docx` int(11) NOT NULL,
+  `limit_download_pdf` int(11) NOT NULL,
+  `limit_edit` int(11) NOT NULL,
+  `limit_hapus` int(11) NOT NULL,
+  `download_docx` int(11) NOT NULL,
+  `download_pdf` int(11) NOT NULL,
+  `edit` int(11) NOT NULL,
+  `hapus` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `subs_basic`
+--
+
+INSERT INTO `subs_basic` (`id`, `limit_download_docx`, `limit_download_pdf`, `limit_edit`, `limit_hapus`, `download_docx`, `download_pdf`, `edit`, `hapus`) VALUES
+(3, 2, 2, 2, 2, 2, 2, 2, 2),
+(4, 1, 1, 1, 1, 1, 1, 1, 1),
+(5, 1, 1, 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -1958,8 +1965,7 @@ CREATE TABLE `sumber` (
 --
 
 INSERT INTO `sumber` (`id`, `id_identitas`, `sumber`) VALUES
-(31, 17, 'Laman E-Learning'),
-(54, 29, 'Laman E-Learning');
+(31, 17, 'Laman E-Learning');
 
 -- --------------------------------------------------------
 
@@ -1978,21 +1984,22 @@ CREATE TABLE `table_user` (
   `mapel` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `profile_img` varchar(255) NOT NULL,
-  `is_premium` tinyint(1) NOT NULL,
+  `is_subscribe` tinyint(1) NOT NULL,
   `limit_free` int(11) NOT NULL,
-  `downloads_free` int(11) NOT NULL
+  `downloads_free` int(11) NOT NULL,
+  `id_subscribe` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `table_user`
 --
 
-INSERT INTO `table_user` (`id`, `nip`, `nama`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`, `profile_img`, `is_premium`, `limit_free`, `downloads_free`) VALUES
-(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'storm_trooper.jpg', 0, 3, 0),
-(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'avatar.jpg', 0, 3, 0),
-(12, '198609262015051000', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah126@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Basis Data', '', 'avatar.jpg', 0, 3, 0),
-(15, '192891291829829', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M. Pd.', 'Matematika', '$2y$10$FGSGKTpV3f7qqmBxG9OjYeFq1ARzFPA7PbqMbdzaef8DJutxK5/Gu', 'storm_trooper.jpg', 0, 3, 0),
-(20, '', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah127@gmail.com', '', '', '', '', '$2y$10$U5xHLbM/pcpG5wWXbKpxveKAgKduiw/jZLreJZKM3RBkKPK7val8q', 'avatar.jpg', 0, 3, 0);
+INSERT INTO `table_user` (`id`, `nip`, `nama`, `email`, `jabatan`, `sekolah`, `kepala_sekolah`, `mapel`, `password`, `profile_img`, `is_subscribe`, `limit_free`, `downloads_free`, `id_subscribe`) VALUES
+(1, '198609262015051001', 'Willy Surya Wardhana, S.Pd.', 'willysurya@gmail.com', 'Guru', 'SMK 3 Pasundan Cimahi', 'Subaryo, S.Pd., M.Pd', 'Animasi', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'storm_trooper.jpg', 0, 3, 3, NULL),
+(4, '190290298989829', 'Gilang Zhanuardy, S. Pd., M. Pd.', 'gilangzhanuardy@gmail.com', 'Kepala Sekolah', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Matematika', '$2y$10$vX.C1E8iAmX2fWJRco9dReDG3nOtL270oe.c6bVQCn8e00gQSL4fS', 'avatar.jpg', 0, 3, 0, NULL),
+(12, '198609262015051000', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah126@gmail.com', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M.Pd.', 'Basis Data', '', 'avatar.jpg', 0, 3, 0, NULL),
+(15, '192891291829829', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah@upi.edu', 'Guru', 'SMKN 13 BANDUNG', 'Suparno, S. Pd., M. Pd.', 'Matematika', '$2y$10$FGSGKTpV3f7qqmBxG9OjYeFq1ARzFPA7PbqMbdzaef8DJutxK5/Gu', 'storm_trooper.jpg', 0, 3, 0, NULL),
+(20, '', 'Fauzan Fiqriansyah', 'fauzanfiqriansyah127@gmail.com', '', '', '', '', '$2y$10$U5xHLbM/pcpG5wWXbKpxveKAgKduiw/jZLreJZKM3RBkKPK7val8q', 'avatar.jpg', 0, 3, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2011,8 +2018,7 @@ CREATE TABLE `target_peserta_didik` (
 --
 
 INSERT INTO `target_peserta_didik` (`id`, `id_identitas`, `target_peserta`) VALUES
-(17, 17, ' Peserta didik regular Siswa Desain Komunikasi visual'),
-(29, 29, ' Peserta didik regular Siswa Desain Komunikasi visual');
+(17, 17, ' Peserta didik regular Siswa Desain Komunikasi visual');
 
 -- --------------------------------------------------------
 
@@ -2031,8 +2037,27 @@ CREATE TABLE `tujuan_pembelajaran` (
 --
 
 INSERT INTO `tujuan_pembelajaran` (`id`, `id_identitas`, `tujuan_pembelajaran`) VALUES
-(17, 17, 'Memahami jenis alat ukur pada jaringan komputer dan sistem telekomunikasi.'),
-(29, 29, 'Menerapkan konsep hukum-hukum dasar kimia untuk menyelesaikan perhitungan kimia');
+(17, 17, 'Memahami jenis alat ukur pada jaringan komputer dan sistem telekomunikasi.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `unlimited_subs`
+--
+
+CREATE TABLE `unlimited_subs` (
+  `id` int(11) NOT NULL,
+  `expired` date NOT NULL,
+  `created_at` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `unlimited_subs`
+--
+
+INSERT INTO `unlimited_subs` (`id`, `expired`, `created_at`) VALUES
+(5, '2023-07-02', '2023-01-02'),
+(6, '2023-07-02', '2023-01-01');
 
 --
 -- Indexes for dumped tables
@@ -2327,6 +2352,20 @@ ALTER TABLE `reset_password`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_paket_basic` (`id_paket_basic`),
+  ADD KEY `fk_paket_unli` (`id_paket_unli`);
+
+--
+-- Indexes for table `subs_basic`
+--
+ALTER TABLE `subs_basic`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sumber`
 --
 ALTER TABLE `sumber`
@@ -2337,7 +2376,8 @@ ALTER TABLE `sumber`
 -- Indexes for table `table_user`
 --
 ALTER TABLE `table_user`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_subscribe` (`id_subscribe`);
 
 --
 -- Indexes for table `target_peserta_didik`
@@ -2354,6 +2394,12 @@ ALTER TABLE `tujuan_pembelajaran`
   ADD KEY `id_identitas` (`id_identitas`);
 
 --
+-- Indexes for table `unlimited_subs`
+--
+ALTER TABLE `unlimited_subs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -2361,31 +2407,31 @@ ALTER TABLE `tujuan_pembelajaran`
 -- AUTO_INCREMENT for table `ases_for`
 --
 ALTER TABLE `ases_for`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `ases_kog`
 --
 ALTER TABLE `ases_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `ases_non_kog`
 --
 ALTER TABLE `ases_non_kog`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT for table `ases_sum`
 --
 ALTER TABLE `ases_sum`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `bahan_bacaan`
 --
 ALTER TABLE `bahan_bacaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `capaian_pembelajaran`
@@ -2397,7 +2443,7 @@ ALTER TABLE `capaian_pembelajaran`
 -- AUTO_INCREMENT for table `daftar_pustaka`
 --
 ALTER TABLE `daftar_pustaka`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `elemen`
@@ -2409,43 +2455,43 @@ ALTER TABLE `elemen`
 -- AUTO_INCREMENT for table `file_modul`
 --
 ALTER TABLE `file_modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `file_preview_modul`
 --
 ALTER TABLE `file_preview_modul`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `glosarium`
 --
 ALTER TABLE `glosarium`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `identitas_sekolah`
 --
 ALTER TABLE `identitas_sekolah`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `inti`
 --
 ALTER TABLE `inti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `kegiatan_pembelajaran`
 --
 ALTER TABLE `kegiatan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `kompetensi_awal`
 --
 ALTER TABLE `kompetensi_awal`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `list_ases_for`
@@ -2523,7 +2569,7 @@ ALTER TABLE `list_tp`
 -- AUTO_INCREMENT for table `lkpd`
 --
 ALTER TABLE `lkpd`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajaran`
@@ -2535,67 +2581,67 @@ ALTER TABLE `mata_pelajaran`
 -- AUTO_INCREMENT for table `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `media`
 --
 ALTER TABLE `media`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
 
 --
 -- AUTO_INCREMENT for table `model_pembelajaran`
 --
 ALTER TABLE `model_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `payment_history`
 --
 ALTER TABLE `payment_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `pemahaman_bermakna`
 --
 ALTER TABLE `pemahaman_bermakna`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `pendahuluan`
 --
 ALTER TABLE `pendahuluan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `pengayaan_remedial`
 --
 ALTER TABLE `pengayaan_remedial`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `penutup`
 --
 ALTER TABLE `penutup`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
 
 --
 -- AUTO_INCREMENT for table `persiapan_pembelajaran`
 --
 ALTER TABLE `persiapan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `pertanyaan_pemantik`
 --
 ALTER TABLE `pertanyaan_pemantik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `profil_pancasila`
 --
 ALTER TABLE `profil_pancasila`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
 -- AUTO_INCREMENT for table `program_keahlian`
@@ -2607,7 +2653,7 @@ ALTER TABLE `program_keahlian`
 -- AUTO_INCREMENT for table `refleksi`
 --
 ALTER TABLE `refleksi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
 -- AUTO_INCREMENT for table `reset_password`
@@ -2616,10 +2662,22 @@ ALTER TABLE `reset_password`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `subs_basic`
+--
+ALTER TABLE `subs_basic`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `sumber`
 --
 ALTER TABLE `sumber`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `table_user`
@@ -2631,13 +2689,19 @@ ALTER TABLE `table_user`
 -- AUTO_INCREMENT for table `target_peserta_didik`
 --
 ALTER TABLE `target_peserta_didik`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
 -- AUTO_INCREMENT for table `tujuan_pembelajaran`
 --
 ALTER TABLE `tujuan_pembelajaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
+--
+-- AUTO_INCREMENT for table `unlimited_subs`
+--
+ALTER TABLE `unlimited_subs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
@@ -2824,10 +2888,23 @@ ALTER TABLE `refleksi`
   ADD CONSTRAINT `refleksi_ibfk_1` FOREIGN KEY (`id_identitas`) REFERENCES `identitas_sekolah` (`id`);
 
 --
+-- Constraints for table `subscribe`
+--
+ALTER TABLE `subscribe`
+  ADD CONSTRAINT `fk_paket_basic` FOREIGN KEY (`id_paket_basic`) REFERENCES `subs_basic` (`id`),
+  ADD CONSTRAINT `fk_paket_unli` FOREIGN KEY (`id_paket_unli`) REFERENCES `unlimited_subs` (`id`);
+
+--
 -- Constraints for table `sumber`
 --
 ALTER TABLE `sumber`
   ADD CONSTRAINT `sumber_ibfk_1` FOREIGN KEY (`id_identitas`) REFERENCES `identitas_sekolah` (`id`);
+
+--
+-- Constraints for table `table_user`
+--
+ALTER TABLE `table_user`
+  ADD CONSTRAINT `fk_subscribe` FOREIGN KEY (`id_subscribe`) REFERENCES `subscribe` (`id`);
 
 --
 -- Constraints for table `target_peserta_didik`
