@@ -48,7 +48,7 @@
 				<div class="collapse navbar-collapse navbar-right" id="navbarNav"  >
 					<ul class="navbar-nav mb-2 mb-lg-0 icon-sosmed">
 						<li class="nav-item">
-                        	<a class="nav-link active" aria-current="page" href="#">Home</a>
+                        	<a class="nav-link active" aria-current="page" href="../">Home</a>
                         </li>
                         <li class="nav-item">
                         	<a class="nav-link" href="#">About us</a>
@@ -60,7 +60,7 @@
 							if(!isset($_SESSION['nama'])){
 								echo '<li class="nav-text"><a class="nav-link active" href="./login"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log In</a></li>';
 							}else{
-								echo '<li class="nav-text"><a class="nav-link active" href="backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a></li><li class="nav-text"><a class="nav-link active" href="../create-modul-ajar">Create Modul</a></li>';
+								echo '<li class="nav-text"><a class="nav-link active" href="../backend/logout/logout.php"><i class="bi bi-person-circle"></i>&nbsp;&nbsp;Log Out</a></li><li class="nav-text"><a class="nav-link active" href="../create-modul-ajar">Create Modul</a></li>';
 							}
 
 						 ?>

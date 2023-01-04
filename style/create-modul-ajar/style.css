@@ -81,6 +81,7 @@ nav{
 
 .nav-info-user{
 	padding-left: 25px;
+	padding-top: 0px;
 }
 
 .container{
@@ -277,6 +278,36 @@ nav{
 	margin-top: 15px;
 }
 
+@media screen and (max-width: 991px) {
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+    .icon-sosmed{
+        display: inline-block !important;
+        margin-right: 20%;
+    }
+	.nav-info-user{
+		padding-top: 70px;
+	}
+}
+
+
+@media screen and (max-width: 694px) {
+	.nav-info-user{
+		padding-top: 50px;
+	}
+}
+
+@media screen and (max-width: 425px) {
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+}
 
 @media screen and (max-width: 401px) {
 	.title{
