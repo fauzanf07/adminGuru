@@ -22,8 +22,7 @@
         if($row1>0){
             echo json_encode(array('statusCode' => 205));
         }else{
-            $voucExpired = strtotime($expired);
-            if($now>$voucExpired){
+            if($now>$expired){
                 echo json_encode(array('statusCode' => 203));
             }else{
                 $date = date('Y-m-d H:i:s');
