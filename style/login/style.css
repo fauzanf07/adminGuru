@@ -249,9 +249,8 @@ footer{
 
 @media screen and (max-width: 425px) {
 	.row-1{
-		margin-left: 50px;
-		margin-right: 50px;
-		margin-top: 100px;
+		margin-top: 0;
+		padding-top: 0;
 	}
 
 	.submit-btn{
@@ -279,4 +278,10 @@ footer{
         display: inline-block !important;
         margin-right: 20%;
     }
+
+	.row-1{
+		margin-top: 0;
+		padding-top: 0;
+	}
+
 }
