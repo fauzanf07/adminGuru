@@ -244,7 +244,7 @@
 			<div class="vouc-code">
 				<div class="input-group mb-3">
 					<input type="text" class="form-control" placeholder="Masukkan kode voucher anda" aria-label="Voucher Code" aria-describedby="button-addon2" id="voucherCode">
-					<button class="btn btn-redeem" type="button" id="redeem">Redeem</button>
+					<button class="btn btn-redeem" type="button" id="redeem" onclick="redeemVoucher()">Redeem</button>
 				</div>
 			</div>
 		</div>
