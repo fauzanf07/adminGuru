@@ -40,7 +40,7 @@
 			$_SESSION['downloads_free'] = $row["downloads_free"];
 		  	$client->revokeToken($_SESSION['access_token']);
     		unset($_SESSION['access_token']);  
-		  	header("Location: ../create-modul-ajar");
+		  	header("Location: ../../create-modul-ajar");
   		}else{
   			$sql = "INSERT INTO table_user VALUES('','','$fullname','$email', '','','','','', 'avatar.jpg','0','3','0',null)";
   			$result = mysqli_query($con,$sql);
@@ -80,7 +80,7 @@
 					]
 				];
 				$response = $mj->post(Resources::$Email, ['body' => $body]);
-				header("Location: ../create-modul-ajar");
+				header("Location: ../../create-modul-ajar");
 			}else{
 				echo "There's something wrong with server";
 			}
