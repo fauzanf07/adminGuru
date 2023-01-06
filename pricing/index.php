@@ -233,14 +233,20 @@
 						</div>
 					</div>
 				</div>
-				<div class="col col-sm-12 col-md-12 col-lg-12">
-					
-				</div>
 				
 			</div>
 		</div>
 		<div class="btn-pembayaran">
 			<a href="../payment" class="btn btn-primary btn-lg btn-daftar">Lihat Pembayaran Anda</a>
+		</div>
+		<div class="voucher-wrapper">
+			<h3> Anda memiliki Voucher?</h3><br/>
+			<div class="vouc-code">
+				<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="Masukkan kode voucher anda" aria-label="Voucher Code" aria-describedby="button-addon2" id="voucherCode">
+					<button class="btn btn-redeem" type="button" id="redeem" onclick="redeemVoucher()">Redeem</button>
+				</div>
+			</div>
 		</div>
 		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 	</div>

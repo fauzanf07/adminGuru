@@ -7,7 +7,11 @@
     if(in_array($_SERVER['REMOTE_ADDR'], $whitelist)){
         $mainUrl = "https://localhost/adminguru/"; 
     }else{
-        $mainUrl = "https://adminguru.id/"; 
+        if($_SERVER['SERVER_NAME'] == "adminguru.id"){
+            $mainUrl = "https://adminguru.id/"; 
+        }else{
+            $mainUrl = "https://app.stg.adminguru.id/"; 
+        }
+        
     }
-    
 ?>
