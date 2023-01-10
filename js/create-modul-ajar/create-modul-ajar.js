@@ -6,6 +6,13 @@ function isEmpty(str) {
 }
 $(document).ready( function () {
     $('#tableModul').DataTable();
+	$('#formModul').sayt();
+	console.log($.cookie('prokel'));
+
+	if($('#formModul').sayt({'checksaveexists': true}) == true)
+	{
+		console.log('Form has an existing save cookie.');
+	}
 } );
 
 // $(window).scroll(function(e){ 
@@ -32,27 +39,8 @@ $('#profile-pic').click(function(){
 
 $('#programKeahlian').on('change',function(){
 	var prokel = $(this).val();
-	$.ajax({
-		url: "../backend/create-modul-ajar/get_mapel.php",
-		type: "POST",
-		data: {
-			prokel: prokel			
-		},
-		cache: false,
-		success: function(dataResult){
-			var dataResult = JSON.parse(dataResult);
-			console.log(dataResult.rows.length);
-			if(dataResult.statusCode==201){
-				$('.option-mapel').remove();
-				for(i=0;i<dataResult.rows.length;i++){
-					$('#mapel').append('<option value="'+dataResult.rows[i].id+'" class="option-mapel">'+dataResult.rows[i].mata_pelajaran+'</option>');
-				}
-			}
-			else if(dataResult.statusCode==202){
-				console.log('gagal');
-			}
-		}
-	});
+	$.cookie('prokel',prokel);
+	populateMapel(prokel);
 });
 
 $('#mapel').on('change',function(){
@@ -121,6 +109,29 @@ $('#elemen').on('change',function(){
 	});
 });
 
+function populateMapel(prokel){
+	$.ajax({
+		url: "../backend/create-modul-ajar/get_mapel.php",
+		type: "POST",
+		data: {
+			prokel: prokel			
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.rows.length);
+			if(dataResult.statusCode==201){
+				$('.option-mapel').remove();
+				for(i=0;i<dataResult.rows.length;i++){
+					$('#mapel').append('<option value="'+dataResult.rows[i].id+'" class="option-mapel">'+dataResult.rows[i].mata_pelajaran+'</option>');
+				}
+			}
+			else if(dataResult.statusCode==202){
+				console.log('gagal');
+			}
+		}
+	});
+}
 
 $('#buatModulAjar').click(function(){
 	if(validatePage3()){

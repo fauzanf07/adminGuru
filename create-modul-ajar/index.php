@@ -289,7 +289,7 @@
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran<span class="bintang-merah">*</span></span>
-												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" required>
+												  <input type="text" class="form-control" placeholder="Tahun Ajaran"  aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" name="tahunAjar" required>
 												    <datalist id="tahunajar-options">
 														<option value="2020/2021">2020/2021</option>
 														<option value="2021/2022">2021/2022</option>
@@ -298,7 +298,7 @@
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Program Keahlian<span class="bintang-merah">*</span></label>
-													<select class="form-select" id="programKeahlian" required>
+													<select class="form-select" id="programKeahlian" name="programKeahlian" required>
 													    <option value="" selected>Choose...</option>
 													    <?php
 													    	$query = "SELECT * FROM program_keahlian";
@@ -311,28 +311,28 @@
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran<span class="bintang-merah">*</span></label>
-													<select class="form-select" id="mapel" required>
+													<select class="form-select" id="mapel" name="mapel" required>
 															<option selected>Choose...</option>
 													</select>
 												</div>
 												<div class="input-group mb-3">
 												  <span class="input-group-text">Kelas, Semester, dan Fase<span class="bintang-merah">*</span></span>
-												  	<select class="form-select" id="kelas" required>
+												  	<select class="form-select" id="kelas" name="kelas" required>
 													    <option selected>Choose...</option>
 													    <option value="x">X</option>
 													    <option value="xi">XI</option>
 													    <option value="xii">XII</option>
 													</select>
-												  	<select class="form-select" id="semester" required>
+												  	<select class="form-select" id="semester" name="semester" required>
 													    <option selected>Choose...</option>
 													    <option value="1">1</option>
 													    <option value="1">2</option>
 													</select>
-													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" value="" disabled="disabled">
+													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" name="fase" value="" disabled="disabled">
 												</div>
 												<div class="input-group mb-3">
 														<span class="input-group-text">Elemen<span class="bintang-merah">*</span></span>
-														<select class="form-select" id="elemen" required>
+														<select class="form-select" id="elemen" name="elemen" required>
 															<option selected>Choose...</option>
 														</select>
 												</div>
@@ -929,6 +929,8 @@
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery-save-as-you-type-master/source/sayt.min.jquery.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery-save-as-you-type-master/dependencies/jquery-cookie.js"></script>
 
 	
 </html>
