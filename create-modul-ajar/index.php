@@ -25,7 +25,7 @@
 <html>
 <head>
 	<title>adminguru &centerdot; Pembuatan Modul Ajar</title>
-	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css?version=1.0">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +75,7 @@
 								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
 							</li>
 							<li class="nav-icon icon-sosmed">
-								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
+								<a class="nav-link icon-sosmed" href="http://instagram.com/adminguruid" target="_blank"><i class="bi bi-instagram"></i></a>
 							</li>
 						</ul>
 					</div>

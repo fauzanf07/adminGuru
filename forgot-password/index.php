@@ -9,7 +9,7 @@
 
 <head>
 	<title>adminguru &centerdot; Forgot Password</title>
-	<link rel="stylesheet" type="text/css" href="../style/forgot-password/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/forgot-password/style.css?version=1.0">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
@@ -62,7 +62,7 @@
 							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
 						</li>
 						<li class="nav-icon icon-sosmed">
-							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-youtube"></i></a>
+							<a class="nav-link icon-sosmed" href="http://instagram.com/adminguruid" target="_blank"><i class="bi bi-instagram"></i></a>
 						</li>
 					</ul>
 				</div>
