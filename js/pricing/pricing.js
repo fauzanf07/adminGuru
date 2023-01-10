@@ -110,3 +110,65 @@ function showToast(msg){
 
     toast.show()
 }
+
+function redeemVoucher(){
+    const voucCode = $('#voucherCode').val();
+    if(!isEmpty(voucCode)){
+        $.ajax({
+            url: "../backend/voucher/redeem.php",
+            type: "POST",
+            data: {
+                voucCode: voucCode	
+            },
+            cache: false,
+            success: function(dataResult){
+                var dataResult = JSON.parse(dataResult);
+                if(dataResult.statusCode==201){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Kode voucher berhasil diredeem',
+                        icon: 'success',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    }).then((result) =>{
+                        if(result.isConfirmed){
+                            location.reload();
+                        }});
+                }
+                else if(dataResult.statusCode==202){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'There is something wrong',
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    })
+                }else if(dataResult.statusCode==203){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Voucher sudah kadaluwarsa',
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    })
+                }else if(dataResult.statusCode==204){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Kode voucher yang anda masukan salah',
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    })
+                }else if(dataResult.statusCode==205){
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Kode voucher yang anda masukan sudah digunakan',
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                        confirmButtonColor: "#d63630"
+                    })
+                }
+            }
+        });
+    }
+}

@@ -148,5 +148,23 @@ footer {
 		justify-content: center;
 		margin-top: 60px;
 	}
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
 
+}
+
+@media screen and (max-width: 991px) {
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+    .icon-sosmed{
+        display: inline-block !important;
+        margin-right: 20%;
+    }
 }

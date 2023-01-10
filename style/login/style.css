@@ -246,3 +246,42 @@ footer{
 	}
 
 }
+
+@media screen and (max-width: 425px) {
+	.row-1{
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+	.submit-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 60px;
+	}
+	
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+}
+
+@media screen and (max-width: 991px) {
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+    .icon-sosmed{
+        display: inline-block !important;
+        margin-right: 20%;
+    }
+
+	.row-1{
+		margin-top: 0;
+		padding-top: 0;
+	}
+
+}

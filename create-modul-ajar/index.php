@@ -133,7 +133,7 @@
 									$r_basic = mysqli_fetch_assoc($result);
 									?>
 									<div class="free-premium-limit">
-										<center><span><b>Paket Basic</b></span><br/></center>
+										<center><span><b>Mode Limited</b></span><br/></center>
 										<span>Batas Download Docx:<span>
 										<div class="progress">
 											<div class="progress-bar" id="downloadDocxBasic" role="progressbar" aria-label="Example with label" style="width: <?php echo ($r_basic['download_docx']/$r_basic['limit_download_docx'])*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><span id="contentPBDocx"><?php echo $r_basic['download_docx'] . " / ".$r_basic['limit_download_docx'] ?></span></div>
@@ -155,7 +155,7 @@
 										</div>
 									</div>
 						<?php			
-								}else if($paket==2){
+								}else if($paket==2 || $paket==3){
 									$sql = "SELECT * FROM table_user as a LEFT JOIN subscribe as b ON a.id_subscribe = b.id LEFT JOIN unlimited_subs c ON c.id = b.id_paket_unli WHERE a.email ='$email'";
 									$result = mysqli_query($con, $sql);
 									$r = mysqli_fetch_assoc($result);
@@ -170,7 +170,7 @@
 									$daysTillExpired = abs($diff/(60 * 60)/24);
 						?>
 								<div class="free-premium-limit">
-									<center><span><b>Paket Individual</b></span><br/><br/></center>
+									<center><span><b>Mode Unlimited</b></span><br/><br/></center>
 									<span>Batas Hari : <?php echo $dateExpired; ?></span>
 									<div class="progress">
 										<div class="progress-bar" id="downloadInd" role="progressbar" aria-label="Example with label" style="width: <?php echo ($daysTillNow/$daysTillExpired)*100; ?>%;" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"><?php echo $daysTillNow . " / ". $daysTillExpired . "Hari"; ?></div>

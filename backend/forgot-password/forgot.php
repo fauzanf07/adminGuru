@@ -32,7 +32,7 @@
 							'Email' => $email
 						]
 						],
-						'TemplateID' => 4413407,
+						'TemplateID' => 4478549,
 						'TemplateLanguage' => true,
 						'Subject' => "Ubah kata sandi",
 						'Variables' => json_decode('{"sess": "'.$uniqID.'"}', true)

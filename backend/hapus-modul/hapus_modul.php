@@ -91,14 +91,28 @@
 				}
 			}
 		}
-		$hapusLKPD = unlink("../../lkpd/".$lkpd);
+
+		if(file_exists("../../lkpd/".$lkpd)){
+			unlink("../../lkpd/".$lkpd);
+		}
 	}else{
-		$hapusLKPD=true;
 		$update=true;
 	}
 
-	if($result && $hapusLKPD &&  $update && unlink("../../modul-ajar/".$file_modul.".docx") && unlink("../../modul-ajar/".$file_modul.".pdf")
-	&& unlink("../../preview-modul/".$file_preview_modul.".docx") && unlink("../../preview-modul/".$file_preview_modul.".pdf")){
+	if(file_exists("../../modul-ajar/".$file_modul.".docx")){
+		unlink("../../modul-ajar/".$file_modul.".docx");
+	}
+	if(file_exists("../../modul-ajar/".$file_modul.".pdf")){
+		unlink("../../modul-ajar/".$file_modul.".pdf");
+	}
+	if(file_exists("../../preview-modul/".$file_preview_modul.".docx")){
+		unlink("../../preview-modul/".$file_preview_modul.".docx");
+	}
+	if(file_exists("../../preview-modul/".$file_preview_modul.".pdf")){
+		unlink("../../preview-modul/".$file_preview_modul.".pdf");
+	}
+
+	if($result &&  $update){
 		echo json_encode(array('statusCode' => 201));
 	}else{
 		echo json_encode(array('statusCode' => 202));

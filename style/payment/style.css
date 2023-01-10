@@ -108,7 +108,7 @@ nav{
 	left: 0;
 	margin: 0 auto;
 	text-align: left;
-	width: 90%;
+	width: 100%;
 	background-color: #FFF;
 	border: 2px solid grey;
 	border-radius: 10px;
@@ -138,4 +138,41 @@ nav{
 
 .waves{
     background-color:#F4FDFF;
+}
+
+@media screen and (max-width: 425px) {
+	.row-1{
+		margin-top: 100px;
+	}
+
+	.submit-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 60px;
+	}
+	
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+	.board-4{
+		width: 110%;
+		left: -5%;
+	}
+
+}
+
+@media screen and (max-width: 991px) {
+	.class-btn{
+		display: flex;
+		justify-content: center;
+		margin-top: 30px;
+	}
+
+    .icon-sosmed{
+        display: inline-block !important;
+        margin-right: 20%;
+    }
 }
