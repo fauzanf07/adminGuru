@@ -224,6 +224,9 @@ function hapusSUMBER(id){
 }
 
 var idTp = 0;
+if(Cookies.get('jmlTp') !== undefined){
+	idTp = parseInt(Cookies.get('jmlTp'));
+}
 function addTP(){
 	var tp = $('#tp-input').val();
 	if(!isEmpty(tp)){	
@@ -231,6 +234,8 @@ function addTP(){
 			$('#list-kosong-tp').remove();
 		}
 		idTp = idTp+1;
+		Cookies.set('tp'+idTp, tp);
+		Cookies.set('jmlTp',idTp);
 		$('#inputs-tp').append('<div class="input-group flex-nowrap mb-3 mt-3 input-tp" id="inputTP'+idTp+
 			'"><span class="input-group-text" id="addon-wrapping-tp'+idTp+'">'+idTp+'</span><textarea class="form-control" name="tp'+idTp+'" id="inputTp'+idTp+'" rows="2" disabled>'+tp+'</textarea><button class="btn btn-danger" id="button-addon2-tp'+idTp+'"  type="button" data-tp="'
 			+idTp+'" onclick="hapusTP(this);">Hapus</button></div>');
@@ -246,6 +251,7 @@ function hapusTP(id){
 	}else{
 		var no = $(id).data('tp');
 		$('#inputTP'+no).remove();
+		Cookies.remove('tp'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-tp'+i).html(i-1);
 			$('#inputTp'+i).attr('name', 'tp'+(i-1));
@@ -254,17 +260,28 @@ function hapusTP(id){
 			$('#addon-wrapping-tp'+i).attr('id','addon-wrapping-tp'+(i-1));
 			$('#inputTp'+i).attr('id','inputTp'+(i-1));
 			$('#button-addon2-tp'+i).attr('id','button-addon2-tp'+(i-1));
+			Cookies.set('tp'+(i-1),Cookies.get('tp'+i));
 		}
 		idTp = $('.input-tp').length;
+		Cookies.set('jmlTp',idTp);
 	}	
 }
 
 var pb = 1;
+if(Cookies.get('jmlPb') !== undefined){
+	pb = parseInt(Cookies.get('jmlPb'));
+}
+function keyUpPB(e){
+	id = $(e).attr('id');
+	val = $(e).val();
+	Cookies.set('jmlPb',pb);
+	Cookies.set(id,val);
+}
 $('#addPB').click(function(){
 	pb = pb+1;
 	$('#inputs-pb').append('<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB'+pb+
 		'"><span class="input-group-text" id="addon-wrapping-pb'+pb+'">'+pb+'</span><input type="text" class="form-control" placeholder="Pemahaman Bermakna '+pb+
-		'" aria-label="Username" aria-describedby="addon-wrapping" name="pb'+pb+'" id="inputPb'+pb+'"><button class="btn btn-danger" id="button-addon2-pb'+pb+'"  type="button" data-pb="'
+		'" aria-label="Username" aria-describedby="addon-wrapping"  id="inputPb'+pb+'" onkeyup="keyUpPB(this)"><button class="btn btn-danger" id="button-addon2-pb'+pb+'"  type="button" data-pb="'
 		+pb+'" onclick="hapusPB(this);">Hapus</button></div>');
 });
 
@@ -275,6 +292,7 @@ function hapusPB(id){
 	}else{
 		var no = $(id).data('pb');
 		$('#inputPB'+no).remove();
+		Cookies.remove('inputPb'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-pb'+i).html(i-1);
 			$('#inputPb'+i).attr('placeholder', 'Pemahaman Bermakna '+(i-1));
@@ -284,17 +302,28 @@ function hapusPB(id){
 			$('#addon-wrapping-pb'+i).attr('id','addon-wrapping-pb'+(i-1));
 			$('#inputPb'+i).attr('id','inputPb'+(i-1));
 			$('#button-addon2-pb'+i).attr('id','button-addon2-pb'+(i-1));
+			Cookies.set('inputPb'+(i-1),Cookies.get('inputPb'+i));
 		}
 		pb = $('.input-pb').length;
+		Cookies.set('jmlPb',pb);
 	}	
 }
 
 var perpem = 1;
+if(Cookies.get('jmlPerpem') !== undefined){
+	perpem = parseInt(Cookies.get('jmlPerpem'));
+}
+function keyUpPerpem(e){
+	id = $(e).attr('id');
+	val = $(e).val();
+	Cookies.set('jmlPerpem',perpem);
+	Cookies.set(id,val);
+}
 $('#addPERPEM').click(function(){
 	perpem = perpem+1;
 	$('#inputs-perpem').append('<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM'+perpem+
 		'"><span class="input-group-text" id="addon-wrapping-perpem'+perpem+'">'+perpem+'</span><input type="text" class="form-control" placeholder="Pertanyaan Pemantik '+perpem+
-		'" aria-label="Username" aria-describedby="addon-wrapping" name="perpem'+perpem+'" id="inputPerpem'+perpem+'"><button class="btn btn-danger" id="button-addon2-perpem'+perpem+'"  type="button" data-perpem="'
+		'" aria-label="Username" aria-describedby="addon-wrapping" id="inputPerpem'+perpem+'" onkeyup="keyUpPerpem(this)"><button class="btn btn-danger" id="button-addon2-perpem'+perpem+'"  type="button" data-perpem="'
 		+perpem+'" onclick="hapusPERPEM(this);">Hapus</button></div>');
 });
 
@@ -305,6 +334,7 @@ function hapusPERPEM(id){
 	}else{
 		var no = $(id).data('perpem');
 		$('#inputPERPEM'+no).remove();
+		Cookies.remove('inputPerpem'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-perpem'+i).html(i-1);
 			$('#inputPerpem'+i).attr('placeholder', 'Pertanyaan Pemantik '+(i-1));
@@ -314,12 +344,17 @@ function hapusPERPEM(id){
 			$('#addon-wrapping-perpem'+i).attr('id','addon-wrapping-perpem'+(i-1));
 			$('#inputPerpem'+i).attr('id','inputPerpem'+(i-1));
 			$('#button-addon2-perpem'+i).attr('id','button-addon2-perpem'+(i-1));
+			Cookies.set('inputPerpem'+(i-1),Cookies.get('inputPerpem'+i));
 		}
 		perpem = $('.input-perpem').length;
+		Cookies.set('jmlPerpem',perpem);
 	}	
 }
 
 var idPerpemb = 0;
+if(Cookies.get('jmlPerpemb') !== undefined){
+	idPerpemb = parseInt(Cookies.get('jmlPerpemb'));
+}
 function addPerpemb(){
 	var perpemb = $('#perpemb-input').val();
 	if(!isEmpty(perpemb)){	
@@ -327,6 +362,8 @@ function addPerpemb(){
 			$('#list-kosong-perpemb').remove();
 		}
 		idPerpemb = idPerpemb+1;
+		Cookies.set('perpemb'+idPerpemb, perpemb);
+		Cookies.set('jmlPerpemb',idPerpemb);
 		$('#inputs-perpemb').append('<div class="input-group flex-nowrap mb-3 mt-3 input-perpemb" id="inputPERPEMB'+idPerpemb+
 			'"><span class="input-group-text" id="addon-wrapping-perpemb'+idPerpemb+'">'+idPerpemb+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="perpemb'+idPerpemb+'" id="inputPerpemb'+idPerpemb+'" value="'+perpemb+'" disabled><button class="btn btn-danger" id="button-addon2-perpemb'+idPerpemb+'"  type="button" data-perpemb="'
 			+idPerpemb+'" onclick="hapusPERPEMB(this);">Hapus</button></div>');
@@ -341,6 +378,7 @@ function hapusPERPEMB(id){
 	}else{
 		var no = $(id).data('perpemb');
 		$('#inputPERPEMB'+no).remove();
+		Cookies.remove('perpemb'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-perpemb'+i).html(i-1);
 			$('#inputPerpemb'+i).attr('name', 'perpemb'+(i-1));
@@ -349,12 +387,17 @@ function hapusPERPEMB(id){
 			$('#addon-wrapping-perpemb'+i).attr('id','addon-wrapping-perpemb'+(i-1));
 			$('#inputPerpemb'+i).attr('id','inputPerpemb'+(i-1));
 			$('#button-addon2-perpemb'+i).attr('id','button-addon2-perpemb'+(i-1));
+			Cookies.set('perpemb'+(i-1),Cookies.get('perpemb'+i));
 		}
 		idPerpemb = $('.input-perpemb').length;
+		Cookies.set('jmlPerpemb',idPerpemb);
 	}	
 }
 
 var idPend = 0;
+if(Cookies.get('jmlPend') !== undefined){
+	idPend = parseInt(Cookies.get('jmlPend'));
+}
 function addPEND(){
 	var pend = $('#pend-input').val();
 	if(!isEmpty(pend)){	
@@ -362,6 +405,8 @@ function addPEND(){
 			$('#list-kosong-pend').remove();
 		}
 		idPend = idPend+1;
+		Cookies.set('pend'+idPend, pend);
+		Cookies.set('jmlPend',idPend);
 		$('#inputs-pend').append('<div class="input-group flex-nowrap mb-3 mt-3 input-pend" id="inputPEND'+idPend+
 			'"><span class="input-group-text" id="addon-wrapping-pend'+idPend+'">'+idPend+'</span><textarea class="form-control" name="pend'+idPend+'" id="inputPend'+idPend+'" rows="2" disabled>'+pend+'</textarea><button class="btn btn-danger" id="button-addon2-pend'+idPend+'"  type="button" data-pend="'
 			+idPend+'" onclick="hapusPEND(this);">Hapus</button></div>');
@@ -376,6 +421,7 @@ function hapusPEND(id){
 	}else{
 		var no = $(id).data('pend');
 		$('#inputPEND'+no).remove();
+		Cookies.remove('pend'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-pend'+i).html(i-1);
 			$('#inputPend'+i).attr('name', 'pend'+(i-1));
@@ -384,12 +430,17 @@ function hapusPEND(id){
 			$('#addon-wrapping-pend'+i).attr('id','addon-wrapping-pend'+(i-1));
 			$('#inputPend'+i).attr('id','inputPend'+(i-1));
 			$('#button-addon2-pend'+i).attr('id','button-addon2-pend'+(i-1));
+			Cookies.set('pend'+(i-1),Cookies.get('pend'+i));
 		}
 		idPend = $('.input-pend').length;
+		Cookies.set('jmlPend',idPend);
 	}	
 }
 
 var idInti = 0;
+if(Cookies.get('jmlInti') !== undefined){
+	idInti = parseInt(Cookies.get('jmlInti'));
+}
 function addINTI(){
 	var inti = $('#inti-input').val();
 	if(!isEmpty(inti)){	
@@ -397,6 +448,8 @@ function addINTI(){
 			$('#list-kosong-inti').remove();
 		}
 		idInti = idInti+1;
+		Cookies.set('inti'+idInti, inti);
+		Cookies.set('jmlInti',idInti);
 		$('#inputs-inti').append('<div class="input-group flex-nowrap mb-3 mt-3 input-inti" id="inputINTI'+idInti+
 			'"><span class="input-group-text" id="addon-wrapping-inti'+idInti+'">'+idInti+'</span><textarea class="form-control" name="inti'+idInti+'" id="inputInti'+idInti+'" rows="2" disabled>'+inti+'</textarea><button class="btn btn-danger" id="button-addon2-inti'+idInti+'"  type="button" data-inti="'
 			+idInti+'" onclick="hapusINTI(this);">Hapus</button></div>');
@@ -411,6 +464,7 @@ function hapusINTI(id){
 	}else{
 		var no = $(id).data('inti');
 		$('#inputINTI'+no).remove();
+		Cookies.remove('inti'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-inti'+i).html(i-1);
 			$('#inputInti'+i).attr('name', 'inti'+(i-1));
@@ -419,12 +473,17 @@ function hapusINTI(id){
 			$('#addon-wrapping-inti'+i).attr('id','addon-wrapping-inti'+(i-1));
 			$('#inputInti'+i).attr('id','inputInti'+(i-1));
 			$('#button-addon2-inti'+i).attr('id','button-addon2-inti'+(i-1));
+			Cookies.set('inti'+(i-1),Cookies.get('inti'+i));
 		}
 		idInti = $('.input-inti').length;
+		Cookies.set('jmlInti',idInti);
 	}	
 }
 
 var idPenutup = 0;
+if(Cookies.get('jmlPenutup') !== undefined){
+	idPenutup = parseInt(Cookies.get('jmlPenutup'));
+}
 function addPENUTUP(){
 	var penutup = $('#penutup-input').val();
 	if(!isEmpty(penutup)){	
@@ -432,6 +491,8 @@ function addPENUTUP(){
 			$('#list-kosong-penutup').remove();
 		}
 		idPenutup = idPenutup+1;
+		Cookies.set('penutup'+idPenutup, penutup);
+		Cookies.set('jmlPenutup',idPenutup);
 		$('#inputs-penutup').append('<div class="input-group flex-nowrap mb-3 mt-3 input-penutup" id="inputPENUTUP'+idPenutup+
 			'"><span class="input-group-text" id="addon-wrapping-penutup'+idPenutup+'">'+idPenutup+'</span><textarea class="form-control" name="penutup'+idPenutup+'" id="inputPenutup'+idPenutup+'" rows="2" disabled>'+penutup+'</textarea><button class="btn btn-danger" id="button-addon2-penutup'+idPenutup+'"  type="button" data-penutup="'
 			+idPenutup+'" onclick="hapusPENUTUP(this);">Hapus</button></div>');
@@ -446,6 +507,7 @@ function hapusPENUTUP(id){
 	}else{
 		var no = $(id).data('penutup');
 		$('#inputPENUTUP'+no).remove();
+		Cookies.remove('penutup'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-penutup'+i).html(i-1);
 			$('#inputPenutup'+i).attr('name', 'penutup'+(i-1));
@@ -454,12 +516,17 @@ function hapusPENUTUP(id){
 			$('#addon-wrapping-penutup'+i).attr('id','addon-wrapping-penutup'+(i-1));
 			$('#inputPenutup'+i).attr('id','inputPenutup'+(i-1));
 			$('#button-addon2-penutup'+i).attr('id','button-addon2-penutup'+(i-1));
+			Cookies.set('penutup'+(i-1),Cookies.get('penutup'+i));
 		}
 		idPenutup = $('.input-penutup').length;
+		Cookies.set('jmlPenutup',idPenutup);
 	}	
 }
 
 var idAsesNon = 0;
+if(Cookies.get('jmlAsesNon') !== undefined){
+	idAsesNon = parseInt(Cookies.get('jmlAsesNon'));
+}
 function addAsesNon(){
 	var asesNon = $('#ases-non-input').val();
 	if(!isEmpty(asesNon)){	
@@ -467,6 +534,8 @@ function addAsesNon(){
 			$('#list-kosong-ases-non').remove();
 		}
 		idAsesNon = idAsesNon+1;
+		Cookies.set('asesNon'+idAsesNon, asesNon);
+		Cookies.set('jmlAsesNon',idAsesNon);
 		$('#inputs-ases-non').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ases-non" id="inputASESNON'+idAsesNon+
 			'"><span class="input-group-text" id="addon-wrapping-ases-non'+idAsesNon+'">'+idAsesNon+'</span><textarea class="form-control" name="ases-non'+idAsesNon+'" id="inputAsesNon'+idAsesNon+'" rows="2" disabled>'+asesNon+'</textarea><button class="btn btn-danger" id="button-addon2-ases-non'+idAsesNon+'"  type="button" data-asesnon="'
 			+idAsesNon+'" onclick="hapusAsesNon(this);">Hapus</button></div>');
@@ -480,6 +549,7 @@ function hapusAsesNon(id){
 		var no = $(id).data('asesnon');
 		console.log(no);
 		$('#inputASESNON'+no).remove();
+		Cookies.remove('asesNon'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-ases-non'+i).html(i-1);
 			$('#inputAsesNon'+i).attr('name', 'ases-non'+(i-1));
@@ -488,14 +558,19 @@ function hapusAsesNon(id){
 			$('#addon-wrapping-ases-non'+i).attr('id','addon-wrapping-ases-non'+(i-1));
 			$('#inputAsesNon'+i).attr('id','inputAsesNon'+(i-1));
 			$('#button-addon2-ases-non'+i).attr('id','button-addon2-ases-non'+(i-1));
+			Cookies.set('asesNon'+(i-1),Cookies.get('asesNon'+i));
 		}
 		idAsesNon = $('.input-ases-non').length;
+		Cookies.set('jmlAsesNon',idAsesNon);
 		if(idAsesNon == 0){
 			$('#inputs-ases-non').append('<div class="list-kosong" id="list-kosong-ases-non">Tidak ada Asesmen Non Kognitif</div>');
 		}
 }
 
 var idAsesKog = 0;
+if(Cookies.get('jmlAsesKog') !== undefined){
+	idAsesKog = parseInt(Cookies.get('jmlAsesKog'));
+}
 function addAsesKog(){
 	var asesKog = $('#ases-kog-input').val();
 	if(!isEmpty(asesKog)){	
@@ -503,6 +578,8 @@ function addAsesKog(){
 			$('#list-kosong-ases-kog').remove();
 		}
 		idAsesKog = idAsesKog+1;
+		Cookies.set('asesKog'+idAsesKog, asesKog);
+		Cookies.set('jmlAsesKog',idAsesKog);
 		$('#inputs-ases-kog').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ases-kog" id="inputASESKOG'+idAsesKog+
 			'"><span class="input-group-text" id="addon-wrapping-ases-kog'+idAsesKog+'">'+idAsesKog+'</span><textarea class="form-control" name="ases-kog'+idAsesKog+'" id="inputAsesKog'+idAsesKog+'" rows="2" disabled>'+asesKog+'</textarea><button class="btn btn-danger" id="button-addon2-ases-kog'+idAsesKog+'"  type="button" data-aseskog="'
 			+idAsesKog+'" onclick="hapusAsesKog(this);">Hapus</button></div>');
@@ -516,22 +593,28 @@ function hapusAsesKog(id){
 		var no = $(id).data('aseskog');
 		console.log(no);
 		$('#inputASESKOG'+no).remove();
+		Cookies.remove('asesKog'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
-			$('#addon-wrapping-ases-non'+i).html(i-1);
+			$('#addon-wrapping-ases-kog'+i).html(i-1);
 			$('#inputAsesKog'+i).attr('name', 'ases-kog'+(i-1));
 			$('#button-addon2-ases-kog'+i).attr('data-aseskog',(i-1));
 			$('#inputASESKOG'+i).attr('id','inputASESKOG'+(i-1));
 			$('#addon-wrapping-ases-kog'+i).attr('id','addon-wrapping-ases-kog'+(i-1));
 			$('#inputAsesKog'+i).attr('id','inputAsesKog'+(i-1));
 			$('#button-addon2-ases-kog'+i).attr('id','button-addon2-ases-kog'+(i-1));
+			Cookies.set('asesKog'+(i-1),Cookies.get('asesKog'+i));
 		}
 		idAsesKog = $('.input-ases-kog').length;
+		Cookies.set('jmlAsesKog',idAsesKog);
 		if(idAsesKog == 0){
 			$('#inputs-ases-kog').append('<div class="list-kosong" id="list-kosong-ases-kog">Tidak ada Asesmen Kognitif</div>');
 		}
 }
 
 var idAsesFor = 0;
+if(Cookies.get('jmlAsesFor') !== undefined){
+	idAsesFor = parseInt(Cookies.get('jmlAsesFor'));
+}
 function addAsesFor(){
 	var asesFor = $('#ases-for-input').val();
 	if(!isEmpty(asesFor)){	
@@ -539,6 +622,8 @@ function addAsesFor(){
 			$('#list-kosong-ases-for').remove();
 		}
 		idAsesFor = idAsesFor+1;
+		Cookies.set('asesFor'+idAsesFor, asesFor);
+		Cookies.set('jmlAsesFor',idAsesFor);
 		$('#inputs-ases-for').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ases-for" id="inputASESFOR'+idAsesFor+
 			'"><span class="input-group-text" id="addon-wrapping-ases-for'+idAsesFor+'">'+idAsesFor+'</span><textarea class="form-control" name="ases-for'+idAsesFor+'" id="inputAsesFor'+idAsesFor+'" rows="2" disabled>'+asesFor+'</textarea><button class="btn btn-danger" id="button-addon2-ases-for'+idAsesFor+'"  type="button" data-asesfor="'
 			+idAsesFor+'" onclick="hapusAsesFor(this);">Hapus</button></div>');
@@ -552,6 +637,7 @@ function hapusAsesFor(id){
 		var no = $(id).data('asesfor');
 		console.log(no);
 		$('#inputASESFOR'+no).remove();
+		Cookies.remove('asesFor'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-ases-for'+i).html(i-1);
 			$('#inputAsesFor'+i).attr('name', 'ases-for'+(i-1));
@@ -560,14 +646,19 @@ function hapusAsesFor(id){
 			$('#addon-wrapping-ases-for'+i).attr('id','addon-wrapping-ases-for'+(i-1));
 			$('#inputAsesFor'+i).attr('id','inputAsesFor'+(i-1));
 			$('#button-addon2-ases-for'+i).attr('id','button-addon2-ases-for'+(i-1));
+			Cookies.set('asesFor'+(i-1),Cookies.get('asesFor'+i));
 		}
 		idAsesFor = $('.input-ases-for').length;
+		Cookies.set('jmlAsesFor',idAsesFor);
 		if(idAsesFor == 0){
 			$('#inputs-ases-for').append('<div class="list-kosong" id="list-kosong-ases-for">Tidak ada Asesmen Formatif</div>');
 		}
 }
 
 var idAsesSum = 0;
+if(Cookies.get('jmlAsesSum') !== undefined){
+	idAsesSum = parseInt(Cookies.get('jmlAsesSum'));
+}
 function addAsesSum(){
 	var asesSum = $('#ases-sum-input').val();
 	if(!isEmpty(asesSum)){	
@@ -575,6 +666,8 @@ function addAsesSum(){
 			$('#list-kosong-ases-sum').remove();
 		}
 		idAsesSum = idAsesSum+1;
+		Cookies.set('asesSum'+idAsesSum, asesSum);
+		Cookies.set('jmlAsesSum',idAsesSum);
 		$('#inputs-ases-sum').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ases-sum" id="inputASESSUM'+idAsesSum+
 			'"><span class="input-group-text" id="addon-wrapping-ases-sum'+idAsesSum+'">'+idAsesSum+'</span><textarea class="form-control" name="ases-sum'+idAsesSum+'" id="inputAsesSum'+idAsesSum+'" rows="2" disabled>'+asesSum+'</textarea><button class="btn btn-danger" id="button-addon2-ases-sum'+idAsesSum+'"  type="button" data-asessum="'
 			+idAsesSum+'" onclick="hapusAsesSum(this);">Hapus</button></div>');
@@ -588,6 +681,7 @@ function hapusAsesSum(id){
 		var no = $(id).data('asessum');
 		console.log(no);
 		$('#inputASESSUM'+no).remove();
+		Cookies.remove('asesSum'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-ases-sum'+i).html(i-1);
 			$('#inputAsesSum'+i).attr('name', 'ases-sum'+(i-1));
@@ -596,14 +690,19 @@ function hapusAsesSum(id){
 			$('#addon-wrapping-ases-sum'+i).attr('id','addon-wrapping-ases-sum'+(i-1));
 			$('#inputAsesSum'+i).attr('id','inputAsesSum'+(i-1));
 			$('#button-addon2-ases-sum'+i).attr('id','button-addon2-ases-sum'+(i-1));
+			Cookies.set('asesSum'+(i-1),Cookies.get('asesSum'+i));
 		}
 		idAsesSum = $('.input-ases-sum').length;
+		Cookies.set('jmlAsesSum',idAsesSum);
 		if(idAsesSum == 0){
 			$('#inputs-ases-sum').append('<div class="list-kosong" id="list-kosong-ases-sum">Tidak ada Asesmen Sumatif</div>');
 		}
 }
 
 var idPenmed = 0;
+if(Cookies.get('jmlPenmed') !== undefined){
+	idPenmed = parseInt(Cookies.get('jmlPenmed'));
+}
 function addPenmed(){
 	var penmed = $('#penmed-input').val();
 	if(!isEmpty(penmed)){	
@@ -611,6 +710,8 @@ function addPenmed(){
 			$('#list-kosong-penmed').remove();
 		}
 		idPenmed = idPenmed+1;
+		Cookies.set('penmed'+idPenmed, penmed);
+		Cookies.set('jmlPenmed',idPenmed);
 		$('#inputs-penmed').append('<div class="input-group flex-nowrap mb-3 mt-3 input-penmed" id="inputPENMED'+idPenmed+
 			'"><span class="input-group-text" id="addon-wrapping-penmed'+idPenmed+'">'+idPenmed+'</span><textarea class="form-control" name="ases-penmed'+idPenmed+'" id="inputPenmed'+idPenmed+'" rows="2" disabled>'+penmed+'</textarea><button class="btn btn-danger" id="button-addon2-penmed'+idPenmed+'"  type="button" data-penmed="'
 			+idPenmed+'" onclick="hapusPenmed(this);">Hapus</button></div>');
@@ -624,6 +725,7 @@ function hapusPenmed(id){
 		var no = $(id).data('penmed');
 		console.log(no);
 		$('#inputPENMED'+no).remove();
+		Cookies.remove('penmed'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-penmed'+i).html(i-1);
 			$('#inputPenmed'+i).attr('name', 'penmed'+(i-1));
@@ -632,14 +734,19 @@ function hapusPenmed(id){
 			$('#addon-wrapping-penmed'+i).attr('id','addon-wrapping-penmed'+(i-1));
 			$('#inputPenmed'+i).attr('id','inputPenmed'+(i-1));
 			$('#button-addon2-penmed'+i).attr('id','button-addon2-penmed'+(i-1));
+			Cookies.set('penmed'+(i-1),Cookies.get('penmed'+i));
 		}
 		idPenmed = $('.input-penmed').length;
+		Cookies.set('jmlPenmed',idPenmed);
 		if(idPenmed == 0){
 			$('#inputs-penmed').append('<div class="list-kosong" id="list-kosong-penmed">Tidak ada Pengayaan dan Remedial</div>');
 		}
 }
 
 var idRefleksi = 0;
+if(Cookies.get('jmlRefleksi') !== undefined){
+	idRefleksi = parseInt(Cookies.get('jmlRefleksi'));
+}
 function addRefleksi(){
 	var refleksi = $('#refleksi-input').val();
 	if(!isEmpty(refleksi)){	
@@ -647,6 +754,8 @@ function addRefleksi(){
 			$('#list-kosong-refleksi').remove();
 		}
 		idRefleksi = idRefleksi+1;
+		Cookies.set('refleksi'+idRefleksi, refleksi);
+		Cookies.set('jmlRefleksi',idRefleksi);
 		$('#inputs-refleksi').append('<div class="input-group flex-nowrap mb-3 mt-3 input-refleksi" id="inputREFLEKSI'+idRefleksi+
 			'"><span class="input-group-text" id="addon-wrapping-refleksi'+idRefleksi+'">'+idRefleksi+'</span><textarea class="form-control" name="ases-refleksi'+idRefleksi+'" id="inputRefleksi'+idRefleksi+'" rows="2" disabled>'+refleksi+'</textarea><button class="btn btn-danger" id="button-addon2-refleksi'+idRefleksi+'"  type="button" data-refleksi="'
 			+idRefleksi+'" onclick="hapusRefleksi(this);">Hapus</button></div>');
@@ -660,6 +769,7 @@ function hapusRefleksi(id){
 		var no = $(id).data('refleksi');
 		console.log(no);
 		$('#inputREFLEKSI'+no).remove();
+		Cookies.remove('refleksi'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-refleksi'+i).html(i-1);
 			$('#inputRefleksi'+i).attr('name', 'refleksi'+(i-1));
@@ -668,18 +778,29 @@ function hapusRefleksi(id){
 			$('#addon-wrapping-refleksi'+i).attr('id','addon-wrapping-refleksi'+(i-1));
 			$('#inputRefleksi'+i).attr('id','inputRefleksi'+(i-1));
 			$('#button-addon2-refleksi'+i).attr('id','button-addon2-refleksi'+(i-1));
+			Cookies.set('refleksi'+(i-1),Cookies.get('refleksi'+i));
 		}
 		idRefleksi = $('.input-refleksi').length;
+		Cookies.set('jmlRefleksi',idRefleksi);
 		if(idRefleksi == 0){
 			$('#inputs-refleksi').append('<div class="list-kosong" id="list-kosong-refleksi">Tidak ada Refleksi</div>');
 		}
 }
 
 var bahan = 1;
+if(Cookies.get('jmlBahan') !== undefined){
+	bahan = parseInt(Cookies.get('jmlBahan'));
+}
+function keyUpBahan(e){
+	id = $(e).attr('id');
+	val = $(e).val();
+	Cookies.set('jmlBahan',bahan);
+	Cookies.set(id,val);
+}
 $('#addBAHAN').click(function(){
 	bahan = bahan+1;
 	$('#inputs-bahan').append('<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN'+bahan+
-		'"><span class="input-group-text" id="addon-wrapping-bahan'+bahan+'">'+bahan+'</span><textarea class="form-control" name="bahan'+bahan+'" id="inputBahan'+bahan+'" rows="2" placeholder="Bahan Bacaan '+bahan+'"></textarea><button class="btn btn-danger" id="button-addon2-bahan'+bahan+'"  type="button" data-bahan="'
+		'"><span class="input-group-text" id="addon-wrapping-bahan'+bahan+'">'+bahan+'</span><textarea class="form-control" name="bahan'+bahan+'" id="inputBahan'+bahan+'" rows="2" placeholder="Bahan Bacaan '+bahan+'" onkeyup="keyUpBahan(this)"></textarea><button class="btn btn-danger" id="button-addon2-bahan'+bahan+'"  type="button" data-bahan="'
 		+bahan+'" onclick="hapusBAHAN(this);">Hapus</button></div>');
 });
 
@@ -690,6 +811,7 @@ function hapusBAHAN(id){
 	}else{
 		var no = $(id).data('bahan');
 		$('#inputBAHAN'+no).remove();
+		Cookies.remove('inputBahan'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-bahan'+i).html(i-1);
 			$('#inputBahan'+i).attr('placeholder', 'Bahan Bacaan '+(i-1));
@@ -699,16 +821,27 @@ function hapusBAHAN(id){
 			$('#addon-wrapping-bahan'+i).attr('id','addon-wrapping-bahan'+(i-1));
 			$('#inputBahan'+i).attr('id','inputBahan'+(i-1));
 			$('#button-addon2-bahan'+i).attr('id','button-addon2-bahan'+(i-1));
+			Cookies.set('inputBahan'+(i-1),Cookies.get('inputBahan'+i));
 		}
 		bahan = $('.input-bahan').length;
+		Cookies.set('jmlBahan',bahan);
 	}	
 }
 
 var glos = 1;
+if(Cookies.get('jmlGlos') !== undefined){
+	glos = parseInt(Cookies.get('jmlGlos'));
+}
+function keyUpGlos(e){
+	id = $(e).attr('id');
+	val = $(e).val();
+	Cookies.set('jmlGlos',glos);
+	Cookies.set(id,val);
+}
 $('#addGLOS').click(function(){
 	glos = glos+1;
 	$('#inputs-glos').append('<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS'+glos+
-		'"><span class="input-group-text" id="addon-wrapping-glos'+glos+'">'+glos+'</span><textarea class="form-control" name="glos'+glos+'" id="inputGlos'+glos+'" rows="2" placeholder="Glosarium '+glos+'"></textarea><button class="btn btn-danger" id="button-addon2-glos'+glos+'"  type="button" data-glos="'
+		'"><span class="input-group-text" id="addon-wrapping-glos'+glos+'">'+glos+'</span><textarea class="form-control" id="inputGlos'+glos+'" rows="2" placeholder="Glosarium '+glos+'" onkeyup="keyUpGlos(this)"></textarea><button class="btn btn-danger" id="button-addon2-glos'+glos+'"  type="button" data-glos="'
 		+glos+'" onclick="hapusGLOS(this);">Hapus</button></div>');
 });
 
@@ -719,6 +852,7 @@ function hapusGLOS(id){
 	}else{
 		var no = $(id).data('glos');
 		$('#inputGLOS'+no).remove();
+		Cookies.remove('inputGlos'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-glos'+i).html(i-1);
 			$('#inputGlos'+i).attr('placeholder', 'Glosarium '+(i-1));
@@ -728,16 +862,27 @@ function hapusGLOS(id){
 			$('#addon-wrapping-glos'+i).attr('id','addon-wrapping-glos'+(i-1));
 			$('#inputGlos'+i).attr('id','inputGlos'+(i-1));
 			$('#button-addon2-glos'+i).attr('id','button-addon2-glos'+(i-1));
+			Cookies.set('inputGlos'+(i-1),Cookies.get('inputGlos'+i));
 		}
 		glos = $('.input-glos').length;
+		Cookies.set('jmlGlos',glos);
 	}	
 }
 
 var dafpus = 1;
+if(Cookies.get('jmlDafpus') !== undefined){
+	dafpus = parseInt(Cookies.get('jmlDafpus'));
+}
+function keyUpDafpus(e){
+	id = $(e).attr('id');
+	val = $(e).val();
+	Cookies.set('jmlDafpus',dafpus);
+	Cookies.set(id,val);
+}
 $('#addDAFPUS').click(function(){
 	dafpus = dafpus+1;
 	$('#inputs-dafpus').append('<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS'+dafpus+
-		'"><span class="input-group-text" id="addon-wrapping-dafpus'+dafpus+'">'+dafpus+'</span><textarea class="form-control" name="dafpus'+dafpus+'" id="inputDafpus'+dafpus+'" rows="2" placeholder="Daftar Pustaka '+dafpus+'"></textarea><button class="btn btn-danger" id="button-addon2-dafpus'+dafpus+'"  type="button" data-dafpus="'
+		'"><span class="input-group-text" id="addon-wrapping-dafpus'+dafpus+'">'+dafpus+'</span><textarea class="form-control"  id="inputDafpus'+dafpus+'" rows="2" placeholder="Daftar Pustaka '+dafpus+'" onkeyup="keyUpDafpus(this)"></textarea><button class="btn btn-danger" id="button-addon2-dafpus'+dafpus+'"  type="button" data-dafpus="'
 		+dafpus+'" onclick="hapusDAFPUS(this);">Hapus</button></div>');
 });
 
@@ -748,6 +893,7 @@ function hapusDAFPUS(id){
 	}else{
 		var no = $(id).data('dafpus');
 		$('#inputDAFPUS'+no).remove();
+		Cookies.remove('inputDafpus'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-dafpus'+i).html(i-1);
 			$('#inputDafpus'+i).attr('placeholder', 'Daftar Pustaka '+(i-1));
@@ -757,7 +903,9 @@ function hapusDAFPUS(id){
 			$('#addon-wrapping-dafpus'+i).attr('id','addon-wrapping-dafpus'+(i-1));
 			$('#inputDafpus'+i).attr('id','inputDafpus'+(i-1));
 			$('#button-addon2-dafpus'+i).attr('id','button-addon2-dafpus'+(i-1));
+			Cookies.set('inputDafpus'+(i-1),Cookies.get('inputDafpus'+i));
 		}
 		dafpus = $('.input-dafpus').length;
+		Cookies.set('jmlDafpus',dafpus);
 	}	
 }

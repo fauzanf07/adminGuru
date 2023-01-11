@@ -494,7 +494,7 @@
 													<div id="inputs-pb">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB1">
 															<span class="input-group-text" id="addon-wrapping-pb1">1</span>
-															<input type="text" class="form-control" placeholder="Pemahaman Bermakna 1" aria-label="Username" aria-describedby="addon-wrapping" name="pb1" id="inputPb1">
+															<input type="text" class="form-control" placeholder="Pemahaman Bermakna 1" aria-label="Username" aria-describedby="addon-wrapping" id="inputPb1" onkeyup="keyUpPB(this)">
 															<button class="btn btn-danger" id="button-addon2-pb1"  type="button" data-pb="1"  onclick="hapusPB(this);">Hapus</button>
 														</div>
 													</div>
@@ -506,7 +506,7 @@
 													<div id="inputs-perpem">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM1">
 															<span class="input-group-text" id="addon-wrapping-perpem1">1</span>
-															<input type="text" class="form-control" placeholder="Pertanyaan Pemantik 1" aria-label="Username" aria-describedby="addon-wrapping" name="perpem1" id="inputPerpem1">
+															<input type="text" class="form-control" placeholder="Pertanyaan Pemantik 1" aria-label="Username" aria-describedby="addon-wrapping" id="inputPerpem1" onkeyup="keyUpPerpem(this)">
 															<button class="btn btn-danger" id="button-addon2-perpem1"  type="button" data-perpem="1"  onclick="hapusPERPEM(this);">Hapus</button>
 														</div>
 													</div>
@@ -795,7 +795,7 @@
 									    			<div id="inputs-bahan">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN1">
 															<span class="input-group-text" id="addon-wrapping-bahan1">1</span>
-															<textarea class="form-control" name="bahan1" id="inputBahan1" rows="2" placeholder="Bahan Bacaan 1"></textarea>
+															<textarea class="form-control"  id="inputBahan1" rows="2" placeholder="Bahan Bacaan 1" onkeyup="keyUpBahan(this)"></textarea>
 															<button class="btn btn-danger" id="button-addon2-bahan1"  type="button" data-bahan="1"  onclick="hapusBAHAN(this);">Hapus</button>
 														</div>
 													</div>
@@ -807,7 +807,7 @@
 									    			<div id="inputs-glos">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS1">
 															<span class="input-group-text" id="addon-wrapping-glos1">1</span>
-															<textarea class="form-control" name="glos1" id="inputGlos1" rows="2" placeholder="Glosarium 1"></textarea>
+															<textarea class="form-control" id="inputGlos1" rows="2" placeholder="Glosarium 1" onkeyup="keyUpGlos(this)"></textarea>
 															<button class="btn btn-danger" id="button-addon2-glos1"  type="button" data-glos="1"  onclick="hapusGLOS(this);">Hapus</button>
 														</div>
 													</div>
@@ -819,7 +819,7 @@
 									    			<div id="inputs-dafpus">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS1">
 															<span class="input-group-text" id="addon-wrapping-dafpus1">1</span>
-															<textarea class="form-control" name="dafpus1" id="inputDafpus1" rows="2" placeholder="Daftar Pustaka 1"></textarea>
+															<textarea class="form-control" id="inputDafpus1" rows="2" placeholder="Daftar Pustaka 1" onkeyup="keyUpDafpus(this)"> </textarea>
 															<button class="btn btn-danger" id="button-addon2-dafpus1"  type="button" data-dafpus="1"  onclick="hapusDAFPUS(this);">Hapus</button>
 														</div>
 													</div>
