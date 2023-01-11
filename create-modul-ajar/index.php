@@ -357,7 +357,7 @@
 												
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Alokasi Waktu<span class="bintang-merah">*</span></span>
-													<input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
+													<input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" name="alokasiW" required>
 													<button type="button" class="btn"
 															data-bs-toggle="tooltip" data-bs-placement="top"
 															data-bs-html="true"
@@ -927,10 +927,12 @@
 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
-	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
-	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
 	<script type="text/javascript" src="../js/plugins/jquery-save-as-you-type-master/source/sayt.min.jquery.js"></script>
 	<script type="text/javascript" src="../js/plugins/jquery-save-as-you-type-master/dependencies/jquery-cookie.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
+	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
+	
 
 	
 </html>

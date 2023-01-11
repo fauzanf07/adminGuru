@@ -1,7 +1,11 @@
 function isEmpty(str) {
     return (!str || str.length === 0 );
 }
-var idMateri = 0;
+var idMateri =0;
+if(Cookies.get('jmlMateri') !== undefined){
+	idMateri = parseInt(Cookies.get('jmlMateri'));
+}
+
 function addMateri(){
 	var materi = $('#materi-input').val();
 	console.log('halo');
@@ -11,6 +15,8 @@ function addMateri(){
 			$('#list-kosong-materi').remove();
 		}
 		idMateri = idMateri+1;
+		Cookies.set('materi'+idMateri, materi);
+		Cookies.set('jmlMateri',idMateri);
 		$('#inputs-materi').append('<div class="input-group flex-nowrap mb-3 mt-3 input-materi" id="inputMATERI'+idMateri+
 			'"><span class="input-group-text" id="addon-wrapping-materi'+idMateri+'">'+idMateri+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="materi'+idMateri+'" id="inputMateri'+idMateri+'" value="'+materi+'" disabled><button class="btn btn-danger" id="button-addon2-materi'+idMateri+'"  type="button" data-materi="'
 			+idMateri+'" onclick="hapusMATERI(this);">Hapus</button></div>');
@@ -25,6 +31,7 @@ function hapusMATERI(id){
 	}else{
 		var no = $(id).data('materi');
 		$('#inputMATERI'+no).remove();
+		Cookies.remove('materi'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-materi'+i).html(i-1);
 			$('#inputMateri'+i).attr('name', 'media'+(i-1));
@@ -33,8 +40,10 @@ function hapusMATERI(id){
 			$('#addon-wrapping-materi'+i).attr('id','addon-wrapping-materi'+(i-1));
 			$('#inputMateri'+i).attr('id','inputMateri'+(i-1));
 			$('#button-addon2-materi'+i).attr('id','button-addon2-materi'+(i-1));
+			Cookies.set('materi'+(i-1),Cookies.get('materi'+i));
 		}
 		idMateri = $('.input-materi').length;
+		Cookies.set('jmlMateri',idMateri);
 	}	
 }
 

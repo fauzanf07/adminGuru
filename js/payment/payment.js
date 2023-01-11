@@ -23,6 +23,7 @@ function checkout(id){
                     },
                     onPending: function(result){
                       updatePayStatus(id,1);
+                      location.reload();
                       console.log(result);
                     },
                     onError: function(result){
@@ -83,8 +84,10 @@ function getUpdateStatus(id){
                     location.reload();
                 }else if(dataResult.transaction_status==="pending"){
                     updatePayStatus(id,1);
+                    location.reload();
                 }else if(dataResult.transaction_status==="deny" || dataResult.transaction_status==="cancel" || dataResult.transaction_status==="expire"){
                     updatePayStatus(id,3);
+                    location.reload();
                 }
             }
         }

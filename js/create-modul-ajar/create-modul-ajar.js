@@ -6,9 +6,35 @@ function isEmpty(str) {
 }
 $(document).ready( function () {
     $('#tableModul').DataTable();
-	$('#formModul').sayt();
-	console.log($.cookie('prokel'));
+	$('#formModul').sayt({'autorecover':false});
+	if(Cookies.get('prokel') !== undefined){
+		var prokel = Cookies.get('prokel');
+		populateMapel(prokel);
+	}
+	if(Cookies.get('mapel') !== undefined){
+		var mapel = Cookies.get('mapel');
+		populateElemen(mapel);
+	}
+	if(Cookies.get('elemen') !== undefined){
+		var elemen = Cookies.get('elemen');
+		populateCP(elemen);
+	}
+	if(Cookies.get('fase') !== undefined){
+		var fase = Cookies.get('fase');
+		$('#fase').val(fase);
+	}
+	if(Cookies.get('jmlMateri') !== undefined){
+		$('#list-kosong-materi').remove();
+		var jml = parseInt(Cookies.get('jmlMateri'));
+		for(var i=1;i<=jml;i++){
+			$('#inputs-materi').append('<div class="input-group flex-nowrap mb-3 mt-3 input-materi" id="inputMATERI'+i+
+			'"><span class="input-group-text" id="addon-wrapping-materi'+i+'">'+i+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="materi'+i+'" id="inputMateri'+i+'" value="'+Cookies.get('materi'+i)+'" disabled><button class="btn btn-danger" id="button-addon2-materi'+i+'"  type="button" data-materi="'
+			+i+'" onclick="hapusMATERI(this);">Hapus</button></div>');
+		}
+	}
+	$('#formModul').sayt({'recover':true});
 
+	
 	if($('#formModul').sayt({'checksaveexists': true}) == true)
 	{
 		console.log('Form has an existing save cookie.');
@@ -39,12 +65,63 @@ $('#profile-pic').click(function(){
 
 $('#programKeahlian').on('change',function(){
 	var prokel = $(this).val();
-	$.cookie('prokel',prokel);
+	Cookies.set('prokel',prokel);
 	populateMapel(prokel);
 });
 
 $('#mapel').on('change',function(){
 	var mapel = $(this).val();
+	Cookies.set('mapel',mapel);
+	populateElemen(mapel);
+})
+
+$('#kelas').on('change',function(){
+	var kelas = $(this).val();
+	if(kelas==="x"){
+		$('#fase').val('E');
+	}else{
+		$('#fase').val('F');
+	}
+	var fase = $('#fase').val();
+	Cookies.set('fase',fase);
+});
+
+$('#elemen').on('change',function(){
+	var elemen = $(this).val();
+	Cookies.set('elemen',elemen);
+	populateCP(elemen);
+	
+});
+
+function populateMapel(prokel){
+	$.ajax({
+		url: "../backend/create-modul-ajar/get_mapel.php",
+		type: "POST",
+		data: {
+			prokel: prokel			
+		},
+		cache: false,
+		success: function(dataResult){
+			var dataResult = JSON.parse(dataResult);
+			console.log(dataResult.rows.length);
+			if(dataResult.statusCode==201){
+				$('.option-mapel').remove();
+				for(i=0;i<dataResult.rows.length;i++){
+					$('#mapel').append('<option value="'+dataResult.rows[i].id+'" class="option-mapel">'+dataResult.rows[i].mata_pelajaran+'</option>');
+				}
+				if(Cookies.get('mapel') !== 'undefined'){
+					var mapel = Cookies.get('mapel');
+					$('#mapel').val(mapel);
+				}
+			}
+			else if(dataResult.statusCode==202){
+				console.log('gagal');
+			}
+		}
+	});
+}
+
+function populateElemen(mapel){
 	$.ajax({
 		url: "../backend/create-modul-ajar/get_data_from_mapel.php",
 		type: "POST",
@@ -65,6 +142,11 @@ $('#mapel').on('change',function(){
 				for(i=0;i<dataResult.materi.length;i++){
 					$('#materi-options').append('<option value="'+dataResult.materi[i].materi+'" class="option-materi">'+dataResult.materi[i].materi+'</option>');
 				}
+
+				if(Cookies.get('elemen') !== 'undefined'){
+					var elemen = Cookies.get('elemen');
+					$('#elemen').val(elemen);
+				}
 				
 			}
 			else if(dataResult.statusCode==202){
@@ -72,19 +154,9 @@ $('#mapel').on('change',function(){
 			}
 		}
 	});
-})
+}
 
-$('#kelas').on('change',function(){
-	var kelas = $(this).val();
-	if(kelas==="x"){
-		$('#fase').val('E');
-	}else{
-		$('#fase').val('F');
-	}
-});
-
-$('#elemen').on('change',function(){
-	var elemen = $(this).val();
+function populateCP(elemen){
 	$.ajax({
 		url: "../backend/create-modul-ajar/get_data_from_elemen.php",
 		type: "POST",
@@ -107,32 +179,7 @@ $('#elemen').on('change',function(){
 			}
 		}
 	});
-});
-
-function populateMapel(prokel){
-	$.ajax({
-		url: "../backend/create-modul-ajar/get_mapel.php",
-		type: "POST",
-		data: {
-			prokel: prokel			
-		},
-		cache: false,
-		success: function(dataResult){
-			var dataResult = JSON.parse(dataResult);
-			console.log(dataResult.rows.length);
-			if(dataResult.statusCode==201){
-				$('.option-mapel').remove();
-				for(i=0;i<dataResult.rows.length;i++){
-					$('#mapel').append('<option value="'+dataResult.rows[i].id+'" class="option-mapel">'+dataResult.rows[i].mata_pelajaran+'</option>');
-				}
-			}
-			else if(dataResult.statusCode==202){
-				console.log('gagal');
-			}
-		}
-	});
 }
-
 $('#buatModulAjar').click(function(){
 	if(validatePage3()){
 		$('#spinner').css('display','inline-block');
