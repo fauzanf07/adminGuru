@@ -32,6 +32,44 @@ $(document).ready( function () {
 			+i+'" onclick="hapusMATERI(this);">Hapus</button></div>');
 		}
 	}
+	if(Cookies.get('jmlKa') !== undefined){
+		var jml = parseInt(Cookies.get('jmlKa'));
+		$('#inputKA1').remove();
+		for(var i=1;i<=jml;i++){
+			$('#inputs-ka').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA'+i+
+		'"><span class="input-group-text" id="addon-wrapping-ka'+i+'">'+i+'</span><input type="text" class="form-control" placeholder="Kompetensi Awal '+i+
+		'" aria-label="Username" aria-describedby="addon-wrapping"  id="inputKa'+i+'" value="'+Cookies.get('inputKa'+i)+'"><button class="btn btn-danger" id="button-addon2-ka'+i+'"  type="button" data-ka="'
+		+i+'" onclick="hapusKA(this);">Hapus</button></div>');
+		}
+	}
+
+	if(Cookies.get('jmlPp') !== undefined){
+		$('#list-kosong-pp').remove();
+		var jml = parseInt(Cookies.get('jmlPp'));
+		for(var i=1;i<=jml;i++){
+			$('#inputs-pp').append('<div class="input-group flex-nowrap mb-3 mt-3 input-pp" id="inputPP'+i+
+			'"><span class="input-group-text" id="addon-wrapping-pp'+i+'">'+i+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="pp'+i+'" id="inputPp'+i+'" value="'+Cookies.get('pp'+i)+'" disabled><button class="btn btn-danger" id="button-addon2-pp'+i+'"  type="button" data-pp="'
+			+i+'" onclick="hapusPP(this);">Hapus</button></div>');
+		}
+	}
+	if(Cookies.get('jmlMedia') !== undefined){
+		$('#list-kosong-media').remove();
+		var jml = parseInt(Cookies.get('jmlMedia'));
+		for(var i=1;i<=jml;i++){
+			$('#inputs-media').append('<div class="input-group flex-nowrap mb-3 mt-3 input-media" id="inputMEDIA'+i+
+			'"><span class="input-group-text" id="addon-wrapping-media'+i+'">'+i+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="media'+i+'" id="inputMedia'+i+'" value="'+Cookies.get('media'+i)+'" disabled><button class="btn btn-danger" id="button-addon2-media'+i+'"  type="button" data-media="'
+			+i+'" onclick="hapusMEDIA(this);">Hapus</button></div>');
+		}
+	}
+	if(Cookies.get('jmlSumber') !== undefined){
+		$('#list-kosong-sumber').remove();
+		var jml = parseInt(Cookies.get('jmlSumber'));
+		for(var i=1;i<=jml;i++){
+			$('#inputs-sumber').append('<div class="input-group flex-nowrap mb-3 mt-3 input-sumber" id="inputSUMBER'+i+
+			'"><span class="input-group-text" id="addon-wrapping-sumber'+i+'">'+i+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="sumber'+i+'" id="inputSumber'+i+'" value="'+Cookies.get('sumber'+i)+'" disabled><button class="btn btn-danger" id="button-addon2-sumber'+i+'"  type="button" data-sumber="'
+			+i+'" onclick="hapusSUMBER(this);">Hapus</button></div>');
+		}
+	}
 	$('#formModul').sayt({'recover':true});
 
 	

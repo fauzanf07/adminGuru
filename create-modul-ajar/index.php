@@ -371,7 +371,7 @@
 													<div id="inputs-ka">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA1">
 															<span class="input-group-text" id="addon-wrapping-ka1">1</span>
-															<input type="text" class="form-control" placeholder="Kompetensi Awal 1" aria-label="Username" aria-describedby="addon-wrapping" name="ka1" id="inputKa1">
+															<input type="text" class="form-control" placeholder="Kompetensi Awal 1" aria-label="Username" aria-describedby="addon-wrapping"  id="inputKa1" onkeyup="keyUpKA(this)">
 															<button class="btn btn-danger" id="button-addon2-ka1"  type="button" data-ka="1" id="button-addon-ka2" onclick="hapusKA(this);">Hapus</button>
 														</div>
 													</div>
@@ -442,13 +442,13 @@
 												<h5>E. TARGET PESERTA DIDIK</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Target Peserta Didik<span class="bintang-merah">*</span></span>
-													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target">
+													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target" name="target">
 												</div>
 												<br/>
 												<h5>F. MODEL PEMBELAJARAN</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Model Pembelajaran<span class="bintang-merah">*</span></span>
-													<select class="form-select" id="model">
+													<select class="form-select" id="model" name="model">
 													    <option selected>Choose...</option>
 													    <option value="Discovery Learning">Discovery Learning</option>
 													    <option value="Inquiry Learning Terbimbing">Inquiry Learning Terbimbing</option>

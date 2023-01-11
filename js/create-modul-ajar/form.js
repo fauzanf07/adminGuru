@@ -49,11 +49,20 @@ function hapusMATERI(id){
 
 
 var ka = 1;
+if(Cookies.get('jmlKa') !== undefined){
+	ka = parseInt(Cookies.get('jmlKa'));
+}
+function keyUpKA(e){
+	id = $(e).attr('id');
+	val = $(e).val();
+	Cookies.set('jmlKa',ka);
+	Cookies.set(id,val);
+}
 $('#addKA').click(function(){
 	ka = ka+1;
 	$('#inputs-ka').append('<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA'+ka+
 		'"><span class="input-group-text" id="addon-wrapping-ka'+ka+'">'+ka+'</span><input type="text" class="form-control" placeholder="Kompetensi Awal '+ka+
-		'" aria-label="Username" aria-describedby="addon-wrapping" name="ka'+ka+'" id="inputKa'+ka+'"><button class="btn btn-danger" id="button-addon2-ka'+ka+'"  type="button" data-ka="'
+		'" aria-label="Username" aria-describedby="addon-wrapping"  id="inputKa'+ka+'" onkeyup="keyUpKA(this)"><button class="btn btn-danger" id="button-addon2-ka'+ka+'"  type="button" data-ka="'
 		+ka+'" onclick="hapusKA(this);">Hapus</button></div>');
 });
 
@@ -64,6 +73,7 @@ function hapusKA(id){
 	}else{
 		var no = $(id).data('ka');
 		$('#inputKA'+no).remove();
+		Cookies.remove('inputKa'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-ka'+i).html(i-1);
 			$('#inputKa'+i).attr('name', 'ka'+(i-1));
@@ -73,12 +83,17 @@ function hapusKA(id){
 			$('#addon-wrapping-ka'+i).attr('id','addon-wrapping-ka'+(i-1));
 			$('#inputKa'+i).attr('id','inputKa'+(i-1));
 			$('#button-addon2-ka'+i).attr('id','button-addon2-ka'+(i-1));
+			Cookies.set('inputKa'+(i-1),Cookies.get('inputKa'+i));
 		}
 		ka = $('.input-ka').length;
+		Cookies.set('jmlKa',ka);
 	}	
 }
 
 var pp = 0;
+if(Cookies.get('jmlPp') !== undefined){
+	pp = parseInt(Cookies.get('jmlPp'));
+}
 function addPP(){
 	var isiPP = $('#pp-input').val();
 
@@ -87,6 +102,8 @@ function addPP(){
 			$('#list-kosong-pp').remove();
 		}
 		pp = pp+1;
+		Cookies.set('pp'+pp, isiPP);
+		Cookies.set('jmlPp',pp);
 		$('#inputs-pp').append('<div class="input-group flex-nowrap mb-3 mt-3 input-pp" id="inputPP'+pp+
 			'"><span class="input-group-text" id="addon-wrapping-pp'+pp+'">'+pp+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="pp'+pp+'" id="inputPp'+pp+'" value="'+isiPP+'" disabled><button class="btn btn-danger" id="button-addon2-pp'+pp+'"  type="button" data-pp="'
 			+pp+'" onclick="hapusPP(this);">Hapus</button></div>');
@@ -102,6 +119,7 @@ function hapusPP(id){
 	}else{
 		var no = $(id).data('pp');
 		$('#inputPP'+no).remove();
+		Cookies.remove('pp'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-pp'+i).html(i-1);
 			$('#inputPp'+i).attr('placeholder', 'Profil '+(i-1));
@@ -111,12 +129,17 @@ function hapusPP(id){
 			$('#addon-wrapping-pp'+i).attr('id','addon-wrapping-pp'+(i-1));
 			$('#inputPp'+i).attr('id','inputPp'+(i-1));
 			$('#button-addon2-pp'+i).attr('id','button-addon2-pp'+(i-1));
+			Cookies.set('pp'+(i-1),Cookies.get('pp'+i));
 		}
 		pp = $('.input-pp').length;
+		Cookies.set('jmlPp',pp);
 	}	
 }
 
 var idMedia = 0;
+if(Cookies.get('jmlMedia') !== undefined){
+	idMedia = parseInt(Cookies.get('jmlMedia'));
+}
 function addMedia(){
 	var media = $('#media-input').val();
 
@@ -125,6 +148,8 @@ function addMedia(){
 			$('#list-kosong-media').remove();
 		}
 		idMedia = idMedia+1;
+		Cookies.set('media'+idMedia, media);
+		Cookies.set('jmlMedia',idMedia);
 		$('#inputs-media').append('<div class="input-group flex-nowrap mb-3 mt-3 input-media" id="inputMEDIA'+idMedia+
 			'"><span class="input-group-text" id="addon-wrapping-media'+idMedia+'">'+idMedia+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="media'+idMedia+'" id="inputMedia'+idMedia+'" value="'+media+'" disabled><button class="btn btn-danger" id="button-addon2-media'+idMedia+'"  type="button" data-media="'
 			+idMedia+'" onclick="hapusMEDIA(this);">Hapus</button></div>');
@@ -139,6 +164,7 @@ function hapusMEDIA(id){
 	}else{
 		var no = $(id).data('media');
 		$('#inputMEDIA'+no).remove();
+		Cookies.remove('media'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-media'+i).html(i-1);
 			$('#inputMedia'+i).attr('name', 'media'+(i-1));
@@ -147,12 +173,17 @@ function hapusMEDIA(id){
 			$('#addon-wrapping-media'+i).attr('id','addon-wrapping-media'+(i-1));
 			$('#inputMedia'+i).attr('id','inputMedia'+(i-1));
 			$('#button-addon2-media'+i).attr('id','button-addon2-media'+(i-1));
+			Cookies.set('media'+(i-1),Cookies.get('media'+i));
 		}
 		idMedia = $('.input-media').length;
+		Cookies.set('jmlMedia',idMedia);
 	}	
 }
 
 var idSumber = 0;
+if(Cookies.get('jmlSumber') !== undefined){
+	idSumber = parseInt(Cookies.get('jmlSumber'));
+}
 function addSumber(){
 	var sumber = $('#sumber-input').val();
 	if(!isEmpty(sumber)){	
@@ -160,6 +191,8 @@ function addSumber(){
 			$('#list-kosong-sumber').remove();
 		}
 		idSumber = idSumber+1;
+		Cookies.set('sumber'+idSumber, sumber);
+		Cookies.set('jmlSumber',idSumber);
 		$('#inputs-sumber').append('<div class="input-group flex-nowrap mb-3 mt-3 input-sumber" id="inputSUMBER'+idSumber+
 			'"><span class="input-group-text" id="addon-wrapping-sumber'+idSumber+'">'+idSumber+'</span><input type="text" class="form-control" aria-label="Username" aria-describedby="addon-wrapping" name="sumber'+idSumber+'" id="inputSumber'+idSumber+'" value="'+sumber+'" disabled><button class="btn btn-danger" id="button-addon2-sumber'+idSumber+'"  type="button" data-sumber="'
 			+idSumber+'" onclick="hapusSUMBER(this);">Hapus</button></div>');
@@ -174,6 +207,7 @@ function hapusSUMBER(id){
 	}else{
 		var no = $(id).data('sumber');
 		$('#inputSUMBER'+no).remove();
+		Cookies.remove('sumber'+no);
 		for (var i = no+1; i <= total_inputs; i++) {
 			$('#addon-wrapping-sumber'+i).html(i-1);
 			$('#inputSumber'+i).attr('name', 'sumber'+(i-1));
@@ -182,8 +216,10 @@ function hapusSUMBER(id){
 			$('#addon-wrapping-sumber'+i).attr('id','addon-wrapping-sumber'+(i-1));
 			$('#inputSumber'+i).attr('id','inputSumber'+(i-1));
 			$('#button-addon2-sumber'+i).attr('id','button-addon2-sumber'+(i-1));
+			Cookies.set('sumber'+(i-1),Cookies.get('sumber'+i));
 		}
 		idSumber = $('.input-sumber').length;
+		Cookies.set('jmlSumber',idSumber);
 	}	
 }
 
