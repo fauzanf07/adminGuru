@@ -25,7 +25,7 @@
 <html>
 <head>
 	<title>adminguru &centerdot; Pembuatan Modul Ajar</title>
-	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css">
+	<link rel="stylesheet" type="text/css" href="../style/create-modul-ajar/style.css?version=1.0">
 	<link rel="icon" type="image/x-icon" href="../images/logo.ico">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -75,7 +75,7 @@
 								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-facebook"></i></a>
 							</li>
 							<li class="nav-icon icon-sosmed">
-								<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
+								<a class="nav-link icon-sosmed" href="http://instagram.com/adminguruid" target="_blank"><i class="bi bi-instagram"></i></a>
 							</li>
 						</ul>
 					</div>
@@ -289,7 +289,7 @@
 												</div>
 												<div class="input-group mb-3 mt-3">
 												  <span class="input-group-text" id="basic-addon1">Tahun Ajaran<span class="bintang-merah">*</span></span>
-												  <input type="text" class="form-control" placeholder="Tahun Ajaran" aria-label="Username" aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" required>
+												  <input type="text" class="form-control" placeholder="Tahun Ajaran"  aria-describedby="basic-addon1" list="tahunajar-options" id="tahunAjar" name="tahunAjar" required>
 												    <datalist id="tahunajar-options">
 														<option value="2020/2021">2020/2021</option>
 														<option value="2021/2022">2021/2022</option>
@@ -298,7 +298,7 @@
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Program Keahlian<span class="bintang-merah">*</span></label>
-													<select class="form-select" id="programKeahlian" required>
+													<select class="form-select" id="programKeahlian" name="programKeahlian" required>
 													    <option value="" selected>Choose...</option>
 													    <?php
 													    	$query = "SELECT * FROM program_keahlian";
@@ -311,28 +311,28 @@
 												</div>
 												<div class="input-group mb-3">
 													<label class="input-group-text" for="inputGroupSelect01">Mata Pelajaran<span class="bintang-merah">*</span></label>
-													<select class="form-select" id="mapel" required>
+													<select class="form-select" id="mapel" name="mapel" required>
 															<option selected>Choose...</option>
 													</select>
 												</div>
 												<div class="input-group mb-3">
 												  <span class="input-group-text">Kelas, Semester, dan Fase<span class="bintang-merah">*</span></span>
-												  	<select class="form-select" id="kelas" required>
+												  	<select class="form-select" id="kelas" name="kelas" required>
 													    <option selected>Choose...</option>
 													    <option value="x">X</option>
 													    <option value="xi">XI</option>
 													    <option value="xii">XII</option>
 													</select>
-												  	<select class="form-select" id="semester" required>
+												  	<select class="form-select" id="semester" name="semester" required>
 													    <option selected>Choose...</option>
 													    <option value="1">1</option>
 													    <option value="1">2</option>
 													</select>
-													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" value="" disabled="disabled">
+													<input type="text" class="form-control" placeholder="Fase" aria-label="Username" aria-describedby="basic-addon1" id="fase" name="fase" value="" disabled="disabled">
 												</div>
 												<div class="input-group mb-3">
 														<span class="input-group-text">Elemen<span class="bintang-merah">*</span></span>
-														<select class="form-select" id="elemen" required>
+														<select class="form-select" id="elemen" name="elemen" required>
 															<option selected>Choose...</option>
 														</select>
 												</div>
@@ -357,7 +357,7 @@
 												
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Alokasi Waktu<span class="bintang-merah">*</span></span>
-													<input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" required>
+													<input type="text" class="form-control" placeholder="Alokasi Waktu" aria-label="Username" aria-describedby="basic-addon1" id="alokasiW" name="alokasiW" required>
 													<button type="button" class="btn"
 															data-bs-toggle="tooltip" data-bs-placement="top"
 															data-bs-html="true"
@@ -371,7 +371,7 @@
 													<div id="inputs-ka">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-ka" id="inputKA1">
 															<span class="input-group-text" id="addon-wrapping-ka1">1</span>
-															<input type="text" class="form-control" placeholder="Kompetensi Awal 1" aria-label="Username" aria-describedby="addon-wrapping" name="ka1" id="inputKa1">
+															<input type="text" class="form-control" placeholder="Kompetensi Awal 1" aria-label="Username" aria-describedby="addon-wrapping"  id="inputKa1" onkeyup="keyUpKA(this)">
 															<button class="btn btn-danger" id="button-addon2-ka1"  type="button" data-ka="1" id="button-addon-ka2" onclick="hapusKA(this);">Hapus</button>
 														</div>
 													</div>
@@ -442,13 +442,13 @@
 												<h5>E. TARGET PESERTA DIDIK</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Target Peserta Didik<span class="bintang-merah">*</span></span>
-													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target">
+													<input type="text" class="form-control" placeholder="Target Peserta Didik" aria-label="Username" aria-describedby="basic-addon1" id="target" name="target">
 												</div>
 												<br/>
 												<h5>F. MODEL PEMBELAJARAN</h5>
 												<div class="input-group mb-3 mt-3">
 													<span class="input-group-text" id="basic-addon1">Model Pembelajaran<span class="bintang-merah">*</span></span>
-													<select class="form-select" id="model">
+													<select class="form-select" id="model" name="model">
 													    <option selected>Choose...</option>
 													    <option value="Discovery Learning">Discovery Learning</option>
 													    <option value="Inquiry Learning Terbimbing">Inquiry Learning Terbimbing</option>
@@ -494,7 +494,7 @@
 													<div id="inputs-pb">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-pb" id="inputPB1">
 															<span class="input-group-text" id="addon-wrapping-pb1">1</span>
-															<input type="text" class="form-control" placeholder="Pemahaman Bermakna 1" aria-label="Username" aria-describedby="addon-wrapping" name="pb1" id="inputPb1">
+															<input type="text" class="form-control" placeholder="Pemahaman Bermakna 1" aria-label="Username" aria-describedby="addon-wrapping" id="inputPb1" onkeyup="keyUpPB(this)">
 															<button class="btn btn-danger" id="button-addon2-pb1"  type="button" data-pb="1"  onclick="hapusPB(this);">Hapus</button>
 														</div>
 													</div>
@@ -506,7 +506,7 @@
 													<div id="inputs-perpem">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-perpem" id="inputPERPEM1">
 															<span class="input-group-text" id="addon-wrapping-perpem1">1</span>
-															<input type="text" class="form-control" placeholder="Pertanyaan Pemantik 1" aria-label="Username" aria-describedby="addon-wrapping" name="perpem1" id="inputPerpem1">
+															<input type="text" class="form-control" placeholder="Pertanyaan Pemantik 1" aria-label="Username" aria-describedby="addon-wrapping" id="inputPerpem1" onkeyup="keyUpPerpem(this)">
 															<button class="btn btn-danger" id="button-addon2-perpem1"  type="button" data-perpem="1"  onclick="hapusPERPEM(this);">Hapus</button>
 														</div>
 													</div>
@@ -795,7 +795,7 @@
 									    			<div id="inputs-bahan">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-bahan" id="inputBAHAN1">
 															<span class="input-group-text" id="addon-wrapping-bahan1">1</span>
-															<textarea class="form-control" name="bahan1" id="inputBahan1" rows="2" placeholder="Bahan Bacaan 1"></textarea>
+															<textarea class="form-control"  id="inputBahan1" rows="2" placeholder="Bahan Bacaan 1" onkeyup="keyUpBahan(this)"></textarea>
 															<button class="btn btn-danger" id="button-addon2-bahan1"  type="button" data-bahan="1"  onclick="hapusBAHAN(this);">Hapus</button>
 														</div>
 													</div>
@@ -807,7 +807,7 @@
 									    			<div id="inputs-glos">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-glos" id="inputGLOS1">
 															<span class="input-group-text" id="addon-wrapping-glos1">1</span>
-															<textarea class="form-control" name="glos1" id="inputGlos1" rows="2" placeholder="Glosarium 1"></textarea>
+															<textarea class="form-control" id="inputGlos1" rows="2" placeholder="Glosarium 1" onkeyup="keyUpGlos(this)"></textarea>
 															<button class="btn btn-danger" id="button-addon2-glos1"  type="button" data-glos="1"  onclick="hapusGLOS(this);">Hapus</button>
 														</div>
 													</div>
@@ -819,7 +819,7 @@
 									    			<div id="inputs-dafpus">
 														<div class="input-group flex-nowrap mb-3 mt-3 input-dafpus" id="inputDAFPUS1">
 															<span class="input-group-text" id="addon-wrapping-dafpus1">1</span>
-															<textarea class="form-control" name="dafpus1" id="inputDafpus1" rows="2" placeholder="Daftar Pustaka 1"></textarea>
+															<textarea class="form-control" id="inputDafpus1" rows="2" placeholder="Daftar Pustaka 1" onkeyup="keyUpDafpus(this)"> </textarea>
 															<button class="btn btn-danger" id="button-addon2-dafpus1"  type="button" data-dafpus="1"  onclick="hapusDAFPUS(this);">Hapus</button>
 														</div>
 													</div>
@@ -927,8 +927,12 @@
 
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery-save-as-you-type-master/source/sayt.min.jquery.js"></script>
+	<script type="text/javascript" src="../js/plugins/jquery-save-as-you-type-master/dependencies/jquery-cookie.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/create-modul-ajar.js"></script>
 	<script type="text/javascript" src="../js/create-modul-ajar/form.js"></script>
+	
 
 	
 </html>

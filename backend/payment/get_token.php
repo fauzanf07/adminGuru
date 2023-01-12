@@ -11,7 +11,7 @@
 
     \Midtrans\Config::$serverKey = $serverKey;
 
-    \Midtrans\Config::$isProduction = false;
+    \Midtrans\Config::$isProduction = true;
     \Midtrans\Config::$isSanitized = true;
     \Midtrans\Config::$is3ds = true;
 
