@@ -936,6 +936,7 @@ function validatePage2(){
 
 	if(isEmpty(msg)){
 		$('#carouselExampleControls').carousel('next');
+		window.location.href = "./#formBuatModul";
 	}else{
 		msg = "Input "+ msg + " belum diisi. Mohon diisi terlebih dahulu";
 		$('#msg-toast').html(msg);
