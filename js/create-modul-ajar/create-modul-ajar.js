@@ -1056,8 +1056,10 @@ function downloadBasic(id){
 			console.log(dataResult.statusCode);
 			if(dataResult.statusCode==201){
 				if(ext==="docx"){
-					$('#downloadDocxBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
-					$('#contentPBDocx').html(dataResult.download+" / "+dataResult.limit);
+					if(dataResult.file_exist==1){
+						$('#downloadDocxBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
+						$('#contentPBDocx').html(dataResult.download+" / "+dataResult.limit);
+					}
 					console.log(dataResult);
 					if(dataResult.is_reached==1){
 						window.open('../pricing','_blank');
@@ -1071,8 +1073,10 @@ function downloadBasic(id){
 					}
 					
 				}else{
-					$('#downloadPDFBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
-					$('#contentPBPdf').html(dataResult.download+" / "+dataResult.limit);
+					if(dataResult.file_exist==1){
+						$('#downloadPDFBasic').css('width',((dataResult.download/dataResult.limit)*100)+'%');
+						$('#contentPBPdf').html(dataResult.download+" / "+dataResult.limit);
+					}
 					if(dataResult.is_reached==1){
 						window.open('../pricing','_blank');
 					}else{
