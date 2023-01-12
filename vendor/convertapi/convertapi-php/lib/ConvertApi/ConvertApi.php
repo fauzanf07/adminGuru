@@ -19,7 +19,7 @@ class ConvertApi
     public static $apiBase = 'https://v2.convertapi.com/';
 
     // @var string HTTP connection timeout.
-    public static $connectTimeout = 5;
+    public static $connectTimeout = 500;
 
     // @var string HTTP read timeout.
     public static $readTimeout = 1800;

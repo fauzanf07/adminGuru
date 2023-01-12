@@ -7,6 +7,21 @@ function isEmpty(str) {
 $(document).ready( function () {
     $('#tableModul').DataTable();
 	$('#formModul').sayt({'autorecover':false});
+	recoverCookies();
+} );
+
+// $(window).scroll(function(e){ 
+// 	var $el = $('.free-premium-limit'); 
+// 	var isPositionFixed = ($el.css('position') == 'fixed');
+// 	if ($(this).scrollTop() > 200 && !isPositionFixed){ 
+// 	  $el.css({'position': 'fixed', 'top': '0px'}); 
+// 	}
+// 	if ($(this).scrollTop() < 200 && isPositionFixed){
+// 	  $el.css({'position': 'static', 'top': '0px'}); 
+// 	} 
+//   });
+
+function recoverCookies(){
 	if(Cookies.get('prokel') !== undefined){
 		var prokel = Cookies.get('prokel');
 		populateMapel(prokel);
@@ -231,26 +246,21 @@ $(document).ready( function () {
 		}
 	}
 	$('#formModul').sayt({'recover':true});
+}
 
-	
-	if($('#formModul').sayt({'checksaveexists': true}) == true)
-	{
-		console.log('Form has an existing save cookie.');
-	}
-} );
+function deleteAllCookies(){
+	const cookies = document.cookie.split(";");
 
-// $(window).scroll(function(e){ 
-// 	var $el = $('.free-premium-limit'); 
-// 	var isPositionFixed = ($el.css('position') == 'fixed');
-// 	if ($(this).scrollTop() > 200 && !isPositionFixed){ 
-// 	  $el.css({'position': 'fixed', 'top': '0px'}); 
-// 	}
-// 	if ($(this).scrollTop() < 200 && isPositionFixed){
-// 	  $el.css({'position': 'static', 'top': '0px'}); 
-// 	} 
-//   });
-
-
+    for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i];
+        const sCookie = cookie.split("=");
+		if(sCookie[0]!="PHPSESSID"){
+			var name = String(sCookie[0]);
+			Cookies.remove(name.replace(/\s/g, ""));
+		}
+    }
+	$('#formModul').sayt({'erase': true});
+}
 $('#logout').click(function(){
 	window.location.href = "../backend/logout/logout.php";
 });
@@ -710,6 +720,7 @@ function createModulPdf(id){
 			$('#spinner').css('display','none');
 			var dataResult = JSON.parse(dataResult);
 			console.log(dataResult.statusCode);
+			deleteAllCookies();
 			Swal.fire({
 					title: 'Success!',
 					text: 'Data berhasil ditambahkan',
