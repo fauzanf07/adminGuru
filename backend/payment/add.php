@@ -15,7 +15,7 @@
     $date = date('Y-m-d H:i:s');
 
     if($productName == "AdminGuru Basic"){
-        $amount = 2500;
+        $amount = 15000;
     }else if($productName == "AdminGuru Individual"){
         $amount = 300000;
     }
