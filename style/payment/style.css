@@ -20,6 +20,9 @@ body{
     flex-direction: column;
 	overflow-x: hidden;
     background-color: #F4FDFF;
+	min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .logo-parent{
@@ -138,6 +141,10 @@ nav{
 
 .waves{
     background-color:#F4FDFF;
+}
+
+footer{
+	margin-top: auto;
 }
 
 @media screen and (max-width: 425px) {
