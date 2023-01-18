@@ -65,7 +65,7 @@
 							<a class="nav-link icon-sosmed" href="#"><i class="bi bi-twitter"></i></a>
 						</li>
 						<li class="nav-icon icon-sosmed">
-						<a class="nav-link icon-sosmed" href="http://instagram.com/adminguruid" target="_blank"><i class="bi bi-instagram"></i></a>
+							<a class="nav-link icon-sosmed" href="http://instagram.com/adminguruid" target="_blank"><i class="bi bi-instagram"></i></a>
 						</li>
 					</ul>
 				</div>

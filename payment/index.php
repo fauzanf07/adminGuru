@@ -22,7 +22,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=0.6">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-	<script type="text/javascript"src="https://app.midtrans.com/snap/snap.js" data-client-key='<?php echo $clientKey; ?>'></script>
+	<script type="text/javascript"src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key='<?php echo $clientKey; ?>'></script>
 </head>
 
 <body>
@@ -163,8 +163,11 @@
 				</div>
 			</div>
 		</div>
-        <svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
 	</div>
+    <footer>
+		<svg class="waves" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" ><path fill="#a3f0ff" fill-opacity="1" d="M0,224L40,192C80,160,160,96,240,74.7C320,53,400,75,480,117.3C560,160,640,224,720,218.7C800,213,880,139,960,128C1040,117,1120,171,1200,176C1280,181,1360,139,1400,117.3L1440,96L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path></svg>
+	</footer>
+
 	<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
 		<div class="offcanvas-header">
 			<center><h5 class="offcanvas-title" id="offcanvasRightLabel"><i class="bi bi-cart-fill"></i>&nbsp;&nbsp;&nbsp;Shopping Cart</h5></center>
